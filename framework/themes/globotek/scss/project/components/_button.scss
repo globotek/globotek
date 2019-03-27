@@ -1,0 +1,32 @@
+.button{
+	
+	@include mode('global'){
+		
+		@extend %transition-all;
+		
+		display: inline-block;
+		text-decoration: none;
+		font-size: 16px;
+		color: $white;
+		background-color: $primary-color;
+		padding: $gutter--mini $gutter--midi;
+		border-radius: $gutter--midi;
+		box-shadow: -5px 0px 10px 0 rgba(0, 0, 0, 0.09);
+		
+		&:hover{
+			background-color: $primary-background;
+			box-shadow: -5px 0px 10px 0 rgba(0, 0, 0, 0.19);
+		}
+		
+		&--large{
+			padding: $gutter--small $gutter--treble;
+		}
+		
+		&--white{
+			color: $primary-color;
+			background-color: $white;
+		}
+		
+	}
+	
+}

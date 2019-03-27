@@ -1,0 +1,76 @@
+.card{
+	
+	@include mode('global'){
+		
+		@extend %flex-wrapper--column;
+		
+		box-shadow: -5px 0px 10px 0 rgba(0, 0, 0, 0.09);
+		border-radius: 10px;
+		overflow: hidden;
+		
+		&__image{
+			
+			position: relative;
+			overflow: hidden;
+			
+			img{
+				width: 100%;
+			}
+			
+			&__decor{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: absolute;
+				top: $gutter--mini;
+				left: $gutter;
+				
+				height: 60px;
+				width: 60px;
+				border-radius: 100%;
+				background: $primary-color;
+				color: $white;
+				z-index: 20;
+				
+				span{
+					line-height: 1.2;
+					word-spacing: 50px;
+					text-align: center;
+					font-size: 12px;
+				}
+			}
+			
+		}
+		
+		&__body{
+			
+			padding: $gutter--double $gutter--midi;
+			
+			&__heading{
+				margin-bottom: $gutter--midi;
+			}
+			
+			&__text{
+			
+			}
+			
+			&__link{
+				margin-top: $gutter--midi;
+				text-align: right;
+				
+				a{
+					color: $blue;
+					
+					&:hover{
+						text-decoration: none;
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}

@@ -1,0 +1,27 @@
+.home{
+	
+	@include mode('global'){
+		
+		@extend %flex-wrapper--column;
+		width: 100%;
+		align-items: center;
+		
+		&__icon-blocks{
+			
+			@extend %flex-wrapper;
+			//padding: $gutter--treble 0;
+			
+			@include media-query('portable'){
+				flex-direction: column;
+			}
+			
+		}
+		
+		&__info-boxes{
+			
+			
+			
+		}
+		
+	}
+}

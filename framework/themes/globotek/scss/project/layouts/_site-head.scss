@@ -1,0 +1,111 @@
+.site-head{
+	
+	@include mode("global"){
+		
+		//position: fixed;
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		background-color: $primary-color;
+		z-index: 1000;
+		
+		&__heading{
+			@extend %is-hidden--text;
+		}
+		
+		&__inner{
+			
+			@extend %grid;
+			@extend %grid--middle;
+			@extend %grid--split;
+			@extend %grid--full;
+			
+			width: $site-max-width;
+			max-width: 100%;
+			padding: $gutter $gutter--mini;
+			
+		}
+		
+		&__logo{
+			display: block;
+			height: 100%;
+		}
+		
+		&__nav{
+			
+			@extend %flex-wrapper;
+			@extend %is-hidden--portable;
+			
+			&__inner{
+				@extend %flex-wrapper;
+			}
+			
+			&__item{
+				padding-left: $gutter--double;
+				list-style: none;
+				color: $white;
+			}
+			
+			@include media-query('portable'){
+				
+				position: absolute;
+				top: 93px;
+				left: 0;
+				width: 100%;
+				
+				&.is-active{
+					display: flex !important;
+				}
+				
+				&__inner{
+					
+					flex-direction: column;
+					width: 100%;
+					overflow: scroll;
+					z-index: 1000;
+					height: 100vh;
+					padding-bottom: 90px;
+					background: $white;
+					
+				}
+				
+				&__item{
+					
+					align-self: flex-start;
+					width: 100%;
+					padding-top: $gutter--mini;
+					padding-left: $gutter;
+					color: $primary-color;
+					
+					&:first-child{
+						padding-top: $gutter;
+					}
+					
+					&:last-child{
+						padding-bottom: $gutter;
+					}
+					
+				}
+			}
+			
+		}
+		
+		&__hamburger{
+			
+			@extend %is-hidden--desk;
+			
+			display: flex;
+			align-items: center;
+			height: 100%;
+			padding-right: $gutter--mini;
+			text-decoration: none;
+			color: $white;
+			
+			i{
+				font-size: 24px;
+			}
+		}
+		
+	}
+	
+}

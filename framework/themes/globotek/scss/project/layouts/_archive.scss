@@ -1,0 +1,15 @@
+
+.archive-page{
+	
+	@include mode('global'){
+		
+		padding: $gutter--treble 0;
+		
+		
+		&__filter{
+			padding-bottom: 100px;
+		}
+		
+	}
+	
+}

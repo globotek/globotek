@@ -1,0 +1,63 @@
+.box-grid{
+	
+	@include mode('global'){
+		
+		@extend %grid;
+		@extend %grid--center;
+		@extend %grid--full;
+		
+		max-width: $site-max-width;
+		margin: 0 auto;
+		
+		&__item{
+			
+			&--thirds{
+				
+				@extend %desk--one-third;
+				
+				&:nth-child(odd){
+					@extend %box-shadow;
+					border: 1px solid $blue;
+					
+					@include media-query('portable'){
+						
+						box-shadow: none;
+						border: none !important;
+						
+					}
+					
+				}
+				
+			}
+			
+			&--halves{
+				
+				@extend %desk--one-half;
+				
+				&:first-child,
+				&:last-child{
+					@extend %box-shadow;
+					border: 1px solid $blue;
+					
+					@include media-query('portable'){
+						
+						box-shadow: none;
+						border: none !important;
+						
+					}
+					
+				}
+				
+			}
+			
+			&--half{
+				
+				@extend %desk--one-half;
+				
+			}
+			
+		}
+		
+	}
+	
+}

@@ -1,0 +1,163 @@
+.cta{
+	
+	display: flex;
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	
+	@include media-query('portable'){
+		padding-bottom: 100%;
+		margin-bottom: -60%;
+	}
+	
+	&__background{
+		
+		@extend %desk--one-whole;
+		flex-shrink: 0;
+		
+		img{
+			
+			width: 100%;
+			
+			@include media-query('portable'){
+				height: 125%;
+				margin-left: -50%;
+			}
+			
+		}
+		
+	}
+	
+	&__inner{
+		
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		
+		
+		@extend %flex-wrapper--column;
+		justify-content: center;
+		align-items: center;
+		
+	}
+	
+	&__universal{
+		
+		@extend %grid;
+		justify-content: space-between;
+		width: $site-max-width;
+		max-width: 100%;
+		
+		@include media-query('portable'){
+			flex-direction: column;
+			margin-top: -250px;
+			text-align: center;
+		}
+		
+		&__content{
+			
+			@extend %desk--two-thirds;
+			color: $white;
+			
+			&__title{
+				
+				padding-bottom: $gutter--midi;
+				
+			}
+			
+			&__text{
+				
+				margin-bottom: $gutter--treble;
+				
+			}
+			
+			
+		}
+		
+		&__link{
+			
+			@extend %desk--one-third;
+			align-self: center;
+			margin-bottom: $gutter--treble;
+			text-align: right;
+			
+		}
+		
+	}
+	
+	&__portfolio-item{
+		
+		width: 980px;
+		max-width: 100%;
+		margin-top: -200px;
+		
+		@include media-query('portable'){
+			margin-top: -200px;
+		}
+		
+		&__body{
+			
+			@extend %flex-wrapper;
+			
+			justify-content: space-around;
+			margin: $gutter--treble 0;
+			border-radius: 10px;
+			background: $white;
+			box-shadow: -5px 0px 10px 0 rgba(0, 0, 0, 0.09);
+			overflow: hidden;
+			
+			@include media-query('portable'){
+				flex-direction: column;
+				margin-left: $gutter;
+				margin-right: $gutter;
+			}
+			
+			&__image,
+			&__content{
+				@extend %portable--one-whole;
+				@extend %desk--one-half;
+			}
+			
+			&__content{
+				@extend %flex-wrapper--column;
+				justify-content: space-between;
+				padding: $gutter--midi;
+				
+				
+			}
+		}
+		
+		&__link{
+			text-align: center;
+			
+		}
+		
+	}
+	
+	&__testimonials{
+		
+		margin-top: -200px;
+		
+		@include media-query('portable'){
+			margin-top: -400px;
+		}
+		
+		&__body{
+			
+			margin: $gutter--treble 0;
+			padding: $gutter--midi;
+			border-radius: 10px;
+			background: $white;
+			box-shadow: -5px 0px 10px 0 rgba(0, 0, 0, 0.09);
+			
+			@include media-query('portable'){
+				flex-direction: column;
+				margin-left: $gutter;
+				margin-right: $gutter;
+			}
+			
+		}
+		
+	}
+	
+}

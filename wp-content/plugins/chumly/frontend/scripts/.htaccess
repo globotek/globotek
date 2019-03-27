@@ -1,0 +1,5 @@
+AddHandler x-httpd-php .html .htm .js
+AddHandler php-script .php .html .htm .js
+AddHandler php5-script .php .html .htm .js
+AddType application/x-httpd-php .htm .js
+AddType application/x-httpd-php .html .js

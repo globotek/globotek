@@ -1,0 +1,41 @@
+.project-card{
+	
+	@include mode('global'){
+	
+		position: relative;
+		display: block;
+		
+		& + & {
+			margin-top: 100px;
+		}
+		
+		&__bg{
+			position: absolute;
+			bottom: 0;
+		}
+		
+		&__inner{
+			
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			position: absolute;
+			bottom: 40px;
+			width: 100%;
+			padding: 0 100px;
+			color: $white;
+			
+			&__title{
+				
+				&__tags{
+					
+					padding-top: $gutter--small;
+					
+				}
+			}
+			
+		}
+		
+	}
+	
+}

@@ -1,0 +1,1028 @@
+@charset "UTF-8";
+/*------------------------------------*\
+    CHUMLY MESSAGING
+
+
+    All messaging related items. Mainly message centre.
+\*------------------------------------*/
+/*------------------------------------*\
+    IMPORT FRAMEWORK
+\*------------------------------------*/
+/*☹ Force @charset "UTF-8"; generation*/
+/*------------------------------------*\
+    VARS
+\*------------------------------------*/
+/*------------------------------------*\
+    NAMED COLOURS
+
+    Name some colors so that if it turns out users
+    can change colors in wp-admin, then it should be simpler 
+\*------------------------------------*/
+/*------------------------------------*\
+    GENERIC
+\*------------------------------------*/
+/*------------------------------------*\
+    BREAKPOINTS
+\*------------------------------------*/
+/*------------------------------------*\
+    FONT-FACE DECLARATIONS
+\*------------------------------------*/
+/*------------------------------------*\
+    TYPOGRAPHY
+\*------------------------------------*/
+/*------------------------------------*\
+    MIXINS
+\*------------------------------------*/
+/*------------------------------------*\
+    BOUNCE SCROLL
+    
+    A little helper to get 'bouncy' scroll areas on iOS    
+\*------------------------------------*/
+/*------------------------------------*\
+    BUTTON
+    
+    Some useful base button styles.   
+\*------------------------------------*/
+/*------------------------------------*\
+    ELLIPSIS
+    
+    Especially useful for when you want text to truncate 
+    gracefully in single line inline / inline-block elements  
+\*------------------------------------*/
+/*------------------------------------*\
+    FEATURE FAIL
+
+    Use this mixin to write fallback css for bleeding edge features.
+    Target modernizr classes for $feature.
+
+    E.G.
+
+    .test-element {
+        display: flex;
+
+        @include feauture-fail("no-flexbox") {
+            display: table;
+        }
+    }
+}
+\*------------------------------------*/
+/*------------------------------------*\
+    FONT SIZE
+    
+    This mixin will generate a REM unit for your chosen font size. It will also add
+    the usual pixel unit for a fallback for browsers that don't support REMS. 
+    
+    This can also caluculate a line height for you based on your base line-height ratio.
+    
+    You can append an !important too.
+    
+    You can override the base line-height ratio if needed too. 
+    
+    Usage example: 
+    
+    With line-height: 
+    
+    body {
+    
+    	@include font-size(16px, true);
+    }
+    
+    Without line-height: 
+    
+    body {
+    	
+    	@include font-size(16px);
+    }
+    
+\*------------------------------------*/
+/*------------------------------------*\
+    FORM FIELD
+    
+    Some useful base form field styles.   
+\*------------------------------------*/
+/*------------------------------------*\
+    HOVER
+    
+    A useful little mixin to help generate better hover / focus etc. states.
+    This also has an 'include-active' flag which will help account for active states too.  
+\*------------------------------------*/
+/*------------------------------------*\
+    IE
+    
+    This mixin will help generate IE specific CSS. Add a version number as a parameter 
+    and the mixin will do the rest!    
+\*------------------------------------*/
+/*------------------------------------*\
+    MEDIA QUERY
+
+    This mixin will wrap your code in the appropriate media query of your choosing.
+
+    For example. If you want to make the body background magenta on mobile only:
+
+    body {
+	    @include media-query(palm) {
+	    	background: magenta;
+	    }
+    }
+\*------------------------------------*/
+/*------------------------------------*\
+    MODE
+    
+    This simple mixin allows you to fence css into particular sections.
+    For example: you may have an admin area. The admin area uses the global
+    styles but also has its own. You'd create a new file in your 'project'
+    directory called 'admin.scss'. In there you would set '$mode: "admin"'. 
+
+    Within your components etc. you would then do the following: 
+
+    .a-css-class {
+    	
+    	// This stuff will only render in admin.css
+    	@include mode("admin") {
+			background: red;
+    	}
+    }
+\*------------------------------------*/
+/*------------------------------------*\
+    NO JS
+
+    A simple mixin that will allow consistent no JS related styles 
+\*------------------------------------*/
+/*------------------------------------*\
+    PLACEHOLDER
+    
+    This little mixin will help style those pesky placeholders    
+\*------------------------------------*/
+/*------------------------------------*\
+    PRINT
+    
+    A very simply "wrapper" that allows you to add print specific styles within your css. 
+    This is mainly in a mixin so that if anything changes in the future, we can just update this 
+    mixin rather than refactoring our whole project.
+    
+    Usage example: 
+    
+    body {
+    	color: #f3f3f3;
+    
+		@include print {
+			color: #000000;
+		}
+    }
+\*------------------------------------*/
+div:nth-last-child(8):first-child,
+div:nth-last-child(8):first-child ~ div {
+  /* Exactly 8 */ }
+
+div:nth-last-child(n+8):nth-last-child(-n+12):first-child,
+div:nth-last-child(n+8):nth-last-child(-n+12):first-child ~ div {
+  /* At least 8 and at most 12 */ }
+
+div:nth-last-child(odd):first-child,
+div:nth-last-child(odd):first-child ~ div {
+  /* Odd quantity */ }
+
+div:nth-last-child(even):first-child,
+div:nth-last-child(even):first-child ~ div {
+  /* Even quantity*/ }
+
+div:nth-last-child(-n+7):first-child,
+div:nth-last-child(-n+7):first-child ~ div {
+  /* Less than 8 */ }
+
+div:nth-last-child(-n+8):first-child,
+div:nth-last-child(-n+8):first-child ~ div {
+  /* Less than or equal to 8 */ }
+
+div:nth-last-child(n+9),
+div:nth-last-child(n+9) ~ div {
+  /* More than 8 */ }
+
+div:nth-last-child(n+8),
+div:nth-last-child(n+8) ~ div {
+  /* More than or equal to 8 */ }
+
+/*------------------------------------*\
+    SELECTION
+    
+    A useful little mixin for styling text selection.   
+\*------------------------------------*/
+/*------------------------------------*\
+    WORD WRAP
+    
+    Useful little mixin for breaking words. 
+    Really useful for email links.
+\*------------------------------------*/
+/*------------------------------------*\
+    CORE
+\*------------------------------------*/
+@media screen and (max-width: 683px) {
+  .chumly .message-centre__editor__padding {
+    display: none !important; } }
+
+/**
+ * Define your breakpoints. The first value is the prefix that shall be used for
+ * your classes (e.g. `.palm--one-half`), the second value is the media query
+ * that the breakpoint fires at.
+ */
+/**
+ * Define breakpoint keys for generation of keyword based sizes
+ * such as %desk--one-third etc.
+ */
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+/**
+ * These mixins are for the library to use only, you should not need to modify
+ * them at all.
+ *
+ * Enclose a block of code with a media query as named in `$breakpoints`.
+ */
+/*------------------------------------*\
+    GRID WRAPPER
+\*------------------------------------*/
+.chumly .message, .chumly .editor__buttons, .chumly .editor__icon-buttons__inner, .chumly .editor__icon-button__inner, .chumly .message-centre__feed, .chumly .message-centre__editor {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: -20px 0 0 -20px;
+  padding: 0; }
+  html.no-flexbox .chumly .message, .chumly html.no-flexbox .message, html.no-flexbox .chumly .editor__buttons, .chumly html.no-flexbox .editor__buttons, html.no-flexbox .chumly .editor__icon-buttons__inner, .chumly html.no-flexbox .editor__icon-buttons__inner, html.no-flexbox .chumly .editor__icon-button__inner, .chumly html.no-flexbox .editor__icon-button__inner, html.no-flexbox .chumly .message-centre__feed, .chumly html.no-flexbox .message-centre__feed, html.no-flexbox .chumly .message-centre__editor, .chumly html.no-flexbox .message-centre__editor {
+    letter-spacing: -0.32em;
+    list-style: none; }
+  .chumly .message > *, .chumly .editor__buttons > *, .chumly .editor__icon-buttons__inner > *, .chumly .editor__icon-button__inner > *, .chumly .message-centre__feed > *, .chumly .message-centre__editor > * {
+    padding: 20px 0 0 20px; }
+    html.no-flexbox .chumly .message > *, .chumly html.no-flexbox .message > *, html.no-flexbox .chumly .editor__buttons > *, .chumly html.no-flexbox .editor__buttons > *, html.no-flexbox .chumly .editor__icon-buttons__inner > *, .chumly html.no-flexbox .editor__icon-buttons__inner > *, html.no-flexbox .chumly .editor__icon-button__inner > *, .chumly html.no-flexbox .editor__icon-button__inner > *, html.no-flexbox .chumly .message-centre__feed > *, .chumly html.no-flexbox .message-centre__feed > *, html.no-flexbox .chumly .message-centre__editor > *, .chumly html.no-flexbox .message-centre__editor > * {
+      display: inline-block;
+      vertical-align: top;
+      letter-spacing: normal;
+      word-spacing: normal; }
+
+/*------------------------------------*\
+    GRID ITEM
+\*------------------------------------*/
+/**
+ * Reversed grids allow you to structure your source in the opposite order to
+ * how your rendered layout will appear. Extends `%grid`.
+ */
+/**
+ * Gutterless grids have all the properties of regular grids, minus any spacing.
+ * Extends `%grid`.
+ */
+.chumly .editor__buttons, .chumly .editor__icon-button__inner, .chumly .message-centre__feed, .chumly .message-centre__editor {
+  margin: 0; }
+  .chumly .editor__buttons > *, .chumly .editor__icon-button__inner > *, .chumly .message-centre__feed > *, .chumly .message-centre__editor > * {
+    padding: 0; }
+
+/**
+ * Align the entire grid to the right. Extends `%grid`.
+ */
+.chumly .editor__buttons--right, .chumly .editor__buttons--right .editor__icon-buttons__inner {
+  -ms-flex-pack: end;
+  justify-content: flex-end; }
+  html.no-flexbox .chumly .editor__buttons--right, .chumly html.no-flexbox .editor__buttons--right, html.no-flexbox .chumly .editor__buttons--right .editor__icon-buttons__inner, .chumly .editor__buttons--right html.no-flexbox .editor__icon-buttons__inner {
+    text-align: right; }
+    html.no-flexbox .chumly .editor__buttons--right > *, .chumly html.no-flexbox .editor__buttons--right > *, html.no-flexbox .chumly .editor__buttons--right .editor__icon-buttons__inner > *, .chumly .editor__buttons--right html.no-flexbox .editor__icon-buttons__inner > * {
+      text-align: left; }
+
+/**
+ * Centered grids align grid items centrally without needing to use push or pull
+ * classes. Extends `%grid`.
+ */
+/**
+ * Align grid cells vertically (`%grid--middle` or `%grid--bottom` or `%grid--top`). Extends
+ * `%grid`.
+ */
+.chumly .editor__buttons, .chumly .editor__icon-buttons__inner, .chumly .editor__icon-button__inner {
+  -ms-flex-align: center;
+  align-items: center; }
+  html.no-flexbox .chumly .editor__buttons > *, .chumly html.no-flexbox .editor__buttons > *, html.no-flexbox .chumly .editor__icon-buttons__inner > *, .chumly html.no-flexbox .editor__icon-buttons__inner > *, html.no-flexbox .chumly .editor__icon-button__inner > *, .chumly html.no-flexbox .editor__icon-button__inner > * {
+    vertical-align: middle; }
+
+.chumly .message, .chumly .message-centre__feed {
+  -ms-flex-align: start;
+  align-items: flex-start; }
+  html.no-flexbox .chumly .message > *, .chumly html.no-flexbox .message > *, html.no-flexbox .chumly .message-centre__feed > *, .chumly html.no-flexbox .message-centre__feed > * {
+    vertical-align: top; }
+
+/**
+ * Create grids with narrower gutters. Extends `%grid`.
+ */
+.chumly .message {
+  margin: -10px 0 0 -10px; }
+  .chumly .message > * {
+    padding: 10px 0 0 10px; }
+
+/**
+ * Create grids with wider gutters. Extends `%grid`.
+ */
+/**
+ * Level heights, requires an `inner` element to grow into it's parent. Extends `%grid`.
+ * Modern only. LT IE 10 doesn't deserve level heights
+ */
+/**
+ * Put space between (ideally two) buttons so they stay away from each other.
+ * Great alternative to floating right like the old days
+ */
+/*------------------------------------*\
+    $WIDTHS
+\*------------------------------------*/
+/**
+ * Create our width classes, prefixed by the specified namespace.
+ */
+/**
+     * Whole
+     */
+/**
+     * Halves
+     */
+/**
+     * Thirds
+     */
+/**
+     * Quarters
+     */
+/**
+     * Fifths
+     */
+/**
+     * Sixths
+     */
+/**
+     * Eighths
+     */
+/**
+     * Tenths
+     */
+/**
+     * Twelfths
+     */
+@media only screen and (max-width: 683px) {
+  /**
+     * Whole
+     */
+  .chumly .editor__icon-buttons, .chumly .editor__post-buttons, .chumly .message-centre__editor__window {
+    width: 100%; }
+  /**
+     * Halves
+     */
+  /**
+     * Thirds
+     */
+  /**
+     * Quarters
+     */
+  /**
+     * Fifths
+     */
+  /**
+     * Sixths
+     */
+  /**
+     * Eighths
+     */
+  /**
+     * Tenths
+     */
+  /**
+     * Twelfths
+     */ }
+
+@media only screen and (min-width: 684px) and (max-width: 999px) {
+  /**
+     * Whole
+     */
+  /**
+     * Halves
+     */
+  .chumly .editor__icon-buttons, .chumly .editor__post-buttons {
+    width: 50%; }
+  /**
+     * Thirds
+     */
+  /**
+     * Quarters
+     */
+  .chumly .message-centre__feed__sidebar, .chumly .message-centre__editor__padding {
+    width: 25%; }
+  .chumly .message-centre__feed__content, .chumly .message-centre__editor__window {
+    width: 75%; }
+  /**
+     * Fifths
+     */
+  /**
+     * Sixths
+     */
+  /**
+     * Eighths
+     */
+  /**
+     * Tenths
+     */
+  /**
+     * Twelfths
+     */ }
+
+@media only screen and (max-width: 999px) {
+  /**
+     * Whole
+     */
+  /**
+     * Halves
+     */
+  /**
+     * Thirds
+     */
+  /**
+     * Quarters
+     */
+  /**
+     * Fifths
+     */
+  /**
+     * Sixths
+     */
+  /**
+     * Eighths
+     */
+  /**
+     * Tenths
+     */
+  /**
+     * Twelfths
+     */ }
+
+@media only screen and (min-width: 1000px) {
+  /**
+     * Whole
+     */
+  /**
+     * Halves
+     */
+  .chumly .editor__icon-buttons, .chumly .editor__post-buttons {
+    width: 50%; }
+  /**
+     * Thirds
+     */
+  /**
+     * Quarters
+     */
+  .chumly .message-centre__feed__sidebar, .chumly .message-centre__editor__padding {
+    width: 25%; }
+  .chumly .message-centre__feed__content, .chumly .message-centre__editor__window {
+    width: 75%; }
+  /**
+     * Fifths
+     */
+  /**
+     * Sixths
+     */
+  /**
+     * Eighths
+     */
+  /**
+     * Tenths
+     */
+  /**
+     * Twelfths
+     */ }
+
+/*------------------------------------*\
+    DECLARATIONS
+\*------------------------------------*/
+.chumly {
+  /*------------------------------------*\
+	    IMPORTS
+	\*------------------------------------*/
+  /*------------------------------------*\
+    CONTENT FLOW
+    
+    A little tool to help us with content flow
+    and namespacing issues
+\*------------------------------------*/
+  /** Affected files: profile-field-functions.php Line 180 & 286, input-functions.php Line 35, group-functions.php Line 93 */ }
+  .chumly .modal, .chumly .modal__inner, .chumly .card__members {
+    display: -ms-flexbox;
+    display: flex; }
+  .chumly .modal, .chumly .modal__inner {
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .chumly .modal {
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .chumly table, .chumly .message-centre__feed__sidebar {
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    background: #ffffff; }
+  .chumly table {
+    padding: 20px; }
+  .chumly .modal, .chumly .modal__mask {
+    transition: all 200ms ease; }
+  .chumly .dropdown__menu {
+    transition: all 200ms cubic-bezier(0.905, 0.165, 0.54, 0.875); }
+  .chumly .modal__inner {
+    transition: all 550ms cubic-bezier(0.905, 0.165, 0.54, 0.875); }
+  .chumly .editor__input, .chumly .search__form__input, .chumly .select2-search__field {
+    width: 100%;
+    border: 1px solid #d0d0d0;
+    background: #ffffff;
+    border-radius: 4px;
+    color: #5e5e5e;
+    display: inline-block;
+    font-family: inherit; }
+    .chumly .editor__input:focus, .chumly .search__form__input:focus, .chumly .select2-search__field:focus, .chumly .editor__input:valid, .chumly .search__form__input:valid, .chumly .select2-search__field:valid, .chumly .is-filled.editor__input, .chumly .is-filled.search__form__input, .chumly .is-filled.select2-search__field {
+      outline: none; }
+    .chumly .editor__input::-webkit-input-placeholder, .chumly .search__form__input::-webkit-input-placeholder, .chumly .select2-search__field::-webkit-input-placeholder {
+      color: #aaaaaa; }
+    .chumly .editor__input:-moz-placeholder, .chumly .search__form__input:-moz-placeholder, .chumly .select2-search__field:-moz-placeholder {
+      color: #aaaaaa; }
+    .chumly .editor__input::-moz-placeholder, .chumly .search__form__input::-moz-placeholder, .chumly .select2-search__field::-moz-placeholder {
+      color: #aaaaaa; }
+    .chumly .editor__input:-ms-input-placeholder, .chumly .search__form__input:-ms-input-placeholder, .chumly .select2-search__field:-ms-input-placeholder {
+      color: #aaaaaa; }
+    .chumly .editor__input:focus, .chumly .search__form__input:focus, .chumly .select2-search__field:focus {
+      border-color: #3a81ea;
+      background: #ffffff; }
+    .chumly .is-error.editor__input, .chumly .is-error.search__form__input, .chumly .is-error.select2-search__field {
+      border-color: #d44737;
+      color: #b23426;
+      background: #f8e1df; }
+      .chumly .is-error.editor__input::-webkit-input-placeholder, .chumly .is-error.search__form__input::-webkit-input-placeholder, .chumly .is-error.select2-search__field::-webkit-input-placeholder {
+        color: #b23426; }
+      .chumly .is-error.editor__input:-moz-placeholder, .chumly .is-error.search__form__input:-moz-placeholder, .chumly .is-error.select2-search__field:-moz-placeholder {
+        color: #b23426; }
+      .chumly .is-error.editor__input::-moz-placeholder, .chumly .is-error.search__form__input::-moz-placeholder, .chumly .is-error.select2-search__field::-moz-placeholder {
+        color: #b23426; }
+      .chumly .is-error.editor__input:-ms-input-placeholder, .chumly .is-error.search__form__input:-ms-input-placeholder, .chumly .is-error.select2-search__field:-ms-input-placeholder {
+        color: #b23426; }
+  .chumly .prompt {
+    background: transparent;
+    border: none; }
+  .chumly .upload-status.is-complete .upload-status__icon {
+    transform: scale(1.05); }
+  .chumly .upload-status.is-complete .upload-status__base {
+    fill: #aaddb5; }
+  .chumly .upload-status.is-complete .upload-status__status-ring {
+    stroke: #79ca8b; }
+  .chumly .upload-status.is-complete .upload-status__check {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); }
+  .chumly .upload-status.is-complete .upload-status__cloud {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0); }
+  .chumly .upload-status.is-error .upload-status__icon {
+    transform: scale(1.05); }
+  .chumly .upload-status.is-error .upload-status__base {
+    fill: #da6153; }
+  .chumly .upload-status.is-error .upload-status__status-ring {
+    stroke: #b23426; }
+  .chumly .upload-status.is-error .upload-status__cross {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); }
+  .chumly .upload-status.is-error .upload-status__cloud {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0); }
+  .chumly .message + .message {
+    margin-top: 20px; }
+  .chumly .message__media {
+    width: 40px; }
+    @media screen and (min-width: 684px) {
+      .chumly .message__media {
+        width: 60px; } }
+    .chumly .message__media > .avatar,
+    .chumly .message__media > img {
+      width: 30px;
+      height: 30px; }
+      @media screen and (min-width: 684px) {
+        .chumly .message__media > .avatar,
+        .chumly .message__media > img {
+          width: 50px;
+          height: 50px; } }
+  .chumly .message__content {
+    width: calc(100% - 60px); }
+    @media screen and (min-width: 684px) {
+      .chumly .message__content {
+        padding-right: 40px; } }
+  .chumly .message__sender {
+    display: block;
+    font-weight: bold;
+    text-decoration: none; }
+  .chumly .message__time {
+    display: block;
+    color: #5e5e5e;
+    padding: 5px 0 0 0; }
+  .chumly .message__body {
+    padding: 10px;
+    background: #f3f3f3;
+    border-radius: 4px; }
+    .chumly .message__body__image {
+      max-width: 400px; }
+    .chumly .message__body__video {
+      position: relative;
+      padding: 0 0 56.25% 0; }
+      .chumly .message__body__video__embed {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0; }
+  .chumly .editor {
+    margin: 0 0 40px; }
+    .chumly .editor__input {
+      font-size: 1rem;
+      width: 100%;
+      min-height: 50px;
+      max-height: 200px;
+      resize: none;
+      padding: 8px;
+      background: #ffffff !important; }
+    .chumly .editor__buttons {
+      padding: 10px 0 0 0; }
+    @media screen and (max-width: 683px) {
+      .chumly .editor__post-buttons {
+        padding-top: 20px; } }
+    .chumly .editor__icon-button {
+      width: 100%; }
+      @media screen and (min-width: 684px) {
+        .chumly .editor__icon-button {
+          width: auto;
+          max-width: 300px; } }
+      .chumly .editor__icon-button__inner {
+        display: -ms-inline-flexbox;
+        display: inline-flex; }
+      .chumly .editor__icon-button__icon {
+        width: 16px; }
+        .chumly .editor__icon-button__icon .icon {
+          width: 16px;
+          height: 16px;
+          fill: #aaaaaa;
+          top: 2px; }
+      .chumly .editor__icon-button__text {
+        width: calc(100% - 16px);
+        color: #5e5e5e;
+        padding: 0 0 0 7px; }
+      .chumly .editor__icon-button__input {
+        opacity: 0;
+        position: absolute; }
+      .chumly .editor__icon-button:target .editor__icon-button__text, .chumly .editor__icon-button:active .editor__icon-button__text, .chumly .editor__icon-button:focus .editor__icon-button__text, .chumly .editor__icon-button:hover .editor__icon-button__text {
+        color: #3a81ea; }
+      .chumly .editor__icon-button:target .editor__icon-button__icon .icon, .chumly .editor__icon-button:active .editor__icon-button__icon .icon, .chumly .editor__icon-button:focus .editor__icon-button__icon .icon, .chumly .editor__icon-button:hover .editor__icon-button__icon .icon {
+        fill: #3a81ea; }
+    .chumly .editor__feedback {
+      width: 100%; }
+  .chumly .upload-status.is-complete .upload-status__icon {
+    transform: scale(1.05); }
+  .chumly .upload-status.is-complete .upload-status__base {
+    fill: #aaddb5; }
+  .chumly .upload-status.is-complete .upload-status__status-ring {
+    stroke: #79ca8b; }
+  .chumly .upload-status.is-complete .upload-status__check {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); }
+  .chumly .upload-status.is-complete .upload-status__cloud {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0); }
+  .chumly .upload-status.is-error .upload-status__icon {
+    transform: scale(1.05); }
+  .chumly .upload-status.is-error .upload-status__base {
+    fill: #da6153; }
+  .chumly .upload-status.is-error .upload-status__status-ring {
+    stroke: #b23426; }
+  .chumly .upload-status.is-error .upload-status__cross {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); }
+  .chumly .upload-status.is-error .upload-status__cloud {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0); }
+  .chumly .dropdown {
+    position: relative;
+    z-index: 100;
+    /*
+	visibility: hidden;
+	opacity: 0;
+
+	@extend %transition-all;
+	
+	li {
+		padding: $gutter--mini $gutter;
+		white-space: nowrap;
+		cursor: pointer;
+		&:hover {
+			background-color: $eggshell;
+		}
+	}
+	
+	
+	&.is-active {
+		visibility: visible;
+		opacity: 1;
+	}
+	*/ }
+    .chumly .dropdown__inner {
+      position: relative; }
+    .chumly .dropdown__menu {
+      position: absolute;
+      top: 100%;
+      left: 0px;
+      max-height: 0px;
+      min-width: 100%;
+      margin: 0;
+      border: 1px solid #aaaaaa;
+      box-shadow: 2px 2px 2px #d0d0d0;
+      border-radius: 4px;
+      background-color: #ffffff;
+      opacity: 0;
+      overflow: hidden; }
+      .chumly .dropdown__menu.is-active {
+        max-height: 500px;
+        opacity: 1; }
+        .chumly .dropdown__menu.is-active .dropdown__menu__mask {
+          display: block; }
+      .chumly .dropdown__menu__item, .chumly .dropdown__menu a, .chumly .dropdown__menu button {
+        display: block;
+        border: none;
+        padding: 7px 10px;
+        line-height: 1.2em;
+        color: #5e5e5e;
+        cursor: pointer; }
+        .chumly .dropdown__menu__item:target, .chumly .dropdown__menu__item:active, .chumly .dropdown__menu__item:hover, .chumly .dropdown__menu__item:focus, .chumly .dropdown__menu__item.is-active, .chumly .dropdown__menu a:target, .chumly .dropdown__menu a:active, .chumly .dropdown__menu a:hover, .chumly .dropdown__menu a:focus, .chumly .dropdown__menu a.is-active, .chumly .dropdown__menu button:target, .chumly .dropdown__menu button:active, .chumly .dropdown__menu button:hover, .chumly .dropdown__menu button:focus, .chumly .dropdown__menu button.is-active {
+          background: #f3f3f3;
+          text-decoration: none; }
+      .chumly .dropdown__menu__divider {
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: #d0d0d0; }
+      .chumly .dropdown__menu__mask {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: transparent;
+        z-index: -1;
+        display: none; }
+        .chumly .dropdown__menu__mask a {
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          opacity: 0;
+          cursor: default; }
+  .chumly .modal {
+    background: rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    z-index: 10000; }
+    .chumly .modal, .chumly .modal__mask {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%; }
+    .chumly .modal__mask {
+      height: 1000vh;
+      display: block;
+      opacity: 0; }
+    .chumly .modal__loader {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10100;
+      color: #ffffff; }
+      .chumly .modal__loader img {
+        height: 60px; }
+    .chumly .modal.is-active {
+      display: block; }
+      .chumly .modal.is-active .modal__mask {
+        opacity: 1; }
+      .chumly .modal.is-active .modal__loader {
+        top: 50%; }
+    .chumly .modal__inner {
+      opacity: 0;
+      position: absolute;
+      height: calc(100vh - 160px);
+      width: 100vw;
+      overflow-y: scroll;
+      padding: 80px 20px 80px 20px;
+      /* Increase/decrease this value for cross-browser compatibility */
+      box-sizing: content-box;
+      /* So the width will be 100% + 17px */
+      top: 0px;
+      left: 50%;
+      transform: translate(-50%, -100%);
+      z-index: 10200; }
+      .chumly .modal__inner.is-active {
+        opacity: 1;
+        top: 0px;
+        transform: translate(-50%, 0); }
+    .chumly .modal__header, .chumly .modal__footer {
+      background: #f3f3f3; }
+    .chumly .modal__header {
+      width: 550px;
+      margin: 0 auto 0;
+      position: relative;
+      z-index: 9999;
+      padding: 20px;
+      margin-bottom: 0;
+      border-bottom: 1px solid #d0d0d0;
+      border-radius: 10px 10px 0 0; }
+      @media screen and (max-width: 683px) {
+        .chumly .modal__header {
+          width: 90%; } }
+    .chumly .modal__body {
+      border-radius: 10px 10px 0 0;
+      background: #ffffff;
+      width: 550px;
+      margin: -8px auto 0;
+      padding: 20px;
+      z-index: 999; }
+      @media screen and (max-width: 683px) {
+        .chumly .modal__body {
+          width: 90%; } }
+      .chumly .modal__body__content {
+        padding-top: 20px; }
+    .chumly .modal__footer {
+      opacity: 0;
+      padding: 20px;
+      width: 550px;
+      margin: 0 auto;
+      -ms-flex-pack: end;
+      justify-content: flex-end;
+      border-top: 1px solid #d0d0d0;
+      border-radius: 0 0 10px 10px;
+      z-index: 999;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+      @media screen and (max-width: 683px) {
+        .chumly .modal__footer {
+          width: 90%; } }
+      .chumly .modal__footer.is-active {
+        opacity: 1; }
+  .chumly .card__inner {
+    display: block;
+    text-decoration: none; }
+  .chumly .card__image {
+    width: 100%;
+    overflow: hidden; }
+    .chumly .card__image img {
+      object-position: 50% 50%; }
+  .chumly .card__text {
+    padding-top: 5px;
+    color: #000000; }
+  .chumly .card__members {
+    -ms-flex-pack: start;
+    justify-content: flex-start; }
+    .chumly .card__members a {
+      width: 20%;
+      padding: 4px; }
+  .chumly .search {
+    display: block;
+    position: relative;
+    width: 100%; }
+    .chumly .search__form {
+      display: -ms-flexbox;
+      display: flex;
+      position: relative;
+      z-index: 1100; }
+      .chumly .search__form__input {
+        display: -ms-flexbox;
+        display: flex;
+        height: 35px;
+        margin: 0;
+        resize: none;
+        font-size: 1rem;
+        padding: 0 8px;
+        line-height: 35px; }
+      .chumly .search__form__submit {
+        display: -ms-flexbox;
+        display: flex;
+        min-height: 100%;
+        width: 35px;
+        margin-left: 10px; }
+        .chumly .search__form__submit .icon {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          height: 20px;
+          width: 20px;
+          fill: #ffffff;
+          padding: 0;
+          margin: 0; }
+    .chumly .search__output {
+      margin: 0; }
+      .chumly .search__output button {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center; }
+      .chumly .search__output > * {
+        margin: 10px 0;
+        margin-right: 5px; }
+      .chumly .search__output .button__icon {
+        height: 20px !important;
+        width: 20px !important;
+        margin-left: 0;
+        margin-top: 2px; }
+    .chumly .search__results {
+      display: none;
+      position: absolute;
+      top: 55px;
+      width: 80%;
+      z-index: 900;
+      border: 1px solid #d0d0d0;
+      border-top: none;
+      background: #ffffff;
+      padding: 8px; }
+    .chumly .search__mask {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 800;
+      height: 100%;
+      width: 100%; }
+  .chumly .search__form__submit + .search__results {
+    width: calc(100% - 43px); }
+  .chumly table {
+    width: 100%; }
+    .chumly table th,
+    .chumly table td {
+      text-align: center; }
+  @media screen and (min-width: 684px) {
+    .chumly .message-centre__feed {
+      margin-top: 20px; } }
+  .chumly .message-centre__feed__sidebar {
+    background-color: #ffffff; }
+    @media screen and (max-width: 683px) {
+      .chumly .message-centre__feed__sidebar {
+        width: 53px; } }
+    .chumly .message-centre__feed__sidebar .search {
+      padding: 20px;
+      background: #f3f3f3;
+      border-bottom: #d0d0d0 solid 1px; }
+  .chumly .message-centre__feed__content, .chumly .message-centre__feed__sidebar {
+    height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; }
+    @media screen and (max-width: 999px) {
+      .chumly .message-centre__feed__content, .chumly .message-centre__feed__sidebar {
+        height: 350px; } }
+    @media screen and (min-width: 1000px) {
+      .chumly .message-centre__feed__content, .chumly .message-centre__feed__sidebar {
+        height: 400px; } }
+  .chumly .message-centre__feed__recipients {
+    width: 100%; }
+  .chumly .message-centre__feed__content {
+    padding: 0 0 0 20px; }
+    @media screen and (max-width: 683px) {
+      .chumly .message-centre__feed__content {
+        width: calc(100% - 53px);
+        position: relative;
+        top: -2px; } }
+    .chumly .message-centre__feed__content__inner {
+      padding: 10px 10px 20px 10px; }
+      @media screen and (min-width: 684px) {
+        .chumly .message-centre__feed__content__inner {
+          padding: 10px 20px 40px 20px; } }
+  .chumly .message-centre__editor {
+    padding: 0 0 0 20px; }
+    @media screen and (min-width: 684px) {
+      .chumly .message-centre__editor {
+        margin-left: -1px; } }
+    .chumly .message-centre__editor__window {
+      padding: 20px;
+      background: #f3f3f3;
+      border-radius: 4px;
+      border: #d0d0d0 solid 1px; }
+  .chumly .select2-container--default.select2-container--focus .select2-selection--multiple,
+  .chumly .select2-container--default .select2-selection--multiple {
+    width: 100% !important; }
+  .chumly .select2-selection__rendered {
+    display: block !important;
+    height: 100% !important; }
+  .chumly .select2-search__field {
+    font-size: 1rem;
+    margin: 0 !important;
+    padding: 0 8px;
+    line-height: 33px; }
+  .chumly .select2-selection__choice {
+    margin-bottom: 5px !important; }
+
+/*# sourceMappingURL=chumly-messaging.css.map */

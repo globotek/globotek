@@ -1,0 +1,19 @@
+.title{
+	
+	@include mode('global'){
+	
+		@extend %title-primary;
+		
+		&__secondary{
+			
+			@extend %title-secondary;
+			
+		}
+		
+		&--centered{
+			text-align: center;
+		}
+		
+	}
+	
+}

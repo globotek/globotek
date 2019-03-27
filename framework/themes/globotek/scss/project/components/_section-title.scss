@@ -1,0 +1,21 @@
+.section-title{
+	
+	@include mode('global'){
+		
+		@extend %flex-wrapper--column;
+		align-self: center;
+		max-width: $site-max-width;
+		padding: 0 $gutter;
+		text-align: center;
+		
+		@include media-query('palm'){
+			margin-bottom: $gutter--double;
+		}
+		
+		&__intro{
+			margin-top: $gutter--midi;
+		}
+		
+	}
+	
+}

@@ -1,0 +1,24 @@
+%form-field {
+	width: 100%;
+	border: 1px solid $grey--light;
+	background: $white;
+	border-radius: $radius;
+	color: $grey--mid;
+
+	@include form-field();
+	@include placeholder($grey);
+	@include font-size($base-font-size, true);
+
+	&:focus {
+		border-color: $primary-color;
+		background: $white;
+	}
+
+	&.is-error {
+		border-color: $negative-color;
+		color: $negative-color--mid;
+		background: lighten($negative-color, 40%);
+
+		@include placeholder($negative-color--mid);
+	}
+}

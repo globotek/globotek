@@ -1,0 +1,16 @@
+.heading{
+	
+	@include mode('global'){
+	
+		@extend %heading-primary;
+		
+		&__secondary{
+			
+			@extend %heading-secondary;
+			
+			
+		}
+		
+	}
+	
+}

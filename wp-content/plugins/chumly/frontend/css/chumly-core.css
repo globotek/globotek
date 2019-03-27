@@ -1,0 +1,1766 @@
+@charset "UTF-8";
+/*------------------------------------*\
+    IMPORT FRAMEWORK
+\*------------------------------------*/
+/*☹ Force @charset "UTF-8"; generation*/
+/*------------------------------------*\
+    VARS
+\*------------------------------------*/
+/*------------------------------------*\
+    NAMED COLOURS
+
+    Name some colors so that if it turns out users
+    can change colors in wp-admin, then it should be simpler 
+\*------------------------------------*/
+/*------------------------------------*\
+    GENERIC
+\*------------------------------------*/
+/*------------------------------------*\
+    BREAKPOINTS
+\*------------------------------------*/
+/*------------------------------------*\
+    FONT-FACE DECLARATIONS
+\*------------------------------------*/
+/*------------------------------------*\
+    TYPOGRAPHY
+\*------------------------------------*/
+/*------------------------------------*\
+    MIXINS
+\*------------------------------------*/
+/*------------------------------------*\
+    BOUNCE SCROLL
+    
+    A little helper to get 'bouncy' scroll areas on iOS    
+\*------------------------------------*/
+/*------------------------------------*\
+    BUTTON
+    
+    Some useful base button styles.   
+\*------------------------------------*/
+/*------------------------------------*\
+    ELLIPSIS
+    
+    Especially useful for when you want text to truncate 
+    gracefully in single line inline / inline-block elements  
+\*------------------------------------*/
+/*------------------------------------*\
+    FEATURE FAIL
+
+    Use this mixin to write fallback css for bleeding edge features.
+    Target modernizr classes for $feature.
+
+    E.G.
+
+    .test-element {
+        display: flex;
+
+        @include feauture-fail("no-flexbox") {
+            display: table;
+        }
+    }
+}
+\*------------------------------------*/
+/*------------------------------------*\
+    FONT SIZE
+    
+    This mixin will generate a REM unit for your chosen font size. It will also add
+    the usual pixel unit for a fallback for browsers that don't support REMS. 
+    
+    This can also caluculate a line height for you based on your base line-height ratio.
+    
+    You can append an !important too.
+    
+    You can override the base line-height ratio if needed too. 
+    
+    Usage example: 
+    
+    With line-height: 
+    
+    body {
+    
+    	@include font-size(16px, true);
+    }
+    
+    Without line-height: 
+    
+    body {
+    	
+    	@include font-size(16px);
+    }
+    
+\*------------------------------------*/
+/*------------------------------------*\
+    FORM FIELD
+    
+    Some useful base form field styles.   
+\*------------------------------------*/
+/*------------------------------------*\
+    HOVER
+    
+    A useful little mixin to help generate better hover / focus etc. states.
+    This also has an 'include-active' flag which will help account for active states too.  
+\*------------------------------------*/
+/*------------------------------------*\
+    IE
+    
+    This mixin will help generate IE specific CSS. Add a version number as a parameter 
+    and the mixin will do the rest!    
+\*------------------------------------*/
+/*------------------------------------*\
+    MEDIA QUERY
+
+    This mixin will wrap your code in the appropriate media query of your choosing.
+
+    For example. If you want to make the body background magenta on mobile only:
+
+    body {
+	    @include media-query(palm) {
+	    	background: magenta;
+	    }
+    }
+\*------------------------------------*/
+/*------------------------------------*\
+    MODE
+    
+    This simple mixin allows you to fence css into particular sections.
+    For example: you may have an admin area. The admin area uses the global
+    styles but also has its own. You'd create a new file in your 'project'
+    directory called 'admin.scss'. In there you would set '$mode: "admin"'. 
+
+    Within your components etc. you would then do the following: 
+
+    .a-css-class {
+    	
+    	// This stuff will only render in admin.css
+    	@include mode("admin") {
+			background: red;
+    	}
+    }
+\*------------------------------------*/
+/*------------------------------------*\
+    NO JS
+
+    A simple mixin that will allow consistent no JS related styles 
+\*------------------------------------*/
+/*------------------------------------*\
+    PLACEHOLDER
+    
+    This little mixin will help style those pesky placeholders    
+\*------------------------------------*/
+/*------------------------------------*\
+    PRINT
+    
+    A very simply "wrapper" that allows you to add print specific styles within your css. 
+    This is mainly in a mixin so that if anything changes in the future, we can just update this 
+    mixin rather than refactoring our whole project.
+    
+    Usage example: 
+    
+    body {
+    	color: #f3f3f3;
+    
+		@include print {
+			color: #000000;
+		}
+    }
+\*------------------------------------*/
+div:nth-last-child(8):first-child,
+div:nth-last-child(8):first-child ~ div {
+  /* Exactly 8 */ }
+
+div:nth-last-child(n+8):nth-last-child(-n+12):first-child,
+div:nth-last-child(n+8):nth-last-child(-n+12):first-child ~ div {
+  /* At least 8 and at most 12 */ }
+
+div:nth-last-child(odd):first-child,
+div:nth-last-child(odd):first-child ~ div {
+  /* Odd quantity */ }
+
+div:nth-last-child(even):first-child,
+div:nth-last-child(even):first-child ~ div {
+  /* Even quantity*/ }
+
+div:nth-last-child(-n+7):first-child,
+div:nth-last-child(-n+7):first-child ~ div {
+  /* Less than 8 */ }
+
+div:nth-last-child(-n+8):first-child,
+div:nth-last-child(-n+8):first-child ~ div {
+  /* Less than or equal to 8 */ }
+
+div:nth-last-child(n+9),
+div:nth-last-child(n+9) ~ div {
+  /* More than 8 */ }
+
+div:nth-last-child(n+8),
+div:nth-last-child(n+8) ~ div {
+  /* More than or equal to 8 */ }
+
+/*------------------------------------*\
+    SELECTION
+    
+    A useful little mixin for styling text selection.   
+\*------------------------------------*/
+/*------------------------------------*\
+    WORD WRAP
+    
+    Useful little mixin for breaking words. 
+    Really useful for email links.
+\*------------------------------------*/
+/*------------------------------------*\
+    CORE
+\*------------------------------------*/
+.chumly .is-hidden, .chumly .form__group__file input[type="file"] {
+  display: none !important; }
+
+@media screen and (max-width: 683px) {
+  .chumly .is-hidden--palm, .chumly .list__item__icon, .chumly .nav-list__item__icon {
+    display: none !important; } }
+
+@media screen and (max-width: 999px) {
+  .chumly .is-hidden--portable {
+    display: none !important; } }
+
+@media screen and (min-width: 400px) {
+  .chumly .is-hidden--portable-and-up {
+    display: none !important; } }
+
+@media screen and (min-width: 684px) and (max-width: 999px) {
+  .chumly .is-hidden--lap {
+    display: none !important; } }
+
+@media screen and (min-width: 1000px) {
+  .chumly .is-hidden--desk {
+    display: none !important; } }
+
+@media screen and (min-width: 1300px) {
+  .chumly .is-hidden--desk-wide {
+    display: none !important; } }
+
+.chumly .is-visible {
+  display: block !important; }
+
+.chumly .is-muted {
+  opacity: 0.5 !important; }
+
+.chumly .is-hidden--text {
+  position: absolute !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden !important;
+  clip: rect(1px, 1px, 1px, 1px); }
+
+@media print {
+  .chumly .no-print {
+    display: none !important; } }
+
+/**
+ * Define your breakpoints. The first value is the prefix that shall be used for
+ * your classes (e.g. `.palm--one-half`), the second value is the media query
+ * that the breakpoint fires at.
+ */
+/**
+ * Define breakpoint keys for generation of keyword based sizes
+ * such as %desk--one-third etc.
+ */
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+/**
+ * These mixins are for the library to use only, you should not need to modify
+ * them at all.
+ *
+ * Enclose a block of code with a media query as named in `$breakpoints`.
+ */
+/*------------------------------------*\
+    GRID WRAPPER
+\*------------------------------------*/
+.chumly .form, .chumly .news-feed__item__inner, .chumly .user-list__item__inner, .chumly .notification__inner, .chumly .hero__content, .chumly .list__item__inner {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: -20px 0 0 -20px;
+  padding: 0; }
+  html.no-flexbox .chumly .form, .chumly html.no-flexbox .form, html.no-flexbox .chumly .news-feed__item__inner, .chumly html.no-flexbox .news-feed__item__inner, html.no-flexbox .chumly .user-list__item__inner, .chumly html.no-flexbox .user-list__item__inner, html.no-flexbox .chumly .notification__inner, .chumly html.no-flexbox .notification__inner, html.no-flexbox .chumly .hero__content, .chumly html.no-flexbox .hero__content, html.no-flexbox .chumly .list__item__inner, .chumly html.no-flexbox .list__item__inner {
+    letter-spacing: -0.32em;
+    list-style: none; }
+  .chumly .form > *, .chumly .news-feed__item__inner > *, .chumly .user-list__item__inner > *, .chumly .notification__inner > *, .chumly .hero__content > *, .chumly .list__item__inner > * {
+    padding: 20px 0 0 20px; }
+    html.no-flexbox .chumly .form > *, .chumly html.no-flexbox .form > *, html.no-flexbox .chumly .news-feed__item__inner > *, .chumly html.no-flexbox .news-feed__item__inner > *, html.no-flexbox .chumly .user-list__item__inner > *, .chumly html.no-flexbox .user-list__item__inner > *, html.no-flexbox .chumly .notification__inner > *, .chumly html.no-flexbox .notification__inner > *, html.no-flexbox .chumly .hero__content > *, .chumly html.no-flexbox .hero__content > *, html.no-flexbox .chumly .list__item__inner > *, .chumly html.no-flexbox .list__item__inner > * {
+      display: inline-block;
+      vertical-align: top;
+      letter-spacing: normal;
+      word-spacing: normal; }
+
+/*------------------------------------*\
+    GRID ITEM
+\*------------------------------------*/
+.chumly .hero__summary, .chumly .hero__decor {
+  padding: 20px 0 0 20px !important; }
+
+/**
+ * Reversed grids allow you to structure your source in the opposite order to
+ * how your rendered layout will appear. Extends `%grid`.
+ */
+/**
+ * Gutterless grids have all the properties of regular grids, minus any spacing.
+ * Extends `%grid`.
+ */
+.chumly .form, .chumly .user-list__item__inner, .chumly .notification__inner, .chumly .list__item__inner {
+  margin: 0; }
+  .chumly .form > *, .chumly .user-list__item__inner > *, .chumly .notification__inner > *, .chumly .list__item__inner > * {
+    padding: 0; }
+
+/**
+ * Align the entire grid to the right. Extends `%grid`.
+ */
+/**
+ * Centered grids align grid items centrally without needing to use push or pull
+ * classes. Extends `%grid`.
+ */
+/**
+ * Align grid cells vertically (`%grid--middle` or `%grid--bottom` or `%grid--top`). Extends
+ * `%grid`.
+ */
+.chumly .user-list__item__inner, .chumly .notification__inner, .chumly .list__item__inner {
+  -ms-flex-align: center;
+  align-items: center; }
+  html.no-flexbox .chumly .user-list__item__inner > *, .chumly html.no-flexbox .user-list__item__inner > *, html.no-flexbox .chumly .notification__inner > *, .chumly html.no-flexbox .notification__inner > *, html.no-flexbox .chumly .list__item__inner > *, .chumly html.no-flexbox .list__item__inner > * {
+    vertical-align: middle; }
+
+.chumly .news-feed__item__inner {
+  -ms-flex-align: start;
+  align-items: flex-start; }
+  html.no-flexbox .chumly .news-feed__item__inner > *, .chumly html.no-flexbox .news-feed__item__inner > * {
+    vertical-align: top; }
+
+/**
+ * Create grids with narrower gutters. Extends `%grid`.
+ */
+/**
+ * Create grids with wider gutters. Extends `%grid`.
+ */
+/**
+ * Level heights, requires an `inner` element to grow into it's parent. Extends `%grid`.
+ * Modern only. LT IE 10 doesn't deserve level heights
+ */
+/**
+ * Put space between (ideally two) buttons so they stay away from each other.
+ * Great alternative to floating right like the old days
+ */
+/*------------------------------------*\
+    $WIDTHS
+\*------------------------------------*/
+/**
+ * Create our width classes, prefixed by the specified namespace.
+ */
+/**
+     * Whole
+     */
+.chumly .hero__content {
+  width: 100%; }
+
+/**
+     * Halves
+     */
+/**
+     * Thirds
+     */
+/**
+     * Quarters
+     */
+/**
+     * Fifths
+     */
+/**
+     * Sixths
+     */
+/**
+     * Eighths
+     */
+/**
+     * Tenths
+     */
+/**
+     * Twelfths
+     */
+@media only screen and (max-width: 683px) {
+  /**
+     * Whole
+     */
+  .chumly .hero__content--narrow, .chumly .hero__summary, .chumly .hero__decor {
+    width: 100%; }
+  /**
+     * Halves
+     */
+  /**
+     * Thirds
+     */
+  /**
+     * Quarters
+     */
+  /**
+     * Fifths
+     */
+  /**
+     * Sixths
+     */
+  /**
+     * Eighths
+     */
+  /**
+     * Tenths
+     */
+  /**
+     * Twelfths
+     */ }
+
+@media only screen and (min-width: 684px) and (max-width: 999px) {
+  /**
+     * Whole
+     */
+  /**
+     * Halves
+     */
+  /**
+     * Thirds
+     */
+  /**
+     * Quarters
+     */
+  /**
+     * Fifths
+     */
+  .chumly .hero__decor {
+    width: 40%; }
+  .chumly .hero__summary {
+    width: 60%; }
+  /**
+     * Sixths
+     */
+  /**
+     * Eighths
+     */
+  /**
+     * Tenths
+     */
+  .chumly .hero__content--narrow {
+    width: 70%; }
+  /**
+     * Twelfths
+     */ }
+
+@media only screen and (max-width: 999px) {
+  /**
+     * Whole
+     */
+  /**
+     * Halves
+     */
+  /**
+     * Thirds
+     */
+  /**
+     * Quarters
+     */
+  /**
+     * Fifths
+     */
+  /**
+     * Sixths
+     */
+  /**
+     * Eighths
+     */
+  /**
+     * Tenths
+     */
+  /**
+     * Twelfths
+     */ }
+
+@media only screen and (min-width: 1000px) {
+  /**
+     * Whole
+     */
+  /**
+     * Halves
+     */
+  /**
+     * Thirds
+     */
+  /**
+     * Quarters
+     */
+  /**
+     * Fifths
+     */
+  .chumly .hero__decor {
+    width: 40%; }
+  .chumly .hero__summary {
+    width: 60%; }
+  /**
+     * Sixths
+     */
+  /**
+     * Eighths
+     */
+  /**
+     * Tenths
+     */
+  .chumly .hero__content--narrow {
+    width: 70%; }
+  /**
+     * Twelfths
+     */ }
+
+/*------------------------------------*\
+    DECLARATIONS
+\*------------------------------------*/
+/*------------------------------------*\
+    ADD SOME GLOBAL STYLES
+\*------------------------------------*/
+body.modal-open {
+  overflow: hidden; }
+
+.chumly {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  text-rendering: optimizeLegibility;
+  /*------------------------------------*\
+        PRINT MEDIA QUERIES
+
+        Print media query keys as a sudo of body.
+        This will allow JS to accurately determine
+        what breakpoint we're at rather than doing 
+        nasty sniffs 👍
+    \*------------------------------------*/
+  /*------------------------------------*\
+        IMPORTS
+    \*------------------------------------*/
+  /*------------------------------------*\
+    CONTENT FLOW
+    
+    A little tool to help us with content flow
+    and namespacing issues
+\*------------------------------------*/
+  /** Affected files: profile-field-functions.php Line 180 & 286, input-functions.php Line 35, group-functions.php Line 93 */
+  /*------------------------------------*\
+    Z-INDEX LOG
+
+	Because of the nature of this UI, all z-index will
+	live in each component/layout. It is still however 
+	to log the values in here so we can still have a 
+	reasonably similar benefit to other projects using 
+	the stalfos framework.
+
+	.prompt { z-index: 900; }
+	.prompt__overlay { z-index: 910; }
+	.prompt__window { z-index: 920; }
+
+	.user-status { z-index: 100; }
+	.user-status__sub-menu__mask { z-index: -1; }
+	
+	.upload__meter { z-index: 1000 }
+
+\*------------------------------------*/
+  /*------------------------------------*\
+    SHAME
+    
+    This file is for awful little hacks that sometime just can't be avoided.
+    
+    Please make sure you comment the hacks and refactor down the line (unless you work in an agency where refactoring is an alien concept)
+\*------------------------------------*/ }
+  .chumly h1, .chumly h2, .chumly h3, .chumly h4, .chumly h5, .chumly h6, .chumly p, .chumly ul, .chumly ol, .chumly li, .chumly dd, .chumly header, .chumly nav, .chumly article, .chumly section,
+  .chumly aside, .chumly figure, .chumly figcaption, .chumly footer, .chumly dl, .chumly dd, .chumly dt {
+    margin: 0px;
+    padding: 0px; }
+  .chumly ul, .chumly ol {
+    list-style: none; }
+  .chumly img {
+    border: 0;
+    display: block;
+    max-width: 100%; }
+  .chumly a:not([class]) {
+    text-decoration: none; }
+    .chumly a:not([class]):hover, .chumly a:not([class]):focus {
+      text-decoration: underline; }
+  .chumly input::-moz-focus-inner {
+    border: 0;
+    padding: 0; }
+  .chumly *, .chumly *:before, .chumly *:after {
+    box-sizing: border-box; }
+  .chumly--no-size {
+    display: -ms-flexbox;
+    display: flex;
+    min-width: 120px; }
+  .chumly img {
+    display: block;
+    max-width: 100%; }
+  .chumly a[href^="mailto"] {
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto; }
+  .chumly .wrapper {
+    min-width: 280px;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative; }
+  .chumly .clear:after, .chumly .clear:before {
+    content: "";
+    clear: both;
+    display: block; }
+  .chumly:before {
+    display: none;
+    content: "palm"; }
+    @media screen and (min-width: 400px) {
+      .chumly:before {
+        content: "portable-and-up"; } }
+    @media screen and (min-width: 684px) {
+      .chumly:before {
+        content: "lap-and-up"; } }
+    @media screen and (min-width: 1000px) {
+      .chumly:before {
+        content: "desk"; } }
+    @media screen and (min-width: 1300px) {
+      .chumly:before {
+        content: "desk-wide"; } }
+  .chumly .prompt, .chumly .modal, .chumly .modal__inner, .chumly .form__group__inline, .chumly .form__group__checkbox, .chumly .notification__meta, .chumly .notification__decor, .chumly .card__members, .chumly .nav-list__item, .chumly .archive, .chumly .archive__content {
+    display: -ms-flexbox;
+    display: flex; }
+  .chumly .prompt, .chumly .modal, .chumly .modal__inner {
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .chumly .prompt, .chumly .modal {
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .chumly .news-feed__item, .chumly table, .chumly .news-feed__item__embed, .chumly .news-feed__item__share {
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    background: #ffffff; }
+  .chumly .news-feed__item, .chumly table {
+    padding: 20px; }
+  .chumly .alert, .chumly .prompt__overlay, .chumly .modal, .chumly .modal__mask, .chumly .nav-list__item, .chumly .nav-list__item__icon, .chumly .nav-list__item__link {
+    transition: all 200ms ease; }
+  .chumly .prompt__window, .chumly .notification, .chumly .dropdown__menu {
+    transition: all 200ms cubic-bezier(0.905, 0.165, 0.54, 0.875); }
+  .chumly .modal__inner {
+    transition: all 550ms cubic-bezier(0.905, 0.165, 0.54, 0.875); }
+  .chumly h1:not(class), .chumly .headline__heading, .chumly h2:not(class), .chumly .prompt__heading, .chumly .headline--secondary .headline__heading, .chumly h3:not(class), .chumly .headline--tertiary .headline__heading, .chumly h4:not(class),
+  .chumly h5:not(class),
+  .chumly h6:not(class) {
+    text-transform: capitalize; }
+  .chumly .form__group__input, .chumly .form__group__select, .chumly .form__group__checkbox__input, .chumly .search__form__input, .chumly .select2-search__field {
+    width: 100%;
+    border: 1px solid #d0d0d0;
+    background: #ffffff;
+    border-radius: 4px;
+    color: #5e5e5e;
+    display: inline-block;
+    font-family: inherit; }
+    .chumly .form__group__input:focus, .chumly .form__group__select:focus, .chumly .form__group__checkbox__input:focus, .chumly .search__form__input:focus, .chumly .select2-search__field:focus, .chumly .form__group__input:valid, .chumly .form__group__select:valid, .chumly .form__group__checkbox__input:valid, .chumly .search__form__input:valid, .chumly .select2-search__field:valid, .chumly .is-filled.form__group__input, .chumly .is-filled.form__group__select, .chumly .is-filled.form__group__checkbox__input, .chumly .is-filled.search__form__input, .chumly .is-filled.select2-search__field {
+      outline: none; }
+    .chumly .form__group__input::-webkit-input-placeholder, .chumly .form__group__select::-webkit-input-placeholder, .chumly .form__group__checkbox__input::-webkit-input-placeholder, .chumly .search__form__input::-webkit-input-placeholder, .chumly .select2-search__field::-webkit-input-placeholder {
+      color: #aaaaaa; }
+    .chumly .form__group__input:-moz-placeholder, .chumly .form__group__select:-moz-placeholder, .chumly .form__group__checkbox__input:-moz-placeholder, .chumly .search__form__input:-moz-placeholder, .chumly .select2-search__field:-moz-placeholder {
+      color: #aaaaaa; }
+    .chumly .form__group__input::-moz-placeholder, .chumly .form__group__select::-moz-placeholder, .chumly .form__group__checkbox__input::-moz-placeholder, .chumly .search__form__input::-moz-placeholder, .chumly .select2-search__field::-moz-placeholder {
+      color: #aaaaaa; }
+    .chumly .form__group__input:-ms-input-placeholder, .chumly .form__group__select:-ms-input-placeholder, .chumly .form__group__checkbox__input:-ms-input-placeholder, .chumly .search__form__input:-ms-input-placeholder, .chumly .select2-search__field:-ms-input-placeholder {
+      color: #aaaaaa; }
+    .chumly .form__group__input:focus, .chumly .form__group__select:focus, .chumly .form__group__checkbox__input:focus, .chumly .search__form__input:focus, .chumly .select2-search__field:focus {
+      border-color: #3a81ea;
+      background: #ffffff; }
+    .chumly .is-error.form__group__input, .chumly .is-error.form__group__select, .chumly .is-error.form__group__checkbox__input, .chumly .is-error.search__form__input, .chumly .is-error.select2-search__field {
+      border-color: #d44737;
+      color: #b23426;
+      background: #f8e1df; }
+      .chumly .is-error.form__group__input::-webkit-input-placeholder, .chumly .is-error.form__group__select::-webkit-input-placeholder, .chumly .is-error.form__group__checkbox__input::-webkit-input-placeholder, .chumly .is-error.search__form__input::-webkit-input-placeholder, .chumly .is-error.select2-search__field::-webkit-input-placeholder {
+        color: #b23426; }
+      .chumly .is-error.form__group__input:-moz-placeholder, .chumly .is-error.form__group__select:-moz-placeholder, .chumly .is-error.form__group__checkbox__input:-moz-placeholder, .chumly .is-error.search__form__input:-moz-placeholder, .chumly .is-error.select2-search__field:-moz-placeholder {
+        color: #b23426; }
+      .chumly .is-error.form__group__input::-moz-placeholder, .chumly .is-error.form__group__select::-moz-placeholder, .chumly .is-error.form__group__checkbox__input::-moz-placeholder, .chumly .is-error.search__form__input::-moz-placeholder, .chumly .is-error.select2-search__field::-moz-placeholder {
+        color: #b23426; }
+      .chumly .is-error.form__group__input:-ms-input-placeholder, .chumly .is-error.form__group__select:-ms-input-placeholder, .chumly .is-error.form__group__checkbox__input:-ms-input-placeholder, .chumly .is-error.search__form__input:-ms-input-placeholder, .chumly .is-error.select2-search__field:-ms-input-placeholder {
+        color: #b23426; }
+  .chumly .news-feed__item__reply {
+    display: inline-block;
+    padding: 20px 0 0 0; }
+  .chumly .news-feed__item__reply {
+    color: #3a81ea;
+    text-decoration: none; }
+    .chumly .news-feed__item__reply:target, .chumly .news-feed__item__reply:active, .chumly .news-feed__item__reply:focus, .chumly .news-feed__item__reply:hover {
+      text-decoration: none;
+      color: #5e5e5e; }
+  .chumly .chunk {
+    display: block; }
+    .chumly .chunk:not([class*="chunk--"]) {
+      padding: 20px 0; }
+    .chumly .chunk--mini {
+      padding: 10px 0; }
+    .chumly .chunk--midi {
+      padding: 30px 0; }
+    .chumly .chunk--double {
+      padding: 40px 0; }
+    .chumly .chunk--treble {
+      padding: 60px 0; }
+    .chumly .chunk + .chunk {
+      padding-top: 0px; }
+  .chumly .icon {
+    display: inline-block;
+    position: relative; }
+    .chumly .icon--right {
+      float: right; }
+  .chumly .placeholder-content {
+    padding: 20px;
+    background: #e7e7e7;
+    color: #5e5e5e;
+    font-family: initial;
+    font-weight: normal; }
+  .chumly .alert {
+    display: block;
+    padding: 10px 40px 12px 40px;
+    position: absolute;
+    background: #5e5e5e;
+    border-radius: 4px;
+    overflow: hidden;
+    height: auto;
+    opacity: 1;
+    width: 550px;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; }
+    .chumly .alert + .alert {
+      margin-top: 20px; }
+    .chumly .alert__content {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      color: #ffffff;
+      vertical-align: middle; }
+      .chumly .alert__content a {
+        color: #ffffff;
+        text-decoration: underline; }
+      .chumly .alert__content__icon {
+        width: 16px;
+        height: 16px;
+        fill: #ffffff;
+        top: 2px;
+        margin-right: 5px; }
+    .chumly .alert__close {
+      border: none;
+      background: none;
+      padding: 0px;
+      margin: 0px;
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      margin-top: 1px;
+      cursor: pointer;
+      -webkit-appearance: none;
+      transform: translate3d(0, -50%, 0); }
+      .chumly .alert__close:hover .alert__close__icon {
+        opacity: 0.7; }
+      .chumly .alert__close__icon {
+        fill: #ffffff;
+        width: 20px;
+        height: 20px; }
+    .chumly .alert--negative {
+      background: #d44737; }
+    .chumly .alert--positive {
+      background: #55bb6c; }
+    .chumly .alert--primary {
+      background: #3a81ea; }
+    .chumly .alert--auto-width {
+      display: inline-block;
+      width: auto; }
+    .chumly .alert:not(.is-active) {
+      height: 0px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      opacity: 0; }
+  .chumly .prompt {
+    background: transparent;
+    border: none;
+    z-index: 10000; }
+    .chumly .prompt, .chumly .prompt__overlay {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0; }
+    .chumly .prompt__overlay {
+      display: block;
+      background: rgba(0, 0, 0, 0.6);
+      opacity: 1;
+      z-index: 10010; }
+    .chumly .prompt__window {
+      display: block;
+      width: calc(100% - 40px);
+      position: relative;
+      overflow: hidden;
+      background: #ffffff;
+      z-index: 10020;
+      margin-top: 0;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+      @media screen and (min-width: 684px) {
+        .chumly .prompt__window {
+          width: 550px; } }
+    .chumly .prompt__header {
+      padding: 20px;
+      background: #f3f3f3;
+      border-bottom: 1px solid #d0d0d0; }
+    .chumly .prompt__heading {
+      color: #ffffff;
+      text-align: center; }
+      .chumly .prompt__heading a {
+        font-size: 0.8rem; }
+    .chumly .prompt__content {
+      padding: 20px;
+      text-align: center;
+      color: inherit; }
+    .chumly .prompt__button {
+      padding: 10px 20px 20px 20px;
+      text-align: center; }
+      .chumly .prompt__button button {
+        background: #55bb6c;
+        border-color: #55bb6c;
+        color: #ffffff;
+        text-transform: none; }
+        .chumly .prompt__button button:target, .chumly .prompt__button button:active, .chumly .prompt__button button:hover, .chumly .prompt__button button:focus, .chumly .prompt__button button.is-active {
+          background: #79ca8b;
+          color: #ffffff; }
+    .chumly .prompt:not(.is-active) .prompt__window {
+      margin-top: -200%; }
+    .chumly .prompt:not(.is-active) .prompt__overlay {
+      opacity: 0; }
+    .chumly .prompt--negative .prompt__header {
+      background: #d44737; }
+    .chumly .prompt--positive .prompt__header {
+      background: #55bb6c; }
+    .chumly .prompt--primary .prompt__header, .chumly .prompt--success .prompt__header {
+      background: #3a81ea; }
+  .chumly .form__group {
+    position: relative;
+    width: 100%;
+    padding: 0 0 0; }
+    .chumly .form__group + .form__group {
+      padding-top: 20px; }
+    .chumly .form__group--right {
+      text-align: right; }
+    .chumly .form__group__label {
+      margin-bottom: 5px;
+      cursor: pointer; }
+    .chumly .form__group__input {
+      font-size: 1rem;
+      margin: 0 !important;
+      padding: 0 8px;
+      line-height: 33px; }
+      .chumly .form__group__input--fill {
+        width: 100%; }
+      .chumly .form__group__input--multiline {
+        min-height: 50px; }
+      .chumly .form__group__input--singleline {
+        min-height: 35px !important;
+        height: 35px !important;
+        resize: none; }
+        .chumly .form__group__input--singleline:not(:first-child) {
+          margin-left: 15px !important; }
+    .chumly .form__group__field--multiline {
+      line-height: 24px !important;
+      padding: 8px; }
+    .chumly .form__group__inline {
+      width: 100%;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
+      .chumly .form__group__inline button {
+        margin-left: 10px;
+        height: 35px;
+        line-height: 34px;
+        padding: 0 11px !important; }
+    .chumly .form__group__radio {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      position: relative;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none; }
+      .chumly .form__group__radio .button-group {
+        -ms-flex-align: start;
+        align-items: flex-start; }
+      .chumly .form__group__radio label {
+        position: relative;
+        -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        cursor: default; }
+      .chumly .form__group__radio input {
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        -webkit-appearance: none;
+        position: absolute;
+        display: none; }
+        .chumly .form__group__radio input:target, .chumly .form__group__radio input:active, .chumly .form__group__radio input:hover, .chumly .form__group__radio input:focus, .chumly .form__group__radio input.is-active {
+          outline: none; }
+    .chumly .form__group__select {
+      font-size: 1rem;
+      padding: 8px 25px 5px 8px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background: url("../../../../../framework/chumly/svg/arrow-down.svg") #ffffff no-repeat right 10px center !important;
+      background-size: 10px auto !important; }
+      .chumly .form__group__select::-ms-expand {
+        display: none;
+        /* remove default arrow in IE 10 and 11 */ }
+      .chumly .form__group__select--narrow {
+        width: auto; }
+      .chumly .form__group__select--big {
+        font-size: 14px;
+        padding: 8px 11px; }
+    .chumly .form__group__checkbox {
+      margin-top: 8px; }
+      .chumly .form__group__checkbox__label {
+        padding-left: 5px;
+        line-height: 14px; }
+      .chumly .form__group__checkbox__input {
+        height: 14px;
+        width: 14px; }
+    .chumly .form__group__file label {
+      margin-right: 8px; }
+    .chumly .form__group input {
+      margin: 0; }
+  .chumly .breathe:not([class*="breathe--"]) {
+    margin: 20px 0; }
+  .chumly .breathe--top {
+    margin-top: 20px; }
+  .chumly .breathe--bottom {
+    margin-bottom: 20px; }
+  .chumly .breathe--bottom-mini {
+    margin-bottom: 10px; }
+  .chumly .wysiwyg *:not(li) + *:not(li) {
+    margin-top: 15px; }
+  .chumly .wysiwyg--large-text {
+    font-size: 200%; }
+  .chumly .wysiwyg img {
+    height: auto; }
+  .chumly .wysiwyg .wp-caption {
+    background: #f3f3f3;
+    border: 1px solid #d0d0d0;
+    display: block;
+    padding: 10px;
+    overflow: hidden;
+    max-width: 100% !important;
+    border-radius: 4px; }
+    .chumly .wysiwyg .wp-caption > * {
+      display: block; }
+    .chumly .wysiwyg .wp-caption-text {
+      display: block;
+      margin: 8px 0 0 0; }
+  @media screen and (min-width: 684px) {
+    .chumly .wysiwyg .alignright {
+      float: right;
+      margin-bottom: 20px;
+      margin-left: 20px; } }
+  @media screen and (min-width: 684px) {
+    .chumly .wysiwyg .alignleft {
+      float: left;
+      margin-bottom: 20px;
+      margin-right: 20px; } }
+  .chumly .wysiwyg .aligncenter {
+    clear: both;
+    margin: 0 auto; }
+  .chumly .wysiwyg p {
+    white-space: pre-line; }
+    .chumly .wysiwyg p .alignleft,
+    .chumly .wysiwyg p .alignright {
+      margin-top: 20px; }
+    .chumly .wysiwyg p .aligncenter {
+      margin: 20px auto; }
+    .chumly .wysiwyg p img {
+      margin: 20px 0; }
+  .chumly .wysiwyg ul, .chumly .wysiwyg ol {
+    margin-left: 20px; }
+  .chumly .wysiwyg ul {
+    list-style: disc; }
+  .chumly .wysiwyg ol {
+    list-style: decimal; }
+  .chumly .wysiwyg li + li {
+    margin-top: 5px; }
+  .chumly .wysiwyg blockquote {
+    background: #f3f3f3;
+    border: 1px solid #d0d0d0;
+    display: block;
+    padding: 10px;
+    font-style: italic;
+    border-radius: 4px; }
+  .chumly .wysiwyg table {
+    table-layout: fixed;
+    border: 1px solid #d0d0d0;
+    border-collapse: collapse;
+    overflow: auto;
+    border-radius: 4px; }
+    .chumly .wysiwyg table, .chumly .wysiwyg table * {
+      text-align: left;
+      vertical-align: top; }
+    .chumly .wysiwyg table td,
+    .chumly .wysiwyg table th {
+      padding: 5px; }
+    .chumly .wysiwyg table th {
+      background: #3a81ea;
+      color: #ffffff; }
+    .chumly .wysiwyg table td + td,
+    .chumly .wysiwyg table th + th {
+      border-left: 1px solid #d0d0d0; }
+    .chumly .wysiwyg table tr:nth-child(even) td {
+      background: #f3f3f3; }
+  .chumly .headline {
+    margin: 0 0 20px 0;
+    background: inherit;
+    text-align: left;
+    position: relative; }
+    .chumly .headline--non-cap > * {
+      text-transform: none !important; }
+    .chumly .headline__heading {
+      line-height: 1.3em;
+      display: inline-block; }
+    .chumly .headline__meta {
+      position: absolute;
+      right: 0px;
+      top: -30px;
+      background: #4d4d4d;
+      color: #ffffff;
+      padding: 10px 10px 6px;
+      border-radius: 0 0 4px 4px; }
+      .chumly .headline__meta:before {
+        content: "";
+        border-top: 10px solid transparent;
+        border-bottom: 0px solid transparent;
+        border-right: 5px solid #4d4d4d;
+        position: absolute;
+        left: -5px;
+        top: 0px; }
+      .chumly .headline__meta:after {
+        content: "";
+        border-top: 10px solid transparent;
+        border-bottom: 0px solid transparent;
+        border-left: 5px solid #4d4d4d;
+        position: absolute;
+        right: -5px;
+        top: 0px; }
+    .chumly .headline__subheadline {
+      color: #5e5e5e;
+      display: block; }
+    .chumly .headline--auto-width {
+      display: inline-block; }
+    .chumly .headline .star-rating {
+      position: relative;
+      left: 20px;
+      top: -5px;
+      display: inline-block;
+      border-left: #5e5e5e solid 1px;
+      padding-left: 16px; }
+    .chumly .headline .form__group {
+      padding-top: 20px; }
+      .chumly .headline .form__group .search__results {
+        top: 35px; }
+  .chumly .upload-status.is-complete .upload-status__icon {
+    transform: scale(1.05); }
+  .chumly .upload-status.is-complete .upload-status__base {
+    fill: #aaddb5; }
+  .chumly .upload-status.is-complete .upload-status__status-ring {
+    stroke: #79ca8b; }
+  .chumly .upload-status.is-complete .upload-status__check {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); }
+  .chumly .upload-status.is-complete .upload-status__cloud {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0); }
+  .chumly .upload-status.is-error .upload-status__icon {
+    transform: scale(1.05); }
+  .chumly .upload-status.is-error .upload-status__base {
+    fill: #da6153; }
+  .chumly .upload-status.is-error .upload-status__status-ring {
+    stroke: #b23426; }
+  .chumly .upload-status.is-error .upload-status__cross {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); }
+  .chumly .upload-status.is-error .upload-status__cloud {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0); }
+  .chumly .news-feed {
+    display: block; }
+    .chumly .news-feed__item {
+      background-color: #ffffff;
+      list-style: none; }
+      .chumly .news-feed__item + .news-feed__item {
+        margin-top: 20px; }
+      .chumly .news-feed__item__decor {
+        display: none; }
+        @media screen and (min-width: 684px) {
+          .chumly .news-feed__item__decor {
+            display: block;
+            width: 52px; }
+            .chumly .news-feed__item__decor .icon {
+              width: 32px;
+              height: 32px;
+              fill: #aaaaaa; } }
+      .chumly .news-feed__item__detail {
+        width: 100%; }
+        @media screen and (min-width: 684px) {
+          .chumly .news-feed__item__detail {
+            width: calc(100% - 52px); } }
+      .chumly .news-feed__item__heading {
+        text-transform: none;
+        font-size: 1.3rem; }
+      .chumly .news-feed__item__content {
+        padding-top: 20px; }
+        .chumly .news-feed__item__content p {
+          font-size: 1rem; }
+      .chumly .news-feed__item__media {
+        padding: 0 0 56.25% 0;
+        position: relative;
+        overflow: hidden;
+        margin: 20px 0 0 0; }
+      .chumly .news-feed__item__embed {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0; }
+        .chumly .news-feed__item__embed[style*="background-image"] {
+          background-size: contain;
+          background-position: center center;
+          background-repeat: no-repeat; }
+      .chumly .news-feed__item__share .headline {
+        margin-bottom: 0; }
+      .chumly .news-feed__item__share__header {
+        padding: 20px;
+        background-color: #f3f3f3; }
+      .chumly .news-feed__item__share__content {
+        padding: 0 20px 10px; }
+      .chumly .news-feed__item__share__embed {
+        margin-top: 0 !important; }
+      .chumly .news-feed__item__share img {
+        width: 100%;
+        border-radius: 0 0 4px 4px; }
+      .chumly .news-feed__item__interactions {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        padding: 0 60px;
+        border: 1px solid #d0d0d0;
+        border-radius: 4px; }
+      .chumly .news-feed__item__comment-form {
+        padding: 20px;
+        margin: 20px -20px -20px;
+        background: #f3f3f3;
+        border-top: 1px solid #d0d0d0;
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 0;
+        border-radius: 4px 4px 0 0; }
+      .chumly .news-feed__item time {
+        font-size: 0.8rem; }
+  .chumly .user-list__item {
+    display: block; }
+    .chumly .user-list__item + .user-list__item {
+      border-top: 1px solid #d0d0d0; }
+    .chumly .user-list__item:target, .chumly .user-list__item:active, .chumly .user-list__item:focus, .chumly .user-list__item:hover {
+      background: #f3f3f3; }
+    .chumly .user-list__item__inner {
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+      width: 100%;
+      padding: 10px 5px;
+      text-decoration: none;
+      cursor: pointer !important; }
+      .chumly .user-list__item__inner:hover {
+        background: #5995ed; }
+        .chumly .user-list__item__inner:hover .user-list__item__text > * {
+          color: #ffffff; }
+        .chumly .user-list__item__inner:hover .icon {
+          fill: #ffffff; }
+      .chumly .user-list__item__inner--media {
+        padding-top: 20px; }
+        @media screen and (min-width: 684px) {
+          .chumly .user-list__item__inner--media .user-list__item__text {
+            width: calc(100% - 80px); } }
+      .chumly .user-list__item__inner--media-icon {
+        padding-top: 20px; }
+        @media screen and (min-width: 684px) {
+          .chumly .user-list__item__inner--media-icon .user-list__item__text {
+            width: calc(100% - 65px); } }
+    .chumly .user-list__item.is-notification {
+      background-color: #e7e7e7; }
+      .chumly .user-list__item.is-notification .user-list__item__icon .icon {
+        fill: #d44737; }
+    .chumly .user-list__item.is-active {
+      background-color: #3a81ea; }
+      .chumly .user-list__item.is-active .user-list__item__text {
+        color: #ffffff; }
+        .chumly .user-list__item.is-active .user-list__item__text--primary {
+          color: #ffffff; }
+        .chumly .user-list__item.is-active .user-list__item__text--secondary {
+          color: #f3f3f3; }
+      .chumly .user-list__item.is-active .user-list__item__icon .icon {
+        fill: #f3f3f3; }
+    .chumly .user-list__item__media {
+      padding: 0 10px;
+      width: 80px; }
+      @media screen and (min-width: 684px) {
+        .chumly .user-list__item__media {
+          padding: 0 0 0 10px; } }
+      .chumly .user-list__item__media > .avatar,
+      .chumly .user-list__item__media > img {
+        width: 60px;
+        height: 60px;
+        position: relative;
+        top: -2px; }
+        @media screen and (min-width: 684px) {
+          .chumly .user-list__item__media > .avatar,
+          .chumly .user-list__item__media > img {
+            width: 70px;
+            height: 70px; } }
+      .chumly .user-list__item__media--small {
+        width: 55px; }
+        .chumly .user-list__item__media--small > .avatar,
+        .chumly .user-list__item__media--small > img {
+          width: 35px;
+          height: 35px; }
+          @media screen and (min-width: 684px) {
+            .chumly .user-list__item__media--small > .avatar,
+            .chumly .user-list__item__media--small > img {
+              width: 45px;
+              height: 45px; } }
+    .chumly .user-list__item__text {
+      margin-top: -10px;
+      padding: 0 10px; }
+      .chumly .user-list__item__text > * {
+        display: block; }
+      .chumly .user-list__item__text--primary {
+        color: #3a81ea; }
+      .chumly .user-list__item__text--secondary {
+        display: none;
+        color: #5e5e5e;
+        margin: 4px 0 0 0; }
+        @media screen and (min-width: 684px) {
+          .chumly .user-list__item__text--secondary {
+            display: block; } }
+      .chumly .user-list__item__text--link {
+        color: #5e5e5e;
+        margin: 4px 0 0 0;
+        text-align: right; }
+        .chumly .user-list__item__text--link:target, .chumly .user-list__item__text--link:active, .chumly .user-list__item__text--link:hover, .chumly .user-list__item__text--link:focus, .chumly .user-list__item__text--link.is-active {
+          color: #3a81ea; }
+    .chumly .user-list__item__icon {
+      height: 10px;
+      width: 10px;
+      padding: 0 15px 0 0; }
+      .chumly .user-list__item__icon .icon {
+        width: 10px;
+        height: 10px;
+        top: -1px;
+        fill: #aaaaaa; }
+  .chumly .upload-status.is-complete .upload-status__icon {
+    transform: scale(1.05); }
+  .chumly .upload-status.is-complete .upload-status__base {
+    fill: #aaddb5; }
+  .chumly .upload-status.is-complete .upload-status__status-ring {
+    stroke: #79ca8b; }
+  .chumly .upload-status.is-complete .upload-status__check {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); }
+  .chumly .upload-status.is-complete .upload-status__cloud {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0); }
+  .chumly .upload-status.is-error .upload-status__icon {
+    transform: scale(1.05); }
+  .chumly .upload-status.is-error .upload-status__base {
+    fill: #da6153; }
+  .chumly .upload-status.is-error .upload-status__status-ring {
+    stroke: #b23426; }
+  .chumly .upload-status.is-error .upload-status__cross {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); }
+  .chumly .upload-status.is-error .upload-status__cloud {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0); }
+  .chumly .notification {
+    background-color: #ffffff; }
+    .chumly .notification--unread {
+      background-color: rgba(58, 129, 234, 0.2); }
+      .chumly .notification--unread svg {
+        fill: #333333; }
+    .chumly .notification__inner {
+      padding: 20px 10px;
+      color: inherit; }
+    .chumly .notification__body {
+      padding-left: 20px; }
+      .chumly .notification__body p {
+        color: #000000; }
+      .chumly .notification__body:target, .chumly .notification__body:active, .chumly .notification__body:focus, .chumly .notification__body:hover {
+        text-decoration: none; }
+    .chumly .notification__meta {
+      margin-top: 10px; }
+      .chumly .notification__meta__icon {
+        padding-right: 10px; }
+        .chumly .notification__meta__icon svg {
+          height: 20px;
+          width: 20px;
+          fill: #5e5e5e; }
+    .chumly .notification__interactions {
+      margin-left: auto; }
+    .chumly .notification__decor {
+      margin-left: auto;
+      height: 20px;
+      width: 20px;
+      fill: #aaaaaa;
+      cursor: pointer; }
+    .chumly .notification .notification__interactions + .notification__decor {
+      margin-left: 20px; }
+  .chumly .dropdown {
+    position: relative;
+    z-index: 100;
+    /*
+	visibility: hidden;
+	opacity: 0;
+
+	@extend %transition-all;
+	
+	li {
+		padding: $gutter--mini $gutter;
+		white-space: nowrap;
+		cursor: pointer;
+		&:hover {
+			background-color: $eggshell;
+		}
+	}
+	
+	
+	&.is-active {
+		visibility: visible;
+		opacity: 1;
+	}
+	*/ }
+    .chumly .dropdown__inner {
+      position: relative; }
+    .chumly .dropdown__menu {
+      position: absolute;
+      top: 100%;
+      left: 0px;
+      max-height: 0px;
+      min-width: 100%;
+      margin: 0;
+      border: 1px solid #aaaaaa;
+      box-shadow: 2px 2px 2px #d0d0d0;
+      border-radius: 4px;
+      background-color: #ffffff;
+      opacity: 0;
+      overflow: hidden; }
+      .chumly .dropdown__menu.is-active {
+        max-height: 500px;
+        opacity: 1; }
+        .chumly .dropdown__menu.is-active .dropdown__menu__mask {
+          display: block; }
+      .chumly .dropdown__menu__item, .chumly .dropdown__menu a, .chumly .dropdown__menu button {
+        display: block;
+        border: none;
+        padding: 7px 10px;
+        line-height: 1.2em;
+        color: #5e5e5e;
+        cursor: pointer; }
+        .chumly .dropdown__menu__item:target, .chumly .dropdown__menu__item:active, .chumly .dropdown__menu__item:hover, .chumly .dropdown__menu__item:focus, .chumly .dropdown__menu__item.is-active, .chumly .dropdown__menu a:target, .chumly .dropdown__menu a:active, .chumly .dropdown__menu a:hover, .chumly .dropdown__menu a:focus, .chumly .dropdown__menu a.is-active, .chumly .dropdown__menu button:target, .chumly .dropdown__menu button:active, .chumly .dropdown__menu button:hover, .chumly .dropdown__menu button:focus, .chumly .dropdown__menu button.is-active {
+          background: #f3f3f3;
+          text-decoration: none; }
+      .chumly .dropdown__menu__divider {
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: #d0d0d0; }
+      .chumly .dropdown__menu__mask {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: transparent;
+        z-index: -1;
+        display: none; }
+        .chumly .dropdown__menu__mask a {
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          opacity: 0;
+          cursor: default; }
+  .chumly .modal {
+    background: rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    z-index: 10000; }
+    .chumly .modal, .chumly .modal__mask {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%; }
+    .chumly .modal__mask {
+      height: 1000vh;
+      display: block;
+      opacity: 0; }
+    .chumly .modal__loader {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10100;
+      color: #ffffff; }
+      .chumly .modal__loader img {
+        height: 60px; }
+    .chumly .modal.is-active {
+      display: block; }
+      .chumly .modal.is-active .modal__mask {
+        opacity: 1; }
+      .chumly .modal.is-active .modal__loader {
+        top: 50%; }
+    .chumly .modal__inner {
+      opacity: 0;
+      position: absolute;
+      height: calc(100vh - 160px);
+      width: 100vw;
+      overflow-y: scroll;
+      padding: 80px 20px 80px 20px;
+      /* Increase/decrease this value for cross-browser compatibility */
+      box-sizing: content-box;
+      /* So the width will be 100% + 17px */
+      top: 0px;
+      left: 50%;
+      transform: translate(-50%, -100%);
+      z-index: 10200; }
+      .chumly .modal__inner.is-active {
+        opacity: 1;
+        top: 0px;
+        transform: translate(-50%, 0); }
+    .chumly .modal__header, .chumly .modal__footer {
+      background: #f3f3f3; }
+    .chumly .modal__header {
+      width: 550px;
+      margin: 0 auto 0;
+      position: relative;
+      z-index: 9999;
+      padding: 20px;
+      margin-bottom: 0;
+      border-bottom: 1px solid #d0d0d0;
+      border-radius: 10px 10px 0 0; }
+      @media screen and (max-width: 683px) {
+        .chumly .modal__header {
+          width: 90%; } }
+    .chumly .modal__body {
+      border-radius: 10px 10px 0 0;
+      background: #ffffff;
+      width: 550px;
+      margin: -8px auto 0;
+      padding: 20px;
+      z-index: 999; }
+      @media screen and (max-width: 683px) {
+        .chumly .modal__body {
+          width: 90%; } }
+      .chumly .modal__body__content {
+        padding-top: 20px; }
+    .chumly .modal__footer {
+      opacity: 0;
+      padding: 20px;
+      width: 550px;
+      margin: 0 auto;
+      -ms-flex-pack: end;
+      justify-content: flex-end;
+      border-top: 1px solid #d0d0d0;
+      border-radius: 0 0 10px 10px;
+      z-index: 999;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+      @media screen and (max-width: 683px) {
+        .chumly .modal__footer {
+          width: 90%; } }
+      .chumly .modal__footer.is-active {
+        opacity: 1; }
+  .chumly .card__inner {
+    display: block;
+    text-decoration: none; }
+  .chumly .card__image {
+    width: 100%;
+    overflow: hidden; }
+    .chumly .card__image img {
+      object-position: 50% 50%; }
+  .chumly .card__text {
+    padding-top: 5px;
+    color: #000000; }
+  .chumly .card__members {
+    -ms-flex-pack: start;
+    justify-content: flex-start; }
+    .chumly .card__members a {
+      width: 20%;
+      padding: 4px; }
+  .chumly .hero {
+    overflow: hidden;
+    position: relative;
+    display: block;
+    padding: 0 0 10px 0; }
+    .chumly .hero--400 {
+      height: 400px; }
+    .chumly .hero__image {
+      height: 100%;
+      width: 100%;
+      object-fit: cover !important; }
+    .chumly .hero__wrapper {
+      height: 100%; }
+    .chumly .hero__heading {
+      display: -ms-flexbox;
+      display: flex;
+      font-size: 30px; }
+      .chumly .hero__heading__icon {
+        padding-right: 10px; }
+    .chumly .hero__content {
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+      position: relative;
+      padding: 0;
+      text-align: left; }
+    .chumly .hero__summary {
+      color: black; }
+    .chumly .hero__decor {
+      position: relative;
+      padding: 20px 0 0 0; }
+      .chumly .hero__decor img {
+        display: none; }
+        @media screen and (min-width: 684px) {
+          .chumly .hero__decor img {
+            width: 100%;
+            max-width: none;
+            display: block; } }
+    .chumly .hero .hero__heading + .hero__summary,
+    .chumly .hero .hero__heading + .hero__button-container {
+      margin-top: 5px; }
+    .chumly .hero .hero__summary + .hero__button-container {
+      margin-top: 20px; }
+    @media screen and (max-width: 683px) {
+      .chumly .hero__button-container .button + .button {
+        margin-top: 10px; } }
+    .chumly .hero--banana {
+      background: #fad46b; }
+  .chumly .search {
+    display: block;
+    position: relative;
+    width: 100%; }
+    .chumly .search__form {
+      display: -ms-flexbox;
+      display: flex;
+      position: relative;
+      z-index: 1100; }
+      .chumly .search__form__input {
+        display: -ms-flexbox;
+        display: flex;
+        height: 35px;
+        margin: 0;
+        resize: none;
+        font-size: 1rem;
+        padding: 0 8px;
+        line-height: 35px; }
+      .chumly .search__form__submit {
+        display: -ms-flexbox;
+        display: flex;
+        min-height: 100%;
+        width: 35px;
+        margin-left: 10px; }
+        .chumly .search__form__submit .icon {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          height: 20px;
+          width: 20px;
+          fill: #ffffff;
+          padding: 0;
+          margin: 0; }
+    .chumly .search__output {
+      margin: 0; }
+      .chumly .search__output button {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center; }
+      .chumly .search__output > * {
+        margin: 10px 0;
+        margin-right: 5px; }
+      .chumly .search__output .button__icon {
+        height: 20px !important;
+        width: 20px !important;
+        margin-left: 0;
+        margin-top: 2px; }
+    .chumly .search__results {
+      display: none;
+      position: absolute;
+      top: 55px;
+      width: 80%;
+      z-index: 900;
+      border: 1px solid #d0d0d0;
+      border-top: none;
+      background: #ffffff;
+      padding: 8px; }
+    .chumly .search__mask {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 800;
+      height: 100%;
+      width: 100%; }
+  .chumly .search__form__submit + .search__results {
+    width: calc(100% - 43px); }
+  .chumly .list__item {
+    display: block;
+    background: #ffffff; }
+    .chumly .list__item + .list__item {
+      border-top: 1px solid #d0d0d0; }
+    .chumly .list__item:target, .chumly .list__item:active, .chumly .list__item:focus, .chumly .list__item:hover {
+      background: #f3f3f3; }
+    .chumly .list__item__inner {
+      width: 100%;
+      padding: 10px 5px;
+      text-decoration: none;
+      cursor: pointer; }
+    .chumly .list__item.is-active {
+      background: #3a81ea; }
+      .chumly .list__item.is-active .list__item__text {
+        color: #ffffff; }
+        .chumly .list__item.is-active .list__item__text--primary {
+          color: #ffffff; }
+        .chumly .list__item.is-active .list__item__text--secondary {
+          color: #f3f3f3; }
+      .chumly .list__item.is-active .list__item__icon.icon {
+        fill: #ffffff; }
+    .chumly .list__item__icon {
+      width: 26px; }
+      .chumly .list__item__icon.icon {
+        width: 16px;
+        height: 16px;
+        top: 1px;
+        fill: #aaaaaa; }
+    .chumly .list__item__text {
+      padding: 0 10px; }
+      .chumly .list__item__text > * {
+        display: block; }
+      .chumly .list__item__text--primary {
+        color: #3a81ea; }
+      .chumly .list__item__text--secondary {
+        color: #5e5e5e;
+        margin: 4px 0 0 0; }
+      .chumly .list__item__text--link {
+        color: #5e5e5e;
+        margin: 4px 0 0 0;
+        text-align: right; }
+  .chumly .nav-list {
+    width: 100%;
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    background: #ffffff; }
+    .chumly .nav-list__section {
+      padding-bottom: 5px; }
+      .chumly .nav-list__section:not(:first-child) {
+        padding-top: 20px; }
+      .chumly .nav-list__section:first-child a {
+        padding: 15px 20px; }
+      .chumly .nav-list__section__title {
+        color: #5e5e5e;
+        padding-left: 20px;
+        font-weight: 600; }
+    .chumly .nav-list__item {
+      -ms-flex-align: center;
+      align-items: center;
+      padding: 5px 20px;
+      cursor: pointer;
+      background: transparent; }
+      .chumly .nav-list__item:target, .chumly .nav-list__item:active, .chumly .nav-list__item:focus, .chumly .nav-list__item:hover {
+        background: #f3f3f3;
+        text-decoration: none; }
+        .chumly .nav-list__item:target .nav-list__item__icon, .chumly .nav-list__item:active .nav-list__item__icon, .chumly .nav-list__item:focus .nav-list__item__icon, .chumly .nav-list__item:hover .nav-list__item__icon {
+          fill: #5e5e5e; }
+      .chumly .nav-list__item.is-active {
+        border-radius: 4px;
+        background: #f3f3f3; }
+        .chumly .nav-list__item.is-active .nav-list__item__icon {
+          fill: #5e5e5e; }
+      .chumly .nav-list__item .avatar {
+        margin-right: 10px; }
+      .chumly .nav-list__item__icon {
+        width: 26px; }
+        .chumly .nav-list__item__icon.icon {
+          width: 16px;
+          height: 16px;
+          margin-right: 7px;
+          top: 2px;
+          fill: #aaaaaa; }
+      .chumly .nav-list__item__link {
+        color: #333333; }
+        .chumly .nav-list__item__link:target, .chumly .nav-list__item__link:active, .chumly .nav-list__item__link:focus, .chumly .nav-list__item__link:hover {
+          text-decoration: none; }
+  .chumly table {
+    width: 100%; }
+    .chumly table th,
+    .chumly table td {
+      text-align: center; }
+  .chumly .archive__content {
+    -ms-flex-direction: column;
+    flex-direction: column; }
+    .chumly .archive__content__header {
+      padding: 10px;
+      border: 1px solid #d0d0d0;
+      border-bottom: 0px;
+      border-radius: 4px;
+      background: #f3f3f3; }
+      .chumly .archive__content__header .button-group {
+        margin: 0; }
+  .chumly .select2-container--default.select2-container--focus .select2-selection--multiple,
+  .chumly .select2-container--default .select2-selection--multiple {
+    width: 100% !important; }
+  .chumly .select2-selection__rendered {
+    display: block !important;
+    height: 100% !important; }
+  .chumly .select2-search__field {
+    font-size: 1rem;
+    margin: 0 !important;
+    padding: 0 8px;
+    line-height: 33px; }
+  .chumly .select2-selection__choice {
+    margin-bottom: 5px !important; }
+
+/*# sourceMappingURL=chumly-core.css.map */

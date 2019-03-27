@@ -1,0 +1,18 @@
+.filter{
+	
+	@include mode('global'){
+		
+		&__title{
+			padding-bottom: $gutter--midi;
+		}
+		
+		&__buttons{
+			
+			&__item{
+				margin-right: $gutter;
+			}
+			
+		}
+		
+	}
+}

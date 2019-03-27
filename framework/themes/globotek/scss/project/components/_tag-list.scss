@@ -1,0 +1,28 @@
+.tag-list {
+
+	@include mode('global') {
+
+		> * {
+			color: $grey;
+		}
+		
+		&--white {
+
+			> * {
+				color: $white;
+			}
+
+		}
+		
+		span {
+			padding: 0 5px;
+
+			&:last-child {
+				display: none;
+			}
+			
+		}
+		
+	}
+
+}

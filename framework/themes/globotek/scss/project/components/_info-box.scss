@@ -1,0 +1,50 @@
+.info-box{
+	
+	@include mode('global'){
+		
+		@extend %flex-wrapper--column;
+		
+		align-items: center;
+		
+		@include media-query('palm'){
+			width: 100%;
+			& + &{
+				margin-top: $gutter--midi;
+			}
+		}
+		
+		
+		
+		&__icon{
+			
+			@extend %flex-wrapper;
+			justify-content: center;
+			align-items: center;
+			
+			width: 100px;
+			
+			background-position: center;
+			background-repeat: no-repeat;
+			
+			img{
+				height: 66px;
+			}
+			
+		}
+		
+		&__heading{
+			margin: $gutter 0;
+		}
+		
+		&__text{
+			max-width: 225px;
+			text-align: center;
+			
+			@include media-query('palm'){
+				max-width: 100%;
+			}
+		}
+		
+	}
+	
+}

@@ -1,0 +1,50 @@
+.box{
+	
+	@include mode('global'){
+		
+		@extend %flex-wrapper--column;
+		
+		align-items: center;
+		padding: $gutter $gutter--double $gutter--double;
+		
+		&__icon{
+			
+			@extend %flex-wrapper;
+			
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			height: 100px;
+			width: 100px;
+			
+			&:before{
+				
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				background: $blue--light;
+				border-radius: 100%;
+				z-index: -10;
+				
+			}
+			
+			img{
+				width: 60px;
+			}
+			
+		}
+		
+		&__heading{
+			margin: $gutter--midi 0 $gutter;
+		}
+		
+		&__text{
+			
+			text-align: center;
+		}
+	}
+	
+}
