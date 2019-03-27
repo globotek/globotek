@@ -10,7 +10,7 @@
 <div class="cta">
 	
 	<div class="cta__background">
-		<img src="<?php echo get_template_directory_uri() . '/images/row-bg.png'; ?>"/>
+		<img src="<?php echo get_template_directory_uri() . '/images/row-bg.svg'; ?>"/>
 	</div>
 	
 	<div class="cta__inner">
