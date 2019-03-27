@@ -9,7 +9,7 @@
 		&__icon-blocks{
 			
 			@extend %flex-wrapper;
-			//padding: $gutter--treble 0;
+			padding: $gutter--treble 0;
 			
 			@include media-query('portable'){
 				flex-direction: column;

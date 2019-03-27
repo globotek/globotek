@@ -2,8 +2,6 @@
 
 <?php include( 'partials/hero-cta.php' ); ?>
 
-<?php icon('dummy'); ?>
-
 <div class="home">
 	
 	<div class="home__icon-blocks wrapper">

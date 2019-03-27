@@ -9,7 +9,8 @@
 		color: $white;
 		
 		&__background{
-			
+            
+            @extend %one-whole;
 			@extend %desk--one-whole;
 			
 			flex-shrink: 0;
@@ -18,7 +19,16 @@
 				
 				width: 100%;
 				
-			}
+            }
+            
+            &__image {
+                width: 100%;
+
+                .icon {
+                    width: 100%;
+                    background-attachment: cover;
+                }
+            }
 			
 		}
 		
@@ -43,8 +53,12 @@
 			max-width: 100%;
 			
 			@include media-query('desk'){
-				margin-top: 200px;
-			}
+				margin-top: 0px;
+            }
+            
+            @include media-query('portable'){
+                margin-top: -50px;
+            }
 			
 			@include media-query('palm'){
 				flex-direction: column;
@@ -57,8 +71,9 @@
 			}
 
 			&__image{
-				//@extend %desk--three-fifths;
-				@extend %is-hidden--palm;
+                margin-top: -100px;
+				@extend %desk--three-fifths;
+                @extend %is-hidden--portable;
 				
 			}
 			
