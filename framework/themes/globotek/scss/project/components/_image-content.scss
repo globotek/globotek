@@ -19,20 +19,26 @@
 		}
 		
 		&__image{
-		
-			@extend %desk--one-half;
+
+            @extend %desk--one-half;
+			@extend %lap--one-half;
 			@extend %palm--one-whole;
-			
-			width: auto;
-			
+            
+            text-align: center;
+
+            img {
+                display: inline;
+            }
+            
 		}
 		
 		&__content{
 			
 			@extend %flex-wrapper--column;
-			
 			@extend %desk--one-half;
-			@extend %palm--one-whole;
+			@extend %lap--one-half;
+            @extend %palm--one-whole;
+            
 			justify-content: center;
 			
 			

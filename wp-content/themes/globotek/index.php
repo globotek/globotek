@@ -30,7 +30,7 @@
 		<h2 class="title__secondary">Lorem ipsum dolor sit amet</h2>
 	</div>
 	
-	<div class="box-row">
+	<div class="home__info-boxes box-row">
 		
 		<?php $info_boxes = array( 'a', 'b', 'c', 'd' ); ?>
 		<?php foreach( $info_boxes as $info_box ) { ?>

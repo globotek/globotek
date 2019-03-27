@@ -7,8 +7,12 @@
  */ ?>
 
 <div class="image-content">
-	
-	<img class="image-content__image" src="<?php echo get_template_directory_uri() . '/images/layer-44.png'; ?>"/>
+    
+    <div class="image-content__image">
+        
+        <img src="<?php echo get_template_directory_uri() . '/images/layer-44.png'; ?>" />
+
+    </div>
 	
 	<div class="image-content__content">
 		

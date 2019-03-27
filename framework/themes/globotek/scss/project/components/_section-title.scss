@@ -5,7 +5,7 @@
 		@extend %flex-wrapper--column;
 		align-self: center;
 		max-width: $site-max-width;
-		padding: 0 $gutter;
+        padding: $gutter--treble $gutter;
 		text-align: center;
 		
 		@include media-query('palm'){

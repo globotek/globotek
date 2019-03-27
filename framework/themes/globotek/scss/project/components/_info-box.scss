@@ -2,18 +2,22 @@
 	
 	@include mode('global'){
 		
-		@extend %flex-wrapper--column;
+        @extend %flex-wrapper--column;
+        
+        @extend %desk--one-quarter;
+		@extend %lap--one-half;
+		@extend %palm--one-whole;
 		
 		align-items: center;
 		
 		@include media-query('palm'){
-			width: 100%;
+            
 			& + &{
 				margin-top: $gutter--midi;
-			}
-		}
-		
-		
+            }
+            
+        }
+	
 		
 		&__icon{
 			

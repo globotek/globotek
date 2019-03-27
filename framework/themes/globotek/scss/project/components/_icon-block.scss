@@ -30,7 +30,7 @@
 		&__content{
 			
 			@extend %flex-wrapper--column;
-			justify-content: space-between;
+			//justify-content: space-between;
 			padding-left: $gutter--small;
 			
 			@include media-query('palm'){
