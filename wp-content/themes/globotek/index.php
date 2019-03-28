@@ -55,9 +55,10 @@
 		<p class="section-title__intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et vestibulum arcu. Aenean quis orci sem. Suspendisse iaculis scelerisque purus ornare finibus. Donec maximus mauris vel interdum pharetra.</p>
 	</div>
 	
-	
-	<?php include( 'partials/card-grid.php' ); ?>
-	
+	<div class="breathe--bottom-double">
+	    <?php include( 'partials/card-grid.php' ); ?>
+    </div>
+    
 	<?php include( 'partials/cta-portfolio-item.php' ); ?>
 	
 	<div class="home__icon-blocks wrapper">
