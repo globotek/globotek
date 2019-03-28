@@ -152,10 +152,10 @@
 	
 	&__testimonials{
 		
-		margin-top: -200px;
+		margin-top: -180px;
 		
 		@include media-query('portable'){
-			margin-top: -400px;
+			margin-top: -250px;
 		}
 		
 		&__body{

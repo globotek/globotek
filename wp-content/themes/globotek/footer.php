@@ -1,7 +1,7 @@
 <footer class="site-foot">
 	
 	<div class="site-foot__background">
-		<img src="<?php echo get_template_directory_uri() . '/images/footer-bg.png'; ?>"/>
+		<img src="<?php echo get_template_directory_uri() . '/images/footer-bg.svg'; ?>"/>
 	</div>
 	
 	<div class="site-foot__inner">
