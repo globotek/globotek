@@ -3,13 +3,17 @@
 	@include mode('global') {
 		
 		max-width: $site-max-width;
-		margin: 0 auto;
+        margin: 0 auto;
+        
+        -moz-box-shadow: 0 0 10px #888;
+        -webkit-box-shadow: 0 0 10px #888;
+        box-shadow: 0 0 10px #888;
 		
 		&__item {
 			@extend %flex-wrapper;
-			overflow: hidden;
+            overflow: hidden;
 			
-			$curve-height: 1000px;
+			$curve-height: 200%;
 			$curve-width: 290px;
 			$curve-offset: -20px;
 			$curve-percentage: 100%;
@@ -30,8 +34,11 @@
 						width: $curve-width;
 						border-radius: $curve-percentage;
 						background: red;
-						background: $primary-color--light;
-						
+                        background: $primary-color--light;
+                        
+                        -moz-box-shadow: 16px 15px -17px #888;
+                        -webkit-box-shadow: 16px 0 15px 17px #888;
+                        box-shadow: 16px 0 15px -17px #888;
 					}
 				}
 			}
@@ -48,10 +55,35 @@
 						width: $curve-width;
 						border-radius: $curve-percentage;
 						background: red;
-						background: $primary-color--light;
+                        background: $primary-color--light;
+
+                        -moz-box-shadow: -16px 0 15px -17px #888;
+                        -webkit-box-shadow: -16px 0 15px 17px #888;
+                        box-shadow: -16px 0 15px -17px #888;
 					}
 				}
-			}
+            }
+            
+            &:nth-child(4n + 3) {
+                .wave-grid__item__body {
+                    background: $primary-color--mid;
+                    
+					&:before {
+                        background: $primary-color--mid;
+                    }
+                }
+            }
+
+            &:nth-child(4n + 2) {
+                .wave-grid__item__body {
+                    background: $primary-color;
+                    color: $white;
+                    
+					&:before {
+                        background: $primary-color;
+                    }
+                }
+            }
 			
 			&__image {
 				
