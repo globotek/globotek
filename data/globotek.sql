@@ -11,7 +11,7 @@
  Target Server Version : 50725
  File Encoding         : 65001
 
- Date: 05/03/2019 10:59:50
+ Date: 29/03/2019 09:41:44
 */
 
 SET NAMES utf8mb4;
@@ -97,7 +97,7 @@ CREATE TABLE `gtek_options`  (
   `autoload` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'yes',
   PRIMARY KEY (`option_id`) USING BTREE,
   UNIQUE INDEX `option_name`(`option_name`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 281 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 282 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_520_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of gtek_options
@@ -224,6 +224,7 @@ INSERT INTO `gtek_options` VALUES (246, 'acf_version', '5.7.12', 'yes');
 INSERT INTO `gtek_options` VALUES (249, 'acf_pro_license', 'YToyOntzOjM6ImtleSI7czo3MjoiYjNKa1pYSmZhV1E5TlRVeU1ESjhkSGx3WlQxa1pYWmxiRzl3WlhKOFpHRjBaVDB5TURFMUxUQTBMVE13SURFeE9qTTBPak0wIjtzOjM6InVybCI7czoyMToiaHR0cDovL2dsb2JvdGVrLmxvY2FsIjt9', 'yes');
 INSERT INTO `gtek_options` VALUES (258, 'db_upgraded', '', 'yes');
 INSERT INTO `gtek_options` VALUES (262, 'can_compress_scripts', '0', 'no');
+INSERT INTO `gtek_options` VALUES (281, '_transient_doing_cron', '1553852292.9388139247894287109375', 'yes');
 
 -- ----------------------------
 -- Table structure for gtek_postmeta
