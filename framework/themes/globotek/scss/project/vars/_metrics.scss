@@ -7,6 +7,7 @@ $gutter--small: ($gutter - 5);
 $gutter--midi: ($gutter  + ($gutter / 2));
 $gutter--double: ($gutter * 2);
 $gutter--treble: ($gutter * 3);
+$gutter--quadruple: ($gutter * 4);
 
 $site-max-width: 1160px;
 $site-min-width: (320px - $gutter--double);

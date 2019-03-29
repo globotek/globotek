@@ -3,12 +3,13 @@
 	@include mode('global') {
 		
 		@extend %flex-wrapper--column;
-		width: 100%;
+        width: 100%;
+        padding-bottom: $gutter--quadruple;
 		
 		&__hero {
-			border: 1px solid purple;
 			position: relative;
-			width: 100%;
+            width: 100%;
+            margin-bottom: $gutter--quadruple;
 			
 			img {
 				width: 100%;
@@ -93,8 +94,18 @@
 				}
 				
 			}
-		}
+        }
+        
+
+        &__wave-grid {
+
+            margin-bottom: $gutter--quadruple;
+
+        }
+
+        
 		
-	}
+    }
+    
 	
 }

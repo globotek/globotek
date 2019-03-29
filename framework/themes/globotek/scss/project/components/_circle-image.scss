@@ -1,0 +1,103 @@
+.circle-image {
+	
+	@include mode('global') {
+		
+		display: flex;
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+
+        @extend %flex-wrapper--column;
+		justify-content: center;
+		align-items: center;
+
+        &__inner{
+            @extend %grid;
+            @extend %grid--full;
+		    justify-content: space-between;
+		    width: 100%;
+		    max-width: 100%;
+
+            
+        }
+
+        &__image{
+			
+            @extend %desk--two-thirds;
+            
+            img {
+                height: 100%;
+            }
+			
+		}
+		
+		&__content{
+			
+            @extend %desk--one-third;
+            @extend %portable--one-whole;
+
+            background: $primary-color--light;
+
+            @extend %flex-wrapper--column;
+			justify-content: center;
+				
+			position: relative;
+            padding: $gutter--treble;
+            
+            $curve-height: 900px;
+			$curve-width: 900px;
+			$curve-offset: -126px;
+			$curve-percentage: 100%;
+
+
+			&__title,
+            &__text{
+				
+                position: relative;
+                z-index: 10;
+                margin-left: -100px;
+                text-align: right;
+
+                @include media-query('portable'){
+                    margin-left: 0px;
+                    text-align: left;
+                }
+				
+            }
+
+            &__text{
+                padding-top: 20px;
+            }
+            
+            &:before {
+                content: "";
+                position: absolute;
+                z-index: 0;
+				top: -22%;
+				left: $curve-offset;
+				height: $curve-height;
+				width: $curve-width;
+				border-radius: $curve-percentage;
+                background: $primary-color--light;
+
+                -moz-box-shadow: -16px 0 15px -17px #888;
+                -webkit-box-shadow: -16px 0 15px -17px #888;
+                box-shadow: -16px 0 15px -17px #888;
+
+                @include media-query('portable'){
+                    width: 110%;
+                    height: 180px;
+                    left: 50%;
+                    transform: translateX(-50%);
+
+                    -moz-box-shadow: 0px -16px 15px -17px #888;
+                    -webkit-box-shadow: 0px -16px 15px -17px #888;
+                    box-shadow: 0px -16px 15px -17px #888;
+                }
+            }
+			
+		}
+		
+	}
+	
+}

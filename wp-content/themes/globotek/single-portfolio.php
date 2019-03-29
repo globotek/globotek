@@ -75,12 +75,11 @@ get_header(); ?>
 	</div>
 	
 	
-	<div class="portfolio-item__info-boxes">
+	<div class="portfolio-item__wave-grid">
 		
 		<div class="wave-grid">
 			
 			<?php foreach ( $project_info as $info_box ) { ?>
-				
 				
 				<div class="wave-grid__item">
 					
@@ -102,7 +101,33 @@ get_header(); ?>
 		
 		</div>
 	
-	</div>
+    </div>
+    
+
+    <div class="portfolio-item__circle-image">
+
+        <div class="circle-image">
+            <div class="circle-image__inner">
+
+                <div class="circle-image__image">
+                    <img src="<?php echo get_template_directory_uri() . '/images/circle-text-img.jpg'; ?>"/>
+                </div>
+
+                <div class="circle-image__content">
+
+                    <h2 class="title title__secondary circle-image__content__title">Lorem ipsum dolor sit amet consectet adipiscing elit</h2>
+
+                    <p class="circle-image__content__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Curabitur et vestibulum arcu. Aenean quis orci sem. 
+                        Suspendisse iaculis scelerisque purus ornare finibus. 
+                        Donec maximus mauris vel interdum pharetra.</p>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
 
 </div>
 
