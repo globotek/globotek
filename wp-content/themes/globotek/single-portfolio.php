@@ -147,6 +147,16 @@ get_header(); ?>
 
     </div>
 
+    <div class="section-title breathe--bottom-double">
+		<h2 class="title__secondary">Lorem ipsum dolor sit amet</h2>
+    </div>
+    
+    <div class="wrapper">
+        <div class="breathe--bottom-double">
+	        <?php include( 'partials/text-grid.php' ); ?>
+        </div>
+    </div>
+
 </div>
 
 <?php get_footer(); ?>

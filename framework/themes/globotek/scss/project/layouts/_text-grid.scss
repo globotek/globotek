@@ -1,0 +1,32 @@
+.text-grid{
+	
+	@include mode('global'){
+	
+		@extend %grid;
+		@extend %grid--full;
+		
+		
+		max-width: $site-max-width;
+		
+		
+		&__item{
+			@extend %desk--one-third;
+			padding: 0 $gutter--mini;
+			
+			@include media-query('portable'){
+				padding: 0 $gutter $gutter;
+			}
+			
+		}
+		
+		&__body {
+            padding: 0 $gutter;
+
+            &__heading{
+				margin-bottom: $gutter--midi;
+			}
+        }
+
+    }
+	
+}

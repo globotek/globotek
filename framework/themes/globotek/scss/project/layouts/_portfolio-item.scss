@@ -99,8 +99,10 @@
         
 
         &__wave-grid,
-        &__circle-image {
+        &__circle-image,
+        &__device-image {
 
+            margin-top: $gutter--quadruple;
             margin-bottom: $gutter--quadruple;
 
         }
