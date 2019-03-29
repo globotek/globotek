@@ -129,6 +129,24 @@ get_header(); ?>
 
     </div>
 
+    <div class="portfolio-item__device-image">
+
+        <div class="cta">
+        
+            <div class="cta__background">
+                <img src="<?php echo get_template_directory_uri() . '/images/row-bg-large.svg'; ?>"/>
+            </div>
+            
+            <div class="cta__inner">
+                
+                <img class="cta__inner__image" src="<?php echo get_template_directory_uri() . '/images/portfolio-devices.png'; ?>"/>
+            
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
 
 <?php get_footer(); ?>

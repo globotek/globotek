@@ -38,7 +38,14 @@
 		
 		@extend %flex-wrapper--column;
 		justify-content: center;
-		align-items: center;
+        align-items: center;
+        
+        &__image {
+
+            @include media-query('desk'){
+                width: 75%;
+            }
+        }
 		
     }
     

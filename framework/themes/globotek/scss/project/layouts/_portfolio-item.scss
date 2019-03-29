@@ -12,7 +12,8 @@
             margin-bottom: $gutter--quadruple;
 			
 			img {
-				width: 100%;
+                width: 100%;
+                object-fit: cover
 			}
 			
 			&__body {
@@ -97,7 +98,8 @@
         }
         
 
-        &__wave-grid {
+        &__wave-grid,
+        &__circle-image {
 
             margin-bottom: $gutter--quadruple;
 
