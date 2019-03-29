@@ -54,6 +54,73 @@
 		<h2 class="title__secondary">Articles &amp; Blog</h2>
 		<p class="section-title__intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et vestibulum arcu. Aenean quis orci sem. Suspendisse iaculis scelerisque purus ornare finibus. Donec maximus mauris vel interdum pharetra.</p>
     </div>
+    
+
+    <div class="portfolio-item">
+		
+        <div class="portfolio-item__info-boxes">
+            
+            <div class="wave-grid">
+                    
+                    
+                    <div class="wave-grid__item">
+                        
+                        <div class="wave-grid__item__image">
+                            <img src="<?php echo get_template_directory_uri() . '/images/service-1.jpg'; ?>"/>
+                        </div>
+                        
+                        <div class="wave-grid__item__body">
+                            
+                            <h2 class="wave-grid__item__body__title">Logo Design</h2>
+                            <div class="wave-grid__item__body__text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et vestibulum arcu. Aenean quis orci sem. Suspendisse iaculis scelerisque purus ornare finibus. Donec maximus mauris vel interdum 
+pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            </div>
+                        </div>
+                    
+                    </div>
+
+                    <div class="wave-grid__item">
+                        
+                        <div class="wave-grid__item__image">
+                            <img src="<?php echo get_template_directory_uri() . '/images/service-2.jpg'; ?>"/>
+                        </div>
+                        
+                        <div class="wave-grid__item__body">
+                            
+                            <h2 class="wave-grid__item__body__title">Logo Design</h2>
+                            <div class="wave-grid__item__body__text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et vestibulum arcu. Aenean quis orci sem. Suspendisse iaculis scelerisque purus ornare finibus. Donec maximus mauris vel interdum 
+pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            </div>
+                        </div>
+                    
+                    </div>
+
+                    <div class="wave-grid__item">
+                        
+                        <div class="wave-grid__item__image">
+                            <img src="<?php echo get_template_directory_uri() . '/images/service-3.jpg'; ?>"/>
+                        </div>
+                        
+                        <div class="wave-grid__item__body">
+                            
+                            <h2 class="wave-grid__item__body__title">Logo Design</h2>
+                            <div class="wave-grid__item__body__text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et vestibulum arcu. Aenean quis orci sem. Suspendisse iaculis scelerisque purus ornare finibus. Donec maximus mauris vel interdum 
+pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            </div>
+                        </div>
+                    
+                    </div>
+            
+            </div>
+        
+        </div>
+
+    </div>
+
+
 	
 	<div class="breathe--bottom-double">
 	    <?php include( 'partials/card-grid.php' ); ?>
