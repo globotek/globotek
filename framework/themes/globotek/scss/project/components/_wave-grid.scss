@@ -23,7 +23,7 @@
 				flex-direction: row-reverse;
 				
 				.wave-grid__item__body {
-					position: relative;
+                    position: relative;
 					
 					&:before {
 						content: "";
@@ -33,7 +33,6 @@
 						height: $curve-height;
 						width: $curve-width;
 						border-radius: $curve-percentage;
-						background: red;
                         background: $primary-color--light;
                         
                         -moz-box-shadow: 16px 15px -17px #888;
@@ -54,22 +53,33 @@
 						height: $curve-height;
 						width: $curve-width;
 						border-radius: $curve-percentage;
-						background: red;
                         background: $primary-color--light;
 
                         -moz-box-shadow: -16px 0 15px -17px #888;
                         -webkit-box-shadow: -16px 0 15px 17px #888;
                         box-shadow: -16px 0 15px -17px #888;
-					}
+                    }
 				}
             }
-            
-            &:nth-child(4n + 3) {
+
+            &:nth-child(4n + 1) {
                 .wave-grid__item__body {
-                    background: $primary-color--mid;
+                    background: $primary-color--light;
                     
 					&:before {
-                        background: $primary-color--mid;
+                        background: $primary-color--light;
+                    }
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        background-image: url('../images/clouds-top.svg');
+                        background-size: auto 85%;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        width: 100%;
+                        height: 100%;
+                        left: 0px;
                     }
                 }
             }
@@ -82,6 +92,40 @@
 					&:before {
                         background: $primary-color;
                     }
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        background-image: url('../images/clouds-middle.svg');
+                        background-size: auto 95%;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        width: 100%;
+                        height: 100%;
+                        left: 0px;
+                    }
+                }
+            }
+
+            &:nth-child(4n + 3) {
+                .wave-grid__item__body {
+                    background: $primary-color--mid;
+                    
+					&:before {
+                        background: $primary-color--mid;
+                    }
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        background-image: url('../images/clouds-bottom.svg');
+                        background-size: 242px auto;
+                        background-repeat: no-repeat;
+                        background-position: top 60px right 40px;
+                        width: 100%;
+                        height: 100%;
+                        left: 0px;
+                    }
                 }
             }
 			
@@ -91,7 +135,8 @@
 				overflow: hidden;
 				
 				img {
-					height: 100%;
+                    height: 100%;
+                    width: 100%;
 					max-width: none;
 				}
 				
@@ -106,7 +151,6 @@
 				
 				position: relative;
 				padding: $gutter--treble;
-				background: $primary-color--light;
 				
 				&__title {
 					position: relative;
