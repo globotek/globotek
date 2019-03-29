@@ -156,6 +156,10 @@ get_header(); ?>
 	        <?php include( 'partials/text-grid.php' ); ?>
         </div>
     </div>
+
+    <div class="portfolio-item__contact-form">
+        <?php include( 'partials/contact-form.php' ); ?>
+    </div>
     
     <div class="portfolio-item__cta">
         <?php include( 'partials/related-work.php' ); ?>

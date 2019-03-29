@@ -1,6 +1,12 @@
+.form{
 
-	
-	.form{
-		@include mode('global'){
-	}
+	@include mode('global'){
+    
+        &__field {
+
+            @extend %form-field;
+            
+        }
+    
+    }
 }

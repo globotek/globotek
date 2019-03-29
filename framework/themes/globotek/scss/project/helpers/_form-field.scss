@@ -1,9 +1,11 @@
 %form-field {
 	width: 100%;
-	border: 1px solid $grey--light;
+	height: 50px;
 	background: $white;
-	border-radius: $radius;
-	color: $grey--mid;
+    border-radius: $radius--form-field;
+    border: none;
+    color: $grey--mid;
+    padding: 0 25px;
 
 	@include form-field();
 	@include placeholder($grey);
