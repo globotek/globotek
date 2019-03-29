@@ -151,10 +151,14 @@ get_header(); ?>
 		<h2 class="title__secondary">Lorem ipsum dolor sit amet</h2>
     </div>
     
-    <div class="wrapper">
+    <div class="wrapper breathe--bottom-double">
         <div class="breathe--bottom-double">
 	        <?php include( 'partials/text-grid.php' ); ?>
         </div>
+    </div>
+    
+    <div class="portfolio-item__cta">
+        <?php include( 'partials/related-work.php' ); ?>
     </div>
 
 </div>
