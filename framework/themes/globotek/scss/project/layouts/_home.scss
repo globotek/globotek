@@ -3,7 +3,7 @@
 	@include mode('global'){
 		
 		@extend %flex-wrapper--column;
-		width: 100%;
+        width: 100%;
 		align-items: center;
 		
 		&__icon-blocks{
@@ -13,7 +13,11 @@
 			
 			@include media-query('portable'){
 				flex-direction: column;
-			}
+            }
+            
+            @include media-query('palm'){
+                padding: $gutter--treble 0 0;
+            }
 			
 		}
 		

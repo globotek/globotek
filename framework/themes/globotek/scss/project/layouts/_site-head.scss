@@ -48,13 +48,16 @@
 			
 			@include media-query('portable'){
 				
-				position: absolute;
-				top: 93px;
-				left: 0;
-				width: 100%;
+                position: absolute;
+                display: flex !important;
+                top: 93px;
+                left: -100vw;
+                width: 100%;
+                transition: all 0.3s ease;
 				
 				&.is-active{
-					display: flex !important;
+                    //display: flex !important;
+                    left: 0px;
 				}
 				
 				&__inner{
@@ -65,7 +68,7 @@
 					z-index: 1000;
 					height: 100vh;
 					padding-bottom: 90px;
-					background: $white;
+                    background: $white;
 					
 				}
 				

@@ -9,7 +9,8 @@
 		text-align: center;
 		
 		@include media-query('palm'){
-			margin-bottom: $gutter--double;
+            margin-bottom: $gutter--double;
+            padding: $gutter $gutter;
 		}
 		
 		&__intro{
