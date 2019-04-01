@@ -11,28 +11,62 @@
 		
 		&__bg{
 			position: absolute;
-			bottom: 0;
+            bottom: 0;
+            
+            @include media-query('portable'){
+
+                height: 200px;
+                background: $primary-color;
+
+            }
 		}
 		
 		&__inner{
+            
+            @extend %grid;
 			
-			display: flex;
 			justify-content: space-between;
 			align-items: center;
 			position: absolute;
 			bottom: 40px;
 			width: 100%;
 			padding: 0 100px;
-			color: $white;
+            color: $white;
+            
+            @include media-query('portable'){
+                
+                padding: 0 20px;
+                bottom: 20px;
+
+            }
 			
 			&__title{
+
+                @extend %desk--two-fifths;
+                @extend %portable--one-whole;
 				
 				&__tags{
 					
 					padding-top: $gutter--small;
 					
 				}
-			}
+            }
+            
+            &__content {
+
+                @extend %desk--two-fifths;
+                @extend %portable--four-fifths;
+
+            }
+
+            &__link {
+
+                @extend %desk--one-fifth;
+                @extend %portable--one-fifth;
+
+                text-align: right;
+
+            }
 			
 		}
 		
