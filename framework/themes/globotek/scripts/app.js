@@ -50,6 +50,13 @@ var app = (function($) {
 								elem.toggle();
 
 								// Run code here 
+                                break;
+                                
+                            case 'range-slider':
+
+								elem.rangeSlider();
+
+								// Run code here 
 								break;
 							
 						}

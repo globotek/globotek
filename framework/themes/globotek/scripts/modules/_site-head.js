@@ -7,7 +7,7 @@
 			};
 
 		var init = function() {
-console.log('Head');
+            console.log('Head');
 			settings = $.extend(true, {}, settings, elem.parseSettings());
 
 			var navTrigger = $('.site-head .js-toggle__trigger'),

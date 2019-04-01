@@ -5,7 +5,7 @@
     border-radius: $radius--form-field;
     border: none;
     color: $grey--mid;
-    padding: 0 25px;
+    margin-bottom: 40px;
 
 	@include form-field();
 	@include placeholder($grey);

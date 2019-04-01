@@ -10,7 +10,7 @@
 <div class="cta">
 	
 	<div class="cta__background">
-		<img src="<?php echo get_template_directory_uri() . '/images/row-bg.svg'; ?>"/>
+		<img src="<?php echo get_template_directory_uri() . '/images/contact-bg.svg'; ?>"/>
 	</div>
 	
 	<div class="cta__inner">
@@ -24,12 +24,22 @@
             
             <div class="cta__contact__left">
                 <input type="text" class="form__field" placeholder="Name" />
-                
+
                 <input type="text" class="form__field" placeholder="Email" />
+
+                <div class="form__range" data-module="range-slider">
+                    <div class="cta__contact__content">
+                        Budget
+                    </div>
+                    <input class="form__range-input js-range__trigger" type="range" min="1000" max="25000" step="100" value="200" data-thumbwidth="20">
+                    <output class="form__range-output" name="range-value">£100</output>
+                </div>
 			</div>
 			
 			<div class="cta__contact__right">
-				<a href="#" class="button button--white">Read More</a>
+                <textarea class="form__textarea" placeholder="Message"></textarea>
+
+				<a href="#" class="button button--white">Send</a>
 			</div>
 		
 		</div>

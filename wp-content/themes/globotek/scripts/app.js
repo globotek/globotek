@@ -305,6 +305,49 @@ function debounce(func, wait, immediate) {
 };
 (function($) {
 
+	$.fn.rangeSlider = function() {
+		var elem = $(this),
+		    triggers = elem.find('.js-range__trigger'),
+		    settings = {
+			    activeClass: 'is-active',
+			    visibleClass: 'is-active',
+			    elemClass: '',
+			    elemClassAttribute: 'data-elem-class'
+		    };
+
+		var init = function() {
+            console.log('Slider');
+
+
+			    triggers.off('input').on('input', function() {
+
+                    var control = $(this),
+                    controlMin = control.attr('min'),
+                    controlMax = control.attr('max'),
+                    controlVal = control.val(),
+                    controlThumbWidth = control.data('thumbwidth');
+
+                    var range = controlMax - controlMin;
+                
+                    var position = ((controlVal - controlMin) / range) * 100;
+                    var positionOffset = Math.round(controlThumbWidth * position / 100) - (controlThumbWidth / 2);
+                    var output = control.next('output');
+                
+                    output
+                        .css('left', 'calc(' + position + '% - ' + positionOffset + 'px - 51px)')
+                        .text('£' + controlVal);
+
+                    }).trigger("change");
+
+		    }
+
+		init();
+		return this;
+	};
+
+}(jQuery));
+(function($) {
+
 	$.fn.siteHead = function() {
 		var elem = $(this),
 			settings = {
@@ -312,7 +355,7 @@ function debounce(func, wait, immediate) {
 			};
 
 		var init = function() {
-console.log('Head');
+            console.log('Head');
 			settings = $.extend(true, {}, settings, elem.parseSettings());
 
 			var navTrigger = $('.site-head .js-toggle__trigger'),
@@ -464,6 +507,13 @@ var app = (function($) {
 							case 'toggle':
 
 								elem.toggle();
+
+								// Run code here 
+                                break;
+                                
+                            case 'range-slider':
+
+								elem.rangeSlider();
 
 								// Run code here 
 								break;

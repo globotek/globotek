@@ -213,9 +213,9 @@
 			
 			&__text{
 				
-                margin-bottom: $gutter--treble;
+                margin-bottom: $gutter--mini;
                 
-                @include media-query('portable'){
+                @include media-query('desk'){
                     margin-bottom: $gutter--mini;
                 }
 				
