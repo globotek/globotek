@@ -224,6 +224,20 @@
 			
         }
 
+        &__prompt {
+            @extend %one-whole;
+
+            &-inner {
+                border-color: $negative-color;
+		        color: $white;
+                background: lighten($negative-color, 40%);
+                padding: $gutter--mini;
+                border-radius: $radius;
+            }
+
+            
+        }
+
         &__field {
             @extend %portable--one-half;
 

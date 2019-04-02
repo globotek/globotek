@@ -60,7 +60,7 @@
                 margin-top: -50px;
             }
 			
-			@include media-query('palm'){
+			@include media-query('portable'){
 				flex-direction: column;
 				text-align: center;
 			}

@@ -1,4 +1,5 @@
 %heading-base {
+    font-family: $heading-font-family;
 	text-transform: capitalize;
 }
 
@@ -25,10 +26,10 @@
 %heading-tertiary {
 	@extend %heading-base;
 
-	@include font-size(20px, true, false, $tight-line-height-ratio);
+	@include font-size(15px, true, false, $base-line-height-ratio);
 
 	@include media-query("lap-and-up") {
-		@include font-size(30px, true, false, $tight-line-height-ratio);
+		@include font-size(15px, true, false, $base-line-height-ratio);
 	}
 }
 
