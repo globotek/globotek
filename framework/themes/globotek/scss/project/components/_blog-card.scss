@@ -1,0 +1,99 @@
+.blog-card{
+	
+	@include mode('global'){
+		
+		@extend %flex-wrapper--column;
+		
+		box-shadow: -5px 0px 10px 0 rgba(0, 0, 0, 0.09);
+		border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: $gutter--quadruple;
+		
+		&__image{
+			
+            overflow: hidden;
+            max-height: 200px;
+			
+			img{
+				object-fit: cover;
+			}
+			
+		}
+		
+		&__body{
+            
+            position: relative;
+            padding: $gutter--double $gutter--midi;
+
+            background: #ffffff; /* Old browsers */
+            background: -moz-linear-gradient(top, #ffffff 0%, #f1f0f0 100%, #7db9e8 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, #ffffff 0%,#f1f0f0 100%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, #ffffff 0%,#f1f0f0 100%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+            
+            &__decor{
+				justify-content: center;
+				align-items: center;
+				position: absolute;
+				top: $gutter--double;
+				left: $gutter--midi;
+				
+				height: 65px;
+				width: 65px;
+				border-radius: 5px;
+				background: $primary-color;
+				color: $white;
+                z-index: 20;
+                font-size: 36px;
+                text-align: center;
+				
+				span{
+					line-height: 1.2;
+					word-spacing: 50px;
+					text-align: center;
+                    font-size: 17px;
+                    display: block;
+                    width: 100%;
+                    margin: 4px 0;
+                    font-weight: bold;
+				}
+			}
+			
+			&__heading{
+                margin-bottom: $gutter--midi;
+                padding-left: 95px;
+            }
+            
+            &__meta {
+                font-size: 12px;
+                margin-bottom: 15px;
+
+                &-name {
+                    color: $primary-color;
+                }
+            }
+			
+			&__text{
+			
+			}
+			
+			&__link{
+				margin-top: $gutter--midi;
+				text-align: right;
+				
+				a{
+					color: $blue;
+					
+					&:hover{
+						text-decoration: none;
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}

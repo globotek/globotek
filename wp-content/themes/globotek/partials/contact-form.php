@@ -21,11 +21,21 @@
 				<div class="cta__contact__content__title title title__secondary">Lorem ipsum dolor sit amet</div>
 				<div class="cta__contact__content__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et vestibulum arcu. Aenean quis orci sem. Suspendisse iaculis scelerisque purus ornare finibus. Donec maximus mauris vel interdum pharetra.</div>
             </div>
+
+            <div class="cta__contact__prompt">
+                <div class="cta__contact__prompt-inner">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </div>
+            </div>
             
             <div class="cta__contact__left">
-                <input type="text" class="form__field" placeholder="Name" />
-
-                <input type="text" class="form__field" placeholder="Email" />
+                <div class="cta__contact__field">
+                    <input type="text" class="form__field" placeholder="Name" />
+                </div>
+                
+                <div class="cta__contact__field">
+                    <input type="text" class="form__field" placeholder="Email" />
+                </div>
 
                 <div class="form__range" data-module="range-slider">
                     <div class="cta__contact__content">
