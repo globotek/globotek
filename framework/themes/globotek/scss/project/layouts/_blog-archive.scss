@@ -1,5 +1,4 @@
-
-.blog-page{
+.blog-archive{
 	
 	@include mode('global'){
 		
@@ -7,6 +6,12 @@
 
         justify-content: space-between;
         padding: $gutter--treble $gutter;
+
+        &__hero__body {
+
+            height: 10px;
+
+        }
 		
 		&__posts {
 

@@ -23,9 +23,13 @@
             </div>
             
             <div class="cta__contact__left">
-                <input type="text" class="form__field" placeholder="Name" />
-
-                <input type="text" class="form__field" placeholder="Email" />
+                <div class="cta__contact__field">
+                    <input type="text" class="form__field" placeholder="Name" />
+                </div>
+                
+                <div class="cta__contact__field">
+                    <input type="text" class="form__field" placeholder="Email" />
+                </div>
 
                 <div class="form__range" data-module="range-slider">
                     <div class="cta__contact__content">

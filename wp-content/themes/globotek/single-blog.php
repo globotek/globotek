@@ -14,149 +14,110 @@ get_header(); ?>
 	
 	<div class="portfolio-item__hero">
 		
-		<?php the_post_thumbnail( 'full' ); ?>
+        <img src="<?php echo get_template_directory_uri() . '/images/scraptastic-banner-min.png'; ?>" alt="">
 		
-		<div class="portfolio-item__hero__body">
+		<div class="portfolio-item__hero__body blog-item__hero__body">
 			
-			<img src="<?php echo get_template_directory_uri() . '/images/bg-project-hero.svg'; ?>"/>
+			<img src="<?php echo get_template_directory_uri() . '/images/bg-blog-hero.svg'; ?>"/>
 			
 			<div class="portfolio-item__hero__inner">
 				
-				<h1 class="portfolio-item__hero__title title title__secondary"><?php the_title(); ?></h1>
-				
-				<div class="portfolio-item__hero__content">
-					
-					<h2 class="portfolio-item__hero__content__heading">Scope</h2>
-					
-					<div class="portfolio-item__hero__content__tags tag-list">
-						
-						<?php $project_tags = array( 'Logo Design', 'Web Design', 'Print Design' ); ?>
-						
-						<?php foreach ( $service_tags as $project_tag ) { ?>
-							
-							<a href="<?php echo get_term_link( $project_tag[ 0 ] ); ?>"><?php echo $project_tag[ 0 ]->name; ?></a>
-							<span>|</span>
-						
-						<?php } ?>
-					
-					</div>
-					
-					<div class="portfolio-item__hero__content__text"><?php the_content(); ?></div>
-					
-					<div class="portfolio-item__hero__content__services">
-						
-						<h3 class="">Services Provided</h3>
-						
-						<ul class="list">
-							
-							<?php foreach ( $service_tags as $service_tag ) { ?>
-								
-								<li class="list__item"><?php echo $service_tag[ 0 ]->name; ?></li>
-							
-							<?php } ?>
-						
-						</ul>
-					
-					</div>
-				
-				
-				</div>
 			
 			</div>
 		
 		</div>
 	
-	</div>
-	
-	
-	<div class="portfolio-item__wave-grid">
-		
-		<div class="wave-grid">
-			
-			<?php foreach ( $project_info as $info_box ) { ?>
-				
-				<div class="wave-grid__item">
-					
-					<div class="wave-grid__item__image">
-						<img src="<?php echo $info_box[ 'service_image' ][ 'url' ]; ?>"/>
-					</div>
-					
-					<div class="wave-grid__item__body">
-						
-						<h2 class="wave-grid__item__body__title"><?php echo $info_box[ 'service' ][ 0 ]->name; ?></h2>
-						<div class="wave-grid__item__body__text">
-							<?php echo $info_box[ 'service_content' ]; ?>
-						</div>
-					</div>
-				
-				</div>
-			
-			<?php } ?>
-		
-		</div>
-	
     </div>
     
 
-    <div class="portfolio-item__circle-image">
-
-        <div class="circle-image">
-            <div class="circle-image__inner">
-
-                <div class="circle-image__image">
-                    <img src="<?php echo get_template_directory_uri() . '/images/circle-text-img.jpg'; ?>"/>
-                </div>
-
-                <div class="circle-image__content">
-
-                    <h2 class="title title__secondary circle-image__content__title">Lorem ipsum dolor sit amet consectet adipiscing elit</h2>
-
-                    <p class="circle-image__content__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Curabitur et vestibulum arcu. Aenean quis orci sem. 
-                        Suspendisse iaculis scelerisque purus ornare finibus. 
-                        Donec maximus mauris vel interdum pharetra.</p>
-
-                </div>
-
-            </div>
-        </div>
-
-    </div>
-
-    <div class="portfolio-item__device-image">
-
-        <div class="cta">
-        
-            <div class="cta__background">
-                <img src="<?php echo get_template_directory_uri() . '/images/row-bg-large.svg'; ?>"/>
-            </div>
+    <div class="blog-item wrapper">
+	
+        <div class="blog-item__posts">
             
-            <div class="cta__inner">
+            <div class="blog-card">
                 
-                <img class="cta__inner__image" src="<?php echo get_template_directory_uri() . '/images/portfolio-devices.png'; ?>"/>
+                <div class="blog-card__body">
+
+                    <div class="blog-card__body__decor">
+                        <span>Jan</span>12
+                    </div>
+                    
+                    <h3 class="blog-card__body__heading title__secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+                    
+                    <div class="blog-card__body__meta">
+                        <p><span class="blog-card__body__meta-name">Author Name</span> | Category1 | Category 2 | Category 3</p>
+                    </div>
+
+                    <div class="blog-card__body__text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse rhoncus dolor ex, at ultricies lorem pretium ac. Duis mauris turpis, condimentum vitae tristique in, semper sed elit. Praesent eu varius augue. Aenean risus quam, molestie quis magna sit amet, semper faucibus dolor. Vivamus magna magna, convallis sit amet enim vitae, consequat faucibus nulla. Pellentesque mollis massa sed tincidunt commodo. Suspendisse quis justo quis neque gravida ultrices at et erat. Sed nunc felis, maximus ac quam ut, fringilla tincidunt mauris. Etiam condimentum metus et arcu interdum mattis. Duis ullamcorper nunc vel sapien pharetra, vel semper metus commodo.</p>
+                        
+                        <img src="<?php echo get_template_directory_uri() . '/images/scraptastic-banner-min.png'; ?>" alt="">
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse rhoncus dolor ex, at ultricies lorem pretium ac. Duis mauris turpis, condimentum vitae tristique in, semper sed elit. Praesent eu varius augue. Aenean risus quam, molestie quis magna sit amet, semper faucibus dolor. Vivamus magna magna, convallis sit amet enim vitae, consequat faucibus nulla. Pellentesque mollis massa sed tincidunt commodo. Suspendisse quis justo quis neque gravida ultrices at et erat. Sed nunc felis, maximus ac quam ut, fringilla tincidunt mauris. Etiam condimentum metus et arcu interdum mattis. Duis ullamcorper nunc vel sapien pharetra, vel semper metus commodo.
+                        <img src="<?php echo get_template_directory_uri() . '/images/scraptastic-banner-min.png'; ?>" alt="">
+                        </p>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse rhoncus dolor ex, at ultricies lorem pretium ac. Duis mauris turpis, condimentum vitae tristique in, semper sed elit. Praesent eu varius augue. Aenean risus quam, molestie quis magna sit amet, semper faucibus dolor. Vivamus magna magna, convallis sit amet enim vitae, consequat faucibus nulla. Pellentesque mollis massa sed tincidunt commodo. Suspendisse quis justo quis neque gravida ultrices at et erat. Sed nunc felis, maximus ac quam ut, fringilla tincidunt mauris. Etiam condimentum metus et arcu interdum mattis. Duis ullamcorper nunc vel sapien pharetra, vel semper metus commodo.</p>
+
+                        
+                    </div>
+                    
+                
+                </div>
+
+            </div>
+
+
+
             
+            
+            
+        </div>
+        
+        <div class="blog-item__sidebar">
+
+            <div class="widget">
+                <h3 class="widget__heading">Categories</h3>
+
+                <ul class="widget__list">
+                    <li class="widget__list__item"><a href="">Category 1</a></li>
+                    <li class="widget__list__item"><a href="">Category 2</a></li>
+                    <li class="widget__list__item"><a href="">Category 3</a></li>
+                    <li class="widget__list__item"><a href="">Category 4</a></li>
+                    <li class="widget__list__item"><a href="">Category 5</a></li>
+                </ul>
+
+            </div>
+
+            <div class="widget">
+                <h3 class="widget__heading">Archives</h3>
+
+                <ul class="widget__list">
+                    <li class="widget__list__item"><a href="">December 2018</a></li>
+                    <li class="widget__list__item"><a href="">January 2019</a></li>
+                    <li class="widget__list__item"><a href="">February 2019</a></li>
+                    <li class="widget__list__item"><a href="">March 2019</a></li>
+                </ul>
+
             </div>
 
         </div>
 
     </div>
-
-    <div class="section-title breathe--bottom-double">
-		<h2 class="title__secondary">Lorem ipsum dolor sit amet</h2>
-    </div>
-    
-    <div class="wrapper breathe--bottom-double">
-        <div class="breathe--bottom-double">
-	        <?php include( 'partials/text-grid.php' ); ?>
-        </div>
-    </div>
+	
 
     <div class="portfolio-item__contact-form">
         <?php include( 'partials/contact-form.php' ); ?>
     </div>
     
-    <div class="portfolio-item__cta">
-        <?php include( 'partials/related-work.php' ); ?>
+    <div class="portfolio-item__cta wrapper">
+        <div class="section-title">
+            <h2 class="title__secondary">Related Articles</h2>
+        </div>
+        
+        <div class="breathe--bottom-double">
+            <?php include( 'partials/card-grid.php' ); ?>
+        </div>
     </div>
 
 </div>

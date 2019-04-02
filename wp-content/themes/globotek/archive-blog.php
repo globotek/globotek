@@ -11,9 +11,9 @@
 
 <?php include( 'partials/hero-blog-archive.php' ); ?>
 
-<div class="blog-page wrapper">
+<div class="blog-archive wrapper">
 	
-	<div class="blog-page__posts">
+	<div class="blog-archive__posts">
 		
 		
         <div class="blog-card">
@@ -81,7 +81,7 @@
 		
     </div>
     
-    <div class="blog-page__sidebar">
+    <div class="blog-archive__sidebar">
 
         <div class="widget">
             <h3 class="widget__heading">Categories</h3>
