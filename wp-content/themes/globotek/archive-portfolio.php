@@ -9,6 +9,8 @@
 
 <?php get_header(); ?>
 
+<?php include( 'partials/hero-cta.php' ); ?>
+
 <div class="archive-page wrapper">
 	
 	<div class="archive-page__filter filter">
@@ -40,9 +42,9 @@
 		
 			<div class="project-card">
 				
-				<?php the_post_thumbnail( 'full', array( 'class' => 'project-card__image' ) ); ?>
+                <?php the_post_thumbnail( 'full', array( 'class' => 'project-card__image' ) ); ?>
 				
-				<img src="<?php echo get_template_directory_uri() . '/images/portfolio-item-bg-' . $content_background_decider . '.png'; ?>" alt="" class="project-card__bg">
+				<img src="<?php echo get_template_directory_uri() . '/images/portfolio-item-bg-' . $content_background_decider . '.svg'; ?>" alt="" class="project-card__bg">
 				
 				<div class="project-card__inner">
 					
