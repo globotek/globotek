@@ -56,7 +56,7 @@
 		
 		</div>
 		
-		<p class="site-foot__copyright">&copy; GloboTek <?php echo date( 'Y' ); ?>. All rights reserved</p>
+		<p class="site-foot__copyright">&copy; GloboTek Ltd <?php echo date( 'Y' ); ?>. All rights reserved</p>
 	
 	</div>
 

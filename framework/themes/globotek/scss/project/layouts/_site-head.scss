@@ -2,7 +2,6 @@
 	
 	@include mode("global"){
 		
-		//position: fixed;
 		display: flex;
 		justify-content: center;
 		width: 100%;
@@ -40,10 +39,17 @@
 				@extend %flex-wrapper;
 			}
 			
-			&__item{
+			&__item {
 				padding-left: $gutter--double;
 				list-style: none;
-				color: $white;
+				
+				a {
+					color: $white;
+					
+					&:hover {
+						text-decoration: none;
+					}
+				}
 			}
 			
 			@include media-query('portable'){
@@ -78,7 +84,10 @@
 					width: 100%;
 					padding-top: $gutter--mini;
 					padding-left: $gutter;
-					color: $primary-color;
+					
+					a {
+						color: $primary-color;
+					}
 					
 					&:first-child{
 						padding-top: $gutter;

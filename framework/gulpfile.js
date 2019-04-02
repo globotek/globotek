@@ -20,11 +20,11 @@ var gulp        = require('gulp'),
 /*------------------------------------
  GLOBAL VARS
  ------------------------------------*/
-var THEMES = ['globotek'];
-var PLUGINS = [];
+var THEMES  = ['globotek'];
+var PLUGINS = ['globotek-theme-functionality'];
 
 var PROJECT_DIRECTORIES = {
-	themes: THEMES,
+	themes:  THEMES,
 	plugins: PLUGINS
 };
 
@@ -33,16 +33,21 @@ gulp.task('default', function () {
 	gulp.task('browser_sync', function () {
 		
 		sync.init({
-			https: false,
-			open: true,
+			https:       false,
+			open:        true,
 			reloadDelay: 50
 		});
 		
 	});
 	
-	
+	var PATHS    = {css: [], icons: [], js: []},
+	    WATCHERS = {scss: [], svg: [], scripts: [], php: []};
 	
 	for (var PROJECT_TYPE in PROJECT_DIRECTORIES) {
+		
+		var PROJECT_CSS   = [],
+		    PROJECT_ICONS = [],
+		    PROJECT_JS    = [];
 		
 		PROJECT_DIRECTORIES[PROJECT_TYPE].forEach(function (PROJECT_DIRECTORY) {
 			
@@ -56,93 +61,164 @@ gulp.task('default', function () {
 			    DESTINATION_SCRIPTS = DESTINATION + '/scripts',
 			    DESTINATION_PHP     = DESTINATION + '/**/*.php';
 			
-			console.log(PROJECT_SCSS);
-			console.log(PROJECT_SVG);
+			PROJECT_CSS[PROJECT_DIRECTORY] = {
+				'source':      PROJECT_SCSS,
+				'destination': DESTINATION_CSS
+			};
+			
+			PROJECT_ICONS[PROJECT_DIRECTORY] = {
+				'source':      PROJECT_SVG,
+				'destination': DESTINATION_SVG
+			};
+			
+			PROJECT_JS[PROJECT_DIRECTORY] = {
+				'source':      PROJECT_SCRIPTS,
+				'destination': DESTINATION_SCRIPTS
+			};
+			
+			WATCHERS['scss'].push(PROJECT_SCSS);
+			WATCHERS['svg'].push(PROJECT_SVG);
+			
+			WATCHERS['scripts'].push('global/scripts/_helpers.js');
+			WATCHERS['scripts'].push(PROJECT_SCRIPTS + '/modules/*.js');
+			WATCHERS['scripts'].push(PROJECT_SCRIPTS + '/app.js');
+						
+			WATCHERS['php'].push(DESTINATION_PHP);
 			
 			
-			gulp.task('process_scss', function () {
+		});
+		
+		PATHS['css'].push(PROJECT_CSS);
+		PATHS['icons'].push(PROJECT_ICONS);
+		PATHS['js'].push(PROJECT_JS);
+		
+	}
+	
+	//console.log(PATHS);
+	gulp.task('process_scss', function () {
+		
+		PATHS['css'].forEach(function (CSS) {
+			
+			for (var INDEX in CSS) {
 				
-				return gulp.src(PROJECT_SCSS)
+				return gulp.src(CSS[INDEX]['source'])
 				.pipe(sass().on('error', sass.logError))
 				.pipe(sourcemaps.init())
 				.pipe(autoprefix({
 					browsers: ['last 2 versions'],
-					cascade: false
+					cascade:  false
 				}))
 				.pipe(minify_css())
 				.pipe(sourcemaps.write('.'))
-				.pipe(gulp.dest(DESTINATION_CSS))
+				.pipe(gulp.dest(CSS[INDEX]['destination']))
 				.pipe(sync.reload({
 					stream: true
 				}));
 				
-			});
+			}
 			
+		});
+		
+	});
+	
+	gulp.task('process_svg', function () {
+		
+		PATHS['icons'].forEach(function (SVG) {
 			
-			gulp.task('process_svg', function () {
+			for (var INDEX in SVG) {
 				
-				return gulp.src(PROJECT_SVG)
+				return gulp.src(SVG[INDEX]['source'])
 				//.pipe(minify_svg())
 				.pipe(svg_symbols())
-				.pipe(gulp.dest(DESTINATION_SVG));
+				.pipe(gulp.dest(SVG[INDEX]['destination']));
 				
-			});
+			}
 			
+		});
+		
+	});
+	
+	
+	gulp.task('delete_svg_css', function () {
+		
+		PATHS['icons'].forEach(function (SVG) {
 			
-			gulp.task('delete_svg_css', function () {
+			for (var INDEX in SVG) {
 				
-				del(DESTINATION_SVG + '/*.css', {force: true});
+				del(SVG[INDEX]['destination'] + '/*.css', {force: true});
 				
-			});
+			}
 			
-			gulp.task('process_script_libraries', function () {
-				
-				var sources = [
-					'global/scripts/lib/*.js'
-				];
+		});
+		
+	});
+	
+	
+	gulp.task('process_script_libraries', function () {
+		
+		var sources = [
+			'global/scripts/lib/*.js'
+		];
+		
+		PATHS['js'].forEach(function (SCRIPT) {
+			
+			for (var INDEX in SCRIPT) {
 				
 				return gulp.src(sources)
 				.pipe(concat('lib.js'))
 				//.pipe(uglify())
-				.pipe(gulp.dest(DESTINATION_SCRIPTS));
+				.pipe(gulp.dest(SCRIPT[INDEX]['destination']));
 				
-			});
+			}
 			
+		});
+		
+	});
+	
+	
+	gulp.task('process_scripts', function () {
+		
+		PATHS['js'].forEach(function (SCRIPT) {
 			
-			gulp.task('process_scripts', function () {
+			for (var INDEX in SCRIPT) {
+				
+				console.log(SCRIPT[INDEX]);
+				
 				
 				var sources = [
 					'global/scripts/_helpers.js',
-					PROJECT_SCRIPTS + '/modules/*.js',
-					PROJECT_SCRIPTS + '/app.js'
+					SCRIPT[INDEX]['source'] + '/modules/*.js',
+					SCRIPT[INDEX]['source'] + '/app.js'
 				];
 				
 				gulp.start('process_script_libraries');
 				
 				return gulp.src(sources)
 				.pipe(sourcemaps.init())
-				.pipe(concat('app.js'))
+				.pipe(concat(INDEX + '.js'))
 				//.pipe(uglify())
 				.pipe(sourcemaps.write('.'))
-				.pipe(gulp.dest(DESTINATION_SCRIPTS));
+				.pipe(gulp.dest(SCRIPT[INDEX]['destination']));
 				
-			});
-			
-			
-			sequence('process_scss', 'process_svg', 'delete_svg_css', 'process_scripts', function () {
-				
-				gulp.watch(PROJECT_SCSS, ['process_scss']);
-				
-				gulp.watch(PROJECT_SVG, ['process_svg', 'delete_svg_css']);
-				
-				gulp.watch(PROJECT_SCRIPTS + '/**/*.js', ['process_scripts']).on('change', reload);
-				
-				gulp.watch(DESTINATION_PHP).on('change', reload);
-				
-			});
+			}
 			
 		});
 		
-	}
+	});
+	
+	console.log(WATCHERS['scripts']);
+	sequence('process_scss', 'process_svg', 'delete_svg_css', 'process_scripts', function () {
+		
+		gulp.watch(WATCHERS['scss'], ['process_scss']);
+		
+		gulp.watch(WATCHERS['svg'], ['process_svg', 'delete_svg_css']);
+		
+		gulp.watch(WATCHERS['scripts'], ['process_scripts']).on('change', reload);
+		
+		gulp.watch(WATCHERS['php']).on('change', reload);
+		
+	});
+	
 	gulp.start('browser_sync');
+	
 });

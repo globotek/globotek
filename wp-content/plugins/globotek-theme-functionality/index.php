@@ -48,3 +48,12 @@ function gtek_taxonomy_setup() {
 }
 
 add_action( 'init', 'gtek_taxonomy_setup' );
+
+
+function gtek_functionality_scripts() {
+	
+	wp_enqueue_script( 'gtek-functionality', plugin_dir_url(__FILE__) . 'scripts/globotek-theme-functionality.js', array( 'jquery' ), '', TRUE );
+	
+}
+
+add_action( 'wp_enqueue_scripts', 'gtek_functionality_scripts' );

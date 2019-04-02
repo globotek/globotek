@@ -40,7 +40,7 @@ add_action( 'wp_enqueue_scripts', 'theme_styles' );
 function theme_scripts() {
 	
 	wp_enqueue_script( 'lib', get_template_directory_uri() . '/scripts/lib.js', array( 'jquery' ), 1.0, TRUE );
-	wp_register_script( 'app', get_template_directory_uri() . '/scripts/app.js', array( 'lib' ), 1.0, TRUE );
+	wp_register_script( 'app', get_template_directory_uri() . '/scripts/globotek.js', array( 'lib' ), 1.0, TRUE );
 	wp_localize_script( 'app', 'ajax_variables', array( 'ajax_url' => admin_url( 'admin-ajax.php' ), 'user_id' => get_current_user_id() ) );
 	wp_enqueue_script( 'app' );
 	
