@@ -9,7 +9,7 @@
 
 <?php get_header(); ?>
 
-<?php include( 'partials/hero-cta.php' ); ?>
+<?php include( 'partials/hero-portfolio-archive.php' ); ?>
 
 <div class="archive-page wrapper">
 	

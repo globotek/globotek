@@ -1,0 +1,41 @@
+
+.blog-page{
+	
+	@include mode('global'){
+		
+        @extend %grid;	
+
+        justify-content: space-between;
+        padding: $gutter--treble $gutter;
+		
+		&__posts {
+
+            @extend %desk--four-fifths;
+            @extend %portable--one-whole;
+
+            padding-right: $gutter--midi;
+
+            @include media-query('portable'){
+                
+                padding-right: $gutter;
+
+            }
+
+        }
+
+        &__sidebar {
+
+            @extend %desk--one-fifth;
+            @extend %portable--one-whole;
+
+            @include media-query('portable'){
+                
+                padding-top: $gutter--treble;
+
+            }
+
+        }
+		
+	}
+	
+}

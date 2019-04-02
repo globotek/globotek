@@ -1,0 +1,44 @@
+.widget{
+	
+	@include mode('global'){
+		
+        margin-bottom: $gutter--quadruple;
+        
+        &__heading {
+
+            text-transform: uppercase;
+            margin-bottom: $gutter;
+
+        }
+
+        &__list {
+
+            &__item {
+
+                position: relative;
+                padding-left: 24px;
+                margin-bottom: $gutter--mini;
+
+                a {
+                    color: $grey--mid;
+                }
+
+                &:before {
+
+                    content: "";
+                    position: absolute;
+                    left: 0px;
+                    top: 6px;
+                    width: 15px;
+                    height: 15px;
+                    background: url('../images/list-item.png') no-repeat center;
+    
+                }
+
+            }
+
+        }
+		
+	}
+	
+}
