@@ -7,7 +7,7 @@
  * Time: 13:03
  */
 
-get_header(); ?>
+get_header(); the_post(); ?>
 
 
 <div class="portfolio-item">
@@ -52,6 +52,8 @@ get_header(); ?>
 
                     </div>
                     
+                    <h1 class="blog-card__body__heading title__secondary"><?php the_title(); ?></h1>
+                    
                     <div class="blog-card__body__meta">
                         <div class="tag-list">
                             <a href="#" class="tag-list__author">Author Name</a>
@@ -65,17 +67,19 @@ get_header(); ?>
                     </div>
 
                     <div class="blog-card__body__text">
+                        <?php the_content(); ?>
+                        <!--
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse rhoncus dolor ex, at ultricies lorem pretium ac. Duis mauris turpis, condimentum vitae tristique in, semper sed elit. Praesent eu varius augue. Aenean risus quam, molestie quis magna sit amet, semper faucibus dolor. Vivamus magna magna, convallis sit amet enim vitae, consequat faucibus nulla. Pellentesque mollis massa sed tincidunt commodo. Suspendisse quis justo quis neque gravida ultrices at et erat. Sed nunc felis, maximus ac quam ut, fringilla tincidunt mauris. Etiam condimentum metus et arcu interdum mattis. Duis ullamcorper nunc vel sapien pharetra, vel semper metus commodo.</p>
                         
-                        <img src="<?php echo get_template_directory_uri() . '/images/scraptastic-banner-min.png'; ?>" alt="">
+                        <img src="<?php /*echo get_template_directory_uri() . '/images/scraptastic-banner-min.png'; */?>" alt="">
 
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse rhoncus dolor ex, at ultricies lorem pretium ac. Duis mauris turpis, condimentum vitae tristique in, semper sed elit. Praesent eu varius augue. Aenean risus quam, molestie quis magna sit amet, semper faucibus dolor. Vivamus magna magna, convallis sit amet enim vitae, consequat faucibus nulla. Pellentesque mollis massa sed tincidunt commodo. Suspendisse quis justo quis neque gravida ultrices at et erat. Sed nunc felis, maximus ac quam ut, fringilla tincidunt mauris. Etiam condimentum metus et arcu interdum mattis. Duis ullamcorper nunc vel sapien pharetra, vel semper metus commodo.
-                        <img src="<?php echo get_template_directory_uri() . '/images/scraptastic-banner-min.png'; ?>" alt="">
+                        <img src="<?php /*echo get_template_directory_uri() . '/images/scraptastic-banner-min.png'; */?>" alt="">
                         </p>
 
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse rhoncus dolor ex, at ultricies lorem pretium ac. Duis mauris turpis, condimentum vitae tristique in, semper sed elit. Praesent eu varius augue. Aenean risus quam, molestie quis magna sit amet, semper faucibus dolor. Vivamus magna magna, convallis sit amet enim vitae, consequat faucibus nulla. Pellentesque mollis massa sed tincidunt commodo. Suspendisse quis justo quis neque gravida ultrices at et erat. Sed nunc felis, maximus ac quam ut, fringilla tincidunt mauris. Etiam condimentum metus et arcu interdum mattis. Duis ullamcorper nunc vel sapien pharetra, vel semper metus commodo.</p>
 
-                        
+                        -->
                     </div>
                     
                 

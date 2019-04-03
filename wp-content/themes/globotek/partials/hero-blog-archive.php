@@ -20,12 +20,12 @@
 			
 			<div class="hero__cta__content">
 				
-				<h2 class="hero__title title title__primary">Blog Archive</h2>
+				<h1 class="hero__title title title__primary"><?php the_title(); ?></h1>
 			
 			</div>
 			
 			<div class="hero__cta__image">
-				<img src="<?php echo get_template_directory_uri() . '/images/people-and-books.png'; ?>"/>
+				<img src="<?php the_post_thumbnail(); ?>"/>
 			</div>
 		
 		</div>

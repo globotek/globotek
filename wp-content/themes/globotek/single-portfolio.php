@@ -10,9 +10,14 @@ get_header(); ?>
 <?php the_post(); ?>
 <?php $fields = get_fields(); ?>
 
-<?php var_dump( $fields[ 'full_width_banner' ] ); ?>
+<?php //var_dump( $fields[ 'full_width_banner' ] ); ?>
 
-<?php $service_tags = wp_list_pluck( $fields[ 'provided_services_content' ], 'service' ); ?>
+<?php if ( $fields[ 'provided_services_content' ] ) { ?>
+	
+	<?php $service_tags = wp_list_pluck( $fields[ 'provided_services_content' ], 'service' ); ?>
+
+<?php } ?>
+
 <?php $project_info = $fields[ 'provided_services_content' ]; ?>
 
 
@@ -101,66 +106,67 @@ get_header(); ?>
 		
 		</div>
 	
-    </div>
-    
-
-    <div class="portfolio-item__circle-image">
-
-        <div class="circle-image">
-            <div class="circle-image__inner">
-
-                <div class="circle-image__image">
-                    <img src="<?php echo $fields[ 'full_width_banner' ]['image']['url']; ?>"/>
-                </div>
-
-                <div class="circle-image__content">
-
-                    <h2 class="title title__secondary circle-image__content__title"><?php echo $fields[ 'full_width_banner' ]['title']; ?></h2>
-
-                    <p class="circle-image__content__text"><?php echo $fields[ 'full_width_banner' ]['content']; ?></p>
-
-                </div>
-
-            </div>
-        </div>
-
-    </div>
-
-    <div class="portfolio-item__device-image">
-
-        <div class="cta">
-        
-            <div class="cta__background">
-                <img src="<?php echo get_template_directory_uri() . '/images/row-bg-large.svg'; ?>"/>
-            </div>
-            
-            <div class="cta__inner">
-                
-                <img class="cta__inner__image" src="<?php echo $fields[ 'banner_image' ]['url']; ?>"/>
-            
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="section-title breathe--bottom-double">
+	</div>
+	
+	
+	<div class="portfolio-item__circle-image">
+		
+		<div class="circle-image">
+			<div class="circle-image__inner">
+				
+				<div class="circle-image__image">
+					<img src="<?php echo $fields[ 'full_width_banner' ][ 'image' ][ 'url' ]; ?>"/>
+				</div>
+				
+				<div class="circle-image__content">
+					
+					<h2 class="title title__secondary circle-image__content__title"><?php echo $fields[ 'full_width_banner' ][ 'title' ]; ?></h2>
+					
+					<p class="circle-image__content__text"><?php echo $fields[ 'full_width_banner' ][ 'content' ]; ?></p>
+				
+				</div>
+			
+			</div>
+		</div>
+	
+	</div>
+	
+	<div class="portfolio-item__device-image">
+		
+		<div class="cta">
+			
+			<div class="cta__background">
+				<img src="<?php echo get_template_directory_uri() . '/images/row-bg-large.svg'; ?>"/>
+			</div>
+			
+			<div class="cta__inner">
+				
+				<img class="cta__inner__image" src="<?php echo $fields[ 'banner_image' ][ 'url' ]; ?>"/>
+			
+			</div>
+		
+		</div>
+	
+	</div>
+	
+	<div class="section-title breathe--bottom-double">
 		<h2 class="title__secondary">Key Features</h2>
-    </div>
-    
-    <div class="wrapper breathe--bottom-double">
-        <div class="breathe--bottom-double">
-	        <?php include( 'partials/text-grid.php' ); ?>
-        </div>
-    </div>
-
-    <div class="portfolio-item__contact-form">
-        <?php include( 'partials/contact-form.php' ); ?>
-    </div>
-    
-    <div class="portfolio-item__cta">
-        <?php include( 'partials/related-work.php' ); ?>
-    </div>
+	</div>
+	
+	<div class="wrapper breathe--bottom-double">
+		<div class="breathe--bottom-double">
+			<?php $text_grid = $fields[ 'triple_column_content' ]; ?>
+			<?php include( 'partials/text-grid.php' ); ?>
+		</div>
+	</div>
+	
+	<div class="portfolio-item__contact-form">
+		<?php include( 'partials/contact-form.php' ); ?>
+	</div>
+	
+	<div class="portfolio-item__cta">
+		<?php include( 'partials/related-work.php' ); ?>
+	</div>
 
 </div>
 
