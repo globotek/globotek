@@ -26,7 +26,7 @@
 					<img src="<?php echo get_template_directory_uri() . '/images/quote-left.png'; ?>" alt="" class="testimonial__decor--left">
 					<div class="testimonial__body">
 						<p class="testimonial__body__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et vestibulum arcu. Aenean quis orci sem. Suspendisse iaculis scelerisque purus ornare finibus. Donec maximus mauris vel interdum pharetra.</p>
-						<h4 class="testimonial__body__author">Firstname Lastname</h4>
+						<h4 class="testimonial__body__author title title__quaternary">Firstname Lastname</h4>
 						<p class="testimonial__body__company">Company Name</p>
 					</div>
 					<img src="<?php echo get_template_directory_uri() . '/images/quote-right.png'; ?>" alt="" class="testimonial__decor--right">

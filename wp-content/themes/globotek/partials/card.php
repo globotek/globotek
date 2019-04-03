@@ -27,7 +27,7 @@
 		</div>
 		
 		<div class="card__body__link">
-			<a href="#">Read More</a>
+			<a href="#" class="button__text button__text--blue">Read More</a>
 		</div>
 	
 	</div>

@@ -14,7 +14,7 @@
 	
 	<div class="icon-block__content">
 		
-		<h3 class="heading">Lorem Ipsum</h3>
+		<h3 class="title title__quaternary">Lorem Ipsum</h3>
 		<p>Lorem ipsum dolor sit amet, consectetur</p>
 		
 	</div>

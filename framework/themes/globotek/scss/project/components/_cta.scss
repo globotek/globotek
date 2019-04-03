@@ -142,7 +142,8 @@
 			}
 			
 			&__content{
-				@extend %flex-wrapper--column;
+                @extend %flex-wrapper--column;
+                @extend %box-gradient;
 				justify-content: space-between;
 				padding: $gutter--midi;
             }
@@ -153,7 +154,12 @@
                     width: auto;
                 }
             }
-		}
+        }
+        
+        &__tags {
+            margin: 5px 0;
+            color: $grey--mid;
+        }
 		
 		&__link{
 			text-align: center;

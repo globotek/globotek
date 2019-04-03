@@ -20,7 +20,7 @@
 			
 			<div class="hero__cta__content">
 				
-				<h2 class="hero__title title">Our Online Portfolio</h2>
+				<h2 class="hero__title title title__primary">Our Online Portfolio</h2>
 				
 				<div class="hero__text">
 					<p>Lorem ipsum dolor sit amet adipiscing elit. Curabitur et vestibulum arcu.</p>
