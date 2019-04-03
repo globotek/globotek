@@ -18,7 +18,21 @@
 				object-fit: cover;
 			}
 			
-		}
+        }
+        
+        &__heading{
+            position: relative;
+
+            &__date {
+                position: absolute;
+                left: 0px;
+                top: 5px;
+            }
+
+            &__title {
+                padding-left: 90px;
+            }
+        }
 		
 		&__body{
             
@@ -26,39 +40,6 @@
             padding: $gutter--double $gutter--midi;
 
             @extend %box-gradient;
-            
-            &__decor{
-				justify-content: center;
-				align-items: center;
-				position: absolute;
-				top: $gutter--double;
-				left: $gutter--midi;
-				
-				height: 65px;
-				width: 65px;
-				border-radius: 5px;
-				background: $primary-color;
-				color: $white;
-                z-index: 20;
-                font-size: 36px;
-                text-align: center;
-				
-				span{
-					line-height: 1.2;
-					word-spacing: 50px;
-					text-align: center;
-                    font-size: 17px;
-                    display: block;
-                    width: 100%;
-                    margin: 4px 0;
-                    font-weight: bold;
-				}
-			}
-			
-			&__heading{
-                margin-bottom: $gutter--midi;
-                padding-left: 95px;
-            }
             
             &__meta {
                 font-size: 12px;
