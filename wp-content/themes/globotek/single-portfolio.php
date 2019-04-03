@@ -10,7 +10,7 @@ get_header(); ?>
 <?php the_post(); ?>
 <?php $fields = get_fields(); ?>
 
-<?php var_dump( $fields[ 'provided_services_content' ] ); ?>
+<?php var_dump( $fields[ 'full_width_banner' ] ); ?>
 
 <?php $service_tags = wp_list_pluck( $fields[ 'provided_services_content' ], 'service' ); ?>
 <?php $project_info = $fields[ 'provided_services_content' ]; ?>
@@ -110,17 +110,14 @@ get_header(); ?>
             <div class="circle-image__inner">
 
                 <div class="circle-image__image">
-                    <img src="<?php echo get_template_directory_uri() . '/images/circle-text-img.jpg'; ?>"/>
+                    <img src="<?php echo $fields[ 'full_width_banner' ]['image']['url']; ?>"/>
                 </div>
 
                 <div class="circle-image__content">
 
-                    <h2 class="title title__secondary circle-image__content__title">Lorem ipsum dolor sit amet consectet adipiscing elit</h2>
+                    <h2 class="title title__secondary circle-image__content__title"><?php echo $fields[ 'full_width_banner' ]['title']; ?></h2>
 
-                    <p class="circle-image__content__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Curabitur et vestibulum arcu. Aenean quis orci sem. 
-                        Suspendisse iaculis scelerisque purus ornare finibus. 
-                        Donec maximus mauris vel interdum pharetra.</p>
+                    <p class="circle-image__content__text"><?php echo $fields[ 'full_width_banner' ]['content']; ?></p>
 
                 </div>
 
@@ -139,7 +136,7 @@ get_header(); ?>
             
             <div class="cta__inner">
                 
-                <img class="cta__inner__image" src="<?php echo get_template_directory_uri() . '/images/portfolio-devices.png'; ?>"/>
+                <img class="cta__inner__image" src="<?php echo $fields[ 'banner_image' ]['url']; ?>"/>
             
             </div>
 
@@ -148,7 +145,7 @@ get_header(); ?>
     </div>
 
     <div class="section-title breathe--bottom-double">
-		<h2 class="title__secondary">Lorem ipsum dolor sit amet</h2>
+		<h2 class="title__secondary">Key Features</h2>
     </div>
     
     <div class="wrapper breathe--bottom-double">
