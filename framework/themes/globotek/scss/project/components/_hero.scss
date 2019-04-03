@@ -74,7 +74,20 @@
                 margin-top: -100px;
 				@extend %desk--three-fifths;
                 @extend %is-hidden--portable;
-				
+
+                @include media-query('desk'){
+                    margin-top: -80px;
+                }
+
+                img {
+                    @include media-query('desk'){
+                        width: 90%;
+                    }
+                    
+                    @include media-query('desk-wide'){
+                       width: 100%;
+                    }
+                }
 			}
 			
 		}

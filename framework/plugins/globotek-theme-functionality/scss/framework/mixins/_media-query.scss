@@ -37,6 +37,10 @@
 
 	@if($alias == "lap-and-up") {
 		$calculated-breakpoint: $breakpoint--lap-and-up;
+    }
+    
+    @if($alias == "desk-narrow") {
+		$calculated-breakpoint: $breakpoint--desk--narrow;
 	}
 
 	@if($alias == "desk-wide") {
