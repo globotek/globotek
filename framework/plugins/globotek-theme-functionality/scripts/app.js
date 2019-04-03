@@ -40,9 +40,9 @@ var app = (function($) {
 						switch(module) {
 
 							// This is an example. Delete when you add your own cases.
-							case 'placeholder':
+							case 'freshsales':
 
-								//elem.functionName();
+								elem.freshSales();
 								break;
 
 						}

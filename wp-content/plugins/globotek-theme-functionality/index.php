@@ -52,8 +52,33 @@ add_action( 'init', 'gtek_taxonomy_setup' );
 
 function gtek_functionality_scripts() {
 	
-	wp_enqueue_script( 'gtek-functionality', plugin_dir_url(__FILE__) . 'scripts/globotek-theme-functionality.js', array( 'jquery' ), '', TRUE );
+	wp_enqueue_script( 'lib', plugin_dir_url( __FILE__ ) . 'scripts/lib.js', array( 'jquery' ), '', TRUE );
+	wp_register_script( 'gtek-functionality', plugin_dir_url( __FILE__ ) . 'scripts/globotek-theme-functionality.js', array( 'lib' ), '', TRUE );
+	wp_localize_script( 'gtek-functionality', 'gtek_vars', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+	wp_enqueue_script( 'gtek-functionality' );
 	
 }
 
 add_action( 'wp_enqueue_scripts', 'gtek_functionality_scripts' );
+
+
+function gtek_register_functionality_globals() {
+	
+	global $api_keys;
+	
+	$api_keys = new stdClass();
+	
+	$api_keys->freshsales = 'T2w9EivCKG8Ngor5q8C8kg';
+	
+}
+
+add_action( 'init', 'gtek_register_functionality_globals' );
+
+
+function gtek_functionality_file_include() {
+	
+	include_once( 'includes/freshsales-api-integration.php' );
+	
+}
+
+add_action( 'init', 'gtek_functionality_file_include' );
