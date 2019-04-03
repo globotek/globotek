@@ -22,7 +22,7 @@
                     max-width: 1500px;
                     left: 50%;
                     transform: translateX(-10%);
-                    
+
                 }
                 
             }
@@ -45,6 +45,7 @@
                     width: 75%;
 
                 }
+
             }
             
         }
@@ -62,6 +63,7 @@
                 text-align: center;
                 
             }
+
         }
 		
 		&__content{
@@ -90,7 +92,7 @@
 			
         }
 
-        &__prompt {
+        &__errors {
 
             @extend %one-whole;
 
@@ -104,7 +106,6 @@
 
             }
 
-            
         }
 
         &__field {
@@ -164,7 +165,24 @@
 
             }
 			
-		}
+        }
+        
+        &__prompt {
+
+            @extend %one-whole;
+
+            &--inner {
+
+                color: $primary-color;
+                text-align: center;
+                background: $white;
+                padding: $gutter--mini;
+                border-radius: $radius--treble;
+                padding: $gutter--treble 0;
+
+            }
+
+        }
         
 	}
 	
