@@ -14,8 +14,8 @@
 		box-shadow: -5px 0px 10px 0 rgba(0, 0, 0, 0.09);
 		
 		&:hover{
-			background-color: $primary-background;
-			box-shadow: -5px 0px 10px 0 rgba(0, 0, 0, 0.19);
+			background-color: $primary-color--light;
+            color: $grey;
 		}
 		
 		&--large{
@@ -24,8 +24,39 @@
 		
 		&--white{
 			color: $primary-color;
-			background-color: $white;
-		}
+            background-color: $white;
+            
+            &:hover {
+                color: $white;
+                background-color: $primary-color--mid;
+            }
+        }
+        
+        &__text {
+
+            @extend %transition-all;
+            border-bottom: transparent solid 1px;
+            text-decoration: none;
+
+            &--blue {
+                color: $primary-color;
+
+                &:hover {
+                    border-bottom: $primary-color solid 1px;
+                }
+            }
+
+            &--white {
+                color: $white;
+
+                &:hover {
+                    border-bottom: $white solid 1px;
+                }
+            }
+
+            
+
+        }
 		
 	}
 	

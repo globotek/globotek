@@ -17,10 +17,10 @@
 %title-secondary {
 	@extend %title-base;
 
-	@include font-size(26px, true, false, $base-line-height-ratio);
+	@include font-size(26px, true, false, $tight-line-height-ratio);
 
 	@include media-query("lap-and-up") {
-		@include font-size(36px, true, false, $base-line-height-ratio);
+		@include font-size(36px, true, false, $tight-line-height-ratio);
 	}
 }
 
@@ -37,9 +37,9 @@
 %title-quaternary {
 	@extend %title-base;
 
-	@include font-size(22px, true, false, $base-line-height-ratio);
+	@include font-size(16px, true, false, $base-line-height-ratio);
 
 	@include media-query("lap-and-up") {
-		@include font-size(24px, true, false, $base-line-height-ratio);
+		@include font-size(18px, true, false, $base-line-height-ratio);
 	}
 }

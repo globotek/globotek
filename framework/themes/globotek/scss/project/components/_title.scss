@@ -2,16 +2,37 @@
 	
 	@include mode('global'){
 	
-		@extend %title-primary;
+        @extend %title-base;
+        
+        &__primary{
+			
+			@extend %title-primary;
+			
+        }
 		
 		&__secondary{
 			
 			@extend %title-secondary;
 			
-		}
+        }
+        
+        &__tertiary {
+
+            @extend %title-tertiary;
+
+        }
+
+        &__quaternary {
+
+            @extend %title-quaternary;
+            text-transform: uppercase;
+
+        }
 		
 		&--centered{
-			text-align: center;
+
+            text-align: center;
+            
 		}
 		
 	}

@@ -355,7 +355,7 @@ function debounce(func, wait, immediate) {
 			};
 
 		var init = function() {
-            console.log('Head');
+            
 			settings = $.extend(true, {}, settings, elem.parseSettings());
 
 			var navTrigger = $('.site-head .js-toggle__trigger'),
@@ -364,14 +364,16 @@ function debounce(func, wait, immediate) {
 			navTrigger.on('click', function(){
 
 				if(navElem.hasClass('is-active')){
-					console.log('Active');
+					
 					$('body').addClass('is-locked');
+					
 				} else {
-					console.log('Not Active');
+					
 					$('body').removeClass('is-locked');
+					
 				}
 
-			})
+			});
 
 
 			// This is a stub module. Go ahead and delete it if you don't need it
@@ -458,64 +460,60 @@ function debounce(func, wait, immediate) {
 
 }(jQuery));
 /*------------------------------------*\
-    CENTRAL APP MASTER 
-    
-    This file includes the module placeholders system that allows modular 
-    binding of custom methods / plugins etc. 
-    
-    EXAMPLE
-    
-    <div data-module="example1,example2"></div> 
-    
-    The above would meet two conditions in the below switch statement.
-    
-\*------------------------------------*/
-var app = (function($) {
+ CENTRAL APP MASTER
+ 
+ This file includes the module placeholders system that allows modular
+ binding of custom methods / plugins etc.
+ 
+ EXAMPLE
+ 
+ <div data-module="example1,example2"></div>
+ 
+ The above would meet two conditions in the below switch statement.
+ 
+ \*------------------------------------*/
+var app = (function ($) {
 	
 	// This method will run when the DOM is ready. 
-	var init = function() {
+	var init = function () {
 		
 		// Find any module placeholders 
 		var modulePlaceholders = $('[data-module]');
 		
-		if(modulePlaceholders.any()) {
+		if (modulePlaceholders.any()) {
 			
 			// Loop each placeholder
-			modulePlaceholders.each(function() {
+			modulePlaceholders.each(function () {
 				
-				var elem = $(this),
-					modules = elem.attr('data-module');
+				var elem    = $(this),
+				    modules = elem.attr('data-module');
 				
 				// If any modules found	
-				if(modules) {
+				if (modules) {
 					
 					// Split on the comma 
 					modules = modules.split(',');
 					
 					// Loop each module key
-					$.each(modules, function(i, module) {
+					$.each(modules, function (i, module) {
 						
 						// Run switch to bind each module to each key
-						switch(module) {
+						switch (module) {
 							
 							// This is an example. Delete when you add your own cases.
 							case 'site-head':
+								
 								elem.siteHead();
-
 								break;
-
+							
 							case 'toggle':
-
+								
 								elem.toggle();
-
-								// Run code here 
-                                break;
-                                
-                            case 'range-slider':
-
+								break;
+							
+							case 'range-slider':
+								
 								elem.rangeSlider();
-
-								// Run code here 
 								break;
 							
 						}
@@ -524,9 +522,9 @@ var app = (function($) {
 				}
 			});
 		}
-
+		
 		// Delete this line. This is just for letting you know that everything is fine on first load.
-		console.log('Let\'s Go!!!');
+		console.log('Let\'s Go!!! Fun time!!!');
 	};
 	
 	return {

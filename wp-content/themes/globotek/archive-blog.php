@@ -39,7 +39,7 @@
                 </div>
                 
                 <div class="blog-card__body__link">
-                    <a href="#">Read More <i class="fas fa-arrow-right"></i></a>
+                    <a href="#" class="button__text button__text--blue">Read More <i class="fas fa-arrow-right"></i></a>
                 </div>
             
             </div>
@@ -71,7 +71,7 @@
                 </div>
                 
                 <div class="blog-card__body__link">
-                    <a href="#">Read More <i class="fas fa-arrow-right"></i></a>
+                    <a href="#" class="button__text button__text--blue">Read More <i class="fas fa-arrow-right"></i></a>
                 </div>
             
             </div>

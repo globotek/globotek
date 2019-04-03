@@ -20,7 +20,7 @@
 			
 			<div class="hero__cta__content">
 				
-				<h2 class="hero__title title">Blog Archive</h2>
+				<h2 class="hero__title title title__primary">Blog Archive</h2>
 			
 			</div>
 			

@@ -29,9 +29,9 @@
 				
 				<div class="cta__portfolio-item__body__content">
 					
-					<h3>Project Name</h3>
+					<h3 class="title title__quaternary">Project Name</h3>
 					
-					<div class="category-tags">
+					<div class="cta__portfolio-item__tags">
 						
 						<?php $tags = array( 'Tag 1', 'Tag 2', 'Tag 3' ); ?>
 						

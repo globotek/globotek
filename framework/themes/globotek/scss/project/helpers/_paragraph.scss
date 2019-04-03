@@ -1,11 +1,6 @@
 %paragraph {
-	@extend %title-base;
 
-	@include font-size(16px, true, false, $tight-line-height-ratio);
-	letter-spacing: 0.6px;
-	
-	@include media-query("lap-and-up") {
-		@include font-size(60px, true, false, $tight-line-height-ratio);
-	}
+    color: $grey--mid;
+    
 }
 
