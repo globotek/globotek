@@ -217,8 +217,10 @@ gulp.task('default', function () {
 		
 		gulp.watch(WATCHERS['php']).on('change', reload);
 		
+		gulp.start('browser_sync');
+		
 	});
 	
-	gulp.start('browser_sync');
+	
 	
 });

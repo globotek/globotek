@@ -10,9 +10,9 @@
 			
 			<div class="site-foot__contact">
 				
-				<div class="site-foot__contact__logo">
+				<a href="<?php echo home_url(); ?>" class="site-foot__contact__logo">
 					<img src="<?php echo get_template_directory_uri() . '/images/gtek.png'; ?>" alt=""/>
-				</div>
+				</a>
 				
 				<a href="tel:01905570735" class="site-foot__contact__phone">01905 570735</a>
 				<p class="site-foot__contact__hours">Available 10am - 6pm UK Time</p>

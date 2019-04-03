@@ -20,12 +20,31 @@
 			
 			<div class="hero__cta__content">
 				
-				<h1 class="hero__title title title__primary"><?php the_title(); ?></h1>
+				<?php if ( is_category() ) { ?>
+					
+					<p class="title title__secondary">Category</p>
+					<h1 class="hero__title title title__primary"><?php single_cat_title(); ?></h1>
+				
+				<?php } else { ?>
+					
+					<h1 class="hero__title title title__primary"><?php the_title(); ?></h1>
+				
+				<?php } ?>
 			
 			</div>
 			
 			<div class="hero__cta__image">
-				<img src="<?php the_post_thumbnail(); ?>"/>
+				
+				<?php if ( is_category() ) { ?>
+					
+					<img src="<?php echo get_template_directory_uri() . '/images/people-and-books.png'; ?>"/>
+					
+				<?php } else { ?>
+					
+					<img src="<?php the_post_thumbnail(); ?>"/>
+				
+				<?php } ?>
+			
 			</div>
 		
 		</div>

@@ -21,7 +21,7 @@ function theme_development() {
 </style>
 
 ';
-
+	
 }
 
 add_action( 'wp_footer', 'theme_development' );
@@ -41,7 +41,10 @@ function theme_scripts() {
 	
 	wp_enqueue_script( 'lib', get_template_directory_uri() . '/scripts/lib.js', array( 'jquery' ), 1.0, TRUE );
 	wp_register_script( 'app', get_template_directory_uri() . '/scripts/globotek.js', array( 'lib' ), 1.0, TRUE );
-	wp_localize_script( 'app', 'ajax_variables', array( 'ajax_url' => admin_url( 'admin-ajax.php' ), 'user_id' => get_current_user_id() ) );
+	wp_localize_script( 'app', 'ajax_variables', array(
+		'ajax_url' => admin_url( 'admin-ajax.php' ),
+		'user_id'  => get_current_user_id()
+	) );
 	wp_enqueue_script( 'app' );
 	
 }
@@ -51,7 +54,7 @@ add_action( 'wp_enqueue_scripts', 'theme_scripts' );
 
 function theme_includes() {
 	
-	foreach( glob( dirname( __FILE__ ) . '/includes/*.php' ) as $file ) {
+	foreach ( glob( dirname( __FILE__ ) . '/includes/*.php' ) as $file ) {
 		include_once( $file );
 	}
 	
@@ -59,11 +62,15 @@ function theme_includes() {
 
 add_action( 'after_setup_theme', 'theme_includes' );
 
-
-add_theme_support( 'post-thumbnails' );
 add_theme_support( 'menus' );
+add_theme_support( 'post-thumbnails' );
+add_theme_support( 'category-thumbnails' );
 
-if( function_exists( 'woocommerce' ) ) {
+
+add_image_size( 'interior-banner', 0, 200, false );
+add_image_size( 'post-hero', 0, 600, TRUE );
+
+if ( function_exists( 'woocommerce' ) ) {
 	
 	add_theme_support( 'woocommerce' );
 	
