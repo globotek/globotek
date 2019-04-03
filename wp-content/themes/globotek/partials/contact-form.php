@@ -22,8 +22,8 @@
 				<div class="contact-form__contact__content__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et vestibulum arcu. Aenean quis orci sem. Suspendisse iaculis scelerisque purus ornare finibus. Donec maximus mauris vel interdum pharetra.</div>
             </div>
 
-            <div class="contact-form__prompt">
-                <div class="contact-form__prompt--inner">
+            <div class="contact-form__errors">
+                <div class="contact-form__errors--inner">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 </div>
             </div>
@@ -50,7 +50,14 @@
                 <textarea class="contact-form__textarea form__textarea" placeholder="Message"></textarea>
 
 				<a href="#" class="button button--white">Send</a>
-			</div>
+            </div>
+            
+            <div class="contact-form__prompt" hidden>
+                <div class="contact-form__prompt--inner">
+                    <h4 class="title title__tertiary">Thank you for your message</h4>
+                    <p>We will get back to you as soon as possible!</p>
+                </div>
+            </div>
 		
         </div>
 	
