@@ -535,4 +535,4 @@ var app = (function ($) {
 
 // RUN!!
 app.init();
-//# sourceMappingURL=app.js.map
+//# sourceMappingURL=globotek.js.map
