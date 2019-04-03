@@ -18,23 +18,23 @@ get_header(); ?>
 
 <div class="portfolio-item">
 	
-	<div class="portfolio-item__hero">
+	<div class="wave-hero">
 		
 		<?php the_post_thumbnail( 'full' ); ?>
 		
-		<div class="portfolio-item__hero__body">
+		<div class="wave-hero__body">
 			
 			<img src="<?php echo get_template_directory_uri() . '/images/bg-project-hero.svg'; ?>"/>
 			
-			<div class="portfolio-item__hero__inner">
+			<div class="wave-hero__inner">
 				
-				<h1 class="portfolio-item__hero__title title title__secondary"><?php the_title(); ?></h1>
+				<h1 class="wave-hero__title title title__secondary"><?php the_title(); ?></h1>
 				
-				<div class="portfolio-item__hero__content">
+				<div class="wave-hero__content">
 					
-					<h2 class="portfolio-item__hero__content__heading">Scope</h2>
+					<h2 class="wave-hero__content__heading">Scope</h2>
 					
-					<div class="portfolio-item__hero__content__tags tag-list">
+					<div class="wave-hero__content__tags tag-list">
 						
 						<?php $project_tags = array( 'Logo Design', 'Web Design', 'Print Design' ); ?>
 						
@@ -47,9 +47,9 @@ get_header(); ?>
 					
 					</div>
 					
-					<div class="portfolio-item__hero__content__text"><?php the_content(); ?></div>
+					<div class="wave-hero__content__text"><?php the_content(); ?></div>
 					
-					<div class="portfolio-item__hero__content__services">
+					<div class="wave-hero__content__services">
 						
 						<h3 class="">Services Provided</h3>
 						

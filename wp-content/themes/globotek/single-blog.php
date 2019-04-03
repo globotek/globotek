@@ -12,15 +12,15 @@ get_header(); ?>
 
 <div class="portfolio-item">
 	
-	<div class="portfolio-item__hero">
+	<div class="wave-hero">
 		
         <img src="<?php echo get_template_directory_uri() . '/images/scraptastic-banner-min.png'; ?>" alt="">
 		
-		<div class="portfolio-item__hero__body blog-item__hero__body">
+		<div class="wave-hero__body blog-item__hero__body">
 			
 			<img src="<?php echo get_template_directory_uri() . '/images/bg-blog-hero.svg'; ?>"/>
 			
-			<div class="portfolio-item__hero__inner">
+			<div class="wave-hero__inner">
 				
 			
 			</div>
@@ -38,14 +38,30 @@ get_header(); ?>
                 
                 <div class="blog-card__body">
 
-                    <div class="blog-card__body__decor">
-                        <span>Jan</span>12
+                    <div class="blog-card__heading">
+
+                        <div class="blog-card__heading__date">
+                            <div class="date">
+                                <span>Jan</span>12
+                            </div>
+                        </div>
+
+                        <div class="blog-card__heading__title">
+                            <h3 class="title title__secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+                        </div>
+
                     </div>
                     
-                    <h3 class="blog-card__body__heading title__secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-                    
                     <div class="blog-card__body__meta">
-                        <p><span class="blog-card__body__meta-name">Author Name</span> | Category1 | Category 2 | Category 3</p>
+                        <div class="tag-list">
+                            <a href="#" class="tag-list__author">Author Name</a>
+                            <span>|</span> 
+                            <a href="#">Category 1</a>
+                            <span>|</span> 
+                            <a href="#">Category 2</a>
+                            <span>|</span> 
+                            <a href="#">Category 3</a>
+                        </div>
                     </div>
 
                     <div class="blog-card__body__text">

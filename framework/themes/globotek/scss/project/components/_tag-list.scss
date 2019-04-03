@@ -3,7 +3,8 @@
 	@include mode('global') {
 
 		> * {
-			color: $grey;
+            color: $grey;
+            text-decoration: none;
 		}
 		
 		&--white {
@@ -21,7 +22,13 @@
 				display: none;
 			}
 			
-		}
+        }
+        
+        &__author {
+
+            color: $primary-color;
+
+        }
 		
 	}
 
