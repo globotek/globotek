@@ -21,13 +21,8 @@ the_post(); ?>
 			
 			<img src="<?php echo get_template_directory_uri() . '/images/bg-blog-hero.svg'; ?>"/>
 			
-<<<<<<< HEAD
-			<div class="portfolio-item__hero__inner">
-			
-=======
 			<div class="wave-hero__inner">
 				
->>>>>>> a130e9b5b4f4cb4b60c15c6bca9991721a607ec6
 			
 			</div>
 		
@@ -35,8 +30,6 @@ the_post(); ?>
 	
 	</div>
 	
-<<<<<<< HEAD
-=======
         <div class="blog-item__posts">
             
             <div class="blog-card">
@@ -129,7 +122,6 @@ the_post(); ?>
         </div>
 
     </div>
->>>>>>> a130e9b5b4f4cb4b60c15c6bca9991721a607ec6
 	
 	<div class="blog-item wrapper">
 		
