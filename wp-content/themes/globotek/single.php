@@ -55,12 +55,25 @@ the_post(); ?>
 				</div>
 				
 				<div class="blog-card__body__meta">
+<<<<<<< HEAD
 					<p>
 						<span class="blog-card__body__meta-name"><?php the_author(); ?></span>
 						<?php foreach ( $categories as $category ) {
 							echo ' | <a href="' . get_term_link( $category ) . '">' . $category->name . '</a>';
 						} ?>
 					</p>
+=======
+                    
+                    <div class="tag-list">
+					    <p>
+						    <span class="blog-card__body__meta-name"><?php the_author(); ?></span>
+						    <?php foreach ( $categories as $category ) {
+							    echo ' | <a href="' . get_term_link( $category ) . '">' . $category->name . '</a>';
+						    } ?>
+                        </p>
+                    </div>
+				
+>>>>>>> f5acb7e005d0d20f7d0bdb8982640afae2cdc637
 				</div>
 				
 				<div class="blog-card__body__text">
