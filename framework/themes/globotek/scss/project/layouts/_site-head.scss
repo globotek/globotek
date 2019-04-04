@@ -80,10 +80,6 @@
                                 padding: 10px 0;
                                 display: block;
                                 color: $primary-color;
-                                
-                                &:hover {
-                                    
-                                }
                             }
                             
                             &:last-child {
@@ -112,7 +108,6 @@
                 transition: all 0.3s ease;
 				
 				&.is-active{
-                    //display: flex !important;
                     left: 0px;
 				}
 				
