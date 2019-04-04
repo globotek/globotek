@@ -22,8 +22,10 @@
 				
 				<?php if ( is_category() ) { ?>
 					
-					<p class="title title__secondary">Category</p>
-					<h1 class="hero__title title title__primary"><?php single_cat_title(); ?></h1>
+					<h1 class="hero__title title title__primary">
+                        <span class="hero__title--category">Category</span>
+                        <?php single_cat_title(); ?>
+                    </h1>
 				
 				<?php } elseif(is_date()) { ?>
 					
