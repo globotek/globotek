@@ -11,7 +11,7 @@
 		background-color: $primary-color;
 		padding: $gutter--mini $gutter--midi;
 		border-radius: $gutter--midi;
-		box-shadow: -5px 0px 10px 0 rgba(0, 0, 0, 0.09);
+		@extend %box-shadow-secondary;
 		
 		&:hover{
 			background-color: $primary-color--light;

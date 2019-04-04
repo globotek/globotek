@@ -67,7 +67,7 @@ the_post(); ?>
 				
 				</div>
 				
-				<div class="blog__body__text">
+				<div class="blog__body__text content">
 					
 					<?php the_content(); ?>
 				
