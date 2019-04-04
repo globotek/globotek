@@ -25,7 +25,12 @@
 					<p class="title title__secondary">Category</p>
 					<h1 class="hero__title title title__primary"><?php single_cat_title(); ?></h1>
 				
-				<?php } else { ?>
+				<?php } elseif(is_date()) { ?>
+					
+					<p class="title title__secondary">Articles from</p>
+					<h1 class="hero__title title title__primary"><?php the_date('F Y'); ?></h1>
+					
+					<?php } else { ?>
 					
 					<h1 class="hero__title title title__primary"><?php the_title(); ?></h1>
 				
@@ -35,13 +40,13 @@
 			
 			<div class="hero__cta__image">
 				
-				<?php if ( is_category() ) { ?>
+				<?php if ( is_category() || is_date() ) { ?>
 					
 					<img src="<?php echo get_template_directory_uri() . '/images/people-and-books.png'; ?>"/>
 					
 				<?php } else { ?>
 					
-					<img src="<?php the_post_thumbnail(); ?>"/>
+					<?php the_post_thumbnail(); ?>
 				
 				<?php } ?>
 			

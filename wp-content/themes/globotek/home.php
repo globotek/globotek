@@ -16,9 +16,16 @@
 	
 	<div class="blog-archive__posts">
 		
-		<?php $query = new WP_Query( array(
+		<?php
+		$query_args = array(
 			'post_type' => 'post'
-		) ); ?>
+		);
+		
+		if ( is_category() ) {
+			$query_args[ 'category_name' ] = single_cat_title( '', FALSE );
+		}
+		
+		$query = new WP_Query( $query_args ); ?>
 		
 		<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 			
@@ -32,13 +39,20 @@
 				
 				<div class="blog-card__body">
 					
-					<div class="blog-card__body__decor">
+					<div class="blog-card__heading">
 						
-						<span><?php the_time( 'M' ); ?></span><?php the_time( 'd' ); ?>
+						<div class="blog-card__heading__date">
+							<div class="post-date">
+								<span><?php the_time( 'M' ); ?></span><?php the_time( 'd' ); ?>
+							</div>
+						</div>
+						
+						<a href="<?php the_permalink(); ?>" class="blog-card__heading__title">
+							<h1 class="title title__secondary"><?php the_title(); ?></h1>
+						</a>
 					
 					</div>
 					
-					<h2 class="blog-card__body__heading title__secondary"><?php the_title(); ?></h2>
 					
 					<div class="blog-card__body__meta">
 						<p>
