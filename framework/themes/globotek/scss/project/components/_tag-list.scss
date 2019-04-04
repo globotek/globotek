@@ -20,17 +20,20 @@
 
 			&:last-child {
 				display: none;
-			}
-			
+            }
+            
         }
 
         a {
+
             color: $grey--mid;
+
         }
         
         &__author {
 
             color: $primary-color;
+            padding: 0 !important;
 
         }
 		

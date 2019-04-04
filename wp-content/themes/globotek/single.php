@@ -36,38 +36,38 @@ the_post(); ?>
 	
 	<div class="blog-item__posts">
 		
-		<div class="blog-card">
-			
-			
-			<div class="blog-card__body">
-				<div class="blog-card__heading">
+		<div class="blog">
+            
+            <div class="blog__heading">
 					
-					<div class="blog-card__heading__date">
-						<div class="post-date">
-							<span><?php the_time( 'M' ); ?></span><?php the_time( 'd' ); ?>
-						</div>
-					</div>
-					
-					<div class="blog-card__heading__title">
-						<h1 class="title title__secondary"><?php the_title(); ?></h1>
-					</div>
+                <div class="blog__heading__date">
+                    <div class="post-date">
+                        <span><?php the_time( 'M' ); ?></span><?php the_time( 'd' ); ?>
+                    </div>
+                </div>
+                
+                <div class="blog__heading__title">
+                    <h1 class="title title__secondary"><?php the_title(); ?></h1>
+                </div>
+            
+            </div>
+			
+			<div class="blog__body">
 				
-				</div>
-				
-				<div class="blog-card__body__meta">
+				<div class="blog__body__meta">
 
                     <div class="tag-list">
-					    <p>
-						    <span class="blog-card__body__meta-name"><?php the_author(); ?></span>
-						    <?php foreach ( $categories as $category ) {
-							    echo ' | <a href="' . get_term_link( $category ) . '">' . $category->name . '</a>';
-						    } ?>
+                        <p>
+                            <span class="tag-list__author"><?php the_author(); ?></span>
+                            <?php foreach ( $categories as $category ) {
+                                echo ' | <a href="' . get_term_link( $category ) . '">' . $category->name . '</a>';
+                            } ?>
                         </p>
                     </div>
 				
 				</div>
 				
-				<div class="blog-card__body__text">
+				<div class="blog__body__text">
 					
 					<?php the_content(); ?>
 				
