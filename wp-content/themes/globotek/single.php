@@ -22,19 +22,12 @@ the_post(); ?>
 		<div class="portfolio-item__hero__inner">
 			
 			<div class="wave-hero__inner">
-<<<<<<< HEAD
-			
-=======
-				
->>>>>>> 0d21ed5981ee24db1bac7adb1f1323a7c45a6258
 			
 			</div>
 		
 		</div>
 	
 	</div>
-<<<<<<< HEAD
-=======
 	
         <div class="blog-item__posts">
             
@@ -88,13 +81,10 @@ the_post(); ?>
                     
                 
                 </div>
->>>>>>> 0d21ed5981ee24db1bac7adb1f1323a7c45a6258
 
 </div>
 
-<<<<<<< HEAD
 <div class="blog-item wrapper">
-=======
 
 
             
@@ -132,7 +122,6 @@ the_post(); ?>
         </div>
 
     </div>
->>>>>>> 0d21ed5981ee24db1bac7adb1f1323a7c45a6258
 	
 	<div class="blog-item__posts">
 		
