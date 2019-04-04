@@ -55,12 +55,9 @@
 					
 					
 					<div class="blog-card__body__meta">
-						<p>
-							<span class="blog-card__body__meta-name"><?php the_author(); ?></span>
-							<?php foreach ( $categories as $category ) {
-								echo ' | <a href="' . get_term_link( $category ) . '">' . $category->name . '</a>';
-							} ?>
-						</p>
+                        
+                        <?php include( 'partials/tag-list.php' ); ?>
+
 					</div>
 					
 					<div class="blog-card__body__text">

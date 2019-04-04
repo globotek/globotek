@@ -56,14 +56,7 @@ the_post(); ?>
 				
 				<div class="blog-card__body__meta">
                     
-                    <div class="tag-list">
-					    <p>
-						    <span class="blog-card__body__meta-name"><?php the_author(); ?></span>
-						    <?php foreach ( $categories as $category ) {
-							    echo ' | <a href="' . get_term_link( $category ) . '">' . $category->name . '</a>';
-						    } ?>
-                        </p>
-                    </div>
+                    <?php include( 'partials/tag-list.php' ); ?>
 				
 				</div>
 				
