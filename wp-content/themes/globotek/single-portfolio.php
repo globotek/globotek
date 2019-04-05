@@ -162,11 +162,18 @@ get_header(); ?>
 	
 	<div class="portfolio-item__contact-form">
 		<?php include( 'partials/contact-form.php' ); ?>
-	</div>
+    </div>
+    
+    <div class="section-title">
+		<h2 class="title__secondary">Recent Work</h2>
+		<p class="section-title__intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et vestibulum arcu. Aenean quis orci sem. Suspendisse iaculis scelerisque purus ornare finibus. Donec maximus mauris vel interdum pharetra.</p>
+    </div>
 	
-	<div class="portfolio-item__cta">
-		<?php include( 'partials/related-work.php' ); ?>
-	</div>
+    <?php include( 'partials/portfolio-item.php' ); ?>	
+
+    <?php include( 'partials/portfolio-item.php' ); ?>	
+
+    <?php include( 'partials/portfolio-item.php' ); ?>	
 
 </div>
 
