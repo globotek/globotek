@@ -6,31 +6,34 @@
             color: $grey;
             text-decoration: none;
 		}
-		
-		&--white {
-
-			> * {
-				color: $white;
-			}
-
-		}
-		
+				
 		span {
 			padding: 0 5px;
 
 			&:last-child {
 				display: none;
-			}
-			
+            }
+            
         }
 
         a {
+
             color: $grey--mid;
+
         }
+
+        &--white {
+
+			a, > * {
+				color: $white;
+			}
+
+		}
         
         &__author {
 
             color: $primary-color;
+            padding: 0 !important;
 
         }
 		

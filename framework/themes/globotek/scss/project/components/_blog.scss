@@ -1,13 +1,9 @@
-.blog-card {
+.blog {
 	
 	@include mode('global') {
 		
 		@extend %flex-wrapper--column;
 		
-		box-shadow: -5px 0px 10px 0 rgba(0, 0, 0, 0.09);
-		border-radius: 10px;
-		overflow: hidden;
-		margin-bottom: $gutter--quadruple;
 		
 		&__image {
 			
@@ -34,7 +30,7 @@
 			&__title {
 				display: inline-block;
 				vertical-align: top;
-				padding-left: $gutter--mini;
+				padding-left: $gutter;
 				color: $black;
 				text-decoration: none;
 				
@@ -46,23 +42,15 @@
 		
 		&__body {
 			
-			position: relative;
-			padding: $gutter--double $gutter--midi;
-			
-			@extend %box-gradient;
-			
 			&__meta {
 				font-size: 12px;
 				margin-bottom: 15px;
 				
 				&-name {
-					color: $primary-color;
+                    color: $primary-color;
+                    padding: 0;
 				}
-			}
-			
-			&__text {
-				
-			}
+            }
 			
 			&__link {
 				margin-top: $gutter--midi;
@@ -79,7 +67,24 @@
 				
 			}
 			
-		}
+        }
+        
+        &__card {
+
+            @extend %box-shadow;
+            @extend %box-gradient;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: $gutter--quadruple;
+
+            &__inner {
+
+                position: relative;
+			    padding: $gutter--double $gutter--midi;
+            
+            }
+
+        }
 		
 	}
 	

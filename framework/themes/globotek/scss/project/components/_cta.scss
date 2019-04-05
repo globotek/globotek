@@ -6,7 +6,6 @@
 	overflow: hidden;
 	
 	
-	
 	&__background{
 		
         @extend %one-whole;
@@ -127,7 +126,7 @@
 			margin: $gutter--double 0;
 			border-radius: 10px;
 			background: $white;
-			box-shadow: -5px 0px 10px 0 rgba(0, 0, 0, 0.09);
+			@extend %box-shadow-secondary;
 			overflow: hidden;
 			
 			@include media-query('portable'){
@@ -182,7 +181,7 @@
 			padding: $gutter--midi;
 			border-radius: 10px;
 			background: $white;
-			box-shadow: -5px 0px 10px 0 rgba(0, 0, 0, 0.09);
+			@extend %box-shadow-secondary;
 			
 			@include media-query('portable'){
 				flex-direction: column;
@@ -193,113 +192,5 @@
 		}
 		
     }
-    
-    &__contact{
-		
-		@extend %grid;
-		justify-content: space-between;
-		width: $site-max-width;
-		max-width: 100%;
-		
-		@include media-query('portable'){
-            margin-top: 40px;
-			text-align: center;
-		}
-		
-		&__content{
-			
-			@extend %desk--one-whole;
-            color: $white;
-            text-align: center;
-			
-			&__title{
-				
-				padding-bottom: $gutter--midi;
-				
-			}
-			
-			&__text{
-				
-                margin-bottom: $gutter--mini;
-                
-                @include media-query('desk'){
-                    margin-bottom: $gutter--mini;
-                }
-				
-			}
-			
-        }
-
-        &__prompt {
-            @extend %one-whole;
-	
-	        display: none;
-	        
-            &-inner {
-                border-color: $negative-color;
-		        color: $white;
-                background: lighten($negative-color, 40%);
-                padding: $gutter--mini;
-                border-radius: $radius;
-            }
-
-            
-        }
-
-        &__field {
-            @extend %portable--one-half;
-
-            @include media-query('portable'){
-
-                &:first-child {
-                    padding-right: 5px;
-                }
-
-                &:nth-child(2) {
-                    padding-left: 5px;
-                }
-                
-            }
-         
-        }
-        
-        &__left{
-			
-            @extend %desk--one-half;
-            @extend %portable--one-whole;
-			align-self: center;
-			margin-bottom: $gutter--treble;
-            text-align: right;
-            
-            @include media-query('portable'){
-
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                text-align: center;
-                
-            }
-
-            .form__range {
-                @extend %portable--one-whole;
-            }
-			
-		}
-		
-		&__right{
-			
-            @extend %desk--one-half;
-            @extend %portable--one-whole;
-			align-self: center;
-			margin-bottom: $gutter--treble;
-            text-align: right;
-            
-            @include media-query('portable'){
-                text-align: center;
-            }
-			
-		}
-		
-	}
 	
 }
