@@ -16,7 +16,8 @@
 			    // Find elem class
 			    if(elem.attr(settings.elemClassAttribute)) {
 				    settings.elemClass = elem.attr(settings.elemClassAttribute);
-			    }
+                }
+                
 
 			    // Bind the click
 			    triggers.off('click').on('click', function(evt) {

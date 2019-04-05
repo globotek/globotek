@@ -11,7 +11,7 @@
 		    };
 		
 		var init = function () {
-			
+            
 			triggers.off('input').on('input', function () {
 				
 				var control           = $(this),

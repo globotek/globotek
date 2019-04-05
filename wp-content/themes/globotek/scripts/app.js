@@ -316,7 +316,7 @@ function debounce(func, wait, immediate) {
 		    };
 		
 		var init = function () {
-			
+            
 			triggers.off('input').on('input', function () {
 				
 				var control           = $(this),
@@ -367,15 +367,21 @@ function debounce(func, wait, immediate) {
 
 				if(navElem.hasClass('is-active')){
 					
-					$('body').addClass('is-locked');
+                    $('body').addClass('is-locked');
 					
 				} else {
 					
 					$('body').removeClass('is-locked');
 					
-				}
+                }
 
-			});
+            });
+
+            $('.is-active .menu-item-has-children a').click(function(e) {
+                
+                e.preventDefault();
+                
+            });
 
 
 			// This is a stub module. Go ahead and delete it if you don't need it
@@ -404,7 +410,8 @@ function debounce(func, wait, immediate) {
 			    // Find elem class
 			    if(elem.attr(settings.elemClassAttribute)) {
 				    settings.elemClass = elem.attr(settings.elemClassAttribute);
-			    }
+                }
+                
 
 			    // Bind the click
 			    triggers.off('click').on('click', function(evt) {

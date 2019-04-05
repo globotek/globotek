@@ -83,11 +83,11 @@ the_post(); ?>
 
 </div>
 
-<div class="portfolio-item__contact-form">
+<div class="blog-item__contact-form">
 	<?php include( 'partials/contact-form.php' ); ?>
 </div>
 
-<div class="portfolio-item__cta wrapper">
+<div class="blog-item__cta wrapper">
 	<div class="section-title">
 		<h2 class="title__secondary">Related Articles</h2>
 	</div>

@@ -21,7 +21,8 @@
 			
 			width: $site-max-width;
 			max-width: 100%;
-			padding: $gutter $gutter--mini;
+            padding: $gutter $gutter--mini;
+            position: relative;
 			
 		}
 		
@@ -140,7 +141,42 @@
 					
 					&:last-child{
 						padding-bottom: $gutter;
-					}
+                    }
+                    
+                    &.menu-item-has-children {
+                    position: relative;
+                    
+                        .sub-menu {
+                            position: relative;
+                            top: auto;
+                            width: auto;
+                            max-height: 0;
+                            overflow: hidden;
+                            background: none;
+                            opacity: 1;
+                            box-shadow: none;
+                            border-radius: 0px;
+                            
+                            .menu-item {
+
+                                a {
+                                    padding: 10px 0;
+                                    display: block;
+                                    color: $primary-color;
+                                }
+                                
+                                &:last-child {
+                                    border: none;
+                                }
+                            }
+                        }
+                        
+                        &:hover {
+                            .sub-menu {
+                                max-height: 500px;
+                            }
+                        }
+                    } 
 					
 				}
 			}

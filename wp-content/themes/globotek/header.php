@@ -154,7 +154,17 @@
 			/** End menu markup creation.*/
 			?>
 		
-		</nav>
+        </nav>
+        
+        <div class="search">
+            <div class="search__icon">
+                <i class="fas fa-search"></i>
+            </div>
+
+            <form class="search__form">
+                <input type="search" class="form__field search__form__field" name="q" autocomplete="off" placeholder="Search" />
+            </form>  
+        </div>
 		
 		<a href="#site-head__nav" class="site-head__hamburger js-toggle__trigger">
 			<i class="fas fa-bars"></i>
