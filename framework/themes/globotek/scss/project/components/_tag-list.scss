@@ -6,15 +6,7 @@
             color: $grey;
             text-decoration: none;
 		}
-		
-		&--white {
-
-			> * {
-				color: $white;
-			}
-
-		}
-		
+				
 		span {
 			padding: 0 5px;
 
@@ -29,6 +21,14 @@
             color: $grey--mid;
 
         }
+
+        &--white {
+
+			a, > * {
+				color: $white;
+			}
+
+		}
         
         &__author {
 
