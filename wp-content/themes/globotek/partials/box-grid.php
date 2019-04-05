@@ -6,7 +6,16 @@
  * Time: 17:59
  */
 
-$boxes = array( 1, 2, 3, 4, 5, 6); ?>
+$boxes = array();
+foreach($component['boxes'] as $box_row){
+	
+	foreach($box_row as $box){
+		
+		$boxes[] = $box;
+		
+	}
+		
+} ?>
 
 <div class="box-grid">
 	
@@ -31,7 +40,7 @@ $boxes = array( 1, 2, 3, 4, 5, 6); ?>
 				break;
 			
 		} ?>
-		
+				
 		<div class="box-grid__item box-grid__item--<?php echo $box_size; ?>">
 			
 			<?php include('box.php'); ?>

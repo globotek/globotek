@@ -32,9 +32,9 @@
 					<p class="title title__secondary">Articles from</p>
 					<h1 class="hero__title title title__primary"><?php the_date('F Y'); ?></h1>
 					
-					<?php } else { ?>
+					<?php } elseif(is_home()) { ?>
 					
-					<h1 class="hero__title title title__primary"><?php the_title(); ?></h1>
+					<h1 class="hero__title title title__primary"><?php echo single_post_title(); ?></h1>
 				
 				<?php } ?>
 			
@@ -42,14 +42,14 @@
 			
 			<div class="hero__cta__image">
 				
-				<?php if ( is_category() || is_date() ) { ?>
+				<?php if(is_home()){ ?>
+					
+					<?php echo get_the_post_thumbnail(get_option('page_for_posts')); ?>
+					
+				<?php } elseif ( is_category() || is_date() ) { ?>
 					
 					<img src="<?php echo get_template_directory_uri() . '/images/people-and-books.png'; ?>"/>
 					
-				<?php } else { ?>
-					
-					<?php the_post_thumbnail(); ?>
-				
 				<?php } ?>
 			
 			</div>

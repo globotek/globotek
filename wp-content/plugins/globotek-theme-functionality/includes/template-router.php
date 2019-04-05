@@ -10,10 +10,10 @@
  * @param $components array Template part assigned by ACF
  */
 function gtek_template_router($components){
-	var_dump( $components );
+
 	foreach($components as $component){
-		var_dump( $component );
-		include_once (get_stylesheet_directory() . '/partials/' . $component['acf_fc_layout'] . '.php');
+
+		include (get_stylesheet_directory() . '/partials/' . $component['acf_fc_layout'] . '.php');
 		
 	}
 	

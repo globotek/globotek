@@ -6,14 +6,21 @@
  * Time: 18:42
  */ ?>
 
-<div class="info-box">
+<div class="page__info-boxes box-row">
 	
-	<div class="info-box__icon" style="background-image: url(<?php echo get_template_directory_uri() . '/images/small-cloud-bg.png'; ?>)">
-		<img src="<?php echo get_template_directory_uri() . '/images/lightbulb.png'; ?>" />
-	</div>
+	<?php foreach ( $component[ 'block' ] as $info_box ) { ?>
+		
+		<div class="info-box">
+			
+			<div class="info-box__icon" style="background-image: url(<?php echo get_template_directory_uri() . '/images/small-cloud-bg.png'; ?>)">
+				<img src="<?php echo get_template_directory_uri() . '/images/lightbulb.png'; ?>"/>
+			</div>
+			
+			<h3 class="info-box__heading heading__tertiary"><?php echo $info_box[ 'title' ]; ?></h3>
+			
+			<p class="info-box__text"><?php echo $info_box['content']; ?></p>
+		</div>
 	
-	<h3 class="info-box__heading heading__tertiary">Lorem ipsum</h3>
-	
-	<p class="info-box__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et vestibulum arcu. Aenean quis orci sem. Suspendisse iaculis scelerisque purus ornare finibus. Donec maximus mauris vel interdum pharetra.</p>
-	
+	<?php } ?>
+
 </div>

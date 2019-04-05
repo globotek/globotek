@@ -9,7 +9,7 @@ get_header(); ?>
 
 <div class="page">
 	
-	
+	<div class="page__icon-blocks wrapper">
 		
 		<?php $icon_blocks = array( 'a', 'b', 'c', 'd' ); ?>
 		<?php foreach( $icon_blocks as $icon_block ) { ?>
@@ -17,8 +17,10 @@ get_header(); ?>
 			<?php include( 'partials/icon-block.php' ); ?>
 		
 		<?php } ?>
-		
 	
+	</div>
+	
+	<div class="page__cta-rows wrapper">
 		
 		<?php $cta_rows = array( 'a', 'b', 'c' ); ?>
 		<?php foreach( $cta_rows as $cta_row ) { ?>
@@ -27,7 +29,7 @@ get_header(); ?>
 		
 		<?php } ?>
 	
-	
+	</div>
 	
 	<div class="section-title breathe--treble">
 		<h2 class="title__secondary">Lorem ipsum dolor sit amet</h2>
@@ -59,7 +61,7 @@ get_header(); ?>
     </div>
 	
 	<div class="breathe--bottom-double">
-	    <?php include( 'partials/card-grid.php' ); ?>
+	    <?php include( 'partials/blog-posts.php' ); ?>
     </div>
     
 	<?php include( 'partials/cta-portfolio-item.php' ); ?>

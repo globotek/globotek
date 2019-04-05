@@ -8,7 +8,6 @@
  */ ?>
 
 <?php get_header(); ?>
-<?php the_post(); ?>
 
 <?php include( 'partials/hero-blog-archive.php' ); ?>
 

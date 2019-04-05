@@ -18,12 +18,12 @@
 		<div class="cta__universal">
 			
 			<div class="cta__universal__content">
-				<div class="cta__universal__content__title title title__secondary">Lorem ipsum dolor sit amet</div>
-				<div class="cta__universal__content__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et vestibulum arcu. Aenean quis orci sem. Suspendisse iaculis scelerisque purus ornare finibus. Donec maximus mauris vel interdum pharetra.</div>
+				<h2 class="cta__universal__content__title title title__secondary"><?php echo $component['title']; ?></h2>
+				<p class="cta__universal__content__text"><?php echo $component['content']; ?></p>
 			</div>
 			
 			<div class="cta__universal__link">
-				<a href="#" class="button button--white">Read More</a>
+				<a href="<?php echo $component['link']['link_url']; ?>" class="button button--white"><?php echo $component['link']['link_text']; ?></a>
 			</div>
 		
 		</div>
