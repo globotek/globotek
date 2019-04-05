@@ -7,9 +7,9 @@ get_header(); ?>
 
 <?php include( 'partials/hero-cta.php' ); ?>
 
-<div class="home">
+<div class="page">
 	
-	<div class="home__icon-blocks wrapper">
+	
 		
 		<?php $icon_blocks = array( 'a', 'b', 'c', 'd' ); ?>
 		<?php foreach( $icon_blocks as $icon_block ) { ?>
@@ -17,10 +17,8 @@ get_header(); ?>
 			<?php include( 'partials/icon-block.php' ); ?>
 		
 		<?php } ?>
+		
 	
-	</div>
-	
-	<div class="home__cta-rows wrapper">
 		
 		<?php $cta_rows = array( 'a', 'b', 'c' ); ?>
 		<?php foreach( $cta_rows as $cta_row ) { ?>
@@ -29,13 +27,13 @@ get_header(); ?>
 		
 		<?php } ?>
 	
-	</div>
+	
 	
 	<div class="section-title breathe--treble">
 		<h2 class="title__secondary">Lorem ipsum dolor sit amet</h2>
 	</div>
 	
-	<div class="home__info-boxes box-row">
+	<div class="page__info-boxes box-row">
 		
 		<?php $info_boxes = array( 'a', 'b', 'c', 'd' ); ?>
 		<?php foreach( $info_boxes as $info_box ) { ?>
@@ -66,7 +64,7 @@ get_header(); ?>
     
 	<?php include( 'partials/cta-portfolio-item.php' ); ?>
 	
-	<div class="home__icon-blocks wrapper">
+	<div class="page__icon-blocks wrapper">
 		
 		<?php $icon_blocks = array( 'a', 'b', 'c', 'd' ); ?>
 		<?php foreach( $icon_blocks as $icon_block ) { ?>
@@ -79,7 +77,7 @@ get_header(); ?>
 	
 	<?php include( 'partials/cta-testimonials.php'); ?>
 	
-	<div class="home__icon-blocks wrapper">
+	<div class="page__icon-blocks wrapper">
 		
 		<?php $icon_blocks = array( 'a', 'b', 'c', 'd' ); ?>
 		<?php foreach( $icon_blocks as $icon_block ) { ?>
