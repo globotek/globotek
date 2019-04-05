@@ -17,15 +17,26 @@
 
 				if(navElem.hasClass('is-active')){
 					
-					$('body').addClass('is-locked');
+                    $('body').addClass('is-locked');
 					
 				} else {
 					
 					$('body').removeClass('is-locked');
 					
-				}
+                }
 
-			});
+            });
+
+            $('.menu-item-has-children a').click(function(e) {
+                if(navElem.hasClass('is-active')){
+                    e.preventDefault();
+                }
+            });
+
+            $('.search__icon').click(function(){
+                $('.search').toggleClass('search--open');
+            });
+              
 
 
 			// This is a stub module. Go ahead and delete it if you don't need it
