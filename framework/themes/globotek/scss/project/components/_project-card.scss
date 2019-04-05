@@ -3,22 +3,55 @@
 	@include mode('global'){
 	
 		position: relative;
-		display: block;
+        display: block;
+        overflow: hidden;
 		
 		& + & {
 			margin-top: 100px;
-		}
+        }
+        
+        &__image {
+            object-fit: cover;
+        }
 		
 		&__bg{
 			position: absolute;
-            bottom: 0;
+            top: 329px;
+            padding-bottom: 100px;
+
+
+            @include media-query('desk'){
+            
+                width: 120%;
+                max-width: 120%;
+                left: 50%;
+                transform: translate(-50%, 0);
+
+            }
+
+            @include media-query('desk-wide'){
+            
+                width: 100%;
+                max-width: 100%;
+
+            }
+            
             
             @include media-query('portable'){
 
-                height: 200px;
+                width: 190%;
+                max-width: 190%;
+                left: 50%;
+                transform: translate(-50%, 0);
+
+            }
+
+            @include media-query('palm'){
+
                 background: $primary-color;
 
             }
+
 		}
 		
 		&__inner{
@@ -32,11 +65,26 @@
 			width: 100%;
 			padding: 0 100px;
             color: $white;
+
+            @include media-query('desk'){
+            
+                bottom: 20px;
+                padding: 0 20px;
+
+            }
+
+            @include media-query('desk-wide'){
+            
+                bottom: 40px;
+                padding: 0 100px;
+
+            }
+            
             
             @include media-query('portable'){
                 
                 padding: 0 20px;
-                bottom: 20px;
+                bottom: 10px;
 
             }
 			
@@ -47,7 +95,13 @@
 				
 				&__tags{
 					
-					padding-top: $gutter--small;
+                    padding-top: $gutter--small;
+                    
+                    @include media-query('portable'){
+
+                        padding-top: 0;
+        
+                    }
 					
 				}
             }
@@ -56,6 +110,12 @@
 
                 @extend %desk--two-fifths;
                 @extend %portable--four-fifths;
+
+                @include media-query('portable'){
+
+                    padding-top: 5px;
+    
+                }
 
             }
 
