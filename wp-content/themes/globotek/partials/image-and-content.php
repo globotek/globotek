@@ -6,26 +6,32 @@
  * Time: 15:32
  */ ?>
 
-<div class="image-content">
-    
-    <div class="image-content__image">
-        
-        <img src="<?php echo get_template_directory_uri() . '/images/layer-44.png'; ?>" />
-
-    </div>
+<div class="page__cta-rows wrapper">
 	
-	<div class="image-content__content">
+	<?php foreach ( $component[ 'block' ] as $content_row ) { ?>
 		
-		<h2 class="image-content__content__title title__secondary">Lorem ipsum dolor sit amet</h2>
+		<div class="image-content">
+			
+			<div class="image-content__image">
+				
+				<img src="<?php echo $content_row[ 'image' ]; ?>"/>
+			
+			</div>
+			
+			<div class="image-content__content">
+				
+				<h2 class="image-content__content__title title__secondary"><?php echo $content_row[ 'title' ]; ?></h2>
+				
+				<p class="image-content__content__text"><?php echo $content_row[ 'content' ]; ?></p>
+				
+				<div class="image-content__content__link">
+					<a href="<?php echo $content_row[ 'link' ][ 'link_url' ]; ?>" class="button"><?php echo $content_row[ 'link' ][ 'link_text' ]; ?></a>
+				</div>
+			
+			</div>
 		
-		<p class="image-content__content__text">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et vestibulum arcu. Aenean quis orci sem. Suspendisse iaculis scelerisque purus ornare finibus. Donec maximus mauris vel interdum pharetra.
-		</p>
-		
-		<div class="image-content__content__link">
-			<a href="#" class="button">Read More</a>
 		</div>
-		
-	</div>
+	
+	<?php } ?>
 
 </div>

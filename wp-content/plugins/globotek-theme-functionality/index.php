@@ -77,7 +77,11 @@ add_action( 'init', 'gtek_register_functionality_globals' );
 
 function gtek_functionality_file_include() {
 	
-	include_once( 'includes/freshsales-api-integration.php' );
+	foreach ( glob( dirname( __FILE__ ) . '/includes/*.php' ) as $file ) {
+		
+		include_once( $file );
+		
+	}
 	
 }
 

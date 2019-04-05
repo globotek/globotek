@@ -20,13 +20,13 @@
 			
 			<div class="hero__cta__content">
 				
-				<h2 class="hero__title title title__primary">Your Online Partner</h2>
+				<h1 class="hero__title title title__primary"><?php echo $component['title']; ?></h1>
 				
 				<div class="hero__text">
-					<p>Lorem ipsum dolor sit amet adipiscing elit. Curabitur et vestibulum arcu.</p>
+					<p><?php echo $component['sub-title']; ?></p>
 				</div>
 				
-				<a class="hero__link button button--large button--white" href="#">Get In Touch</a>
+				<a class="hero__link button button--large button--white" href="<?php echo $component['link']['link_url']; ?>"><?php echo $component['link']['link_text']; ?></a>
 			
 			</div>
 			
