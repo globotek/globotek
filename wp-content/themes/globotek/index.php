@@ -9,4 +9,7 @@
 get_header(); ?>
 
 
+<?php gtek_template_router( get_field( 'components' ) ); ?>
+
+
 <?php get_footer(); 
