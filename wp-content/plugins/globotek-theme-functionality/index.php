@@ -8,46 +8,17 @@
  * Date: 18/02/2019
  * Time: 11:53
  */
-
-function gtek_cpt_setup() {
+function gtek_functionality_file_include() {
 	
-	$portfolio_labels = array(
-		'name'          => 'Portfolio Projects',
-		'singular_name' => 'Portfolio Project'
-	);
-	
-	$portfolio_args = array(
-		'labels'      => $portfolio_labels,
-		'public'      => TRUE,
-		'supports'    => array( 'title', 'editor', 'excerpt', 'thumbnail', 'custom-fields' ),
-		'has_archive' => TRUE
-	);
-	
-	register_post_type( 'portfolio', $portfolio_args );
+	foreach ( glob( dirname( __FILE__ ) . '/includes/*.php' ) as $file ) {
+		
+		include( $file );
+		
+	}
 	
 }
 
-add_action( 'init', 'gtek_cpt_setup' );
-
-
-function gtek_taxonomy_setup() {
-	
-	$services_labels = array(
-		'name'          => 'Services',
-		'singular_name' => 'Service'
-	);
-	
-	$services_args = array(
-		'labels' => $services_labels,
-		'public' => TRUE,
-	
-	);
-	
-	register_taxonomy( 'services', array( 'portfolio' ), $services_args );
-	
-}
-
-add_action( 'init', 'gtek_taxonomy_setup' );
+add_action( 'init', 'gtek_functionality_file_include' );
 
 
 function gtek_functionality_scripts() {
@@ -73,16 +44,4 @@ function gtek_register_functionality_globals() {
 }
 
 add_action( 'init', 'gtek_register_functionality_globals' );
-
-
-function gtek_functionality_file_include() {
 	
-	foreach ( glob( dirname( __FILE__ ) . '/includes/*.php' ) as $file ) {
-		
-		include_once( $file );
-		
-	}
-	
-}
-
-add_action( 'init', 'gtek_functionality_file_include' );

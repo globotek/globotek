@@ -43,7 +43,7 @@
                         Budget
                     </div>
                     <input class="form__range--input js-range__trigger" name="contact-form-budget" type="range" min="1000" max="25000" step="100" value="200" data-thumbwidth="20">
-                    <output class="form__range--output" name="range-value">£100</output>
+                    <output class="form__range--output" name="range-value">£1000</output>
                 </div>
 	            
 			</div>
@@ -60,7 +60,7 @@
             
             <div class="contact-form__prompt" hidden>
                 <div class="contact-form__prompt--inner">
-                    <h4 class="title title__tertiary">Thank you for your message</h4>
+                    <p class="title title__tertiary">Thank you for your message</p>
                     <p>We will get back to you as soon as possible!</p>
                 </div>
             </div>

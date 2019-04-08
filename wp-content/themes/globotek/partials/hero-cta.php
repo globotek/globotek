@@ -20,18 +20,22 @@
 			
 			<div class="hero__cta__content">
 				
-				<h1 class="hero__title title title__primary"><?php echo $component['title']; ?></h1>
+				<h1 class="hero__title title title__primary"><?php echo $hero[ 'title' ]; ?></h1>
 				
 				<div class="hero__text">
-					<p><?php echo $component['sub-title']; ?></p>
+					<p><?php echo $hero[ 'sub-title' ]; ?></p>
 				</div>
 				
-				<a class="hero__link button button--large button--white" href="<?php echo $component['link']['link_url']; ?>"><?php echo $component['link']['link_text']; ?></a>
+				<?php if ( ! empty( $hero[ 'link' ][ 'url' ] ) ) { ?>
+					
+					<a class="hero__link button button--large button--white" href="<?php echo $hero[ 'link' ][ 'link_url' ]; ?>"><?php echo $hero[ 'link' ][ 'link_text' ]; ?></a>
+				
+				<?php } ?>
 			
 			</div>
 			
 			<div class="hero__cta__image">
-				<img src="<?php echo get_template_directory_uri() . '/images/man-at-desk.png'; ?>"/>
+				<img src="<?php echo $hero[ 'image' ]; ?>"/>
 			</div>
 		
 		</div>
