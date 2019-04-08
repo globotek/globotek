@@ -9,7 +9,7 @@
 
 <?php get_header(); ?>
 
-<?php include( 'partials/hero-blog-archive.php' ); ?>
+<?php gtek_hero('hero-archive'); ?>
 
 <div class="blog-archive wrapper">
 	

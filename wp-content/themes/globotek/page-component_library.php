@@ -77,7 +77,7 @@ get_header(); ?>
 	
 	</div>
 	
-	<?php include( 'partials/cta-testimonials.php'); ?>
+	<?php include( 'partials/cta-testimonial.php'); ?>
 	
 	<div class="page__icon-blocks wrapper">
 		

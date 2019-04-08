@@ -10,8 +10,6 @@ get_header(); ?>
 <?php the_post(); ?>
 <?php $fields = get_fields(); ?>
 
-<?php //var_dump( $fields[ 'full_width_banner' ] ); ?>
-
 <?php if ( $fields[ 'provided_services_content' ] ) { ?>
 	
 	<?php $service_tags = wp_list_pluck( $fields[ 'provided_services_content' ], 'service' ); ?>
@@ -41,12 +39,25 @@ get_header(); ?>
 					
 					<div class="wave-hero__content__tags tag-list">
 						
-						<?php $project_tags = array( 'Logo Design', 'Web Design', 'Print Design' ); ?>
-						
-						<?php foreach ( $service_tags as $project_tag ) { ?>
+						<?php if ( $fields[ 'provided_services_content' ] ) { ?>
 							
-							<a href="<?php echo get_term_link( $project_tag[ 0 ] ); ?>"><?php echo $project_tag[ 0 ]->name; ?></a>
-							<span>|</span>
+							<?php $service_tags = wp_list_pluck( $fields[ 'provided_services_content' ], 'service' ); ?>
+							<?php foreach ( $service_tags as $project_service ) { ?>
+								<?php $service_page = get_posts( array(
+									'post_type' => 'page',
+									'tax_query' => array(
+										array(
+											'taxonomy' => 'services',
+											'field'    => 'ID',
+											'terms'    => $project_service[ 0 ]->term_id
+										)
+									)
+								) )[ 0 ]; ?>
+								
+								<a href="<?php echo get_the_permalink( $service_page->ID ); ?>"><?php echo $project_service[ 0 ]->name; ?></a>
+								<span>|</span>
+															
+							<?php } ?>
 						
 						<?php } ?>
 					
@@ -162,18 +173,32 @@ get_header(); ?>
 	
 	<div class="portfolio-item__contact-form">
 		<?php include( 'partials/contact-form.php' ); ?>
-    </div>
-    
-    <div class="section-title">
+	</div>
+	
+	<div class="section-title">
 		<h2 class="title__secondary">Recent Work</h2>
 		<p class="section-title__intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et vestibulum arcu. Aenean quis orci sem. Suspendisse iaculis scelerisque purus ornare finibus. Donec maximus mauris vel interdum pharetra.</p>
-    </div>
+	</div>
+
+	<?php $query = new WP_Query(
+		array(
+			'post_type'      => 'portfolio',
+			'posts_per_page' => 3,
+			'post__not_in'   => array($post->ID)
+		)
+	); ?>
 	
-    <?php include( 'partials/portfolio-item.php' ); ?>	
-
-    <?php include( 'partials/portfolio-item.php' ); ?>	
-
-    <?php include( 'partials/portfolio-item.php' ); ?>	
+	<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+		
+		<?php include( 'partials/portfolio-item.php' ); ?>
+		
+	<?php endwhile; ?>
+	
+	
+	
+	<?php //include( 'partials/portfolio-item.php' ); ?>
+	
+	<?php //include( 'partials/portfolio-item.php' ); ?>
 
 </div>
 

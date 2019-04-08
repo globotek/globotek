@@ -9,7 +9,7 @@
 
 <?php get_header(); ?>
 
-<?php include( 'partials/hero-portfolio-archive.php' ); ?>
+<?php gtek_hero(); ?>
 
 <div class="archive-page wrapper">
 	
@@ -18,16 +18,16 @@
 		<h3 class="filter__title">Project Filter</h3>
 		<div class="filter__buttons">
 			
-			<?php $project_categories = array('Ecommerce', 'Elearning', 'Blog', 'Brochure'); ?>
+			<?php $project_categories = get_terms( array( 'taxonomy' => 'site-type' ) ); ?>
 			
-			<?php foreach($project_categories as $project_category){ ?>
-			
-				<a href="#" class="filter__buttons__item button"><?php echo $project_category; ?></a>
+			<?php foreach ( $project_categories as $project_category ) { ?>
 				
-			<?php } ?>
+				<a href="#<?php echo $project_category->term_id; ?>" class="filter__buttons__item button"><?php echo $project_category->name; ?></a>
 			
-		</div>
+			<?php } ?>
 		
+		</div>
+	
 	</div>
 	
 	<div class="archive-page__posts">
@@ -36,13 +36,13 @@
 			'post_type' => 'portfolio'
 		) );
 		
-		while( have_posts() ) : the_post(); ?>
+		while ( $query->have_posts() ) : $query->the_post(); ?>
 			
-			<?php $content_background_decider = rand(1, 3); ?>
-		
+			<?php $content_background_decider = rand( 1, 3 ); ?>
+			
 			<div class="project-card">
 				
-                <?php the_post_thumbnail( 'full', array( 'class' => 'project-card__image' ) ); ?>
+				<?php the_post_thumbnail( 'full', array( 'class' => 'project-card__image' ) ); ?>
 				
 				<img src="<?php echo get_template_directory_uri() . '/images/portfolio-item-bg-' . $content_background_decider . '.svg'; ?>" alt="" class="project-card__bg">
 				
@@ -54,17 +54,21 @@
 						<h2 class="title title__secondary"><?php the_title(); ?></h2>
 						<div class="project-card__inner__title__tags tag-list tag-list--white">
 							
-							<?php $project_tags = array('Logo Design', 'Web Design', 'Print Design'); ?>
+							<?php $project_services = get_field( 'provided_services_content' ); ?>
 							
-							<?php foreach($project_tags as $project_tag){ ?>
+							<?php if ( $project_services ) { ?>
 								
-								<a href="#"><?php echo $project_tag; ?></a>
-								<span>|</span>
+								<?php foreach ( $project_services as $project_service ) { ?>
+									
+									<a href="<?php echo $project_service[ 'service_page' ]; ?>"><?php echo get_the_title( url_to_postid( $project_service[ 'service_page' ] ) ); ?></a>
+									<span>|</span>
 								
+								<?php } ?>
+							
 							<?php } ?>
-							
-						</div>
 						
+						</div>
+					
 					</div>
 					
 					<div class="project-card__inner__content">
@@ -80,8 +84,7 @@
 		
 		<?php endwhile; ?>
 	
-		
-		
+	
 	</div>
 
 </div>
