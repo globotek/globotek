@@ -1,10 +1,30 @@
-.bg-hero {
-  width: 1440px;
-  height: 665.31px;
+.clouds {
+  width: 40.02px;
+  height: 25.78px;
+}
+
+.code {
+  width: 104.21px;
+  height: 83.41px;
 }
 
 .dummy {
   width: 40px;
   height: 35px;
+}
+
+.mobile {
+  width: 20.12px;
+  height: 31.46px;
+}
+
+.server {
+  width: 22.93px;
+  height: 31.62px;
+}
+
+.tools {
+  width: 30.63px;
+  height: 30.63px;
 }
 
