@@ -11,9 +11,11 @@
 
 <?php gtek_hero(); ?>
 
-<div class="comparison-page wrapper">
+<?php get_template_part('partials/hero-comparison'); ?>
+
+<div class="comparison-page breathe--treble wrapper">
 	
-	
+    <?php get_template_part('partials/comparison'); ?>
 
 </div>
 
