@@ -65,10 +65,6 @@
 
             input {
 
-                @extend %form-field;
-                border: $primary-color solid 1px;
-                height: auto;
-
                 &.qty {
 
                     text-align: center;
@@ -133,6 +129,31 @@
             padding: 12px $gutter--midi !important;
             border-radius: $gutter--midi !important;
             @extend %box-shadow-secondary;
+
+        }
+
+        input {
+
+            &.input-text {
+
+                @extend %form-field;
+                border: $grey--mid solid 1px;
+                height: auto;
+
+            }
+
+        }
+
+        .woocommerce-billing-fields, .notes {
+
+            input, .select2-selection, .input-text {
+                
+                padding: 15px;
+                height: auto;
+                border: $grey--mid solid 1px;
+                border-radius: 26px;
+
+            }
 
         }
         
