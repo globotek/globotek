@@ -1,0 +1,141 @@
+.woocommerce{
+	
+	@include mode('global'){
+
+        h2 {
+
+            @extend %title-quaternary;
+
+        }
+
+        table {
+            margin-bottom: $gutter--midi;
+            border-spacing: 0px;
+            border-radius: $radius--double;
+            @extend %box-shadow;
+            border-width: 0px !important;
+
+            tr {
+
+                th {
+                    
+                    @extend %heading-base;
+
+                    padding: 18px 12px !important;
+                    vertical-align: top;
+                    background: $primary-color;
+                    color: $white;
+                    font-weight: bold;
+                    
+                }
+
+                &:first-child {
+
+                    th {
+    
+                        &:first-child {
+    
+                            border-radius: $radius--double 0 0 0;
+    
+                        }
+    
+                        &:last-child {
+    
+                            border-radius: 0 $radius--double 0 0;
+    
+                        }
+                            
+                    }
+
+                }
+
+                td {
+
+                    padding: 18px 12px !important;
+
+                }
+
+            }
+
+            a {
+
+                color: $primary-color;
+
+            }
+
+            input {
+
+                @extend %form-field;
+                border: $primary-color solid 1px;
+                height: auto;
+
+                &.qty {
+
+                    text-align: center;
+                    width: 70px !important;
+                    //padding: $gutter--mini;
+
+                }
+
+                &#coupon_code {
+                    
+                    width: 150px;
+
+                }
+
+            }
+
+        }
+
+        .cart_totals {
+
+            table {
+
+                tr {
+
+                    th {
+
+                        background: $grey--mid;
+
+                    }
+
+                    &:last-child {
+
+                        th {
+        
+                            &:first-child {
+        
+                                border-radius: 0 0 0 $radius--double;
+        
+                            }
+        
+                            &:last-child {
+        
+                                border-radius: 0 $radius--double 0 0;
+        
+                            }
+                                
+                        }
+    
+                    }
+
+                }
+
+            }
+
+        }
+
+        .button, .wc-proceed-to-checkout a {
+
+            font-size: 13px !important;
+            color: $white !important;
+            background-color: $primary-color !important;
+            padding: 12px $gutter--midi !important;
+            border-radius: $gutter--midi !important;
+            @extend %box-shadow-secondary;
+
+        }
+        
+	}
+	
+}
