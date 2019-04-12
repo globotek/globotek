@@ -21,7 +21,8 @@ $cards = get_posts( array( 'posts_per_page' => 3 ) ); ?>
 			<div class="card">
 				
 				<div class="card__image">
-					<img src="<?php echo get_template_directory_uri() . '/images/big-data.png'; ?>" alt="">
+					
+					<?php the_post_thumbnail('large'); ?>
 					
 					<div class="card__image__decor">
 						<span><?php echo the_time( 'd M Y' ); ?></span>

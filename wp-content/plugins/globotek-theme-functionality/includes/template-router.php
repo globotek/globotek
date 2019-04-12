@@ -11,9 +11,17 @@
  */
 function gtek_template_router( $components ) {
 	
-	foreach ( $components as $component ) {
+	if ( $components ) {
 		
-		include( get_stylesheet_directory() . '/partials/' . $component[ 'acf_fc_layout' ] . '.php' );
+		foreach ( $components as $component ) {
+			
+			echo '<div class="chunk chunk--treble">';
+			
+			include( get_stylesheet_directory() . '/partials/' . $component[ 'acf_fc_layout' ] . '.php' );
+			
+			echo '</div>';
+			
+		}
 		
 	}
 	
@@ -23,8 +31,13 @@ function gtek_hero( $hero_template = NULL ) {
 	
 	if ( ! $hero_template ) {
 		
-		$hero          = get_field( 'hero', get_the_ID() );
-		$hero_template = $hero[ 'hero_template' ];
+		$hero = get_field( 'hero', get_the_ID() );
+		
+		if ( $hero[ 'title' ] ) {
+			
+			$hero_template = $hero[ 'hero_template' ];
+			
+		}
 		
 	}
 	

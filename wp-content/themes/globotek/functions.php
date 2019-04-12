@@ -65,9 +65,10 @@ add_action( 'after_setup_theme', 'theme_includes' );
 add_theme_support( 'menus' );
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'category-thumbnails' );
+add_theme_support( 'custom-header' );
 
 
-add_image_size( 'interior-banner', 0, 200, false );
+add_image_size( 'interior-banner', 0, 200, FALSE );
 add_image_size( 'post-hero', 0, 600, TRUE );
 
 if ( function_exists( 'woocommerce' ) ) {

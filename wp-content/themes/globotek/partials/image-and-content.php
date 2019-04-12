@@ -8,29 +8,33 @@
 
 <div class="page__cta-rows wrapper">
 	
-	<?php foreach ( $component[ 'block' ] as $content_row ) { ?>
+	<?php if ( $component[ 'block' ] ) { ?>
 		
-		<div class="image-content">
+		<?php foreach ( $component[ 'block' ] as $content_row ) { ?>
 			
-			<div class="image-content__image">
+			<div class="image-content">
 				
-				<img src="<?php echo $content_row[ 'image' ]; ?>"/>
-			
-			</div>
-			
-			<div class="image-content__content">
+				<div class="image-content__image">
+					
+					<img src="<?php echo $content_row[ 'image' ]; ?>"/>
 				
-				<h2 class="image-content__content__title title__secondary"><?php echo $content_row[ 'title' ]; ?></h2>
+				</div>
 				
-				<p class="image-content__content__text"><?php echo $content_row[ 'content' ]; ?></p>
+				<div class="image-content__content">
+					
+					<h2 class="image-content__content__title title__secondary"><?php echo $content_row[ 'title' ]; ?></h2>
+					
+					<p class="image-content__content__text"><?php echo $content_row[ 'content' ]; ?></p>
+					
+					<div class="image-content__content__link">
+						<a href="<?php echo $content_row[ 'link' ][ 'link_url' ]; ?>" class="button"><?php echo $content_row[ 'link' ][ 'link_text' ]; ?></a>
+					</div>
 				
-				<div class="image-content__content__link">
-					<a href="<?php echo $content_row[ 'link' ][ 'link_url' ]; ?>" class="button"><?php echo $content_row[ 'link' ][ 'link_text' ]; ?></a>
 				</div>
 			
 			</div>
 		
-		</div>
+		<?php } ?>
 	
 	<?php } ?>
 

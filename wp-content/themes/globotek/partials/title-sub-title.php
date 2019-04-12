@@ -6,7 +6,8 @@
  * Time: 12:35 PM
  */ ?>
 
-<div class="section-title breathe--bottom-double">
+<div class="section-title">
+	
 	<h2 class="title__secondary"><?php echo $component[ 'title' ]; ?></h2>
 	
 	<?php if ( $component[ 'sub-title' ] ) { ?>

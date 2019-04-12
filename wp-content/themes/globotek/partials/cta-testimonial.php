@@ -10,7 +10,7 @@
 <div class="cta">
 	
 	<div class="cta__background">
-		<img src="<?php echo get_template_directory_uri() . '/images/cta-bg-large.png'; ?>" alt="">
+		<img src="<?php echo get_template_directory_uri() . '/images/cta-bg-large.svg'; ?>" alt="Blue Wave Background">
 	</div>
 	
 	<div class="cta__inner">

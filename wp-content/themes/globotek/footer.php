@@ -11,7 +11,7 @@
 			<div class="site-foot__contact">
 				
 				<a href="<?php echo home_url(); ?>" class="site-foot__contact__logo">
-					<img src="<?php echo get_template_directory_uri() . '/images/gtek.png'; ?>" alt=""/>
+					<img src="<?php header_image(); ?>" alt="GloboTek Logo in White" />
 				</a>
 				
 				<a href="tel:01905570735" class="site-foot__contact__phone">01905 570735</a>

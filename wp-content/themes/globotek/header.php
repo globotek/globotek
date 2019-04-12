@@ -24,7 +24,7 @@
 	<div class="site-head__inner">
 		
 		<a href="<?php echo home_url(); ?>" class="site-head__logo">
-			<img src="<?php echo get_template_directory_uri() . '/images/gtek.png'; ?>"/>
+			<img src="<?php header_image(); ?>" alt="GloboTek Logo in White" />
 		</a>
 		
 		<nav id="site-head__nav" class="site-head__nav js-toggle__target">

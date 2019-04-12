@@ -7,12 +7,16 @@
  */ ?>
 
 <?php get_header(); ?>
+
+<?php gtek_hero(); ?>
+
 <div class="wrapper">
 
 	<div class="chunk">
 
 		<?php the_post(); ?>
-		<?php the_content(); ?>
+		
+		<?php gtek_template_router(get_field('components')); ?>
 	
 	</div>
 

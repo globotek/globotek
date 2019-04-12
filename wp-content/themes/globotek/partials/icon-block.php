@@ -13,7 +13,7 @@
 		<div class="icon-block">
 			
 			<div class="icon-block__icon">
-				<img src="<?php echo get_template_directory_uri() . '/images/icon-block-2.png'; ?>"/>
+				<?php icon($icon_block['icon']); ?>
 			</div>
 			
 			<div class="icon-block__content">

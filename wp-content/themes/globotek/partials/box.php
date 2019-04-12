@@ -8,7 +8,7 @@
 
 <div class="box">
 	<div class="box__icon">
-		<img src="<?php echo get_template_directory_uri() . '/images/browser.png'; ?>" alt=""/>
+		<?php icon($box['icon']); ?>
 	</div>
 	
 	<h3 class="box__heading heading__tertiary"><?php echo $box['title']; ?></h3>

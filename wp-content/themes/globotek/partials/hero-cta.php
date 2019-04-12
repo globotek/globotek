@@ -26,7 +26,7 @@
 					<p><?php echo $hero[ 'sub-title' ]; ?></p>
 				</div>
 				
-				<?php if ( ! empty( $hero[ 'link' ][ 'url' ] ) ) { ?>
+				<?php if ( ! empty( $hero[ 'link' ][ 'link_url' ] ) ) { ?>
 					
 					<a class="hero__link button button--large button--white" href="<?php echo $hero[ 'link' ][ 'link_url' ]; ?>"><?php echo $hero[ 'link' ][ 'link_text' ]; ?></a>
 				
