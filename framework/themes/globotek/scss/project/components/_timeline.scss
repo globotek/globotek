@@ -67,7 +67,7 @@
         &__time {
 
             @extend %box-shadow;
-            @extend .title__secondary;
+            @extend %title-secondary;
 
             color: $primary-color;
             display: inline-block;

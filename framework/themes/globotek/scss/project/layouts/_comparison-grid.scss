@@ -9,11 +9,14 @@
 		max-width: $site-max-width;
 		
 		&__item{
-			@extend %desk--one-quarter;
-			padding: 0 $gutter;
+            @extend %desk--one-quarter;
+            @extend %lap--one-half;
+            @extend %palm--one-whole;
+
+			padding: 0 $gutter--mini;
 			
 			@include media-query('portable'){
-				padding: 0 $gutter $gutter;
+				margin-bottom: 140px;
 			}
 			
 		}

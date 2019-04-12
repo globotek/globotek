@@ -5,9 +5,10 @@
         //@extend %flex-wrapper--column;
 
         background: $primary-color;
-        min-width: 258px;
+        max-width: 258px;
         height: 100%;
         position: relative;
+        margin: 0 auto;
 
         &__title {
 
@@ -15,11 +16,36 @@
 
             background: $white;
             text-align: center;
-            width: 220px;
+            width: 88%;
             margin: 0 auto;
-            padding: $gutter--mini 0;
+            padding: $gutter 0;
             position: relative;
             top: -55px;
+
+            &--popular {
+
+                &:before {
+
+                    content: "";
+                    width: 104px;
+                    height: 94px;
+                    position: absolute;
+                    left: -5px;
+                    top: -5px;
+                    background: url('../images/comparison-banner.png') no-repeat;
+
+                }
+
+                &:after {
+                    content: "Popular";
+                    color: $white;
+                    position: absolute;
+                    top: 17px;
+                    left: 2px;
+                    transform: rotate(-44deg);
+                }
+
+            }
 
         }
 
@@ -65,15 +91,19 @@
 
             width: 100%;
             position: absolute;
-            bottom: -30px;
+            bottom: -28px;
+            overflow: hidden;
 
             &__image {
 
-                width: 100%;
+                max-width: 102%;
+                display: block;
+                margin-left: -2px;
 
             }
 
         }
+
 
     }
 	
