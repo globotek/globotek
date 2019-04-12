@@ -2,9 +2,13 @@
 	
 	@include mode('global'){
 	
-		@extend %grid;
-		
-		max-width: 980px;
+        @extend %grid;
+        @extend %box-gradient;
+        @extend %box-shadow;
+
+		border-radius: $radius--double;
+        max-width: 980px;
+        margin: 0 auto;
 		
 		@include media-query('desk'){
 			flex-wrap: nowrap;

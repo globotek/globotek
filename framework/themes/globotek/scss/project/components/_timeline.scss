@@ -1,0 +1,87 @@
+.timeline{
+	
+	@include mode('global'){
+
+        &__step {
+            
+            @extend %grid;
+            @extend %grid--split;
+            
+            &__image{
+
+                @extend %desk--one-half;
+                @extend %lap--one-half;
+                @extend %palm--one-whole;
+                
+                text-align: center;
+
+                img {
+                    display: inline;
+                }
+                
+            }
+            
+            &__content{
+                
+                @extend %flex-wrapper--column;
+                @extend %desk--one-half;
+                @extend %lap--one-half;
+                @extend %palm--one-whole;
+                
+                justify-content: center;
+
+                @include media-query('palm'){
+                    
+                    text-align: center;
+
+                }
+                
+            }
+
+        }
+		
+    }
+    
+    &__line {
+
+        @extend %grid;
+
+
+        &__background{
+            
+            @extend %desk--one-half;
+            @extend %lap--one-half;
+            @extend %palm--one-whole;
+
+            text-align: center;
+            position: relative;
+
+            img {
+
+                margin: 0 auto;
+
+            }
+
+        }
+
+        &__time {
+
+            @extend %box-shadow;
+            @extend %title-secondary;
+
+            color: $primary-color;
+            display: inline-block;
+            background: $white;
+            padding: 30px 50px;
+            width: 300px;
+
+            position: absolute;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+
+        }
+
+    }
+	
+}

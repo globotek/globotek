@@ -1,0 +1,35 @@
+.faq{
+	
+	@include mode('global'){
+	
+        @extend %grid;
+        @extend %box-gradient;
+        @extend %box-shadow-secondary;
+
+		border-radius: $radius--double;
+        max-width: 980px;
+        margin: 0 auto $gutter--treble;
+		
+		@include media-query('desk'){
+			flex-wrap: nowrap;
+		}
+		
+		
+		&__body{
+		
+			padding: $gutter--double 140px;
+			text-align: center;
+			
+			@include media-query('palm'){
+				padding: $gutter;
+			}
+			
+			&__content{
+				margin-top: $gutter--midi;
+			}
+			
+		}
+		
+	}
+	
+}
