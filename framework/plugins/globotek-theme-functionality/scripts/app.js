@@ -44,6 +44,11 @@ var app = (function($) {
 
 								elem.freshSales();
 								break;
+							
+							case 'search':
+								
+								elem.gtekSearch();
+								break;
 
 						}
 						

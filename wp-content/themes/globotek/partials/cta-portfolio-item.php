@@ -30,7 +30,7 @@
 			
 			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 				
-				<?php include( 'portfolio-item.php' ); ?>
+				<?php include( 'portfolio-box.php' ); ?>
 			
 			<?php endwhile; ?>
 		

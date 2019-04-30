@@ -14,7 +14,7 @@
         &__body {
             
             position: relative;
-            margin-top: -112px;
+            margin-top: -125px;
             width: 100%;
             
         }
@@ -57,11 +57,11 @@
             
             @extend %flex-wrapper;
             flex-wrap: wrap;
+            align-items: flex-start;
             padding: $gutter--midi $gutter;
             
             &__heading {
                 @extend %one-whole;
-                
             }
             
             &__tags {
@@ -74,7 +74,7 @@
                 
                 @extend %desk--eight-tenths;
                 
-                padding-top: $gutter--double;
+                padding-top: $gutter;
                 padding-right: $gutter--treble;
                 
             }
@@ -82,6 +82,7 @@
             &__services {
                 
                 @extend %desk--two-tenths;
+                
                 
                 padding: $gutter--double $gutter--midi;
                 border-radius: $gutter;

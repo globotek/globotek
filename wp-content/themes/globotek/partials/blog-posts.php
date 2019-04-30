@@ -6,9 +6,9 @@
  * Time: 19:28
  */
 
-$cards = get_posts( array( 'posts_per_page' => 3 ) ); ?>
+$cards = get_posts( array( 'posts_per_page' => 3, 'post__not_in' => array(get_the_ID()) ) ); ?>
 
-<div class="card-grid">
+<div class="card-grid center">
 	
 	<?php foreach ( $cards as $card ) { ?>
 		

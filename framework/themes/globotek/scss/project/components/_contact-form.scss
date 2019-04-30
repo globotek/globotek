@@ -96,6 +96,8 @@
 
             @extend %one-whole;
 
+            display: none;
+            
             &--inner {
 
                 border-color: $negative-color;
@@ -170,7 +172,9 @@
         &__prompt {
 
             @extend %one-whole;
-
+    
+            display: none;
+            
             &--inner {
 
                 color: $primary-color;

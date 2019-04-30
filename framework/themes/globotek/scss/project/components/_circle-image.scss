@@ -10,14 +10,14 @@
         @extend %flex-wrapper--column;
 		justify-content: center;
 		align-items: center;
-
+		max-height: 600px;
         &__inner{
             @extend %grid;
             @extend %grid--full;
 		    justify-content: space-between;
 		    width: 100%;
 		    max-width: 100%;
-
+	        max-height: 600px;
             
         }
 
@@ -45,8 +45,8 @@
 			position: relative;
             padding: $gutter--treble;
             
-            $curve-height: 900px;
-			$curve-width: 900px;
+            $curve-height: 950px;
+			$curve-width: 950px;
 			$curve-offset: -126px;
 			$curve-percentage: 100%;
 

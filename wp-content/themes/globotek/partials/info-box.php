@@ -6,7 +6,7 @@
  * Time: 18:42
  */ ?>
 
-<div class="page__info-boxes box-row">
+<div class="page__info-boxes box-row wrapper">
 	
 	<?php foreach ( $component[ 'block' ] as $info_box ) { ?>
 		

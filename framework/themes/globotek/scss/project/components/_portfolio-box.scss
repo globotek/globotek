@@ -1,74 +1,75 @@
-.portfolio-box{
-
-    @extend %flex-wrapper--column;
+.portfolio-box {
+	
+	@extend %flex-wrapper--column;
 	justify-content: center;
-    align-items: center;
-    
-    &__inner {
-
-        width: 980px;
-        max-width: 100%;
-        
-        @include media-query('desk'){
-        }
-        
-        &__body{
-            
-            @extend %flex-wrapper;
-            
-            justify-content: space-around;
-            
-            margin: $gutter--double 0;
-            border-radius: 10px;
-            background: $white;
-            @extend %box-shadow-secondary;
-            overflow: hidden;
-            
-            @include media-query('portable'){
-                flex-direction: column;
-                margin: $gutter--double $gutter;
-            }
-            
-            &__image,
-            &__content{
-                @extend %portable--one-whole;
-                @extend %desk--one-half;
-            }
-            
-            &__image{
-                max-height: 250px;
-            }
-            
-            &__content{
-                @extend %flex-wrapper--column;
-                @extend %box-gradient;
-                justify-content: space-between;
-                padding: $gutter--midi;
-                
-                a{
-                    color: $black;
-                    
-                    &:hover{
-                        text-decoration: none;
-                    }
-                }
-                
-                &__text{
-                    min-height:120px;
-                }
-            }
-            
-        }
-        
-        &__tags {
-            margin: 5px 0;
-            color: $grey--mid;
-        }
-        
-        &__link{
-            text-align: center;
-        }
-
-    }
+	align-items: center;
+	
+	&__inner {
+		
+		width: 980px;
+		max-width: 100%;
+		
+		@include media-query('desk') {
+		}
+		
+		&__body {
+			
+			@extend %flex-wrapper;
+			
+			justify-content: space-around;
+			
+			margin: $gutter--double 0;
+			border-radius: 10px;
+			background: $white;
+			@extend %box-shadow-secondary;
+			overflow: hidden;
+			
+			@include media-query('portable') {
+				flex-direction: column;
+				margin: $gutter--double $gutter;
+			}
+			
+			&__image,
+			&__content {
+				@extend %portable--one-whole;
+				@extend %desk--one-half;
+			}
+			
+			&__image img {
+				max-height: 250px;
+				object-fit: cover;
+			}
+			
+			&__content {
+				@extend %flex-wrapper--column;
+				@extend %box-gradient;
+				justify-content: space-between;
+				padding: $gutter--midi;
+				
+				a {
+					color: $black;
+					
+					&:hover {
+						text-decoration: none;
+					}
+				}
+				
+				&__text {
+					min-height: 120px;
+				}
+			}
+			
+		}
+		
+		&__tags {
+			margin: 5px 0;
+			color: $grey--mid;
+		}
+		
+		&__link {
+			text-align: center;
+		}
+		
+	}
 	
 }

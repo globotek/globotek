@@ -93,7 +93,7 @@ the_post(); ?>
 	</div>
 	
 	<div class="breathe--bottom-double">
-		<?php include( 'partials/card-grid.php' ); ?>
+		<?php include( 'partials/blog-posts.php' ); ?>
 	</div>
 </div>
 

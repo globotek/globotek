@@ -6,7 +6,7 @@
  * Time: 12:35 PM
  */ ?>
 
-<div class="section-title">
+<div class="section-title center">
 	
 	<h2 class="title__secondary"><?php echo $component[ 'title' ]; ?></h2>
 	

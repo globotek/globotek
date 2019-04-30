@@ -134,12 +134,6 @@
 				@extend %desk--one-half;
 				overflow: hidden;
 				
-				img {
-					object-fit: contain;
-                    height: 315px;
-					max-width: none;
-				}
-				
 			}
 			
 			&__body {

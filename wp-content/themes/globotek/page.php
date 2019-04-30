@@ -10,15 +10,11 @@
 
 <?php gtek_hero(); ?>
 
-<div class="wrapper">
-
-	<div class="chunk">
-
-		<?php the_post(); ?>
-		
-		<?php gtek_template_router(get_field('components')); ?>
+<div class="chunk">
 	
-	</div>
+	<?php the_post(); ?>
+	
+	<?php gtek_template_router( get_field( 'components' ) ); ?>
 
 </div>
 

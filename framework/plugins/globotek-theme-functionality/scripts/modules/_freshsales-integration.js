@@ -5,19 +5,22 @@
 	
 	$.fn.freshSales = function () {
 		
+		var elem          = $(this),
+		    errorPrompt   = elem.find('.contact-form__errors'),
+		    successPrompt = elem.find('.contact-form__prompt');
+		
 		var init = function () {
-			
-			console.log('Freshsales Init');
-			
+						
 			$('#submit-contact-form').on('click', function (event) {
+				
 				event.preventDefault();
 				
-				$('.cta__contact__prompt').hide();
+				errorPrompt.hide();
+				successPrompt.hide();
 				
 				if (!$('input[name="contact-form-name"]').val() || !$('input[name="contact-form-email"]').val()) {
 					
-					$('.cta__contact__prompt').show();
-					console.log('Error');
+					errorPrompt.show();
 					
 				} else {
 					
@@ -32,6 +35,8 @@
 						'last_name':      lastName,
 						'emails':         $('input[name="contact-form-email"]').val(),
 						'lead_source_id': $('input[name="contact-form-source_id"]').val(),
+						'work_number':    $('input[name="contact-form-phone"]').val(),
+						'name':           $('input[name="contact-form-company"]').val(),
 						'deal':           {
 							'amount': parseInt($('input[name="contact-form-budget"]').val())
 							
@@ -50,14 +55,13 @@
 					$.ajax({
 						url:     gtek_vars.ajax_url,
 						method:  'POST',
-						//dataType: 'json',
 						data:    {
 							'action':    'gtek_submit_to_freshsales',
 							'lead_data': leadData
 						},
 						success: function (data) {
 							
-							$('#form-output').html(data);
+							successPrompt.show();
 							
 						}
 					});

@@ -10,14 +10,7 @@ get_header(); ?>
 <?php the_post(); ?>
 <?php $fields = get_fields(); ?>
 
-<?php if ( $fields[ 'provided_services_content' ] ) { ?>
-	
-	<?php $service_tags = wp_list_pluck( $fields[ 'provided_services_content' ], 'service' ); ?>
-
-<?php } ?>
-
-<?php $project_info = $fields[ 'provided_services_content' ]; ?>
-
+<?php $provided_services = $fields[ 'provided_services_content' ]; ?>
 
 <div class="portfolio-item">
 	
@@ -37,50 +30,54 @@ get_header(); ?>
 					
 					<h2 class="wave-hero__content__heading">Scope</h2>
 					
-					<div class="wave-hero__content__tags tag-list">
+					<?php if ( ! empty( $provided_services ) ) { ?>
 						
-						<?php if ( $fields[ 'provided_services_content' ] ) { ?>
+						<?php $service_pages = wp_list_pluck( $provided_services, 'service_page' ); ?>
+						
+						<?php if ( $service_pages[ 0 ] !== FALSE ) { ?>
 							
-							<?php $service_tags = wp_list_pluck( $fields[ 'provided_services_content' ], 'service' ); ?>
-							<?php foreach ( $service_tags as $project_service ) { ?>
-								<?php $service_page = get_posts( array(
-									'post_type' => 'page',
-									'tax_query' => array(
-										array(
-											'taxonomy' => 'services',
-											'field'    => 'ID',
-											'terms'    => $project_service[ 0 ]->term_id
-										)
-									)
-								) )[ 0 ]; ?>
+							<div class="wave-hero__content__tags tag-list">
 								
-								<a href="<?php echo get_the_permalink( $service_page->ID ); ?>"><?php echo $project_service[ 0 ]->name; ?></a>
-								<span>|</span>
-															
-							<?php } ?>
+								<?php foreach ( $service_pages as $service_page ) { ?>
+									
+									<?php if ( $service_page ) { ?>
+										
+										<a href="<?php echo get_the_permalink( $service_page->ID ); ?>"><?php echo $service_page->post_title; ?></a>
+										<span>|</span>
+									
+									<?php } ?>
+								
+								<?php } ?>
+							
+							</div>
 						
 						<?php } ?>
 					
-					</div>
+					<?php } ?>
 					
-					<div class="wave-hero__content__text"><?php the_content(); ?></div>
+					<div class="wave-hero__content__text content"><?php the_content(); ?></div>
 					
-					<div class="wave-hero__content__services">
+					<?php if ( ! empty( $provided_services ) ) { ?>
 						
-						<h3 class="">Services Provided</h3>
-						
-						<ul class="list">
+						<div class="wave-hero__content__services">
 							
-							<?php foreach ( $service_tags as $service_tag ) { ?>
+							<h3 class="">Services Provided</h3>
+							
+							<ul class="list">
 								
-								<li class="list__item"><?php echo $service_tag[ 0 ]->name; ?></li>
+								<?php $service_tags = wp_list_pluck( $provided_services, 'service' ); ?>
+								
+								<?php foreach ( $service_tags as $service_tag ) { ?>
+									
+									<li class="list__item"><?php echo $service_tag[ 0 ]->name; ?></li>
+								
+								<?php } ?>
 							
-							<?php } ?>
+							</ul>
 						
-						</ul>
+						</div>
 					
-					</div>
-				
+					<?php } ?>
 				
 				</div>
 			
@@ -95,7 +92,7 @@ get_header(); ?>
 		
 		<div class="wave-grid">
 			
-			<?php foreach ( $project_info as $info_box ) { ?>
+			<?php foreach ( $provided_services as $info_box ) { ?>
 				
 				<div class="wave-grid__item">
 					
@@ -175,30 +172,64 @@ get_header(); ?>
 		<?php include( 'partials/contact-form.php' ); ?>
 	</div>
 	
-	<div class="section-title">
-		<h2 class="title__secondary">Recent Work</h2>
-		<p class="section-title__intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et vestibulum arcu. Aenean quis orci sem. Suspendisse iaculis scelerisque purus ornare finibus. Donec maximus mauris vel interdum pharetra.</p>
-	</div>
-
-	<?php $query = new WP_Query(
+	<?php
+	$related_project_terms               = array();
+	$related_project_terms[ 'relation' ] = 'OR';
+	
+	foreach ( wp_list_pluck( wp_list_pluck( $provided_services, 'service' ), 0 ) as $item ) {
+		
+		$related_project_terms[] = array(
+			'taxonomy' => $item->taxonomy,
+			'field'    => 'term_id',
+			'terms'    => $item->term_id
+		);
+		
+	}
+	
+	$query = new WP_Query(
 		array(
 			'post_type'      => 'portfolio',
 			'posts_per_page' => 3,
-			'post__not_in'   => array($post->ID)
+			'post__not_in'   => array( $post->ID ),
+			'tax_query'      => $related_project_terms
 		)
 	); ?>
 	
-	<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+	<?php if ( $query->have_posts() ) : ?>
 		
-		<?php include( 'partials/portfolio-item.php' ); ?>
+		<div class="section-title">
+			<h2 class="title__secondary">Related Work</h2>
+			<p class="section-title__intro">Like the look of this site? Here's a few more sites we've built that are similar and we think you might like.</p>
+		</div>
 		
-	<?php endwhile; ?>
+		<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+			
+			<?php include( 'partials/portfolio-box.php' ); ?>
+		
+		<?php endwhile; ?>
 	
+	<?php else: ?>
+		
+		<div class="section-title">
+			<h2 class="title__secondary">Recent Work</h2>
+			<p class="section-title__intro">Like the look of this site? Here's a few of the most recent sites we've built.</p>
+		</div>
+		
+		<?php $query = new WP_Query(
+			array(
+				'post_type'      => 'portfolio',
+				'posts_per_page' => 3,
+				'post__not_in'   => array( $post->ID )
+			)
+		); ?>
+		
+		<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+			
+			<?php include( 'partials/portfolio-box.php' ); ?>
+		
+		<?php endwhile; ?>
 	
-	
-	<?php //include( 'partials/portfolio-item.php' ); ?>
-	
-	<?php //include( 'partials/portfolio-item.php' ); ?>
+	<?php endif; ?>
 
 </div>
 

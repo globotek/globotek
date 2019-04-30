@@ -22,6 +22,10 @@ body {
 	@include font-size($base-font-size, true);
 }
 
+.xdebug-error{
+	color: black !important;
+}
+
 img {
 	display: block;
 	max-width: 100%;

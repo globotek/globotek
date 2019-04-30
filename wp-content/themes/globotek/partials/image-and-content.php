@@ -26,9 +26,13 @@
 					
 					<p class="image-content__content__text"><?php echo $content_row[ 'content' ]; ?></p>
 					
-					<div class="image-content__content__link">
-						<a href="<?php echo $content_row[ 'link' ][ 'link_url' ]; ?>" class="button"><?php echo $content_row[ 'link' ][ 'link_text' ]; ?></a>
-					</div>
+					<?php if ( $content_row[ 'link' ][ 'link_text' ] ) { ?>
+						
+						<div class="image-content__content__link">
+							<a href="<?php echo $content_row[ 'link' ][ 'link_url' ]; ?>" class="button"><?php echo $content_row[ 'link' ][ 'link_text' ]; ?></a>
+						</div>
+					
+					<?php } ?>
 				
 				</div>
 			

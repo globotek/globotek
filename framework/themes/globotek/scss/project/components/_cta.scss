@@ -9,8 +9,7 @@
 	&__background{
 		
         @extend %one-whole;
-        //flex-shrink: 0;
-        
+               
         width: 100vw;
 		
 		img{
@@ -18,10 +17,12 @@
 			width: 100%;
 			
 			@include media-query('portable'){
+				
                 width: 1500px;
                 max-width: 1500px;
                 left: 50%;
                 transform: translateX(-10%);
+				
 			}
 			
 		}
@@ -42,7 +43,7 @@
         &__image {
 
             @include media-query('desk'){
-                width: 75%;
+                max-width: 75%;
             }
         }
 		

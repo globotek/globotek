@@ -5,5 +5,11 @@
  * Date: 9/4/19
  * Time: 5:50 PM
  */
+?>
 
-the_content();
+<div class="wrapper">
+	
+	<?php the_content(); ?>
+
+</div>
+	
