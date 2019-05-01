@@ -7,24 +7,28 @@
  */
 
 function gtek_search() {
-
+	
 	ob_start();
+	
+	if ( intval( $_POST[ 'term' ] ) == TRUE ) {
+		
+		$term_query = array(
+			'taxonomy' => esc_attr( $_POST[ 'taxonomy' ] ),
+			'field'    => 'term_id',
+			'terms'    => intval( $_POST[ 'term' ] )
+		);
+		
+	}
 	
 	$query = new WP_Query( array(
 		'post_type'      => esc_attr( $_POST[ 'post_type' ] ),
 		'posts_per_page' => intval( $_POST[ 'post_limit' ] ),
-		'tax_query'      => array(
-			array(
-				'taxonomy' => esc_attr( $_POST[ 'taxonomy' ] ),
-				'field'    => 'term_id',
-				'terms'    => intval( $_POST[ 'term' ] )
-			)
-		)
+		'tax_query'      => array( $term_query )
 	) );
-
+	
 	while ( $query->have_posts() ) : $query->the_post();
 		
-		include( get_template_directory( ) . '/partials/project-box.php' );
+		include( get_template_directory() . '/partials/project-box.php' );
 		echo ob_get_clean();
 	
 	endwhile;

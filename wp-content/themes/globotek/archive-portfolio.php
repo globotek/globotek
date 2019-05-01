@@ -19,6 +19,16 @@
 		
 		<div class="filter__buttons" data-module="search" data-target=".archive-page__posts">
 			
+			<a href="#0"
+			   class="filter__buttons__item button"
+			   data-post_type="portfolio"
+			   data-taxonomy="site-type"
+			   data-term="0"
+			   data-post_limit="4" ,
+			   data-action="search">
+				All
+			</a>
+			
 			<?php $project_categories = get_terms( array( 'taxonomy' => 'site-type' ) ); ?>
 			
 			<?php foreach ( $project_categories as $project_category ) { ?>

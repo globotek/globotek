@@ -14,7 +14,7 @@ $portfolio_args = array(
 	'labels'      => $portfolio_labels,
 	'public'      => TRUE,
 	'supports'    => array( 'title', 'editor', 'excerpt', 'thumbnail', 'custom-fields' ),
-	'has_archive' => TRUE,
+	'has_archive' => FALSE,
 	'rewrite'     => array( 'with_front' => FALSE )
 );
 

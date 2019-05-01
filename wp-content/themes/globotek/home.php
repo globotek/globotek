@@ -68,7 +68,7 @@
                         </div>
                         
                         <div class="blog__body__text">
-                            <p><?php the_excerpt(); ?></p>
+                            <p><?php the_excerpt(60); ?></p>
                         </div>
                         
                         <div class="blog__body__link">

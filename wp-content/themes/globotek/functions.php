@@ -82,3 +82,24 @@ register_nav_menus( array(
 	'main'   => 'Main Menu',
 	'footer' => 'Footer Menu'
 ) );
+
+
+function reduced_excerpt_length( $length ) {
+	
+	if ( !is_admin() || !is_home() ) {
+		
+		return 20;
+		
+	}
+	
+	return $length;
+	
+}
+
+add_filter( 'excerpt_length', 'reduced_excerpt_length', 999 );
+
+
+add_filter( 'yoast-acf-analysis/refresh_rate', function () {
+	// Refresh rates in milliseconds
+	return 1000;
+} );

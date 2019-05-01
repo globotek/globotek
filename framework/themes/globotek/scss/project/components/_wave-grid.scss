@@ -62,7 +62,7 @@
 				}
             }
 
-            &:nth-child(4n + 1) {
+            &:nth-child(1n) {
                 .wave-grid__item__body {
                     background: $primary-color--light;
                     
@@ -84,7 +84,7 @@
                 }
             }
 
-            &:nth-child(4n + 2) {
+            &:nth-child(2n) {
                 .wave-grid__item__body {
                     background: $primary-color;
                     color: $white;
@@ -107,7 +107,7 @@
                 }
             }
 
-            &:nth-child(4n + 3) {
+            &:nth-child(3n) {
                 .wave-grid__item__body {
                     background: $primary-color--mid;
                     

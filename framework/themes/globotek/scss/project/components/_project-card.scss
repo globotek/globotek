@@ -1,137 +1,134 @@
 .project-card{
 	
-	@include mode('global'){
-	
+	@include mode('global') {
+		
 		position: relative;
-        display: block;
-        overflow: hidden;
+		display: block;
+		overflow: hidden;
 		
 		& + & {
 			margin-top: 100px;
-        }
-        
-        &__image {
-            height: auto;
-        }
-		
-		&__bg{
-			position: absolute;
-            bottom: 0;
-
-            @include media-query('desk'){
-            
-                width: 120%;
-                max-width: 120%;
-                left: 50%;
-                transform: translate(-50%, 0);
-
-            }
-
-            @include media-query('desk-wide'){
-            
-                width: 100%;
-                max-width: 100%;
-
-            }
-            
-            
-            @include media-query('portable'){
-
-                width: 190%;
-                max-width: 190%;
-                left: 50%;
-                transform: translate(-50%, 0);
-
-            }
-
-            @include media-query('palm'){
-
-                background: $primary-color;
-
-            }
-
 		}
 		
-		&__inner{
-            
-            @extend %grid;
+		&__image {
+			height: auto;
+			width: 100%;
+		}
+		
+		&__bg {
+			
+			position: absolute;
+			bottom: 0;
+			
+			@include media-query('desk') {
+				
+				width: 120%;
+				max-width: 120%;
+				
+			}
+			
+			@include media-query('desk-wide') {
+				
+				width: 100%;
+				max-width: 100%;
+				
+			}
+			
+			@include media-query('portable') {
+				
+				width: 110%;
+				max-width: 190%;
+				
+				
+			}
+			
+			@include media-query('palm') {
+				
+				background: $primary-color;
+				
+			}
+			
+		}
+		
+		&__inner {
+			
+			@extend %grid;
 			
 			justify-content: space-between;
 			align-items: center;
 			position: absolute;
-			bottom: 40px;
+			bottom: 20px;
 			width: 100%;
 			padding: 0 100px;
-            color: $white;
-
-            @include media-query('desk'){
-            
-                bottom: 20px;
-                padding: 0 20px;
-
-            }
-
-            @include media-query('desk-wide'){
-            
-                bottom: 40px;
-                padding: 0 100px;
-
-            }
-            
-            
-            @include media-query('portable'){
-                
-                padding: 0 20px;
-                bottom: 10px;
-
-            }
+			color: $white;
 			
-			&__title{
-
-                @extend %desk--two-fifths;
-                @extend %portable--one-whole;
+			@include media-query('desk') {
 				
-				&__tags{
+				bottom: 20px;
+				padding: 0 20px;
+				
+			}
+			
+			@include media-query('desk-wide') {
+				
+				bottom: 20px;
+				padding: 0 100px;
+				
+			}
+			
+			@include media-query('portable') {
+				
+				padding: 0 20px;
+				bottom: 10px;
+				
+			}
+			
+			&__title {
+				
+				@extend %desk--two-fifths;
+				@extend %portable--one-half;
+				
+				&__tags {
 					
-                    padding-top: $gutter--small;
-                    
-                    @include media-query('portable'){
-
-                        padding-top: 0;
-        
-                    }
+					padding-top: $gutter--small;
 					
-                }
-                
-            }
-            
-            &__content {
-
-                @extend %desk--two-fifths;
-                @extend %portable--four-fifths;
-
-                @include media-query('portable'){
-
-                    padding-top: 0px;
-    
-                }
-
-            }
-
-            &__link {
-
-                @extend %desk--one-fifth;
-                @extend %portable--one-fifth;
-
-                text-align: right;
-
-                @include media-query('portable'){
-
-                    padding-top: 0px;
-    
-                }
-
-            }
+					@include media-query('portable') {
+						
+						padding-top: 0;
+						
+					}
+					
+				}
+				
+			}
+			
+			&__content {
+				
+				@extend %desk--two-fifths;
+				@extend %portable--four-fifths;
+				
+				@include media-query('portable') {
+					
+					display: none;
+					
+				}
+				
+			}
+			
+			&__link {
+				
+				@extend %desk--one-fifth;
+				@extend %portable--one-fifth;
+				
+				text-align: right;
+				
+				@include media-query('portable') {
+					
+					padding-top: 0px;
+					
+				}
+				
+			}
 			
 		}
 		

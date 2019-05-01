@@ -20,7 +20,7 @@ get_header(); ?>
 		
 		<div class="wave-hero__body">
 			
-			<img src="<?php echo get_template_directory_uri() . '/images/bg-project-hero.svg'; ?>"/>
+			<img class="wave-hero__body__border" src="<?php echo get_template_directory_uri() . '/images/bg-project-hero-top.svg'; ?>"/>
 			
 			<div class="wave-hero__inner">
 				
@@ -82,6 +82,8 @@ get_header(); ?>
 				</div>
 			
 			</div>
+			
+			<img class="wave-hero__body__border" src="<?php echo get_template_directory_uri() . '/images/bg-project-hero-bottom.svg'; ?>"/>
 		
 		</div>
 	
@@ -175,11 +177,11 @@ get_header(); ?>
 	<?php
 	$related_project_terms               = array();
 	$related_project_terms[ 'relation' ] = 'OR';
-	
-	foreach ( wp_list_pluck( wp_list_pluck( $provided_services, 'service' ), 0 ) as $item ) {
+		
+	foreach ( get_the_terms(get_the_ID(), 'site-type') as $item ) {
 		
 		$related_project_terms[] = array(
-			'taxonomy' => $item->taxonomy,
+			'taxonomy' => 'site-type',
 			'field'    => 'term_id',
 			'terms'    => $item->term_id
 		);
@@ -190,7 +192,7 @@ get_header(); ?>
 		array(
 			'post_type'      => 'portfolio',
 			'posts_per_page' => 3,
-			'post__not_in'   => array( $post->ID ),
+			'post__not_in'   => array( get_the_ID() ),
 			'tax_query'      => $related_project_terms
 		)
 	); ?>

@@ -22,8 +22,8 @@
 				
 				<?php if ( is_category() ) { ?>
 					
+					<p class="hero__category">Category</p>
 					<h1 class="hero__title title title__primary">
-						<span class="hero__title--category">Category</span>
 						<?php single_cat_title(); ?>
 					</h1>
 				
@@ -44,11 +44,11 @@
 				
 				<?php if ( is_home() ) { ?>
 					
-					<?php echo get_the_post_thumbnail( get_option( 'page_for_posts' ) ); ?>
+					<img src="<?php echo get_field('hero', get_option('page_for_posts'))['image']; ?>" />
 				
 				<?php } elseif ( is_category() || is_date() ) { ?>
 					
-					<img src="<?php echo get_template_directory_uri() . '/images/people-and-books.png'; ?>"/>
+					<?php echo wpsfi_display_image(get_queried_object_id(), 'full'); ?>
 				
 				<?php } ?>
 			

@@ -3,13 +3,18 @@
 	@include mode('global'){
 		
 		&__title{
+			
 			padding-bottom: $gutter--midi;
+			padding-left: $gutter--mini;
+			
 		}
 		
 		&__buttons{
 			
 			&__item{
+				
 				margin: $gutter--mini $gutter--mini;
+				
 			}
 			
 		}

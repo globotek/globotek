@@ -31,15 +31,31 @@
             
 			
         }
-        
-        &__title {
-
-            &--category {
-                display: block;
-                @include font-size(16px, true, false, $tight-line-height-ratio);
-            }
-
-        }
+		
+		
+		&__category {
+			
+			position: relative;
+			display: inline;
+			@include font-size(16px, true, false, $tight-line-height-ratio);
+			padding-left: 5px;
+			
+			&:after{
+				content: "";
+				position: absolute;
+				bottom: -7px;
+				left: 5px;
+				width: calc(100% - 5px);
+				height: 1px;
+				background-color: $white;
+			}
+			
+		}
+		
+		
+		&__title {
+			padding-top: $gutter--mini;
+		}
 		
 		&__inner{
 			
@@ -89,6 +105,9 @@
                 }
 
                 img {
+	                
+	                height: auto;
+	                
                     @include media-query('desk'){
                         width: 90%;
                     }
