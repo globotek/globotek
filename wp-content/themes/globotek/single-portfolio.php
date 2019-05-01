@@ -13,22 +13,30 @@ get_header(); ?>
 <?php $provided_services = $fields[ 'provided_services_content' ]; ?>
 
 <div class="portfolio-item">
+
+    <div class="hero hero--no-content">
+
+        <div class="hero__image">
+
+            <?php the_post_thumbnail( 'full' ); ?>
+
+        </div>
+
+    </div>
 	
-	<div class="wave-hero">
+	<div class="portfolio-intro">
 		
-		<?php the_post_thumbnail( 'full' ); ?>
-		
-		<div class="wave-hero__body">
+		<div class="portfolio-intro__body">
 			
-			<img class="wave-hero__body__border" src="<?php echo get_template_directory_uri() . '/images/bg-project-hero-top.svg'; ?>"/>
+			<img class="portfolio-intro__body__border" src="<?php echo get_template_directory_uri() . '/images/bg-project-hero-top.svg'; ?>"/>
 			
-			<div class="wave-hero__inner">
+			<div class="portfolio-intro__inner">
 				
-				<h1 class="wave-hero__title title title__secondary"><?php the_title(); ?></h1>
+				<h1 class="portfolio-intro__title title title__secondary"><?php the_title(); ?></h1>
 				
-				<div class="wave-hero__content">
+				<div class="portfolio-intro__content">
 					
-					<h2 class="wave-hero__content__heading">Scope</h2>
+					<h2 class="portfolio-intro__content__heading">Scope</h2>
 					
 					<?php if ( ! empty( $provided_services ) ) { ?>
 						
@@ -36,7 +44,7 @@ get_header(); ?>
 						
 						<?php if ( $service_pages[ 0 ] !== FALSE ) { ?>
 							
-							<div class="wave-hero__content__tags tag-list">
+							<div class="portfolio-intro__content__tags tag-list">
 								
 								<?php foreach ( $service_pages as $service_page ) { ?>
 									
@@ -55,11 +63,11 @@ get_header(); ?>
 					
 					<?php } ?>
 					
-					<div class="wave-hero__content__text content"><?php the_content(); ?></div>
+					<div class="portfolio-intro__content__text content"><?php the_content(); ?></div>
 					
 					<?php if ( ! empty( $provided_services ) ) { ?>
 						
-						<div class="wave-hero__content__services">
+						<div class="portfolio-intro__content__services">
 							
 							<h3 class="">Services Provided</h3>
 							
@@ -83,7 +91,7 @@ get_header(); ?>
 			
 			</div>
 			
-			<img class="wave-hero__body__border" src="<?php echo get_template_directory_uri() . '/images/bg-project-hero-bottom.svg'; ?>"/>
+			<img class="portfolio-intro__body__border" src="<?php echo get_template_directory_uri() . '/images/bg-project-hero-bottom.svg'; ?>"/>
 		
 		</div>
 	

@@ -6,7 +6,7 @@
  * Time: 22:48
  */ ?>
 
-<div class="hero">
+<div class="hero hero--content">
 	
 	<div class="hero__background">
 		

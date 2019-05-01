@@ -1,12 +1,40 @@
 .hero{
 	
 	@include mode('global'){
+
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        
+        &--content {
+
+            display: flex;
+            overflow: hidden;
+            color: $white;
+
+        }
+
+        &--no-content {
+
+            margin-bottom: $gutter--quadruple;
+
+        }
+
+
+		&__image {
+
+            height: 650px;
+            object-fit: cover;
+
+            img {
+
+                object-fit: cover;
+                width: 100%;
+
+            }
+
+        }
 		
-		display: flex;
-		position: relative;
-		width: 100%;
-		overflow: hidden;
-		color: $white;
 		
 		&__background{
             
@@ -28,10 +56,18 @@
 				
             }
             
-            
-			
         }
-		
+
+        &__wave {
+			
+			position: relative;
+            width: 100%;
+            
+            margin-top: -160px;
+            overflow: hidden;
+            height: 110px;
+
+		}
 		
 		&__category {
 			

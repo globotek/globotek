@@ -1,19 +1,13 @@
-.wave-hero {
+.portfolio-intro {
 	
-	@include mode('global') {
-		
-		position: relative;
-		width: 100%;
-		margin-bottom: $gutter--quadruple;
-		
-		&__body {
-			
-			@extend %flex-wrapper--column;
+	@include mode('global') {     
+
+        &__body {
 			
 			position: relative;
-			width: 100%;
-			
-			margin-top: -160px;
+            width: 100%;
+            
+            margin-top: -160px;
 			
 			&__border {
 				

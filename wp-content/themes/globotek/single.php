@@ -11,22 +11,17 @@ the_post(); ?>
 
 <?php $categories = wp_get_post_terms( $post->ID, 'category' ); ?>
 
-<div class="wave-hero">
+<div class="hero hero--no-content">
+
+    <div class="hero__image">
 	
-	<?php the_post_thumbnail( 'post-hero' ); ?>
+        <?php the_post_thumbnail( 'post-hero' ); ?>
+        
+    </div>
 	
-	<div class="wave-hero__body blog-item__hero__body">
+	<div class="hero__wave">
 		
-		<img src="<?php echo get_template_directory_uri() . '/images/bg-blog-hero.svg'; ?>"/>
-		
-		<div class="portfolio-item__hero__inner">
-			
-			<div class="wave-hero__inner">
-			
-			
-			</div>
-		
-		</div>
+		<img class="hero__wave__image" src="<?php echo get_template_directory_uri() . '/images/bg-blog-hero.svg'; ?>"/>
 	
 	</div>
 
