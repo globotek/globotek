@@ -18,3 +18,6 @@ wp-content/plugins/hello.php
 /sitemap.xml.gz
 
 node_modules/
+
+wp-content/plugins/
+!wp-content/plugins/globotek-theme-functionality/
