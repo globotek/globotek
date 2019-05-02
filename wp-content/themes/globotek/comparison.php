@@ -15,7 +15,7 @@
 
 <div class="comparison-page breathe--treble wrapper">
 	
-    <?php get_template_part('partials/comparison'); ?>
+    <?php get_template_part('partials/price-comparison-table'); ?>
 
     <div class="section-title breathe--top-treble">
 		<h2 class="title__secondary">Site Care Questions?</h2>
