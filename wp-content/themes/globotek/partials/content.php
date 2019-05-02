@@ -7,7 +7,7 @@
  */
 ?>
 
-<div class="wrapper">
+<div class="wrapper content">
 	
 	<?php the_content(); ?>
 
