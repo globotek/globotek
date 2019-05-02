@@ -7,11 +7,18 @@
  */ ?>
 
 <div class="box">
-	<div class="box__icon">
-		<?php icon($box['icon']); ?>
-	</div>
 	
-	<h3 class="box__heading heading__tertiary"><?php echo $box['title']; ?></h3>
-	<p class="box__text"><?php echo $box['content']; ?></p>
+	<?php if ( ! empty( $box[ 'icon' ] ) ) { ?>
+		
+		<div class="box__icon">
+			
+			<?php icon( $box[ 'icon' ] ); ?>
+		
+		</div>
 	
+	<?php } ?>
+	
+	<h3 class="box__heading heading__tertiary"><?php echo $box[ 'title' ]; ?></h3>
+	<p class="box__text"><?php echo $box[ 'content' ]; ?></p>
+
 </div>
