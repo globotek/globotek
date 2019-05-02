@@ -55,14 +55,6 @@
                         text-decoration: none;
                         opacity: 0.7;
                     }
-
-                    &:focus {
-                        .site-head__nav__item__arrow {
-                            @include media-query('portable'){
-                                transform: rotate(0deg);
-                            }
-                        }
-                    }
                     
                 }
 
@@ -112,14 +104,18 @@
                             }
                         }
                     }
-                    
-                    &:hover {
 
-                        .sub-menu {
-                            opacity: 1;
-                            z-index: 2;
-                            max-height: 500px;
+                    @include media-query('desk'){
+                    
+                        &:hover {
+
+                            .sub-menu {
+                                opacity: 1;
+                                z-index: 2;
+                                max-height: 500px;
+                            }
                         }
+
                     }
                 } 
                
@@ -196,12 +192,22 @@
                                 }
                             }
                         }
-                        
-                        &:hover {
-                            .sub-menu {
-                                max-height: 500px;
+
+                        &.is-active {
+
+                            .site-head__nav__item__arrow {
+                                transform: rotate(0deg);
                             }
+
+                            .sub-menu {
+
+                                max-height: 500px;
+
+                            }
+
                         }
+                        
+                        
                     } 
 					
 				}
