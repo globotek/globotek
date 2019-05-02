@@ -27,7 +27,7 @@
 
             });
 
-            $('.menu-item-has-children a').click(function(e) {
+            $('.menu-item-has-children > a .site-head__nav__item__arrow').click(function(e) {
                 if(navElem.hasClass('is-active')){
                     e.preventDefault();
                 }
