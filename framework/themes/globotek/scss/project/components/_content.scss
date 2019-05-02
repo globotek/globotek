@@ -14,9 +14,50 @@
             color: $primary-color;
         }
 
-        ul {
+        ul, ol {
+            li {
+                list-style: none;
+                position: relative;
+                left: 20px;
 
+                &:before {
+                    position: absolute;
+                    left: -20px;
+                }
+            }
         }
+
+        ul {
+            li {
+                &:before {
+                    content: "";
+                    background: $primary-color;
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 50%;
+                    top: 11px;
+                }
+            }
+        }
+
+        ol {
+            counter-reset: li;
+
+            li {
+                counter-increment: li;
+
+                &:before {
+                    content: counter(li);
+                    color: $primary-color;
+                    top: 0px;
+                    text-align: right; 
+                    direction: rtl;
+                    display: inline-block;
+                    width: 10px;
+                }
+            }
+        }
+
 
         table {
             margin-bottom: $gutter--midi;
