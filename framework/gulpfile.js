@@ -35,6 +35,7 @@ gulp.task('default', function () {
 		sync.init({
 			https:       false,
 			open:        true,
+			ghostMode:   false,
 			reloadDelay: 50
 		});
 		
@@ -82,7 +83,7 @@ gulp.task('default', function () {
 			WATCHERS['scripts'].push('global/scripts/_helpers.js');
 			WATCHERS['scripts'].push(PROJECT_SCRIPTS + '/modules/*.js');
 			WATCHERS['scripts'].push(PROJECT_SCRIPTS + '/app.js');
-						
+			
 			WATCHERS['php'].push(DESTINATION_PHP);
 			
 			
@@ -220,7 +221,6 @@ gulp.task('default', function () {
 		gulp.start('browser_sync');
 		
 	});
-	
 	
 	
 });
