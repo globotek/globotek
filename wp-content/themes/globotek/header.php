@@ -103,8 +103,8 @@
 					 * As we've separated items with submenus from those that don't, we can now output
 					 * the necessary submenu markup independently from those with no submenu.
 					 */
-					echo '<li class="site-head__nav__item menu-item-has-children' . implode(' ', $link->classes) . '">';
-					echo '<a href="' . $link->url . '">' . $link->title . '<span class="site-head__nav__item__arrow"><i class="fas fa-chevron-down"></i></span></a>';
+					echo '<li class="site-head__nav__item menu-item-has-children js-toggle__target' . implode(' ', $link->classes) . '" data-elem-class="class-attribute">';
+					echo '<a href="' . $link->url . '">' . $link->title . '<span class="site-head__nav__item__arrow js-toggle__trigger"><i class="fas fa-chevron-down"></i></span></a>';
 					
 					echo '<ul class="sub-menu">';
 					

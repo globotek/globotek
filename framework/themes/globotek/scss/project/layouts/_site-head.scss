@@ -184,8 +184,6 @@
                             opacity: 1;
                             box-shadow: none;
                             border-radius: 0px;
-
-                            @extend %transition-all;
                             
                             .menu-item {
 
@@ -201,12 +199,12 @@
                             }
                         }
 
+                        
+
                         &.is-active {
 
-                            .site-head__nav__item__arrow {
-                                i {
-                                    transform: rotate(0deg);
-                                }
+                            i {
+                                transform: rotate(0deg);
                             }
 
                             .sub-menu {
