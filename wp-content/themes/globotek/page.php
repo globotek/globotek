@@ -14,6 +14,10 @@
 	
 	<?php the_post(); ?>
 	
+	<?php var_dump( is_woocommerce() ); ?>
+	
+	<?php the_content(); ?>
+	
 	<?php gtek_template_router( get_field( 'components' ) ); ?>
 
 </div>
