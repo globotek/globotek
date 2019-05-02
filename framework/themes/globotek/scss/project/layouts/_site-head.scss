@@ -61,14 +61,20 @@
                 &__arrow {
                     font-size: 12px;
                     margin: 0 0 0 5px;
-                    @extend %transition-all;
+
+                    i {
+                        @extend %transition-all;
+                    }
 
                     @include media-query('portable'){
                         position: absolute;
                         right: 0px;
                         top: 0px;
-                        padding: 33px;
-                        transform: rotate(-90deg);
+                        padding: 25px 33px 33px 50px;
+
+                        i {
+                            transform: rotate(-90deg);
+                        }
                     }
                 }
                 
@@ -178,6 +184,8 @@
                             opacity: 1;
                             box-shadow: none;
                             border-radius: 0px;
+
+                            @extend %transition-all;
                             
                             .menu-item {
 
@@ -196,7 +204,9 @@
                         &.is-active {
 
                             .site-head__nav__item__arrow {
-                                transform: rotate(0deg);
+                                i {
+                                    transform: rotate(0deg);
+                                }
                             }
 
                             .sub-menu {
