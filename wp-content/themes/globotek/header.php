@@ -104,7 +104,7 @@
 					 * the necessary submenu markup independently from those with no submenu.
 					 */
 					echo '<li class="site-head__nav__item menu-item-has-children' . implode(' ', $link->classes) . '">';
-					echo '<a href="' . $link->url . '">' . $link->title . '<i class="fas fa-chevron-down site-head__nav__item__arrow"></i></a>';
+					echo '<a href="' . $link->url . '">' . $link->title . '<span class="site-head__nav__item__arrow"><i class="fas fa-chevron-down"></i></span></a>';
 					
 					echo '<ul class="sub-menu">';
 					

@@ -381,7 +381,14 @@ function debounce(func, wait, immediate) {
                 if(navElem.hasClass('is-active')){
                     e.preventDefault();
 
-                    $(this).closest('.menu-item-has-children').toggleClass('is-active');
+                    var $this = $(this);
+
+                    $('.menu-item-has-children').removeClass('is-active');
+                    
+                    setTimeout(function(){
+                        $this.closest('.menu-item-has-children').addClass('is-active');
+                    }, 300);
+
                 }
             });
 
