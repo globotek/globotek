@@ -55,6 +55,11 @@ var app = (function ($) {
 								elem.rangeSlider();
 								break;
 							
+							case 'gallery':
+								
+								elem.gallery();
+								break;
+							
 						}
 						
 					});
