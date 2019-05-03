@@ -74,7 +74,7 @@ add_image_size( 'post-hero', 0, 600, TRUE );
 
 if ( class_exists( 'woocommerce' ) ) {
 	
-	add_theme_support( 'woocommerce' );
+	add_theme_support( 'woocommerce');
 	
 }
 

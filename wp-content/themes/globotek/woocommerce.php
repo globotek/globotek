@@ -7,14 +7,15 @@
  */
 
 get_header(); ?>
-
 	
-	<div class="chunk">
+	<div class="wrapper">
 		
-		<?php the_post(); ?>
-				
-		<?php woocommerce_content(); ?>
+		<div class="chunk">
 			
+			<?php woocommerce_content(); ?>
+		
+		</div>
+	
 	</div>
 
 <?php get_footer(); ?>

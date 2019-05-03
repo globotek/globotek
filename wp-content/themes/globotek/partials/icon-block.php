@@ -9,7 +9,7 @@
 <div class="page__icon-blocks wrapper">
 	
 	<?php foreach ( $component[ 'icons' ] as $icon_block ) { ?>
-		
+
 		<div class="icon-block">
 			
 			<div class="icon-block__icon">

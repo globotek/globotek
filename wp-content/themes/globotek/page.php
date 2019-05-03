@@ -14,9 +14,19 @@
 	
 	<?php the_post(); ?>
 	
-	<?php var_dump( is_woocommerce() ); ?>
+	<?php if ( class_exists( 'woocommerce' ) ) { ?>
+		
+		<?php if ( is_cart() || is_checkout() || is_account_page() || is_woocommerce() ) { ?>
+			
+			<div class="wrapper">
+				
+				<?php the_content(); ?>
+			
+			</div>
+		
+		<?php } ?>
 	
-	<?php the_content(); ?>
+	<?php } ?>
 	
 	<?php gtek_template_router( get_field( 'components' ) ); ?>
 

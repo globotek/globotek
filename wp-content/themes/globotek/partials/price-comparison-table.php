@@ -10,7 +10,7 @@
 	
 	<?php foreach ( $component[ 'columns' ] as $column ) { ?>
 		
-		<?php if ( $column['title'] ) { ?>
+		<?php if ( $column[ 'title' ] ) { ?>
 			
 			<div class="comparison-grid__item breathe--top">
 				
@@ -44,11 +44,27 @@
 						
 						</div>
 						
-						<div class="comparison__link">
+						<?php if ( $column[ 'linked_page' ] || $column[ 'linked_product' ] ) { ?>
 							
-							<a href="<?php echo $column[ 'linked_page' ]; ?>" class="button button--white"><?php echo $column[ 'link_text' ]; ?></a>
+							<?php if ( $column[ 'linked_product' ] ) { ?>
+																
+								<div class="comparison__link">
+									
+									<a href="<?php echo wc_get_cart_url() . '?add-to-cart=' . $column[ 'linked_product' ]; ?>" class="button button--white"><?php echo $column[ 'link_text' ]; ?></a>
+								
+								</div>
+							
+							<?php } elseif ( $column[ 'linked_page' ] ) { ?>
+								
+								<div class="comparison__link">
+									
+									<a href="<?php echo $column[ 'linked_page' ]; ?>" class="button button--white"><?php echo $column[ 'link_text' ]; ?></a>
+								
+								</div>
+							
+							<?php } ?>
 						
-						</div>
+						<?php } ?>
 					
 					</div>
 					
