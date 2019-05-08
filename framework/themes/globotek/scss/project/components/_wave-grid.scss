@@ -16,7 +16,18 @@
 			$curve-height: 200%;
 			$curve-width: 290px;
 			$curve-offset: -19.55px;
-			$curve-percentage: 100%;
+            $curve-percentage: 100%;
+            
+            @include media-query('portable'){
+
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                margin: #{-$gutter} 0 0 #{-$gutter};
+                padding: 0;
+        
+            }
 						
 			
 			&:nth-child(even) {
@@ -38,6 +49,12 @@
                         -moz-box-shadow: 16px 15px -17px #888;
                         -webkit-box-shadow: 16px 0 15px 17px #888;
                         box-shadow: 16px 0 15px -17px #888;
+
+                        @include media-query('portable'){
+
+                            display: none;
+
+                        }
 					}
 				}
 			}
@@ -58,6 +75,12 @@
                         -moz-box-shadow: -16px 0 15px -17px #888;
                         -webkit-box-shadow: -16px 0 15px 17px #888;
                         box-shadow: -16px 0 15px -17px #888;
+
+                        @include media-query('portable'){
+
+                            display: none;
+
+                        }
                     }
 				}
             }
@@ -131,14 +154,23 @@
 			
 			&__image {
 				
-				@extend %desk--one-half;
-				overflow: hidden;
+                @extend %desk--one-half;
+                @extend %portable--one-whole;
+                overflow: hidden;
+                
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                }
+                
 				
 			}
 			
 			&__body {
 				
-				@extend %desk--one-half;
+                @extend %desk--one-half;
+                @extend %portable--one-whole;
+
 				
 				@extend %flex-wrapper--column;
 				justify-content: center;
