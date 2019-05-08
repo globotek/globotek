@@ -12,10 +12,10 @@
 			console.log('Packery Time', elem);
 			
 			elem.isotope({
-				//layoutMode:      'packery',
+				layoutMode:      'packery',
 				itemSelector:    '.gallery__item',
 				percentPosition: true,
-				masonry:         {
+				packery:         {
 					gutter: 30,
 					//horizontal: true
 				}
