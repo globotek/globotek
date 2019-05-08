@@ -33,14 +33,11 @@
                     e.preventDefault();
                     var $this = $(this);
 
+
                     if($this.closest('.menu-item-has-children').hasClass('is-active')) {
                         $this.closest('.menu-item-has-children').removeClass('is-active');
                     } else {
-                        $('.menu-item-has-children').removeClass('is-active');
-                    
-                        setTimeout(function(){
-                            $this.closest('.menu-item-has-children').addClass('is-active');
-                        }, 300);
+                        $this.closest('.menu-item-has-children').addClass('is-active');
                     }                  
 
                 }
