@@ -1,0 +1,39 @@
+.gallery{
+	
+	@include mode('global'){
+		
+		&__packery{
+			
+			//@extend %box-gradient;
+			
+			&--sizer{
+				
+				width: 22%;
+				
+			}
+			
+			&--gutter{
+				
+				width: 4%;
+				
+			}
+			
+		}
+		
+		&__item{
+			
+			width: 31%;
+			//@extend %box-shadow;
+			@extend %box-shadow-secondary;
+			
+		}
+		
+		&__item--double{
+			
+			width: 48%;
+			
+		}
+		
+	}
+	
+}

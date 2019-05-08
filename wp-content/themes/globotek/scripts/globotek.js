@@ -303,6 +303,35 @@ function debounce(func, wait, immediate) {
 		if (callNow) func.apply(context, args);
 	};
 };
+/**
+ * Created by matthew on 3/5/19.
+ */
+(function ($) {
+	
+	$.fn.gallery = function () {
+		
+		var init = function () {
+			
+			console.log('Packery Time');
+			
+			$(this).isotope({
+				layoutMode:      'packery',
+				itemSelector:    '.gallery__item',
+				percentPosition: true,
+				packery:         {
+					gutter: '.gutter-sizer'
+				}
+			});
+			
+		};
+		
+		init();
+		return this;
+		
+	}
+	
+	
+}(jQuery));
 (function ($) {
 	
 	$.fn.rangeSlider = function () {
@@ -541,6 +570,11 @@ var app = (function ($) {
 							case 'range-slider':
 								
 								elem.rangeSlider();
+								break;
+							
+							case 'gallery':
+								
+								elem.gallery();
 								break;
 							
 						}
