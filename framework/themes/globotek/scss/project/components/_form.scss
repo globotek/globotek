@@ -17,10 +17,22 @@
             padding: 10px 25px;
             height: 140px;
 
+            @include media-query('portable'){
+
+                height: 100px;
+        
+            }
+
         }
 
         &__range {
             position: relative; 
+
+            @include media-query('portable'){
+
+                margin: 0 $gutter--double;
+        
+            }
 
             &--input {
                 -webkit-appearance: none;

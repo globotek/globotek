@@ -7,6 +7,12 @@
     color: $grey--mid;
     margin-bottom: 40px;
 
+    @include media-query('portable'){
+
+        margin-bottom: 20px;
+
+    }
+
 	@include form-field();
 	@include placeholder($grey);
 	@include font-size($base-font-size, true);

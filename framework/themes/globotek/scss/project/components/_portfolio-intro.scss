@@ -32,7 +32,7 @@
 			line-height: 1.2;
 			color: $white;
 			padding: $gutter--midi calc(40% + 30px) $gutter--midi $gutter;
-			width: $site-max-width;
+			width: 100%;
 			margin: 0 auto;
 			z-index: 20;
 			
@@ -58,7 +58,7 @@
 			flex-wrap: wrap;
 			align-items: flex-start;
 			padding: $gutter--midi $gutter;
-			width: $site-max-width;
+			width: 100%;
 			margin: 0 auto;
 			
 			&__heading {

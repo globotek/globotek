@@ -33,7 +33,7 @@
 			
 			<div class="contact-form__left">
 				
-				<div class="contact-form__contact__field">
+				<div class="contact-form__field">
 					<input type="text" class="form__field" name="contact-form-name" placeholder="Name (required)" value=""/>
 				</div>
 				

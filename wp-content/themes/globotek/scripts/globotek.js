@@ -310,16 +310,19 @@ function debounce(func, wait, immediate) {
 	
 	$.fn.gallery = function () {
 		
+		var elem = $(this);
+		
 		var init = function () {
 			
-			console.log('Packery Time');
+			console.log('Packery Time', elem);
 			
-			$(this).isotope({
+			elem.isotope({
 				layoutMode:      'packery',
 				itemSelector:    '.gallery__item',
 				percentPosition: true,
 				packery:         {
-					gutter: '.gutter-sizer'
+					gutter: 30,
+					//horizontal: true
 				}
 			});
 			

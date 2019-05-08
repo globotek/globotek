@@ -71,10 +71,17 @@
 			@extend %desk--one-whole;
             color: $white;
             text-align: center;
+            width: 100%;
 			
 			&__title{
 				
-				padding-bottom: $gutter--midi;
+                padding-bottom: $gutter--midi;
+                
+                @include media-query('portable'){
+
+                    padding-bottom: $gutter--mini;
+                    
+                }
 				
 			}
 			
@@ -86,6 +93,12 @@
 
                     padding: 0 80px;
 
+                }
+
+                @include media-query('portable'){
+
+                    margin-bottom: 0;
+                    
                 }
 				
 			}
