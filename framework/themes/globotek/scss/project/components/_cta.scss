@@ -180,9 +180,6 @@
 			
 			margin: $gutter--treble 0;
 			padding: $gutter--midi;
-			border-radius: 10px;
-			background: $white;
-			@extend %box-shadow-secondary;
 			
 			@include media-query('portable'){
 				flex-direction: column;

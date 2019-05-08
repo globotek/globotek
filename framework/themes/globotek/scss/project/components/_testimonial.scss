@@ -22,7 +22,9 @@
 			}
 			
 			&--right{
-				align-self: flex-end;
+                align-self: flex-end;
+                padding-right: $gutter;
+                padding-bottom: $gutter;
 				
 				@include media-query('portable'){
 					margin-left: auto;
