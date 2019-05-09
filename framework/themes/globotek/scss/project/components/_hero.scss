@@ -4,13 +4,12 @@
 
         position: relative;
         width: 100%;
-        overflow: hidden;
-        
+
         &--content {
 
             display: flex;
-            overflow: hidden;
             color: $white;
+            position: relative;
 
         }
 
@@ -39,21 +38,17 @@
 		&__background{
             
             @extend %one-whole;
-			@extend %desk--one-whole;
+            @extend %desk--one-whole;
+            position: absolute;
+
+            bottom: 0;
 			
-			flex-shrink: 0;
-			
-			img{
+            flex-shrink: 0;
+
+			&__image{
 				
-                width: 100%;
+                width: 100%;              
                 
-                @include media-query('portable'){
-                    width: 1100px;
-                    max-width: 1100px;
-                    left: 50%;
-                    transform: translateX(-10%);
-                }
-				
             }
             
         }
@@ -89,27 +84,29 @@
 		}
 		
 		
-		&__title {
-			padding-top: $gutter--mini;
-		}
-		
 		&__inner{
 			
-			position: absolute;
+			position: relative;
 			height: 100%;
 			width: 100%;
 			
 			
 			@extend %flex-wrapper--column;
 			justify-content: center;
-			align-items: center;
+            align-items: center;
+            
+            @include media-query('portable'){
+                height: 420px;
+            }
 			
 		}
 		
 		&__cta{
 			
-			@extend %grid;
-			justify-content: space-between;
+            @extend %grid;
+            @extend %flex-wrapper--row;
+			justify-content: center;
+			align-items: center;
 			width: $site-max-width;
 			max-width: 100%;
 			
@@ -118,7 +115,7 @@
             }
             
             @include media-query('portable'){
-                margin-top: -50px;
+                margin-top: 0px;
             }
 			
 			@include media-query('portable'){
@@ -132,25 +129,28 @@
 			}
 
 			&__image{
-                margin-top: -100px;
+                margin-top: 0px;
 				@extend %desk--three-fifths;
                 @extend %is-hidden--portable;
 
+                @extend %flex-wrapper;
+                justify-content: flex-end;
+
+                text-align: right;
+
                 @include media-query('desk'){
-                    margin-top: -80px;
+                    margin-top: 0px;
                 }
 
                 img {
-	                
-	                height: auto;
-	                
-                    @include media-query('desk'){
-                        width: 90%;
-                    }
-                    
+
+                    height: 500px;
+                    width: auto !important;
+
                     @include media-query('desk-wide'){
-                       width: 100%;
+                        height: 650px;
                     }
+	                
                 }
 			}
 			
