@@ -32,6 +32,12 @@
 
                 position: absolute;
                 z-index: -1;
+                
+                @include media-query('lap'){
+                    width: 330px;
+                }
+
+
 
             }
             
