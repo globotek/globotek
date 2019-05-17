@@ -27,6 +27,10 @@
 			margin-top: ($breathe-space / 2);
 		}
 		
+		&--top-double{
+			margin-top: ($breathe-space * 2);
+		}
+		
 		&--top-treble{
 			margin-top: ($breathe-space * 3);
 		}

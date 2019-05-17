@@ -37,6 +37,10 @@ function gtek_hero( $hero_template = NULL ) {
 			
 			$hero_template = $hero[ 'hero_template' ];
 			
+		} else {
+			
+			$hero_template = 'hero-menu-bg';
+			
 		}
 		
 	}

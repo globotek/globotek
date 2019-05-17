@@ -2,11 +2,11 @@
 	
 	@include mode('global'){
 		
-        @extend %grid;	
-
+        @extend %grid;
+        @extend %one-whole;
+        
         justify-content: space-between;
-        padding: $gutter--treble $gutter;
-
+        
         &__hero__body {
 
             height: 10px;
@@ -17,7 +17,9 @@
 
             @extend %desk--four-fifths;
             @extend %portable--one-whole;
-
+            
+            
+            
             padding-right: $gutter--midi;
 
             @include media-query('portable'){

@@ -24,8 +24,8 @@
 		<div class="cta__portfolio-item">
 			
 			<div class="cta__title">
-				<h2 class="title title__secondary">Latest Project</h2>
-				<p class="section-title__intro">Take a moment and checkout GloboTek's latest project.</p>
+				<h2 class="title title__secondary">GloboTek's Latest Project</h2>
+				<p class="section-title__intro">Take a moment to checkout our latest project.</p>
 			</div>
 			
 			<?php while ( $query->have_posts() ) : $query->the_post(); ?>

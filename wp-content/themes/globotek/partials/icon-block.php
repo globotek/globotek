@@ -8,9 +8,11 @@
 
 <div class="page__icon-blocks wrapper">
 	
+	<?php $block_count = count($component['icons']); ?>
+
 	<?php foreach ( $component[ 'icons' ] as $icon_block ) { ?>
 
-		<div class="icon-block">
+		<div class="icon-block <?php _e($block_count == 3 ? 'icon-block--thirds' : '' ); ?>">
 			
 			<div class="icon-block__icon">
 				<?php icon($icon_block['icon']); ?>

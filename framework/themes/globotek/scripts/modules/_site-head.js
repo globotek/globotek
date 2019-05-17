@@ -44,7 +44,10 @@
             });
 
             $('.search__icon').click(function(){
-                $('.search').toggleClass('search--open');
+	            
+                $('.search').toggleClass('search--open')
+                $('.search__form__field').focus();
+	            
             });
               
 

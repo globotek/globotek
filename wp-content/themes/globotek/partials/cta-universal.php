@@ -18,13 +18,17 @@
 		<div class="cta__universal">
 			
 			<div class="cta__universal__content">
-				<h2 class="cta__universal__content__title title title__secondary"><?php echo $component['title']; ?></h2>
-				<p class="cta__universal__content__text"><?php echo $component['content']; ?></p>
+				<h2 class="cta__universal__content__title title title__secondary"><?php echo $component[ 'title' ]; ?></h2>
+				<p class="cta__universal__content__text"><?php echo $component[ 'content' ]; ?></p>
 			</div>
 			
-			<div class="cta__universal__link">
-				<a href="<?php echo $component['link']['link_url']; ?>" class="button button--white"><?php echo $component['link']['link_text']; ?></a>
-			</div>
+			<?php if ( ! empty( $component[ 'link' ][ 'link_text' ] ) ) { ?>
+				
+				<div class="cta__universal__link">
+					<a href="<?php echo $component[ 'link' ][ 'link_url' ]; ?>" class="button button--white"><?php echo $component[ 'link' ][ 'link_text' ]; ?></a>
+				</div>
+			
+			<?php } ?>
 		
 		</div>
 	

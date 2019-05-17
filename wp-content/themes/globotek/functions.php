@@ -24,8 +24,11 @@ function theme_development() {
 	
 }
 
-add_action( 'wp_footer', 'theme_development' );
-
+if ( home_url() == 'http://globotek.local' ) {
+	
+	add_action( 'wp_footer', 'theme_development' );
+	
+}
 
 function theme_styles() {
 	
@@ -74,20 +77,23 @@ add_image_size( 'post-hero', 0, 600, TRUE );
 
 if ( class_exists( 'woocommerce' ) ) {
 	
-	add_theme_support( 'woocommerce');
+	add_theme_support( 'woocommerce' );
 	
 }
 
 
 register_nav_menus( array(
-	'main'   => 'Main Menu',
-	'footer' => 'Footer Menu'
+	'main'         => 'Main Menu',
+	'footer_col_1' => 'Footer Column 1 Menu',
+	'footer_col_2' => 'Footer Column 2 Menu',
+	'footer_col_3' => 'Footer Column 3 Menu',
+	'footer_col_4' => 'Footer Column 4 Menu'
 ) );
 
 
 function reduced_excerpt_length( $length ) {
 	
-	if ( !is_admin() || !is_home() ) {
+	if ( ! is_admin() || ! is_home() ) {
 		
 		return 20;
 		
@@ -104,3 +110,12 @@ add_filter( 'yoast-acf-analysis/refresh_rate', function () {
 	// Refresh rates in milliseconds
 	return 1000;
 } );
+
+
+function woocommerce_sidebar_test() {
+	
+	echo 'Hello World';
+	
+}
+
+add_action( 'woocommerce_sidebar', 'woocommerce_sidebar_test', 5 );

@@ -22,7 +22,7 @@
 				
 				<div class="image-content__content">
 					
-					<h2 class="image-content__content__title title__secondary"><?php echo $content_row[ 'title' ]; ?></h2>
+					<h3 class="image-content__content__title title__secondary"><?php echo $content_row[ 'title' ]; ?></h3>
 					
 					<p class="image-content__content__text"><?php echo $content_row[ 'content' ]; ?></p>
 					

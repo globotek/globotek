@@ -3,10 +3,16 @@
 	@include mode('global'){
 		
 		@extend %flex-wrapper;
-		@extend %desk--one-quarter;
+		@extend %one-quarter;
 		@extend %palm--one-whole;
 		
 		padding: 0 $gutter;
+		
+		&--thirds{
+			
+			@extend %desk--one-third;
+			
+		}
 		
 		@include media-query('portable'){
 			padding-bottom:  $gutter--midi;

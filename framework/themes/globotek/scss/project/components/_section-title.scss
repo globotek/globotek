@@ -14,7 +14,7 @@
 		}
 		
 		&.center{
-			margin-bottom: -$gutter--double;
+			//margin-bottom: -$gutter--double;
 			
 			.section-title__intro{
 				margin-bottom: $gutter--treble;
@@ -23,6 +23,8 @@
 		}
 		
 		&__intro{
+			width: 70%;
+			margin: 0 15%;
 			margin-top: $gutter--midi;
 		}
 		

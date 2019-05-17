@@ -7,7 +7,7 @@
  */
 ?>
 
-<div class="wrapper content">
+<div class="wrapper content centered">
 	
 	<?php the_content(); ?>
 
