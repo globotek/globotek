@@ -32,4 +32,10 @@
 
 </div>
 
+<script>
+
+
+</script>
+
+
 <?php get_footer(); ?>

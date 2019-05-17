@@ -22,12 +22,23 @@
 
             @extend %desk--one-half;
 			@extend %lap--one-half;
-			@extend %palm--one-whole;
-            
-            text-align: center;
+            @extend %palm--one-whole;
+            @extend %flex-wrapper;
 
-            img {
-                display: inline;
+            justify-content: center;
+            align-items: center;
+
+            &__cloud {
+
+                position: absolute;
+                z-index: -1;
+                
+                @include media-query('lap'){
+                    width: 330px;
+                }
+
+
+
             }
             
 		}
