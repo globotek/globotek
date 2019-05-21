@@ -314,16 +314,20 @@ function debounce(func, wait, immediate) {
 		
 		var init = function () {
 			
-			console.log('Packery Time', elem);
-			
-			elem.isotope({
-				layoutMode:      'packery',
-				itemSelector:    '.gallery__item',
-				percentPosition: true,
-				packery:         {
-					gutter: 30,
-					//horizontal: true
-				}
+			$(window).load(function () {
+				
+				console.log('Packery Time', elem);
+				
+				elem.isotope({
+					layoutMode:      'packery',
+					itemSelector:    '.gallery__item',
+					percentPosition: true,
+					packery:         {
+						gutter: 30,
+						//horizontal: true
+					}
+				});
+				
 			});
 			
 		};
@@ -426,7 +430,10 @@ function debounce(func, wait, immediate) {
             });
 
             $('.search__icon').click(function(){
-                $('.search').toggleClass('search--open');
+	            
+                $('.search').toggleClass('search--open')
+                $('.search__form__field').focus();
+	            
             });
               
 
