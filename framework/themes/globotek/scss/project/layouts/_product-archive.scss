@@ -1,0 +1,54 @@
+.product-archive{
+	
+	@include mode('global'){
+	
+        @extend %one-whole;
+        
+        &__products {
+
+
+
+        }
+
+        &__product {
+
+            &:nth-child(odd) {
+
+                .product-archive__inner {
+                    background: $primary-color;
+                    height: 200px;
+                }
+                
+            }
+
+        }
+
+        
+
+        &__background {
+            position: relative;
+
+            img {
+
+                width: 105%;
+                display: block;
+
+            }
+
+            &-top {
+
+                bottom: -2px;
+
+            }
+
+            &-bottom {
+
+                top: -2px;
+
+            }
+
+        }
+		
+	}
+	
+}
