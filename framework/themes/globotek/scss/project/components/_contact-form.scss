@@ -2,7 +2,7 @@
 	
 	@include mode('global'){
 
-        display: flex;
+        //display: flex;
         position: relative;
         width: 100%;
         overflow: hidden;
@@ -32,9 +32,10 @@
         &__inner{
             
             @extend %flex-wrapper--column;
+            background: $primary-color--bg;
             justify-content: center;
             align-items: center;
-            position: absolute;
+            position: relative;
             height: 100%;
             width: 100%;
             
@@ -63,7 +64,6 @@
             
             @include media-query('portable'){
 
-                margin-top: 40px;
                 text-align: center;
                 
             }
@@ -181,6 +181,7 @@
             @include media-query('portable'){
 
                 text-align: center;
+                margin-bottom: 0px;
 
             }
 			

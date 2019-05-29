@@ -1,0 +1,15 @@
+.support{
+	
+	@include mode('global'){
+	
+        background: $primary-color;
+        color: $white;
+        padding: $gutter;
+        margin-bottom: $gutter--double;
+        @extend %box-shadow;
+
+        border-radius: $gutter--mini;
+		
+	}
+	
+}

@@ -4,7 +4,7 @@
 		
 		.wrapper {
 			
-			padding: $gutter--treble 0;
+			padding: $gutter--treble $gutter;
 			
 			h2, h3 {
 				
@@ -250,12 +250,160 @@
 			
 		}
 		
-	}
+    }
+
+    div.product div.summary {
+        float: none;
+    }
 	
 }
 
 .woocommerce-product-gallery {
 
     float: none !important;
+
+}
+
+.woocommerce-product {
+
+    @extend %grid;
+    @extend %grid--full;
+
+    &__left {
+
+        @extend %desk--three-quarters;
+        @extend %lap--three-quarters;
+        @extend %palm--one-whole;
+
+        padding-right: $gutter--double;
+
+
+        @include media-query('portable') {
+            margin-bottom: $gutter--double;
+            padding-right: 0px;
+        }
+
+    }
+
+    &__right {
+
+        @extend %desk--one-quarter;
+        @extend %lap--one-quarter;
+        @extend %palm--one-whole;
+
+    }
+
+    .woocommerce-product-gallery__image {
+        margin: $gutter--double 0;
+        
+        img {
+            margin: 0 auto;
+        }
+        
+
+    }
+
+    .gradient-box {
+        @extend %box-gradient;
+        @extend %box-shadow;
+
+        border-radius: $gutter--mini;
+        padding: $gutter;
+        margin-bottom: $gutter--double;
+
+        .woocommerce-Price-amount {
+
+            @extend %title-secondary;
+            color: $black;
+
+        }
+
+        .cart {
+            text-align: center;
+
+            .quantity {
+                float: none !important;
+                margin: $gutter auto !important;
+            }
+
+            .button {
+                float: none !important;
+            }
+        }
+    }
+
+    .support {
+
+        h3 {
+            margin: 0 0 $gutter;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .button--white {
+
+            @extend %transition-all;
+		
+            display: inline-block;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+            padding: $gutter--mini $gutter--midi;
+            border-radius: $gutter--midi;
+            @extend %box-shadow-secondary;
+
+            margin: $gutter--double 0 $gutter;
+
+        }
+
+    }
+
+
+    .details {
+
+        background: $grey--lighter;
+        padding: $gutter;
+
+        @extend %box-shadow;
+
+        border-radius: $gutter--mini;
+
+        p {
+            text-align: right;
+        }
+
+    }
+
+
+    .woocommerce-tabs {
+
+        ul.tabs {
+
+            display: none !important;
+
+        }
+
+        .shop_attributes {
+
+            box-shadow: none;
+
+            th,td {
+
+                background: none !important;
+                border: none !important;
+                padding: 0 !important;
+                text-align: left !important;
+
+                p {
+                    text-align: left;
+                }
+
+            }
+
+        }
+
+    }
 
 }

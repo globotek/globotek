@@ -9,8 +9,13 @@
 
 <div class="contact-form">
 	
+<<<<<<< HEAD
 	<div class="contact-form__background">
 		<img src="<?php echo get_template_directory_uri() . '/images/contact-bg.svg'; ?>" alt="Contact Form Background" />
+=======
+	<div class="contact-form__background contact-form__background-top">
+		<img src="<?php echo get_template_directory_uri() . '/images/contact-bg-top.svg'; ?>"/>
+>>>>>>> c2fca725771ddfb58126297e1c348d61347d0f53
 	</div>
 	
 	<div class="contact-form__inner">
@@ -79,6 +84,10 @@
 		
 		</div>
 	
+	</div>
+
+    <div class="contact-form__background contact-form__background-bottom">
+		<img src="<?php echo get_template_directory_uri() . '/images/contact-bg-bottom.svg'; ?>"/>
 	</div>
 
 </div>
