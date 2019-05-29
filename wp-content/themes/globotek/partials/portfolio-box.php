@@ -13,7 +13,7 @@
 		<div class="portfolio-box__inner__body">
 			
 			<a href="<?php echo get_the_permalink(); ?>" class="portfolio-box__inner__body__image">
-				<?php the_post_thumbnail( 'large' ); ?>
+				<?php the_post_thumbnail( 'card-thumbnail' ); ?>
 			</a>
 			
 			<div class="portfolio-box__inner__body__content">

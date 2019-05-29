@@ -34,7 +34,7 @@ get_header(); ?>
 				
 				<h1 class="portfolio-intro__title title title__secondary"><?php the_title(); ?></h1>
 				
-				<div class="portfolio-intro__content">
+				<div class="portfolio-intro__content wrapper">
 					
 					<h2 class="portfolio-intro__content__heading">Scope</h2>
 					
@@ -107,7 +107,7 @@ get_header(); ?>
 				<div class="wave-grid__item">
 					
 					<div class="wave-grid__item__image">
-						<img src="<?php echo $info_box[ 'service_image' ][ 'url' ]; ?>"/>
+						<img src="<?php echo $info_box[ 'service_image' ][ 'url' ]; ?>" alt="<?php echo $info_box['service_image']['alt']; ?>"/>
 					</div>
 					
 					<div class="wave-grid__item__body">
@@ -133,7 +133,7 @@ get_header(); ?>
 			<div class="circle-image__inner">
 				
 				<div class="circle-image__image">
-					<img src="<?php echo $fields[ 'full_width_banner' ][ 'image' ][ 'url' ]; ?>"/>
+					<img src="<?php echo $fields[ 'full_width_banner' ][ 'image' ][ 'url' ]; ?>" alt="<?php echo $fields[ 'full_width_banner' ][ 'image' ][ 'alt' ]; ?>" />
 				</div>
 				
 				<div class="circle-image__content">
@@ -159,7 +159,7 @@ get_header(); ?>
 			
 			<div class="cta__inner">
 				
-				<img class="cta__inner__image" src="<?php echo $fields[ 'banner_image' ][ 'url' ]; ?>"/>
+				<img class="cta__inner__image" src="<?php echo $fields[ 'banner_image' ][ 'url' ]; ?>" alt="<?php echo $fields[ 'banner_image' ][ 'alt' ]; ?>" />
 			
 			</div>
 		

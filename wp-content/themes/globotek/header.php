@@ -12,17 +12,51 @@
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	
+	<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	
 	<?php wp_head(); ?>
 	
-	<!-- Google Tag Manager -->
-	<!--<script>
-		(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	                                                  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-W4QP6F9');
-	</script>-->
-	<!-- End Google Tag Manager -->
+	<?php if ( home_url() == 'https://globotek.net' && ! current_user_can( 'manage_options' ) ) { ?>
+		
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-96947295-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+			
+			gtag('config', 'UA-96947295-1');
+		</script>
+		
+		
+		<!-- Google Tag Manager -->
+		<!--	<script>-->
+		<!--		(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':-->
+		<!--			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],-->
+		<!--	                                                  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=-->
+		<!--			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);-->
+		<!--		})(window,document,'script','dataLayer','GTM-W4QP6F9');-->
+		<!--	</script>-->
+		<!-- End Google Tag Manager -->
+	
+	<?php } ?>
 
 </head>
 
@@ -101,14 +135,17 @@
 				
 			}
 			
+			
 			/** Now we have separated parent items from child items, we can construct the markup.*/
 			echo '<ol class="site-head__nav__inner">';
 			
 			/** Loop over all menu items again, as to build the lists.*/
 			foreach ( $menu_items as $link ) {
 				
-				$link_id   = $link->ID;
-				$parent_id = $link->menu_item_parent;
+				$link_id        = $link->ID;
+				$parent_id      = $link->menu_item_parent;
+				$sub_menu_class = '';
+				
 				
 				/**
 				 * We check if the menu item ID exists as a key in the child array. If it does, it has
@@ -123,7 +160,19 @@
 					echo '<li class="site-head__nav__item menu-item-has-children js-toggle__target' . implode( ' ', $link->classes ) . '" data-elem-class="class-attribute">';
 					echo '<a href="' . $link->url . '">' . $link->title . '<span class="site-head__nav__item__arrow js-toggle__trigger"><i class="fas fa-chevron-down"></i></span></a>';
 					
-					echo '<ul class="sub-menu">';
+					$grandchild_keys = $child_array[ $link_id ];
+					
+					foreach ( $grandchild_keys as $key ) {
+						
+						if ( in_array( $key, array_keys( $grandchild_array ) ) ) {
+							
+							$sub_menu_class = 'sub-menu-has-sub-menu';
+							
+						}
+						
+					}
+					
+					echo '<ul class="sub-menu ' . $sub_menu_class . '">';
 					
 					/**
 					 * We have the IDs of child items stored but no data so we need to loop over
@@ -201,9 +250,7 @@
 					echo '</ul>';
 					echo '</li>';
 					
-				} elseif
-				( $link->menu_item_parent == 0
-				) {
+				} elseif ( $link->menu_item_parent == 0 ) {
 					
 					echo '<li class="site-head__nav__item ' . implode( ' ', $link->classes ) . '">';
 					
@@ -214,7 +261,7 @@
 				}
 			}
 			
-			echo '</ul>';
+			echo '</ol>';
 			/** End menu markup creation.*/
 			?>
 		

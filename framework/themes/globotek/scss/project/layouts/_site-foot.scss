@@ -1,37 +1,33 @@
-.site-foot{
+.site-foot {
 	
-	@include mode("global"){
+	@include mode("global") {
 		
 		display: flex;
 		position: relative;
 		width: 100%;
 		overflow: hidden;
 		color: $white;
-		
-		@include media-query('portable'){
-			padding-bottom: 20%;
-		}
-		
-		&__background{
+				
+		&__background {
 			
 			@extend %desk--one-whole;
 			flex-shrink: 0;
 			
-			img{
+			img {
 				
 				width: 100%;
-                
-                @include media-query('portable'){
-                    width: 2250px;
-                    left: 50%;
-                    transform: translateX(-10%);
-                }
+				
+				@include media-query('portable') {
+					width: 2250px;
+					left: 50%;
+					transform: translateX(-10%);
+				}
 				
 			}
 			
 		}
 		
-		&__inner{
+		&__inner {
 			
 			position: absolute;
 			top: 0;
@@ -44,7 +40,7 @@
 			
 		}
 		
-		&__content{
+		&__content {
 			
 			@extend %grid;
 			justify-content: space-between;
@@ -52,7 +48,7 @@
 			max-width: $site-max-width;
 			padding-top: 225px;
 			
-			@include media-query('portable'){
+			@include media-query('portable') {
 				flex-direction: column;
 				padding-top: 80px;
 				padding-left: 40px;
@@ -61,23 +57,23 @@
 		}
 		
 		&__contact,
-		&__nav{
+		&__nav {
 			
 			@extend %desk--one-half;
 			@extend %palm--one-whole;
 			
 		}
 		
-		&__contact{
+		&__contact {
 			
-            @extend %flex-wrapper--column;
-            
-            @include media-query('portable'){
-                position: relative;
-                top: 150px;
-            }
+			@extend %flex-wrapper--column;
 			
-			&__logo{
+			@include media-query('portable') {
+				position: relative;
+				top: 150px;
+			}
+			
+			&__logo {
 				
 				width: auto;
 				max-width: 100%;
@@ -85,37 +81,41 @@
 				
 			}
 			
-			&__phone{
+			&__phone {
 				
 				@include font-size(24px);
 				margin-bottom: $gutter--mini;
 				color: $white;
 				text-decoration: none;
 				
+				& + & {
+					margin-top: 20px;
+				}
+				
 			}
 			
 		}
 		
-		&__nav{
+		&__nav {
 			
 			@extend %flex-wrapper;
 			justify-content: space-between;
 			
-			@include media-query('portable'){
-                flex-wrap: wrap;
-                position: relative;
-                top: 0px;
+			@include media-query('portable') {
+				flex-wrap: wrap;
+				position: relative;
+				top: 0px;
 			}
 			
-			&__item{
+			&__item {
 				
 				@extend %portable--one-half;
 				
-				@include media-query('portable'){
+				@include media-query('portable') {
 					padding-bottom: $gutter--double;
 				}
 				
-				&__menu li a{
+				&__menu li a {
 					
 					color: $white;
 					text-decoration: none;
@@ -126,7 +126,7 @@
 			
 		}
 		
-		&__copyright{
+		&__copyright {
 			
 			width: 100%;
 			//align-self: flex-end;

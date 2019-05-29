@@ -38,6 +38,10 @@
             height: 100%;
             width: 100%;
             
+            @include media-query('palm'){
+                padding-top: 40px;
+            }
+            
             &__image {
     
                 @include media-query('desk'){

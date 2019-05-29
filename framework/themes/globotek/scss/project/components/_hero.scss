@@ -22,12 +22,10 @@
 		
 		&__image {
 			
-			//height: 650px;
-			object-fit: cover;
+			overflow: hidden;
 			
 			img {
 				
-				object-fit: cover;
 				width: 100%;
 				height: auto;
 				
@@ -96,7 +94,7 @@
 			display: inline;
 			@include font-size(16px, true, false, $tight-line-height-ratio);
 			padding-left: 5px;
-			
+						
 			&:after {
 				content: "";
 				position: absolute;
@@ -109,9 +107,9 @@
 			
 		}
 		
-		&__title {
+		&__category + &__title  {
 			
-			padding-top: 100px;
+			margin-top: 10px;
 			
 		}
 		
@@ -136,9 +134,9 @@
 			@extend %grid;
 			@extend %flex-wrapper--row;
 			justify-content: center;
-			//align-items: center;
 			width: $site-max-width;
 			max-width: 100%;
+			min-height: 500px;
 			
 			@include media-query('desk') {
 				margin-top: 0px;
@@ -156,6 +154,14 @@
 			&__content {
 				@extend %desk--two-fifths;
 				@extend %palm--one-whole;
+				
+				padding-top: 100px;
+				min-height: 400px;
+				
+				@include media-query('portable'){
+					padding-top: 50px;
+				}
+				
 			}
 			
 			&__image {

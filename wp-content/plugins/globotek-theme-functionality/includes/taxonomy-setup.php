@@ -13,8 +13,8 @@ $site_type_labels = array(
 $site_type_args = array(
 	'labels'       => $site_type_labels,
 	'public'       => TRUE,
-	'hierarchical' => TRUE
-
+	'hierarchical' => TRUE,
+	'rewrite'     => array( 'with_front' => FALSE )
 );
 
 register_taxonomy( 'site-type', array( 'portfolio' ), $site_type_args );
@@ -29,8 +29,8 @@ $services_args = array(
 	'labels'       => $services_labels,
 	'public'       => TRUE,
 	'show_ui'      => TRUE,
-	'hierarchical' => TRUE
-
+	'hierarchical' => TRUE,
+	'rewrite'     => array( 'with_front' => FALSE )
 );
 
 register_taxonomy( 'services', array( 'portfolio', 'page' ), $services_args );

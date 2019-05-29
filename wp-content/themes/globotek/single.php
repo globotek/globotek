@@ -21,7 +21,7 @@ the_post(); ?>
 	
 	<div class="hero__wave">
 		
-		<img class="hero__wave__image" src="<?php echo get_template_directory_uri() . '/images/bg-blog-hero.svg'; ?>"/>
+		<img class="hero__wave__image" src="<?php echo get_template_directory_uri() . '/images/bg-blog-hero.svg'; ?>" alt="Hero Section Background" />
 	
 	</div>
 
@@ -84,7 +84,7 @@ the_post(); ?>
 
 <div class="blog-item__cta wrapper">
 	<div class="section-title">
-		<h2 class="title__secondary">Related Articles</h2>
+		<h2 class="title__secondary breathe--bottom">Related Articles</h2>
 	</div>
 	
 	<div class="breathe--bottom-double">

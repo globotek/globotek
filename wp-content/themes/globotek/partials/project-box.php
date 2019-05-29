@@ -16,7 +16,7 @@ $content_background_decider = rand( 1, 3 ); ?>
 	
 	<div class="project-card__body">
 		
-		<img class="project-card__bg" src="<?php echo get_template_directory_uri() . '/images/portfolio-item-bg-' . $content_background_decider . '.svg'; ?>" alt="">
+		<img class="project-card__bg" src="<?php echo get_template_directory_uri() . '/images/portfolio-item-bg-' . $content_background_decider . '.svg'; ?>" alt="Blue Wave Background">
 		
 		<div class="project-card__inner">
 			

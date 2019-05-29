@@ -22,9 +22,9 @@
 				
 				<h1 class="hero__title title title__primary"><?php echo $hero[ 'title' ]; ?></h1>
 				
-				<div class="hero__text">
-					<p><?php echo $hero[ 'sub-title' ]; ?></p>
-				</div>
+				<p class="hero__text">
+					<?php echo $hero[ 'sub-title' ]; ?>
+				</p>
 				
 				<?php if ( ! empty( $hero[ 'link' ][ 'link_url' ] ) ) { ?>
 					

@@ -15,7 +15,7 @@ $portfolio_args = array(
 	'public'      => TRUE,
 	'supports'    => array( 'title', 'editor', 'excerpt', 'thumbnail', 'custom-fields' ),
 	'has_archive' => FALSE,
-	'rewrite'     => array( 'with_front' => FALSE )
+	'rewrite'     => array( 'with_front' => FALSE, 'slug' => 'project-portfolio' )
 );
 
 register_post_type( 'portfolio', $portfolio_args );
@@ -30,7 +30,8 @@ $testimonial_args = array(
 	'labels'      => $testimonial_labels,
 	'public'      => TRUE,
 	'supports'    => array( 'title', 'editor', 'custom-fields' ),
-	'has_archive' => TRUE
+	'has_archive' => TRUE,
+	'rewrite'     => array( 'with_front' => FALSE )
 );
 
 register_post_type( 'testimonial', $testimonial_args );

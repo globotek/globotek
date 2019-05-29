@@ -46,6 +46,10 @@
 				font-size: 12px;
 				margin-bottom: 15px;
 				
+				@include media-query('palm'){
+					padding-top: 10px;
+				}
+				
 				&-name {
                     color: $primary-color;
                     padding: 0;

@@ -10,7 +10,7 @@
 <div class="contact-form">
 	
 	<div class="contact-form__background">
-		<img src="<?php echo get_template_directory_uri() . '/images/contact-bg.svg'; ?>"/>
+		<img src="<?php echo get_template_directory_uri() . '/images/contact-bg.svg'; ?>" alt="Contact Form Background" />
 	</div>
 	
 	<div class="contact-form__inner">
