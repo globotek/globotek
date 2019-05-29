@@ -16,14 +16,111 @@
 
                 .product-archive__inner {
                     background: $primary-color;
-                    height: 200px;
+                    color: $white;
+                }
+
+                .product-archive__image {
+
+                    float: left;
+
+                }
+
+                .product-archive__text {
+
+                    float: right;
+                    padding-left: $gutter--double;
+
+                    @include media-query('portable') {
+                        padding-left: 0;
+                    }
+
                 }
                 
             }
 
+            &:nth-child(even) {
+
+                .product-archive__background-top,
+                .product-archive__background-bottom {
+
+                    display: none;
+
+                }
+
+                .product-archive__inner {
+                    
+                    background: $white;
+                    padding: $gutter--treble 0;
+
+                }
+
+                .product-archive__image {
+
+                    float: right;
+
+                }
+
+                .product-archive__text {
+
+                    float: left;
+                    padding-right: $gutter--double;
+
+                    @include media-query('portable') {
+                        padding-right: 0;
+                    }
+
+                }
+
+            }
+
         }
 
-        
+        &__inner {
+
+
+
+        }
+
+        &__content {
+
+            
+
+        }
+
+        &__image {
+
+            @extend %portable--one-whole;
+            @extend %desk--one-third;
+
+            img {
+                @include media-query('portable') {
+                    margin: 0 auto $gutter--double;
+                }
+            }
+            
+            
+
+        }
+
+        &__text {
+
+            @extend %portable--one-whole;
+			@extend %desk--two-thirds;
+
+        }
+
+        &__heading {
+
+
+        }
+
+        &__paragraph {
+
+            p {
+                margin-top: $gutter;
+            }
+
+        }
 
         &__background {
             position: relative;
@@ -31,7 +128,10 @@
             img {
 
                 width: 105%;
+                max-width: 105%;
                 display: block;
+                position: relative;
+                left: -5px;
 
             }
 

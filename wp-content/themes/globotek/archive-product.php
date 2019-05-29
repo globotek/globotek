@@ -24,38 +24,13 @@
 	
 	<div class="product-archive__products">
 		
-		<div class="product-archive__product">
+        <?php include( 'partials/product-archive.php' ); ?>
 
-            <div class="product-archive__background product-archive__background-top">
-                <img src="<?php echo get_template_directory_uri() . '/images/product-bg-top.svg'; ?>"/>
-            </div>
+        <?php include( 'partials/product-archive.php' ); ?>
 
-            <div class="product-archive__inner">
+        <?php include( 'partials/product-archive.php' ); ?>
 
-                <div class="wrapper">
-
-                    <div class="product-archive__image">
-
-
-
-                    </div>
-
-                    <div class="product-archive__text">
-
-
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="product-archive__background product-archive__background-bottom">
-                <img src="<?php echo get_template_directory_uri() . '/images/product-bg-bottom.svg'; ?>"/>
-            </div>
-
-        </div>
-	
+        <?php include( 'partials/product-archive.php' ); ?>
 	
 	</div>
 
