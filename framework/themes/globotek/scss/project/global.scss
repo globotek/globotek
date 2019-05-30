@@ -16,14 +16,9 @@ html {
 body {
 	font-family: $base-font-family;
 	min-width: $site-min-width;
-<<<<<<< HEAD
-	min-height: 100%;
-	
-=======
     min-height: 100%;
     overflow-x: hidden;
 
->>>>>>> c2fca725771ddfb58126297e1c348d61347d0f53
 	@include font-size($base-font-size, true);
 }
 
