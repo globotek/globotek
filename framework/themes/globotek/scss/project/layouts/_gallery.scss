@@ -22,9 +22,17 @@
 		
 		&__item{
 			
-			width: 31%;
+			
 			//@extend %box-shadow;
 			@extend %box-shadow-secondary;
+			
+			width: 31%;
+			
+			@include media-query('portable'){
+				
+				width: 100%;
+				
+			}
 			
 		}
 		

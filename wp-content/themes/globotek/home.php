@@ -36,6 +36,19 @@
 			
 		}
 		
+		if ( is_date() ) {
+			
+			$archive_date = array(
+				'year'  => get_query_var( 'year' ),
+				'month' => get_query_var( 'monthnum' )
+			);
+						
+			$query_args[ 'date_query' ] = $archive_date;
+			
+			$blog_archive_title .= ' from ' . $GLOBALS[ 'wp_locale' ]->get_month( $archive_date[ 'month' ] ) . ' ' . $archive_date[ 'year' ];
+			
+		}
+		
 		$query = new WP_Query( $query_args ); ?>
 		
 		<?php if ( $query->have_posts() ) : ?>

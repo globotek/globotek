@@ -12,7 +12,7 @@ get_header(); ?>
 		
 		<div class="chunk">
 			
-            <?php woocommerce_content(); ?>
+			<?php woocommerce_content(); ?>
 		
 		</div>
 	

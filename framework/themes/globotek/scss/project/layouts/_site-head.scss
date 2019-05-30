@@ -93,10 +93,11 @@
 					position: relative;
 					
 					.sub-menu {
+						
 						position: absolute;
 						top: 50px;
 						display: flex;
-						flex-wrap: nowrap;
+						flex-direction: column;
 						min-width: 250px;
 						max-height: 0px;
 						background: $white;
@@ -108,25 +109,51 @@
 						
 						@extend %transition-all;
 						
-						.menu-item {
+						@include media-query('portable'){
+							z-index: 1000;
+						}
+						
+						&.sub-menu-has-sub-menu {
+							flex-direction: row;
+							z-index: 1000;
 							
-							& + .menu-item-has-children{
-								//padding-left: $gutter--treble;
+							@include media-query('portable'){
+								flex-direction: column;
 							}
 							
-							&.menu-item-has-children{
+							.menu-item {
 								
-								a.title-menu-item{
-									
-									background-color: $primary-color;
-									color: $white;
+								@include media-query('portable') {
+									padding-left: 0;
 								}
 								
-								.sub-sub-menu{
+							}
+							
+						}
+						
+						.menu-item {
+							
+							@include media-query('portable') {
+								padding-left: $gutter;
+							}
+							
+							&.menu-item-has-children {
+								
+								a.title-menu-item {
+									background-color: $primary-color;
+									color: $white;
 									
-									padding-bottom: 10px;
+									@include media-query('portable') {
+										padding-left: $gutter;
+									}
 									
-									a{
+								}
+								
+								.sub-sub-menu {
+									
+									padding: 5px 0 10px;
+									
+									a {
 										padding: 2px $gutter;
 									}
 								}
@@ -139,6 +166,7 @@
 								padding: 10px $gutter;
 								display: block;
 								color: $primary-color;
+								
 							}
 							
 							&:last-child {

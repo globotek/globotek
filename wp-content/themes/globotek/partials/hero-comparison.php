@@ -10,7 +10,7 @@
 	
 	<div class="hero__background">
 		
-		<img class="hero__background__image" src="<?php echo get_template_directory_uri() . '/images/hero-home-bg.svg'; ?>"/>
+		<img class="hero__background__image" src="<?php echo get_template_directory_uri() . '/images/hero-home-bg.svg'; ?>"  alt="Hero Section Background" />
 	
 	</div>
 	
@@ -28,7 +28,7 @@
 			
 			<div class="hero__cta__image">
 					
-				<img src="<?php echo get_template_directory_uri() . '/images/comparison-hero.png'; ?>"/>
+				<img src="<?php echo get_template_directory_uri() . '/images/comparison-hero.png'; ?>" alt="Hero Section Background"/>
 				
 			</div>
 		

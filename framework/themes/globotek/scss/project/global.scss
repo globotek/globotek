@@ -4,7 +4,6 @@
 @import "../framework/build";
 @import "../framework/core/reset";
 
-
 /*------------------------------------*\
     ADD SOME GLOBAL STYLES
 \*------------------------------------*/
@@ -15,15 +14,20 @@ html {
 }
 
 body {
-    font-family: $base-font-family;
+	font-family: $base-font-family;
 	min-width: $site-min-width;
+<<<<<<< HEAD
+	min-height: 100%;
+	
+=======
     min-height: 100%;
     overflow-x: hidden;
 
+>>>>>>> c2fca725771ddfb58126297e1c348d61347d0f53
 	@include font-size($base-font-size, true);
 }
 
-.xdebug-error{
+.xdebug-error {
 	color: black !important;
 }
 
@@ -45,7 +49,7 @@ a[href^="mailto"] {
 }
 
 .clear {
-
+	
 	&:after,
 	&:before {
 		content: "";
@@ -54,18 +58,24 @@ a[href^="mailto"] {
 	}
 }
 
-.center{
+.center {
 	margin: 0 auto;
 }
 
-.centered{
-	width: 740px;
+.centered {
+	max-width: 740px;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
+	
+	&--wide {
+		
+		max-width: $site-max-width;
+		
+	}
 }
 
-.is-locked{
+.is-locked {
 	overflow: hidden;
 }
 
@@ -78,29 +88,27 @@ a[href^="mailto"] {
     nasty sniffs 👍
 \*------------------------------------*/
 body {
-    &:before {
-        display: none;
-        content: "palm";
-
-        @include media-query("portable-and-up") {
-            content: "portable-and-up";
-        }
-
-        @include media-query("lap-and-up") {
-            content: "lap-and-up";
-        }
-
-        @include media-query("desk") {
-            content: "desk";
-        }
-
-        @include media-query("desk-wide") {
-            content: "desk-wide";
-        }
-    }
+	&:before {
+		display: none;
+		content: "palm";
+		
+		@include media-query("portable-and-up") {
+			content: "portable-and-up";
+		}
+		
+		@include media-query("lap-and-up") {
+			content: "lap-and-up";
+		}
+		
+		@include media-query("desk") {
+			content: "desk";
+		}
+		
+		@include media-query("desk-wide") {
+			content: "desk-wide";
+		}
+	}
 }
-
-
 
 /*------------------------------------*\
     DECLARATIONS

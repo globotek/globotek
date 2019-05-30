@@ -4,12 +4,17 @@
 	
         h1, h2, h3, h4, h5, h6{
             @extend %title-base;
+            margin-top: $gutter--double;
         }
 
-        p {
-            margin: $gutter--midi 0;
+        > * {
+            margin-top: $gutter--midi;
         }
-
+        
+        p + p{
+            margin-top: $gutter--small;
+        }
+        
         a {
             color: $primary-color;
         }
@@ -98,7 +103,15 @@
 
             }
         }
-
+                
+        .wp-block-columns{
+    
+            p + p{
+                margin-top: $gutter--mini;
+            }
+            
+        }
+        
         .wp-block-image {
 
             margin: $gutter--midi 0;

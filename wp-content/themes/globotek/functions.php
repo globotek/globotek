@@ -73,6 +73,8 @@ add_theme_support( 'custom-header' );
 
 add_image_size( 'interior-banner', 0, 200, FALSE );
 add_image_size( 'post-hero', 0, 600, TRUE );
+add_image_size( 'card-thumbnail', 0, 250, FALSE );
+
 
 
 if ( class_exists( 'woocommerce' ) ) {

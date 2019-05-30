@@ -6,7 +6,7 @@
  * Time: 19:28
  */
 
-$cards = get_posts( array( 'posts_per_page' => 3, 'post__not_in' => array(get_the_ID()) ) ); ?>
+$cards = get_posts( array( 'posts_per_page' => 3, 'post__not_in' => array( get_the_ID() ) ) ); ?>
 
 <div class="card-grid center">
 	
@@ -22,7 +22,7 @@ $cards = get_posts( array( 'posts_per_page' => 3, 'post__not_in' => array(get_th
 				
 				<div class="card__image">
 					
-					<?php the_post_thumbnail('large'); ?>
+					<?php the_post_thumbnail( 'card-thumbnail' ); ?>
 					
 					<div class="card__image__decor">
 						<span><?php echo the_time( 'd M Y' ); ?></span>

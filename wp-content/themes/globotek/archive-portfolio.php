@@ -9,7 +9,15 @@
 
 <?php get_header(); ?>
 
-<?php gtek_hero(); ?>
+<?php if ( is_tax() ) { ?>
+	
+	<?php gtek_hero( 'hero-archive' ); ?>
+
+<?php } else { ?>
+	
+	<?php gtek_hero(); ?>
+
+<?php } ?>
 
 <div class="archive-page wrapper">
 	
@@ -48,12 +56,32 @@
 		</div>
 	
 	</div>
-	
+
 	<div class="archive-page__posts">
 		
-		<?php $query = new WP_Query( array(
+		<?php $query_args = array(
 			'post_type' => 'portfolio'
-		) );
+		);
+		
+		if ( is_tax() ) {
+			
+			$query_args[ 'tax_query' ] = array(
+				'relation' => 'OR',
+				array(
+					'taxonomy' => 'site-type',
+					'field'    => 'term_id',
+					'terms'    => get_queried_object_id()
+				),
+				array(
+					'taxonomy' => 'services',
+					'field'    => 'term_id',
+					'terms'    => get_queried_object_id()
+				)
+			);
+			
+		}
+		
+		$query = new WP_Query( $query_args );
 		
 		while ( $query->have_posts() ) : $query->the_post(); ?>
 			

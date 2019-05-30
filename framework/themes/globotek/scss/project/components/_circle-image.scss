@@ -62,12 +62,12 @@
 
             @include media-query('portable'){
         
-                padding: $gutter $gutter--treble $gutter--treble;
+                padding: $gutter $gutter--double $gutter--treble;
     
             }
             
             
-            $curve-height: 950px;
+            $curve-height: 150%;
 			$curve-width: 950px;
 			$curve-offset: -126px;
 			$curve-percentage: 100%;
@@ -78,7 +78,7 @@
 				
                 position: relative;
                 z-index: 10;
-                margin-left: -100px;
+                padding-right: 50px;
                 text-align: right;
 
                 @include media-query('portable'){
@@ -96,7 +96,7 @@
                 content: "";
                 position: absolute;
                 z-index: 0;
-				top: -29%;
+				//top: -50%;
 				left: $curve-offset;
 				height: $curve-height;
 				width: $curve-width;
@@ -117,6 +117,10 @@
                     -webkit-box-shadow: 0px -16px 15px -17px #888;
                     box-shadow: 0px -16px 15px -17px #888;
                 }
+	            
+	            @include media-query('palm'){
+		            display: none;
+	            }
             }
 			
 		}

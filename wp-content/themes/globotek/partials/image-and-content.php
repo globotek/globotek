@@ -15,8 +15,6 @@
 			<div class="image-content">
 				
 				<div class="image-content__image">
-
-                    <img class="image-content__image__cloud" src="<?php echo get_template_directory_uri() . '/images/bg-cloud.svg'; ?>"/>
 					
 					<img src="<?php echo $content_row[ 'image' ]; ?>"/>
 				

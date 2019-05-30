@@ -76,6 +76,10 @@
 			@extend %desk--two-thirds;
 			color: $white;
 			
+			@include media-query('portable'){
+				padding-top: 60px;
+			}
+			
 			&__title{
 				
 				padding-bottom: $gutter--midi;
@@ -173,7 +177,7 @@
 		margin-top: -180px;
 		
 		@include media-query('portable'){
-			margin-top: -250px;
+			margin-top: -100px;
 		}
 		
 		&__body{

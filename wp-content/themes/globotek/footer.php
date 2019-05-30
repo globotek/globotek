@@ -14,6 +14,8 @@
 					<img src="<?php header_image(); ?>" alt="GloboTek Logo in White"/>
 				</a>
 				
+				<a href="mailto:enquiries@globotek.net" class="site-foot__contact__phone">enquiries@globotek.net</a>
+				
 				<a href="tel:01905570735" class="site-foot__contact__phone">01905 570735</a>
 				<p class="site-foot__contact__hours">Available 10am - 6pm UK Time</p>
 			

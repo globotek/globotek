@@ -1,48 +1,52 @@
-.testimonial{
+.testimonial {
 	
-	@include mode('global'){
-	
-        @extend %grid;
-        @extend %box-gradient;
-        @extend %box-shadow;
-
-		border-radius: $radius--double;
-        max-width: 980px;
-        margin: 0 auto;
+	@include mode('global') {
 		
-		@include media-query('desk'){
+		@extend %grid;
+		@extend %box-gradient;
+		@extend %box-shadow;
+		
+		border-radius: $radius--double;
+		max-width: 980px;
+		margin: 0 auto;
+		
+		& + & {
+			margin-top: $gutter--treble;
+		}
+		
+		@include media-query('desk') {
 			flex-wrap: nowrap;
 		}
 		
-		
-		&__decor{
+		&__decor {
 			
-			&--left{
+			&--left {
 				align-self: flex-start;
 			}
 			
-			&--right{
-                align-self: flex-end;
-                padding-right: $gutter;
-                padding-bottom: $gutter;
+			&--right {
+				align-self: flex-end;
+				padding-right: $gutter;
+				padding-bottom: $gutter;
 				
-				@include media-query('portable'){
+				@include media-query('portable') {
 					margin-left: auto;
 				}
 			}
 			
 		}
 		
-		&__body{
-		
+		&__body {
+			
+			@extend %one-whole;
 			padding: 50px $gutter--double $gutter--midi;
 			text-align: center;
 			
-			@include media-query('portable'){
-				padding: 50px 0 0 $gutter;
+			@include media-query('portable') {
+				padding-top: 50px;
 			}
 			
-			&__content{
+			&__content {
 				margin-bottom: $gutter--midi;
 			}
 			
