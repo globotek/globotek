@@ -35,7 +35,7 @@
 			</div>
 			
 			<div class="hero__cta__image">
-				<img src="<?php echo $hero[ 'image' ]; ?>"/>
+				<img src="<?php echo $hero[ 'image' ][ 'url' ]; ?>" alt="<?php echo $hero[ 'image' ][ 'alt' ]; ?>"/>
 			</div>
 		
 		</div>

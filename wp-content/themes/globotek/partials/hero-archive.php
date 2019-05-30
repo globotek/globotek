@@ -10,7 +10,7 @@
 	
 	<div class="hero__background">
 		
-		<img class="hero__background__image" src="<?php echo get_template_directory_uri() . '/images/hero-home-bg.svg'; ?>" alt="Hero Section Background" />
+		<img class="hero__background__image" src="<?php echo get_template_directory_uri() . '/images/hero-home-bg.svg'; ?>" alt="Hero Section Background"/>
 	
 	</div>
 	
@@ -65,10 +65,10 @@
 					
 					<?php $hero_image = get_field( 'hero', get_option( 'page_for_posts' ) ); ?>
 					
-					<img src="<?php echo $hero_image[ 'image' ]; ?>" />
+					<img src="<?php echo $hero_image[ 'image' ][ 'url' ]; ?>" alt="<?php echo $hero_image[ 'image' ][ 'alt' ]; ?>"/>
 				
 				<?php } elseif ( is_category() || is_tax() ) { ?>
-
+					
 					<?php if ( ! empty( get_term_meta( get_queried_object_id(), 'wpsfi_tax_image_id' ) ) ) { ?>
 						
 						<?php echo wpsfi_display_image( get_queried_object_id(), 'full' ); ?>
