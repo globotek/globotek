@@ -16,7 +16,7 @@
 				
 				<div class="image-content__image">
 					
-					<img src="<?php echo $content_row[ 'image' ]; ?>"/>
+					<img src="<?php echo $content_row[ 'image' ][ 'url' ]; ?>" alt="<?php echo $content_row[ 'image' ][ 'alt' ]; ?>"/>
 				
 				</div>
 				
