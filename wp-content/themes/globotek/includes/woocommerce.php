@@ -28,9 +28,6 @@ function clear_add_to_cart(){
 	
 }
 
-<<<<<<< HEAD
-add_action( 'template_redirect', 'clear_add_to_cart' );
-=======
 add_action('template_redirect', 'clear_add_to_cart');
 
 add_action('woocommerce_before_single_product', 'woocommerce_template_single_title', 5);
@@ -42,4 +39,3 @@ add_action('woocommerce_before_single_product_summary', 'woocommerce_template_si
 add_action('woocommerce_before_single_product_summary', 'woocommerce_template_single_add_to_cart', 20);
 
 add_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 30);
->>>>>>> c2fca725771ddfb58126297e1c348d61347d0f53
