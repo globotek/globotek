@@ -112,12 +112,3 @@ add_filter( 'yoast-acf-analysis/refresh_rate', function () {
 	// Refresh rates in milliseconds
 	return 1000;
 } );
-
-
-function woocommerce_sidebar_test() {
-	
-	echo 'Hello World';
-	
-}
-
-add_action( 'woocommerce_sidebar', 'woocommerce_sidebar_test', 5 );
