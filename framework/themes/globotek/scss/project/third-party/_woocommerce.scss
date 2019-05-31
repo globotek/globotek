@@ -4,7 +4,7 @@
 		
 		.wrapper {
 			
-			padding: $gutter--treble $gutter;
+			padding: $gutter--treble $gutter !important;
 			
 			h2, h3 {
 				
@@ -248,7 +248,7 @@
 				border-top-color: $primary-color;
 			}
 			
-		}
+        }
 		
     }
 
@@ -406,4 +406,14 @@
 
     }
 
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+
+    @extend %title-secondary;
+
+}
+
+.woocommerce ul.products[class*=columns-] li.product, .woocommerce-page ul.products[class*=columns-] li.product {
+    width: 100%;
 }
