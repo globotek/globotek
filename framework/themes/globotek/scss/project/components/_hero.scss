@@ -125,6 +125,10 @@
 			
 			@include media-query('portable') {
 				height: 420px;
+            }
+            
+            @include media-query('palm') {
+				height: 370px;
 			}
 			
 		}
