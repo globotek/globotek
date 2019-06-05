@@ -8,7 +8,7 @@
 
 add_action( 'woocommerce_before_main_content', function () {
 	
-	echo '<div class="wrapper"><div class="chunk">';
+	echo '<div class="product-archive wrapper"><div class="chunk">';
 	
 }, 5 );
 

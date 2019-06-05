@@ -8,9 +8,6 @@
 ?>
 
 <div class="contact-form">
-	
-	<div class="contact-form__background">
-		<img src="<?php echo get_template_directory_uri() . '/images/contact-bg.svg'; ?>" alt="Contact Form Background" />
 
 	<div class="contact-form__background contact-form__background-top">
 		<img src="<?php echo get_template_directory_uri() . '/images/contact-bg-top.svg'; ?>"/>

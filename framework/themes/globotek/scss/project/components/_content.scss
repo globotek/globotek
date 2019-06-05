@@ -1,123 +1,134 @@
-.content{
+.content {
 	
-	@include mode('global'){
-	
-        h1, h2, h3, h4, h5, h6{
-            @extend %title-base;
-            margin-top: $gutter--double;
-        }
-
-        > * {
-            margin-top: $gutter--midi;
-        }
-        
-        p + p{
-            margin-top: $gutter--small;
-        }
-        
-        a {
-            color: $primary-color;
-        }
-
-        ul, ol {
-            li {
-                list-style: none;
-                position: relative;
-                left: 20px;
-
-                &:before {
-                    position: absolute;
-                    left: -20px;
-                }
-            }
-        }
-
-        ul {
-            li {
-                &:before {
-                    content: "";
-                    background: $primary-color;
-                    width: 5px;
-                    height: 5px;
-                    border-radius: 50%;
-                    top: 11px;
-                }
-            }
-        }
-
-        ol {
-            counter-reset: li;
-
-            li {
-                counter-increment: li;
-
-                &:before {
-                    content: counter(li);
-                    color: $primary-color;
-                    top: 0px;
-                    text-align: right; 
-                    direction: rtl;
-                    display: inline-block;
-                    width: 10px;
-                }
-            }
-        }
-
-
-        table {
-            margin-bottom: $gutter--midi;
-            border-spacing: 0px;
-            border-radius: $radius--double;
-            @extend %box-shadow;
-
-            tr {
-
-                td {
-                    padding: $gutter $gutter;
-                    vertical-align: top;
-                }
-
-                &:first-child {
-                    
-                    td {
-                        background: $primary-color;
-                        color: $white;
-                        font-weight: bold;
-                        @extend %heading-base;
-
-                        &:first-child {
-
-                            border-radius: $radius--double 0 0 0;
-
-                        }
-
-                        &:last-child {
-
-                            border-radius: 0 $radius--double 0 0;
-
-                        }
-                        
-                    }
-
-                }
-
-            }
-        }
-                
-        .wp-block-columns{
-    
-            p + p{
-                margin-top: $gutter--mini;
-            }
-            
-        }
-        
-        .wp-block-image {
-
-            margin: $gutter--midi 0;
-
-        }
-	
+	@include mode('global') {
+		
+		h1, h2, h3, h4, h5, h6 {
+			@extend %title-base;
+			margin-top: $gutter--double;
+		}
+		
+		h2, h3, h4, h5 {
+			font-weight: normal;
+		}
+		
+		> * {
+			margin-top: $gutter--midi;
+		}
+		
+		h3 + * {
+			margin-top: 5px;
+		}
+		
+		p + p {
+			margin-top: $gutter--small;
+		}
+		
+		a {
+			color: $primary-color;
+		}
+		
+		ul, ol {
+			li {
+				list-style: none;
+				position: relative;
+				left: 20px;
+				
+				&:before {
+					position: absolute;
+					left: -20px;
+				}
+			}
+		}
+		
+		ul {
+			li {
+				&:before {
+					content: "";
+					background: $primary-color;
+					width: 5px;
+					height: 5px;
+					border-radius: 50%;
+					top: 11px;
+				}
+			}
+		}
+		
+		ol {
+			counter-reset: li;
+			
+			li {
+				counter-increment: li;
+				
+				&:before {
+					content: counter(li);
+					color: $primary-color;
+					top: 0px;
+					text-align: right;
+					direction: rtl;
+					display: inline-block;
+					width: 10px;
+				}
+			}
+		}
+		
+		table {
+			margin-bottom: $gutter--midi;
+			border-spacing: 0px;
+			border-radius: $radius--double;
+			@extend %box-shadow;
+			
+			tr {
+				
+				td {
+					padding: $gutter $gutter;
+					vertical-align: top;
+				}
+				
+				&:first-child {
+					
+					td {
+						background: $primary-color;
+						color: $white;
+						font-weight: bold;
+						@extend %heading-base;
+						
+						&:first-child {
+							
+							border-radius: $radius--double 0 0 0;
+							
+						}
+						
+						&:last-child {
+							
+							border-radius: 0 $radius--double 0 0;
+							
+						}
+						
+					}
+					
+				}
+				
+			}
+		}
+		
+		.wp-block-columns {
+			
+			p + p {
+				margin-top: $gutter--mini;
+			}
+			
+		}
+		
+		.wp-block-image {
+			
+			margin: $gutter--midi 0;
+			
+			figcaption {
+				text-align: left;
+			}
+			
+		}
+		
 	}
 	
 }
