@@ -30,11 +30,7 @@ do_action( 'woocommerce_before_main_content' );
 
 ?>
 <header class="woocommerce-products-header">
-<<<<<<< HEAD
-	
-=======
-    sargergergregregreger
->>>>>>> 216873fa28dc057a647d0cb5eced0de01022ba56
+    
 	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 		<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
 	<?php endif; ?>

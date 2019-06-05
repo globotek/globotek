@@ -10,13 +10,23 @@
 
         }
 
-        &__product {
+        .product {
+
+            .wrapper {
+
+                max-width: $site-max-width !important;
+
+            }
 
             &:nth-child(odd) {
 
                 .product-archive__inner {
                     background: $primary-color;
                     color: $white;
+
+                    a {
+                        color: $white;
+                    }
                 }
 
                 .product-archive__image {
@@ -52,6 +62,12 @@
                     background: $white;
                     padding: $gutter--treble 0;
 
+                    color: $black;
+
+                    a {
+                        color: $black;
+                    }
+
                 }
 
                 .product-archive__image {
@@ -75,15 +91,11 @@
 
         }
 
-        &__inner {
-
-
-
-        }
-
         &__content {
 
-            
+            .product {
+                @extend %grid;
+            }
 
         }
 
@@ -91,6 +103,7 @@
 
             @extend %portable--one-whole;
             @extend %desk--one-third;
+            @extend %palm--one-whole;
 
             img {
                 @include media-query('portable') {
@@ -98,19 +111,12 @@
                 }
             }
             
-            
-
         }
 
         &__text {
 
             @extend %portable--one-whole;
 			@extend %desk--two-thirds;
-
-        }
-
-        &__heading {
-
 
         }
 
