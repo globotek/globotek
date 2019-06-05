@@ -8,11 +8,7 @@
 ?>
 
 <div class="contact-form">
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> b5762540683435c6b86e38d9995f3da0cedaa41e
 	<div class="contact-form__background contact-form__background-top">
 		<img src="<?php echo get_template_directory_uri() . '/images/contact-bg-top.svg'; ?>"/>
 	</div>

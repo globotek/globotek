@@ -6,8 +6,6 @@
  * Time: 6:51 PM
  */
 
-
-
 // SINGLE PRODUCT TEMPLATE HOOKS
 
 // REMOVE HOOKS
@@ -55,7 +53,7 @@ add_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_prod
 add_action( 'woocommerce_before_main_content', function () {
       
     if ( is_product() ) {
-        echo '<div class="wrapper">';
+        //echo '<div class="wrapper">';
     }
         
 }, 5 );
@@ -63,11 +61,9 @@ add_action( 'woocommerce_before_main_content', function () {
 
 add_action( 'woocommerce_before_single_product', function () {
 	
-<<<<<<< HEAD
 	echo '<div class="product-archive wrapper"><div class="chunk">';
-=======
+
 	echo '<div class="woocommerce-product"><div class="woocommerce-product__left">';
->>>>>>> b5762540683435c6b86e38d9995f3da0cedaa41e
 	
 }, 5 );
 
@@ -114,8 +110,6 @@ add_action( 'woocommerce_after_single_product', function () {
 	echo '</div></div></div>';
 	
 }, 5 );
-
-
 
 
 // ARCHIVE PRODUCT TEMPLATE HOOKS
