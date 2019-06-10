@@ -121,6 +121,13 @@
                         background: $primary-color;
                         color: $white;
 
+                        &:hover {
+
+                            background: $primary-color;
+
+                        }
+
+
                     }
 
                 }
@@ -131,6 +138,13 @@
     
                         background: $grey--light;
                         color: $black;
+
+                        &:hover {
+
+                            background: $primary-color--light;
+
+                        }
+
     
                     }
     
