@@ -9,10 +9,18 @@
 
 get_header(); ?>
 
-<div class="book-appointment" data-module="freshsales">
-	
-	<div class="js-datepicker"></div>
-	<input type="text" class="js-datepicker-selection"/>
+<div class="chunk">
+
+    <div class="wrapper">
+
+        <div class="book-appointment" data-module="freshsales">
+            
+            <div class="js-datepicker"></div>
+            <input type="text" class="js-datepicker-selection"/>
+
+        </div>
+
+    </div>
 
 </div>
 
