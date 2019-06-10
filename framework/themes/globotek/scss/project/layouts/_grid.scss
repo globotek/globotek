@@ -1,0 +1,118 @@
+@include mode('global') {
+	
+	.grid {
+		
+		@extend %grid;
+		
+		// Default horizontally align content center, unless set otherwise
+		&:not(.grid--left):not(.grid--right) {
+			@extend %grid--center;
+		}
+		
+		// Default vertically align content top, unless set otherwise
+		&:not(.grid--middle):not(.grid--bottom) {
+			@extend %grid--top;
+		}
+		
+		// Default split into halves but add modifiers anyway
+		&--halfs,
+		&--halves {
+			
+			.grid__item {
+				@extend %palm--one-whole;
+				@extend %lap--one-half;
+				@extend %desk--one-half;
+			}
+		}
+		
+		&--thirds {
+			
+			.grid__item {
+				@extend %palm--one-whole;
+				@extend %lap--one-half;
+				@extend %desk--one-third;
+			}
+		}
+		
+		&--quarters {
+			
+			.grid__item {
+				@extend %palm--one-whole;
+				@extend %lap--one-quarter;
+				@extend %desk--one-quarter;
+			}
+		}
+		
+		&--fifths {
+			
+			.grid__item {
+				@extend %palm--one-half;
+				@extend %lap--one-third;
+				@extend %desk--one-fifth;
+			}
+		}
+		
+		&--one-third-two-thirds {
+			
+			.grid__item:nth-child(odd) {
+				@extend %palm--one-whole;
+				@extend %lap--one-third;
+				@extend %desk--one-third;
+			}
+			
+			.grid__item:nth-child(even) {
+				@extend %palm--one-whole;
+				@extend %lap--two-thirds;
+				@extend %desk--two-thirds;
+			}
+		}
+		
+		&--two-thirds-one-third {
+			
+			.grid__item:nth-child(odd) {
+				@extend %palm--one-whole;
+				@extend %lap--two-thirds;
+				@extend %desk--two-thirds;
+			}
+			
+			.grid__item:nth-child(even) {
+				@extend %palm--one-whole;
+				@extend %lap--one-third;
+				@extend %desk--one-third;
+			}
+		}
+		
+		&--fifths{
+			
+			.grid__item{
+				@extend %palm--one-whole;
+				@extend %lap--one-third;
+				@extend %desk--one-fifth;
+			}
+		}
+		
+		&--bottom {
+			@extend %grid--bottom;
+		}
+		
+		&--middle {
+			@extend %grid--middle;
+		}
+		
+		&--right {
+			@extend %grid--right;
+		}
+		
+		&__item {
+			position: relative;
+			
+			// Halves by default.
+			&:not([class*="grid__item--"]) {
+				@extend %palm--one-whole;
+				@extend %lap--one-half;
+				@extend %desk--one-half;
+			}
+		}
+	}
+
+}
