@@ -18,8 +18,11 @@
 
                 @extend .button;
 
-                width: 48%;
+                width: 45px;
+                height: 45px;
                 position: relative;
+                text-indent: -9999px;
+                padding: 0 !important;
 
                 &:before {
 
@@ -66,7 +69,8 @@
             &-title {
                 
                 text-align: center;
-                padding-top: $gutter--treble;
+                padding-top: $gutter--mini;
+                margin-bottom: $gutter;
 
             }
 
