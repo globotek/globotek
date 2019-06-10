@@ -10,6 +10,7 @@
 get_header(); ?>
 
 <div class="chunk">
+<<<<<<< HEAD
 	
 	<div class="book-appointment grid grid--halves wrapper" data-module="freshsales">
 		
@@ -27,6 +28,19 @@ get_header(); ?>
 		</div>
 	
 	</div>
+=======
+
+    <div class="wrapper">
+
+        <div class="book-appointment" data-module="freshsales">
+            
+            <div class="js-datepicker"></div>
+            <input type="text" class="js-datepicker-selection"/>
+
+        </div>
+
+    </div>
+>>>>>>> aec7a8a0cbd8349c592e3acb76f79dc1ba3010e5
 
 </div>
 

@@ -10,7 +10,9 @@
 		color: $white;
 		background-color: $primary-color;
 		padding: $gutter--mini $gutter--midi;
-		border-radius: $gutter--midi;
+        border-radius: $gutter--midi;
+        text-align: center;
+        cursor: pointer;
 		@extend %box-shadow-secondary;
 		
 		&:hover{
