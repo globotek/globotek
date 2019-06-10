@@ -1,159 +1,160 @@
-.datepicker{
+.datepicker {
 	
-	@include mode('global'){
-
-        display: inline-block;
-
-        .ui-datepicker {
-
-            &-header {
-
-                font-weight: bold;
-                padding: $gutter 0;
-
-            }
-
-            &-prev,
-            &-next {
-
-                @extend .button;
-
-                width: 45px;
-                height: 45px;
-                position: relative;
-                padding: 0 !important;
-
-                &:before {
-
-                    content: "";
-                    border: solid $white;
-                    border-width: 0 3px 3px 0;
-                    display: inline-block;
-                    padding: 3px;
-                    position: absolute;
-                    top: 18px;
-
-                }
-
-            }
-
-            &-prev {
-
-                float: left;
-
-                &:before {
-                    
-                    left: 20px;
-                    transform: rotate(135deg);
-                    -webkit-transform: rotate(135deg);
-
-                }
-
-            }
-
-            &-next {
-
-                float: right;
-
-                &:before {
-                    
-                    right: 20px;
-                    transform: rotate(-45deg);
-                    -webkit-transform: rotate(-45deg);
-
-                }
-
-            }
-
-            &-title {
-                
-                text-align: center;
-                padding-top: $gutter--mini;
-                margin-bottom: $gutter;
-
-            }
-
-            &-calendar {
-
-                @extend %box-shadow-secondary;
-
-                background: $grey--lighter;
-                border-radius: $gutter;
-                padding: $gutter;
-
-                thead {
-
-                    th {
-
-                        font-weight: bold;
-
-                    }
-
-                }
-
-                .ui-state {
-                    
-                    &-default {
-
-                        @extend %transition-all;
-
-                        display: block;
-                        width: 35px;
-                        height: 35px;
-                        background: $white;
-                        border-radius: 50%;
-                        text-align: center;
-                        text-decoration: none;
-                        color: $primary-color;
-                        line-height: 35px;
-
-                        &:hover {
-
-                            background: $primary-color--light;
-
-                        }
-
-                    }
-
-                    &-active {
-
-                        background: $primary-color;
-                        color: $white;
-
-                        &:hover {
-
-                            background: $primary-color;
-
-                        }
-
-
-                    }
-
-                }
-
-                .ui-datepicker-week-end {
-
-                    .ui-state-default {
-    
-                        background: $grey--light;
-                        color: $black;
-
-                        &:hover {
-
-                            background: $primary-color--light;
-
-                        }
-
-    
-                    }
-    
-                }
-    
-            }
-
-        }
-        
-
-    }
+	@include mode('global') {
+		
+		display: inline-block;
+		
+		.ui-datepicker {
+			
+			&-header {
+				
+				font-weight: bold;
+				padding: $gutter 0;
+				
+			}
+			
+			&-prev,
+			&-next {
+				
+				@extend .button;
+				
+				width: 45px;
+				height: 45px;
+				position: relative;
+				padding: 0 !important;
+				
+				&:before {
+					
+					content: "";
+					border: solid $white;
+					border-width: 0 3px 3px 0;
+					display: inline-block;
+					padding: 3px;
+					position: absolute;
+					top: 18px;
+					
+				}
+				
+			}
+			
+			&-prev {
+				
+				float: left;
+				
+				&:before {
+					
+					left: 20px;
+					transform: rotate(135deg);
+					-webkit-transform: rotate(135deg);
+					
+				}
+				
+			}
+			
+			&-next {
+				
+				float: right;
+				
+				&:before {
+					
+					right: 20px;
+					transform: rotate(-45deg);
+					-webkit-transform: rotate(-45deg);
+					
+				}
+				
+			}
+			
+			&-title {
+				
+				text-align: center;
+				padding-top: $gutter--mini;
+				margin-bottom: $gutter;
+				
+			}
+			
+			&-calendar {
+				
+				@extend %box-shadow-secondary;
+				
+				background: $grey--lighter;
+				border-radius: $gutter;
+				padding: $gutter;
+				
+				thead {
+					
+					th {
+						
+						font-weight: bold;
+						
+					}
+					
+				}
+				
+				.ui-state {
+					
+					&-default {
+						
+						@extend %transition-all;
+						
+						display: block;
+						width: 35px;
+						height: 35px;
+						background: $white;
+						border-radius: 50%;
+						text-align: center;
+						text-decoration: none;
+						color: $primary-color;
+						line-height: 35px;
+						
+						&:hover {
+							
+							background: $primary-color--light;
+							
+						}
+						
+					}
+					
+					&-active {
+						
+						background: $primary-color;
+						color: $white;
+						
+						&:hover {
+							
+							background: $primary-color;
+							
+						}
+						
+					}
+					
+				}
+				
+				.ui-datepicker-week-end {
+					
+					.ui-state-default {
+						
+						background: $grey--light;
+						color: $black;
+						
+						&:hover {
+							
+							background: $primary-color--light;
+							
+						}
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+		.ui-icon {
+			display: none;
+		}
+		
+	}
 	
 }
