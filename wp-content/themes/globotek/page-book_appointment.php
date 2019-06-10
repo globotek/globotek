@@ -28,6 +28,26 @@ get_header(); ?>
 		</div>
 	
 	</div>
+<<<<<<< HEAD
+=======
+=======
+
+    <div class="wrapper">
+
+        <div class="book-appointment" data-module="freshsales">
+
+            <div class="datepicker">
+            
+                <div class="js-datepicker"></div>
+                <input type="text" class="js-datepicker-selection"/>
+
+            </div>
+
+        </div>
+
+    </div>
+>>>>>>> aec7a8a0cbd8349c592e3acb76f79dc1ba3010e5
+>>>>>>> 09a56fe55cffb8eaca4e5fccc97021cbbfe28d94
 
 </div>
 

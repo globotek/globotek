@@ -1,4 +1,4 @@
-.book-appointment{
+.datepicker{
 	
 	@include mode('global'){
 
@@ -21,7 +21,6 @@
                 width: 45px;
                 height: 45px;
                 position: relative;
-                text-indent: -9999px;
                 padding: 0 !important;
 
                 &:before {
