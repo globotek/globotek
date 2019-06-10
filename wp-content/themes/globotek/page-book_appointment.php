@@ -14,9 +14,13 @@ get_header(); ?>
     <div class="wrapper">
 
         <div class="book-appointment" data-module="freshsales">
+
+            <div class="datepicker">
             
-            <div class="js-datepicker"></div>
-            <input type="text" class="js-datepicker-selection"/>
+                <div class="js-datepicker"></div>
+                <input type="text" class="js-datepicker-selection"/>
+
+            </div>
 
         </div>
 

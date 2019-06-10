@@ -21,7 +21,9 @@
 					return [ disabledDates.indexOf(string) == -1 ]
 				},
 				altField: '.js-datepicker-selection',
-				altFormat: 'DD, d MM, YY'
+                altFormat: 'DD, d MM, YY',
+                nextText: "",
+                prevText: ""
 			});
 			
 			
