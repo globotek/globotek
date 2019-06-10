@@ -5,92 +5,91 @@
         @extend %one-whole;
         
         &__products {
-
-
-
-        }
-
-        .product {
-
-            .wrapper {
-
-                max-width: $site-max-width !important;
-
-            }
-
-            &:nth-child(odd) {
-
-                .product-archive__inner {
-                    background: $primary-color;
-                    color: $white;
-
-                    a {
+    
+            .product {
+        
+                //.wrapper {
+            
+                width: 100% !important;
+                  //  max-width: $site-max-width !important;
+            
+               // }
+        
+                &:nth-child(odd) {
+            
+                    .product-archive__inner {
+                        background: $primary-color;
                         color: $white;
-                    }
-                }
-
-                .product-archive__image {
-
-                    float: left;
-
-                }
-
-                .product-archive__text {
-
-                    float: right;
-                    padding-left: $gutter--double;
-
-                    @include media-query('portable') {
-                        padding-left: 0;
-                    }
-
-                }
                 
-            }
-
-            &:nth-child(even) {
-
-                .product-archive__background-top,
-                .product-archive__background-bottom {
-
-                    display: none;
-
+                        a {
+                            color: $white;
+                        }
+                    }
+            
+                    .product-archive__image {
+                
+                        float: left;
+                
+                    }
+            
+                    .product-archive__text {
+                
+                        float: right;
+                        padding-left: $gutter--double;
+                
+                        @include media-query('portable') {
+                            padding-left: 0;
+                        }
+                
+                    }
+            
                 }
-
-                .product-archive__inner {
-                    
-                    background: $white;
-                    padding: $gutter--treble 0;
-
-                    color: $black;
-
-                    a {
+        
+                &:nth-child(even) {
+            
+                    .product-archive__background-top,
+                    .product-archive__background-bottom {
+                
+                        display: none;
+                
+                    }
+            
+                    .product-archive__inner {
+                
+                        background: $white;
+                        padding: $gutter--treble 0;
+                
                         color: $black;
+                
+                        a {
+                            color: $black;
+                        }
+                
                     }
-
-                }
-
-                .product-archive__image {
-
-                    float: right;
-
-                }
-
-                .product-archive__text {
-
-                    float: left;
-                    padding-right: $gutter--double;
-
-                    @include media-query('portable') {
-                        padding-right: 0;
+            
+                    .product-archive__image {
+                
+                        float: right;
+                
                     }
-
+            
+                    .product-archive__text {
+                
+                        float: left;
+                        padding-right: $gutter--double;
+                
+                        @include media-query('portable') {
+                            padding-right: 0;
+                        }
+                
+                    }
+            
                 }
-
+        
             }
-
+    
         }
-
+        
         &__content {
 
             .product {

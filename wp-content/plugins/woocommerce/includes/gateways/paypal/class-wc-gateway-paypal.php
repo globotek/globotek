@@ -170,7 +170,7 @@ class WC_Gateway_Paypal extends WC_Payment_Gateway {
 		$countries     = array( 'DZ', 'AU', 'BH', 'BQ', 'BW', 'CA', 'CN', 'CW', 'FI', 'FR', 'DE', 'GR', 'HK', 'ID', 'JO', 'KE', 'KW', 'LU', 'MY', 'MA', 'OM', 'PH', 'PL', 'PT', 'QA', 'IE', 'RU', 'BL', 'SX', 'MF', 'SA', 'SG', 'SK', 'KR', 'SS', 'TW', 'TH', 'AE', 'GB', 'US', 'VN' );
 
 		if ( in_array( $country, $home_counties, true ) ) {
-			return $url . '/webapps/mpp/home';
+			return $url . '/webapps/mpp/home/www/vhosts';
 		} elseif ( in_array( $country, $countries, true ) ) {
 			return $url . '/webapps/mpp/paypal-popup';
 		} else {

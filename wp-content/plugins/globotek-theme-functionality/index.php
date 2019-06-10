@@ -23,7 +23,9 @@ add_action( 'init', 'gtek_functionality_file_include' );
 
 function gtek_functionality_scripts() {
 	
-	wp_enqueue_script( 'lib', plugin_dir_url( __FILE__ ) . 'scripts/lib.js', array( 'jquery' ), '', TRUE );
+	wp_enqueue_script( 'jquery-ui-datepicker' );
+	wp_enqueue_script( 'lib', plugin_dir_url( __FILE__ ) . 'scripts/lib.js', array( 'jquery' ) );
+	
 	wp_register_script( 'gtek-functionality', plugin_dir_url( __FILE__ ) . 'scripts/globotek-theme-functionality.js', array( 'lib' ), '', TRUE );
 	wp_localize_script( 'gtek-functionality', 'gtek_vars', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
 	wp_enqueue_script( 'gtek-functionality' );

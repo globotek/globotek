@@ -20,7 +20,7 @@ $cards = get_posts( array( 'posts_per_page' => 3, 'post__not_in' => array( get_t
 			
 			<div class="card">
 				
-				<div class="card__image">
+				<a href="<?php the_permalink(); ?>" class="card__image card__image--flush">
 					
 					<?php the_post_thumbnail( 'card-thumbnail' ); ?>
 					
@@ -28,10 +28,9 @@ $cards = get_posts( array( 'posts_per_page' => 3, 'post__not_in' => array( get_t
 						<span><?php echo the_time( 'd M Y' ); ?></span>
 					</div>
 				
-				</div>
+				</a>
 				
 				<div class="card__body">
-					
 					
 					<h3 class="card__body__heading heading heading__tertiary"><?php echo the_title(); ?></h3>
 					

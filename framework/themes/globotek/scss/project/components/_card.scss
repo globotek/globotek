@@ -11,11 +11,21 @@
 		&__image{
 			
 			position: relative;
-			overflow: hidden;
+			padding: 0 $gutter--treble;
 			
 			img{
-				height: 220px;
-				object-fit: cover;
+				height: 150px;
+				object-fit: contain;
+			}
+			
+			&--flush{
+				width: 100%;
+				padding: 0;
+				
+				img{
+					height: 220px;
+					object-fit: cover;
+				}
 			}
 			
 			&__decor{

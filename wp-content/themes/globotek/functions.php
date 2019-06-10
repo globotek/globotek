@@ -50,6 +50,8 @@ function theme_scripts() {
 	) );
 	wp_enqueue_script( 'app' );
 	
+	wp_dequeue_script('wc-cart-fragments');
+	
 }
 
 add_action( 'wp_enqueue_scripts', 'theme_scripts' );
@@ -74,7 +76,6 @@ add_theme_support( 'custom-header' );
 add_image_size( 'interior-banner', 0, 200, FALSE );
 add_image_size( 'post-hero', 0, 600, TRUE );
 add_image_size( 'card-thumbnail', 0, 250, FALSE );
-
 
 
 if ( class_exists( 'woocommerce' ) ) {
@@ -109,6 +110,8 @@ add_filter( 'excerpt_length', 'reduced_excerpt_length', 999 );
 
 
 add_filter( 'yoast-acf-analysis/refresh_rate', function () {
+	
 	// Refresh rates in milliseconds
 	return 1000;
+	
 } );

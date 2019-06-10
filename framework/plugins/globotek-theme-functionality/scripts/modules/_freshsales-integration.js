@@ -9,8 +9,22 @@
 		    errorPrompt   = elem.find('.contact-form__errors'),
 		    successPrompt = elem.find('.contact-form__prompt');
 		
+		
+		
 		var init = function () {
-						
+			
+			console.log('a');
+			var disabledDates = ["2019-06-28","2019-06-14","2019-06-21"];
+			$('.js-datepicker').datepicker({
+				beforeShowDay: function(date){
+					var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
+					return [ disabledDates.indexOf(string) == -1 ]
+				},
+				altField: '.js-datepicker-selection',
+				altFormat: 'DD, d MM, YY'
+			});
+			
+			
 			$('#submit-contact-form').on('click', function (event) {
 				
 				event.preventDefault();
@@ -67,6 +81,13 @@
 					});
 					
 				}
+				
+			});
+			
+			
+			$('#submit_appointment_booking').on('click', function(event){
+				
+				
 				
 			});
 			

@@ -7,10 +7,12 @@
 		
 		
 		max-width: $site-max-width;
+		margin: 0 auto;
 		
 		
 		&__item{
 			@extend %desk--one-third;
+			margin-bottom: $gutter;
 			padding: 0 $gutter--mini;
 			
 			@include media-query('portable'){
