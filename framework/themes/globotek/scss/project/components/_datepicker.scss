@@ -4,6 +4,8 @@
 		
         display: inline-block;
         width: 100%;
+        margin: 0 auto;
+        text-align: center;
 		
 		.ui-datepicker {
 			
@@ -80,10 +82,11 @@
 				
 				@extend %box-shadow-secondary;
                 
-                width: 100%;
+                width: 350px;
 				background: $grey--lighter;
 				border-radius: $gutter;
-				padding: $gutter;
+                padding: $gutter;
+                margin: 0 auto;
 				
 				thead {
 					
@@ -176,12 +179,21 @@
         
         .js-datepicker-selection {
 
-            @extend .title__secondary;
+            @extend .heading__tertiary;
+            @extend %box-shadow-secondary;
+
+            @include media-query('portable'){
+				@extend .heading__tertiary;
+			}
 
             border: none;
-            width: 100%;
+            width: 350px;
             text-align: center;
             margin: $gutter--double 0;
+            background: $grey--lighter;
+			border-radius: $gutter;
+            padding: $gutter;
+            color: $primary-color;
 
             &:focus {
 
