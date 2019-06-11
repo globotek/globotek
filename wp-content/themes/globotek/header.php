@@ -7,9 +7,6 @@
 	
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-	
-	<title><?php wp_title(); ?></title>
-	
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	
 	<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
