@@ -2,7 +2,8 @@
 	
 	@include mode('global') {
 		
-		display: inline-block;
+        display: inline-block;
+        width: 100%;
 		
 		.ui-datepicker {
 			
@@ -66,6 +67,8 @@
 			}
 			
 			&-title {
+
+                @extend .heading__tertiary;
 				
 				text-align: center;
 				padding-top: $gutter--mini;
@@ -76,7 +79,8 @@
 			&-calendar {
 				
 				@extend %box-shadow-secondary;
-				
+                
+                width: 100%;
 				background: $grey--lighter;
 				border-radius: $gutter;
 				padding: $gutter;
@@ -84,12 +88,25 @@
 				thead {
 					
 					th {
-						
+                        
+                        @extend .heading__tertiary;
+
 						font-weight: bold;
 						
 					}
 					
-				}
+                }
+                
+                tbody {
+
+                    td {
+
+                        text-align: center;
+                        padding: 5px 0;
+
+                    }
+
+                }
 				
 				.ui-state {
 					
@@ -97,7 +114,7 @@
 						
 						@extend %transition-all;
 						
-						display: block;
+						display: inline-block;
 						width: 35px;
 						height: 35px;
 						background: $white;
@@ -131,6 +148,8 @@
 				}
 				
 				.ui-datepicker-week-end {
+
+                    display: none;
 					
 					.ui-state-default {
 						
@@ -153,7 +172,24 @@
 		
 		.ui-icon {
 			display: none;
-		}
+        }
+        
+        .js-datepicker-selection {
+
+            @extend .title__secondary;
+
+            border: none;
+            width: 100%;
+            text-align: center;
+            margin: $gutter--double 0;
+
+            &:focus {
+
+                outline: none;
+
+            }
+
+        }
 		
 	}
 	

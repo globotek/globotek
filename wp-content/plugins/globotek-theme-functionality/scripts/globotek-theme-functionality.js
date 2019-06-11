@@ -321,12 +321,14 @@ function debounce(func, wait, immediate) {
 			console.log('a');
 			var disabledDates = ["2019-06-28","2019-06-14","2019-06-21"];
 			$('.js-datepicker').datepicker({
+                firstDay: 7,
+                dayNamesMin: [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" ],
 				beforeShowDay: function(date){
 					var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
-					return [ disabledDates.indexOf(string) == -1 ]
+                    return [ disabledDates.indexOf(string) == -1 ];
 				},
 				altField: '.js-datepicker-selection',
-                altFormat: 'DD, d MM, YY',
+                altFormat: 'DD, d MM',
                 nextText: "",
                 prevText: ""
 			});
