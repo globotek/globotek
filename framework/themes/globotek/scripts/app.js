@@ -58,7 +58,12 @@ var app = (function ($) {
 							case 'gallery':
 								
 								elem.gallery();
-								break;
+                                break;
+                                
+                            case 'form-page':
+								
+                                elem.formPage();
+                                break;
 							
 						}
 						

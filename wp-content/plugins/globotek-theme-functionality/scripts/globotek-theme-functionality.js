@@ -315,22 +315,41 @@ function debounce(func, wait, immediate) {
 		    successPrompt = elem.find('.contact-form__prompt');
 		
 		
-		
 		var init = function () {
 			
 			console.log('a');
-			var disabledDates = ["2019-06-28","2019-06-14","2019-06-21"];
+			var disabledDates = ['2019-06-28', '2019-06-13', '2019-06-21'];
 			$('.js-datepicker').datepicker({
-                firstDay: 7,
-                dayNamesMin: [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" ],
-				beforeShowDay: function(date){
+				firstDay:      7,
+				dateFormat: 'DD-yy-mm-dd',
+				minDate: 0,
+				maxDate: '+1m',
+				dayNamesMin:   ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+				beforeShowDay: function (date) {
 					var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
-                    return [ disabledDates.indexOf(string) == -1 ];
+					return [disabledDates.indexOf(string) == -1];
 				},
-				altField: '.js-datepicker-selection',
-                altFormat: 'DD, d MM',
-                nextText: "",
-                prevText: ""
+				altField:      '.js-datepicker-selection',
+				altFormat:     'DD, d MM',
+				nextText:      '',
+				prevText:      '',
+				onSelect: function(date){
+					
+					$.ajax({
+						url:     gtek_vars.ajax_url,
+						method:  'POST',
+						data:    {
+							'action':    'gtek_get_available_timeslots_for_date',
+							'date': date
+						},
+						success: function (data) {
+							
+							console.log(data);
+							
+						}
+					});
+				}
+				
 			});
 			
 			
@@ -394,8 +413,7 @@ function debounce(func, wait, immediate) {
 			});
 			
 			
-			$('#submit_appointment_booking').on('click', function(event){
-				
+			$('#submit_appointment_booking').on('click', function (event) {
 				
 				
 			});

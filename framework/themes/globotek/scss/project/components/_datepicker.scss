@@ -83,7 +83,7 @@
 				@extend %box-shadow-secondary;
                 
                 width: 350px;
-				background: $grey--lighter;
+				background: $white;
 				border-radius: $gutter;
                 padding: $gutter;
                 margin: 0 auto;
@@ -178,11 +178,12 @@
         }
 		
 		.ui-state-disabled.ui-corner-all{
-			background: $grey--light;
+            background: $grey--light;
 		}
 		
 		.ui-state-disabled span{
-			background: $grey--lighter !important;
+            background: $grey--lighter !important;
+            color: $grey--mid !important;
 		}
         
         .js-datepicker-selection {
@@ -198,7 +199,7 @@
             width: 350px;
             text-align: center;
             margin: $gutter--double 0;
-            background: $grey--lighter;
+            background: $white;
 			border-radius: $gutter;
             padding: $gutter;
             color: $primary-color;

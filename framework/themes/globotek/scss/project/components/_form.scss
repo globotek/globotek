@@ -1,6 +1,10 @@
 .form{
 
 	@include mode('global'){
+
+        @extend %transition-all;
+
+        max-height: 2000px;
     
         &__field {
 
@@ -99,6 +103,35 @@
               }
 
         }
+
+        &__page {
+
+            display: none;
+
+            @extend %box-shadow-secondary;
+                
+            background: $grey--lighter;
+            border-radius: $gutter;
+            padding: $gutter;
+            text-align: center;
+
+            &__heading {
+
+                margin-bottom: $gutter;
+
+            }
+
+        }
+
+        &__buttons {
+            text-align: center;
+            padding: $gutter--double 0;
+
+            &__button {
+                margin: 0 $gutter;
+            }
+        }
     
     }
+
 }

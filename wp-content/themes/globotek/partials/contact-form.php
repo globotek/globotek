@@ -28,7 +28,6 @@
 			
 			<div class="contact-form__errors">
 				<p class="contact-form__errors--inner">Please make sure all required fields are completed.</p>
-			
 			</div>
 			
 			<div class="contact-form__left">
