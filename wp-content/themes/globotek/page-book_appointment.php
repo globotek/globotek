@@ -27,7 +27,7 @@ get_header(); ?>
 			
 			<form class="form" method="post" data-module="form-page">
 
-                <div class="form-page">
+                <div class="form-page js-page__target">
 				
                     <div class="form__page" data-id="1" style="display: block;">
                         
@@ -157,8 +157,8 @@ get_header(); ?>
                     
                     <div class="form__buttons">
 
-                        <a href="#back" class="button button--neutral button--small form__buttons__button back">Go Back</a>
-                        <a href="#next" class="button button--small form__buttons__button next">Next</a>
+                        <a href="#back" class="button button--neutral button--small form__buttons__button js-prev__trigger back">Go Back</a>
+                        <a href="#next" class="button button--small form__buttons__button js-next__trigger next">Next</a>
                         
                     </div>
 			

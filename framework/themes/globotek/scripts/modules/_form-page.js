@@ -1,8 +1,10 @@
 (function ($) {
 	
 	$.fn.formPage = function () {
-		var elem     = $(this),
-		    triggers = elem.find('.js-range__trigger'),
+        var elem     = $(this),
+            targets = elem.find('.js-page__target'),
+            triggerNext = elem.find('.js-next__trigger'),
+            triggerPrev = elem.find('.js-prev__trigger'),
 		    settings = {
 			    activeClass:        'is-active',
 			    visibleClass:       'is-active',
@@ -13,7 +15,8 @@
 		var init = function () {
 
             
-			$('body').on('click', '.next', function() { 
+            triggerNext.off('click').on('click', function() {
+			
                 var id = $('.form__page:visible').data('id');
                 var nextId = $('.form__page:visible').data('id')+1;
                 $('[data-id="'+id+'"]').hide();
@@ -26,9 +29,11 @@
                 if(nextId == 3){
                     $('.next').hide();
                 }
-            });
             
-            $('body').on('click', '.back', function() { 
+            });
+
+            triggerPrev.off('click').on('click', function() {
+			
                 var id = $('.form__page:visible').data('id');
                 var prevId = $('.form__page:visible').data('id')-1;
                 $('[data-id="'+id+'"]').hide();
@@ -38,16 +43,9 @@
                 if(prevId == 1){
                     $('.back').hide();
                 }    
-            });
-
-            $('body').on('click', '.edit-previous', function() { 
-                $('.end').hide();
-                $('.content-holder').show();
-                $('#content-3').show();
-            });
             
-
-			
+            });
+           
 		}
 		
 		init();
