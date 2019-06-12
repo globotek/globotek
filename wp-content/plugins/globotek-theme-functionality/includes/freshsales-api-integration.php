@@ -114,11 +114,11 @@ function gtek_freshsales_create_note( $note, $target_id, $target_type ) {
 	curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, 0 );
 	$response    = curl_exec( $ch );
 	$http_status = curl_getinfo( $ch, CURLINFO_HTTP_CODE );
+	
 	return json_decode( $response );
 	if ( $http_status != 200 ) {
 		throw new Exception( "Freshsales encountered an error. CODE: " . $http_status . " Response: " . $response );
 	}
-	
 	
 	
 }
@@ -128,13 +128,9 @@ function gtek_submit_to_freshsales() {
 	
 	$lead = gtek_freshsales_create_lead( $_POST[ 'lead_data' ] );
 	
-	var_dump( $_POST );
-	
-	if($_POST[ 'lead_data' ][ 'note' ]['value']) {
+	if ( $_POST[ 'lead_data' ][ 'note' ][ 'value' ] ) {
 		
 		$note = gtek_freshsales_create_note( $_POST[ 'lead_data' ][ 'note' ][ 'value' ], $lead->lead->id, $_POST[ 'lead_data' ][ 'note' ][ 'target_type' ] );
-		
-		var_dump( $note );
 		
 	}
 	
@@ -144,3 +140,82 @@ function gtek_submit_to_freshsales() {
 
 add_action( 'wp_ajax_gtek_submit_to_freshsales', 'gtek_submit_to_freshsales' );
 add_action( 'wp_ajax_nopriv_gtek_submit_to_freshsales', 'gtek_submit_to_freshsales' );
+
+
+function gtek_get_freshsales_appointments( $filter = 'future' ) {
+	
+	global $api_keys;
+	$url = 'https://globotek.freshsales.io/api/appointments?filter=' . $filter;
+	
+	$ch = curl_init();
+	
+	curl_setopt( $ch, CURLOPT_URL, $url );
+	curl_setopt( $ch, CURLOPT_HTTPHEADER, array(
+			'Content-Type: application/json',
+			'Accept: application/json',
+			'Authorization: Token token=' . $api_keys->freshsales
+		)
+	);
+	
+	curl_setopt( $ch, CURLOPT_RETURNTRANSFER, TRUE );
+	curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, 0 );
+	curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, 0 );
+	$response    = curl_exec( $ch );
+	$http_status = curl_getinfo( $ch, CURLINFO_HTTP_CODE );
+	
+	if ( $http_status != 200 ) {
+		throw new Exception( "Freshsales encountered an error. CODE: " . $http_status . " Response: " . $response );
+	}
+	
+	return json_decode( $response )->appointments;
+	
+}
+
+
+function gtek_get_appointments_for_date( $date ) {
+	
+	$appointments          = gtek_get_freshsales_appointments();
+	$filtered_appointments = array();
+	
+	foreach ( $appointments as $appointment ) {
+		
+		$appointment_date = date( 'Y-m-d', strtotime( $appointment->from_date ) );
+		
+		if ( $appointment_date == $date ) {
+			
+			$filtered_appointments[] = $appointment->from_date;
+			
+		}
+		
+	}
+	
+	return $filtered_appointments;
+	
+}
+
+
+function gtek_trigger_get_appointments_for_date() {
+	
+	echo json_encode( gtek_get_appointments_for_date( $_POST[ 'date' ] ) );
+	
+	wp_die();
+	
+}
+
+add_action( 'wp_ajax_gtek_get_appointments_for_date', 'gtek_trigger_get_appointments_for_date' );
+add_action( 'wp_ajax_nopriv_gtek_get_appointments_for_date', 'gtek_trigger_get_appointments_for_date' );
+
+
+function gtek_get_available_timeslots_for_date( $date ) {
+	
+	$appointments = gtek_get_appointments_for_date( $date );
+	$date_day = date('l', strtotime($date));
+	var_dump( $date_day );
+	$timeslots = get_field($date_day . '_appointment_slots', 'option');
+	
+	var_dump( $timeslots );
+
+}
+
+add_action( 'wp_ajax_gtek_get_available_timeslots_for_date', 'gtek_trigger_get_available_timeslots_for_date' );
+add_action( 'wp_ajax_nopriv_gtek_get_available_timeslots_for_date', 'gtek_trigger_get_available_timeslots_for_date' );

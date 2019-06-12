@@ -176,6 +176,14 @@
 		.ui-icon {
 			display: none;
         }
+		
+		.ui-state-disabled.ui-corner-all{
+			background: $grey--light;
+		}
+		
+		.ui-state-disabled span{
+			background: $grey--lighter !important;
+		}
         
         .js-datepicker-selection {
 

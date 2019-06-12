@@ -50,7 +50,7 @@ function theme_scripts() {
 	) );
 	wp_enqueue_script( 'app' );
 	
-	wp_dequeue_script('wc-cart-fragments');
+	wp_dequeue_script( 'wc-cart-fragments' );
 	
 }
 
@@ -115,3 +115,6 @@ add_filter( 'yoast-acf-analysis/refresh_rate', function () {
 	return 1000;
 	
 } );
+
+
+acf_add_options_page( array( 'page_title' => 'Appointment Slots' ) );
