@@ -310,12 +310,7 @@ function debounce(func, wait, immediate) {
             triggerNext = elem.find('.js-next__trigger'),
             triggerPrev = elem.find('.js-prev__trigger'),
             target = $('.form'),
-            targetPage = $('.form-slider__page'),
-		    settings = {
-			    activeClass:        'is-active',
-			    elemClass:          '',
-			    elemClassAttribute: 'data-elem-class'
-		    };
+            targetPage = $('.form-slider__page');
 		
 		var init = function () {
 
@@ -326,8 +321,6 @@ function debounce(func, wait, immediate) {
 
             targetPage.width(formWidth);
             $('.form-slider__slider').width(sliderWidth);
-
-            console.log(sliderWidth);
 
             triggerNext.off('click').on('click', function() {
             
