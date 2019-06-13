@@ -1,26 +1,26 @@
 (function ($) {
 	
 	$.fn.formPage = function () {
-        var elem     = $(this),
-            targets = elem.find('.js-page__target'),
+          var elem = $(this),
             triggerNext = elem.find('.js-next__trigger'),
             triggerPrev = elem.find('.js-prev__trigger'),
+            target = $('.form'),
 		    settings = {
 			    activeClass:        'is-active',
-			    visibleClass:       'is-active',
 			    elemClass:          '',
 			    elemClassAttribute: 'data-elem-class'
 		    };
 		
 		var init = function () {
 
-            
             triggerNext.off('click').on('click', function() {
 			
                 var id = $('.form__page:visible').data('id');
                 var nextId = $('.form__page:visible').data('id')+1;
+                var nextHeight = $('[data-id="'+nextId+'"]').height();
                 $('[data-id="'+id+'"]').hide();
                 $('[data-id="'+nextId+'"]').show();
+                target.height(nextHeight + 150);
                 
                 if($('.back:hidden').length == 1){
                     $('.back').show();
@@ -36,9 +36,11 @@
 			
                 var id = $('.form__page:visible').data('id');
                 var prevId = $('.form__page:visible').data('id')-1;
+                var prevHeight = $('[data-id="'+prevId+'"]').height();
                 $('[data-id="'+id+'"]').hide();
                 $('[data-id="'+prevId+'"]').show();
                 $('.next').show();
+                target.height(prevHeight + 150);
                 
                 if(prevId == 1){
                     $('.back').hide();

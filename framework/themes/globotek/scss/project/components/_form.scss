@@ -3,8 +3,6 @@
 	@include mode('global'){
 
         @extend %transition-all;
-
-        max-height: 2000px;
     
         &__field {
 
@@ -108,17 +106,22 @@
 
             display: none;
 
-            @extend %box-shadow-secondary;
+            //@extend %box-shadow-secondary;
                 
-            background: $grey--lighter;
+            //background: $blue--light;
             border-radius: $gutter;
             padding: $gutter;
             text-align: center;
 
             &__heading {
 
-                margin-bottom: $gutter;
+                margin-bottom: $gutter--double;
 
+            }
+
+            &__field {
+                width: 55%;
+                border: $blue solid 1px;
             }
 
         }

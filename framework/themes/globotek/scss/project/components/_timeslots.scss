@@ -4,13 +4,14 @@
 
         @extend %flex-wrapper;
 
-        flex-wrap: wrap;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
 
 		&__item {
 
             margin: 0 5px $gutter;
-            width: 100px;
+            width: 350px;
 
             &__label {
                 
@@ -29,6 +30,10 @@
 
                     input ~ .timeslots__item__checkmark {
                         background-color: #ccc;
+                    }
+
+                    input ~ .timeslots__item__time {
+                        color: $white;
                     }
 
                     input:checked ~ .timeslots__item__checkmark {
@@ -78,7 +83,8 @@
                 left: 0;
                 height: $gutter--double;
                 border-radius: $radius--form-field;
-                width: 100px;
+                border: $blue solid 1px;
+                width: 350px;
                 background-color: $white;
                 z-index: 1;
 

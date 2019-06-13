@@ -25,9 +25,9 @@ get_header(); ?>
 		
 		<div class="grid__item">
 			
-			<form class="form" method="post" data-module="form-page">
+			<form class="form js-page__target" method="post" data-module="form-page">
 
-                <div class="form-page js-page__target">
+                <div class="form-page">
 				
                     <div class="form__page" data-id="1" style="display: block;">
                         
@@ -62,70 +62,70 @@ get_header(); ?>
                             <li class="timeslots__item">
                                 <label class="timeslots__item__label">
                                     <input type="radio" class="timeslots__item__input" name="timeslot" value="09:00"/>
-                                    <span class="timeslots__item__time">09:00</span>
+                                    <span class="timeslots__item__time">09:00 - 09:30</span>
                                     <span class="timeslots__item__checkmark"></span>
                                 </label>
                             </li>
                             <li class="timeslots__item">
                                 <label class="timeslots__item__label">
                                     <input type="radio" class="timeslots__item__input" name="timeslot" value="09:00"/>
-                                    <span class="timeslots__item__time">10:00</span>
+                                    <span class="timeslots__item__time">10:00 - 10:30</span>
                                     <span class="timeslots__item__checkmark"></span>
                                 </label>
                             </li>
                             <li class="timeslots__item">
                                 <label class="timeslots__item__label">
                                     <input type="radio" class="timeslots__item__input" name="timeslot" value="09:00"/>
-                                    <span class="timeslots__item__time">11:00</span>
+                                    <span class="timeslots__item__time">11:00 - 11:30</span>
                                     <span class="timeslots__item__checkmark"></span>
                                 </label>
                             </li>
                             <li class="timeslots__item">
                                 <label class="timeslots__item__label">
                                     <input type="radio" class="timeslots__item__input" name="timeslot" value="09:00"/>
-                                    <span class="timeslots__item__time">12:00</span>
+                                    <span class="timeslots__item__time">12:00 - 12:30</span>
                                     <span class="timeslots__item__checkmark"></span>
                                 </label>
                             </li>
                             <li class="timeslots__item">
                                 <label class="timeslots__item__label">
                                     <input type="radio" class="timeslots__item__input" name="timeslot" value="09:00"/>
-                                    <span class="timeslots__item__time">13:00</span>
+                                    <span class="timeslots__item__time">13:00 - 13:30</span>
                                     <span class="timeslots__item__checkmark"></span>
                                 </label>
                             </li>
                             <li class="timeslots__item">
                                 <label class="timeslots__item__label">
                                     <input type="radio" class="timeslots__item__input" name="timeslot" value="09:00"/>
-                                    <span class="timeslots__item__time">14:00</span>
+                                    <span class="timeslots__item__time">14:00 - 14:30</span>
                                     <span class="timeslots__item__checkmark"></span>
                                 </label>
                             </li>
                             <li class="timeslots__item">
                                 <label class="timeslots__item__label">
                                     <input type="radio" class="timeslots__item__input" name="timeslot" value="09:00"/>
-                                    <span class="timeslots__item__time">15:00</span>
+                                    <span class="timeslots__item__time">15:00 - 15:30</span>
                                     <span class="timeslots__item__checkmark"></span>
                                 </label>
                             </li>
                             <li class="timeslots__item">
                                 <label class="timeslots__item__label">
                                     <input type="radio" class="timeslots__item__input" name="timeslot" value="09:00"/>
-                                    <span class="timeslots__item__time">16:00</span>
+                                    <span class="timeslots__item__time">16:00 - 16:30</span>
                                     <span class="timeslots__item__checkmark"></span>
                                 </label>
                             </li>
                             <li class="timeslots__item">
                                 <label class="timeslots__item__label">
                                     <input type="radio" class="timeslots__item__input" name="timeslot" value="09:00"/>
-                                    <span class="timeslots__item__time">17:00</span>
+                                    <span class="timeslots__item__time">17:00 - 17:30</span>
                                     <span class="timeslots__item__checkmark"></span>
                                 </label>
                             </li>
                             <li class="timeslots__item">
                                 <label class="timeslots__item__label">
                                     <input type="radio" class="timeslots__item__input" name="timeslot" value="09:00"/>
-                                    <span class="timeslots__item__time">18:00</span>
+                                    <span class="timeslots__item__time">18:00 - 18:30</span>
                                     <span class="timeslots__item__checkmark"></span>
                                 </label>
                             </li>
@@ -138,12 +138,12 @@ get_header(); ?>
 
                         <h2 class="heading heading__secondary form__page__heading">Details</h2>
                         
-                        <input type="text" class="form__field" name="first_name" placeholder="First Name" />
-                        <input type="text" class="form__field" name="last_name" placeholder="Last Name" />
-                        <input type="text" class="form__field" name="company" placeholder="Company" />
-                        <input type="text" class="form__field" name="company_position" placeholder="Company Position" />
-                        <input type="email" class="form__field" name="email_address" placeholder="Email Address" />
-                        <input type="tel" class="form__field" name="phone_number" placeholder="Phone Number" />
+                        <input type="text" class="form__page__field form__field" name="first_name" placeholder="First Name" />
+                        <input type="text" class="form__page__field form__field" name="last_name" placeholder="Last Name" />
+                        <input type="text" class="form__page__field form__field" name="company" placeholder="Company" />
+                        <input type="text" class="form__page__field form__field" name="company_position" placeholder="Company Position" />
+                        <input type="email" class="form__page__field form__field" name="email_address" placeholder="Email Address" />
+                        <input type="tel" class="form__page__field form__field" name="phone_number" placeholder="Phone Number" />
                     
                     </div>
                     
