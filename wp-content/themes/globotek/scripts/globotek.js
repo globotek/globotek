@@ -324,7 +324,9 @@ function debounce(func, wait, immediate) {
                 var nextId = $('.form__page:visible').data('id')+1;
                 var nextHeight = $('[data-id="'+nextId+'"]').height();
                 $('[data-id="'+id+'"]').hide();
+                $('[data-id="'+id+'"]').css('opacity', '0');
                 $('[data-id="'+nextId+'"]').show();
+                $('[data-id="'+nextId+'"]').css('opacity', '1');
                 target.height(nextHeight + 150);
                 
                 if($('.back:hidden').length == 1){
@@ -343,7 +345,9 @@ function debounce(func, wait, immediate) {
                 var prevId = $('.form__page:visible').data('id')-1;
                 var prevHeight = $('[data-id="'+prevId+'"]').height();
                 $('[data-id="'+id+'"]').hide();
+                $('[data-id="'+id+'"]').css('opacity', '0');
                 $('[data-id="'+prevId+'"]').show();
+                $('[data-id="'+prevId+'"]').css('opacity', '1');
                 $('.next').show();
                 target.height(prevHeight + 150);
                 

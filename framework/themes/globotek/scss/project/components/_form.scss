@@ -3,6 +3,8 @@
 	@include mode('global'){
 
         @extend %transition-all;
+
+        overflow: hidden;
     
         &__field {
 
@@ -105,10 +107,7 @@
         &__page {
 
             display: none;
-
-            //@extend %box-shadow-secondary;
-                
-            //background: $blue--light;
+            opacity: 0;
             border-radius: $gutter;
             padding: $gutter;
             text-align: center;
@@ -122,6 +121,11 @@
             &__field {
                 width: 55%;
                 border: $blue solid 1px;
+            }
+
+            &[data-id='1'] {
+                display: block;
+                opacity: 1;
             }
 
         }
