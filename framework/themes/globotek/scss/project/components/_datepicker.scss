@@ -12,7 +12,9 @@
 			&-header {
 				
 				font-weight: bold;
-				padding: $gutter 0;
+                padding: $gutter 0;
+                margin: 0 auto;
+                width: 330px;
 				
 			}
 			
@@ -80,10 +82,10 @@
 			
 			&-calendar {
 				
-				@extend %box-shadow-secondary;
+				//@extend %box-shadow-secondary;
                 
-                width: 350px;
-				background: $white;
+                width: 400px;
+				//background: $grey--lighter;
 				border-radius: $gutter;
                 padding: $gutter;
                 margin: 0 auto;
@@ -105,7 +107,7 @@
                     td {
 
                         text-align: center;
-                        padding: 5px 0;
+                        padding: 10px 0;
 
                     }
 
@@ -118,14 +120,14 @@
 						@extend %transition-all;
 						
 						display: inline-block;
-						width: 35px;
-						height: 35px;
+						width: 50px;
+						height: 50px;
 						background: $white;
 						border-radius: 50%;
 						text-align: center;
 						text-decoration: none;
 						color: $primary-color;
-						line-height: 35px;
+						line-height: 50px;
 						
 						&:hover {
 							
@@ -199,10 +201,10 @@
             width: 350px;
             text-align: center;
             margin: $gutter--double 0;
-            background: $white;
-			border-radius: $gutter;
-            padding: $gutter;
-            color: $primary-color;
+            border-radius: $gutter;
+            border: $blue solid 1px;
+            padding: $gutter--mini;
+            color: $blue;
 
             &:focus {
 

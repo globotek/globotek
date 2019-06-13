@@ -2,7 +2,8 @@
 	
 	@include mode('global'){
 		
-		@extend %transition-all;
+        @extend %transition-all;
+        font-family: $base-font-family;
 		
 		display: inline-block;
 		text-decoration: none;
@@ -11,6 +12,7 @@
 		background-color: $primary-color;
 		padding: $gutter--mini $gutter--midi;
         border-radius: $gutter--midi;
+        border: none;
         text-align: center;
         cursor: pointer;
 		@extend %box-shadow-secondary;
@@ -22,7 +24,11 @@
 		
 		&--large{
 			padding: $gutter--small $gutter--treble;
-		}
+        }
+        
+        &--small {
+            padding: 5px $gutter--treble;
+        }
 		
 		&--white{
 			color: $primary-color;
@@ -55,8 +61,6 @@
                     border-bottom: $white solid 1px;
                 }
             }
-
-            
 
         }
 		

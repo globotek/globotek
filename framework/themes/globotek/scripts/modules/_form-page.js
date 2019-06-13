@@ -1,48 +1,49 @@
 (function ($) {
 	
 	$.fn.formPage = function () {
-        var elem     = $(this),
-            targets = elem.find('.js-page__target'),
+          var elem = $(this),
             triggerNext = elem.find('.js-next__trigger'),
             triggerPrev = elem.find('.js-prev__trigger'),
-		    settings = {
-			    activeClass:        'is-active',
-			    visibleClass:       'is-active',
-			    elemClass:          '',
-			    elemClassAttribute: 'data-elem-class'
-		    };
+            target = $('.form'),
+            targetPage = $('.form-slider__page');
 		
 		var init = function () {
 
-            
+            var pageNum = targetPage.length,
+              formWidth = target.width();
+              pageWidth = targetPage.width(),
+            sliderWidth = formWidth * pageNum;
+
+            targetPage.width(formWidth);
+            $('.form-slider__slider').width(sliderWidth);
+
             triggerNext.off('click').on('click', function() {
-			
-                var id = $('.form__page:visible').data('id');
-                var nextId = $('.form__page:visible').data('id')+1;
-                $('[data-id="'+id+'"]').hide();
-                $('[data-id="'+nextId+'"]').show();
-                
-                if($('.back:hidden').length == 1){
-                    $('.back').show();
-                }
-                
-                if(nextId == 3){
-                    $('.next').hide();
-                }
+            
+                var left = parseInt($('.form-slider__slider').css("left")),
+                leftNew = left - formWidth,
+                slideNextHeight = $('.active').next().height();
+
+                $('.active').removeClass('active').next().addClass('active');
+                $('.form-slider__slider').css('left', leftNew);
+
+                $('.form-slider__slider, .form-slider').css({
+                    height: slideNextHeight
+                });
             
             });
 
             triggerPrev.off('click').on('click', function() {
+
+                var left = parseInt($('.form-slider__slider').css("left")),
+                leftNew = left + formWidth,
+                slidePrevHeight = $('.active').prev().height();
 			
-                var id = $('.form__page:visible').data('id');
-                var prevId = $('.form__page:visible').data('id')-1;
-                $('[data-id="'+id+'"]').hide();
-                $('[data-id="'+prevId+'"]').show();
-                $('.next').show();
-                
-                if(prevId == 1){
-                    $('.back').hide();
-                }    
+                $('.active').removeClass('active').prev().addClass('active');
+                $('.form-slider__slider').css('left', leftNew);
+
+                $('.form-slider__slider, .form-slider').css({
+                    height: slidePrevHeight
+                }); 
             
             });
            

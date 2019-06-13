@@ -1,0 +1,46 @@
+.form-slider{
+
+	@include mode('global'){
+
+        &__slider {
+
+            @extend %transition-all;
+            position: relative;
+            left: 0px;
+
+        }
+
+        &__page {
+
+            border-radius: $gutter;
+            padding: $gutter 0;
+            text-align: center;
+            float: left;
+
+            &__heading {
+
+                margin-bottom: $gutter--double;
+
+            }
+
+            &__field {
+                width: 55%;
+                border: $blue solid 1px;
+            }
+
+        }
+
+        &__buttons {
+            text-align: center;
+            bottom: 0px;
+            width: 100%;
+            padding: $gutter--double 0;
+
+            &__button {
+                margin: 0 $gutter;
+            }
+        }
+    
+    }
+
+}

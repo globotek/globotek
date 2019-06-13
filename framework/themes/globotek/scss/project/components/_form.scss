@@ -2,9 +2,10 @@
 
 	@include mode('global'){
 
-        @extend %transition-all;
+        @extend %transition-all-slow;
 
-        max-height: 2000px;
+        position: relative;
+        overflow: hidden;
     
         &__field {
 
@@ -102,34 +103,6 @@
                   }
               }
 
-        }
-
-        &__page {
-
-            display: none;
-
-            @extend %box-shadow-secondary;
-                
-            background: $grey--lighter;
-            border-radius: $gutter;
-            padding: $gutter;
-            text-align: center;
-
-            &__heading {
-
-                margin-bottom: $gutter;
-
-            }
-
-        }
-
-        &__buttons {
-            text-align: center;
-            padding: $gutter--double 0;
-
-            &__button {
-                margin: 0 $gutter;
-            }
         }
     
     }
