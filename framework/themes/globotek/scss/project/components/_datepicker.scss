@@ -201,10 +201,9 @@
             width: 350px;
             text-align: center;
             margin: $gutter--double 0;
-            background: $grey--lighter;
             border-radius: $gutter;
             border: $blue solid 1px;
-            padding: $gutter;
+            padding: $gutter--mini;
             color: $blue;
 
             &:focus {

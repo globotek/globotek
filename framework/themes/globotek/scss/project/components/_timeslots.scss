@@ -24,7 +24,7 @@
                 -moz-user-select: none;
                 -ms-user-select: none;
                 user-select: none;
-                line-height: $gutter--double;
+                line-height: 47px;
 
                 &:hover {
 
@@ -81,8 +81,8 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                height: $gutter--double;
-                border-radius: $radius--form-field;
+                height: 47px;
+                border-radius: $gutter;
                 border: $blue solid 1px;
                 width: 350px;
                 background-color: $white;
