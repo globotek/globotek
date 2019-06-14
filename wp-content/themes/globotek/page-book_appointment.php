@@ -186,7 +186,7 @@ get_header(); ?>
                             
                             <h2 class="heading heading__secondary form-slider__page__heading">Confirm</h3>
                             
-                            <input type="submit" class="button button--neutral button--small" name="confirm_booking" value="Book Consultation"/>
+                            <input type="submit" class="button button--primary" name="confirm_booking" value="Book Consultation"/>
                             
                         </div>
 

@@ -39,6 +39,16 @@
                 background-color: $primary-color--mid;
             }
         }
+
+        &--neutral{
+			color: $white;
+            background-color: $grey--light;
+            
+            &:hover {
+                color: $grey;
+                background-color: $grey--lighter;
+            }
+        }
         
         &__text {
 
