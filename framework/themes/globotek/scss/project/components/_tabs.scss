@@ -10,18 +10,22 @@
             display: none;
 
             &:checked + label {
-                background: $white;
-                color: $black;
+                background: $blue;
+                color: $white;
             }
 
             &#tab1:checked ~ .tabs__container #c1 {
                 opacity: 1;
                 display: block;
+                left: 0px;
+                z-index: 2;
             }
 
             &#tab2:checked ~ .tabs__container #c2 {
                 opacity: 1;
                 display: block;
+                left: -350px;
+                z-index: 2;
             }
         }
 
@@ -30,21 +34,31 @@
             cursor: pointer;
             padding: 5px 0;
             width: 49%;
+            background: $white;
+            color: $black;
             
         }
 
         &__container {
             position: relative;
             top: 34px;
+            overflow: hidden;
+
+            &__inner {
+
+                width: 200%;
+
+            }
         }
 
         &__content {
             position: relative;
             padding: $gutter--double;
-            width: 100%;
+            width: 50%;
             top: 0;
             opacity: 1;
-            display: none;
+            float: left;
+            z-index: 1;
         }
 
     }
