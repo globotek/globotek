@@ -46,11 +46,9 @@ get_header(); ?>
                             
                             <div class="tabs clear">
                                 <input class="tabs__input" type="radio" id="tab1" name="tab" checked>
-                                <label class="tabs__label" for="tab1">Morning</label>
+                                <label class="tabs__label button button--small" for="tab1">Morning</label>
                                 <input class="tabs__input" type="radio" id="tab2" name="tab">
-                                <label class="tabs__label" for="tab2">Afternoon</label>
-                                
-                                <div class="line"></div>
+                                <label class="tabs__label button button--small" for="tab2">Afternoon</label>
                                 
                                 <div class="tabs__container">
                                     <div class="tabs__content" id="c1">
@@ -177,6 +175,8 @@ get_header(); ?>
                         <div class="form-slider__page" data-id="2">
 
                             <h2 class="heading heading__secondary form-slider__page__heading">Details</h2>
+
+                            
                             
                             <input type="text" class="form-slider__page__field form__field" name="first_name" placeholder="First Name" />
                             <input type="text" class="form-slider__page__field form__field" name="last_name" placeholder="Last Name" />

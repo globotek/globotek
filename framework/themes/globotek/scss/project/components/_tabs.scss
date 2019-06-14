@@ -1,0 +1,53 @@
+.tabs {
+
+    @include mode('global') {
+        width: 350px;
+        position: relative;
+        padding: $gutter 0 0 0;
+        margin: 0 auto;
+
+        &__input {
+            display: none;
+
+            &:checked + label {
+                background: $white;
+                color: $black;
+            }
+
+            &#tab1:checked ~ .tabs__container #c1 {
+                opacity: 1;
+                display: block;
+            }
+
+            &#tab2:checked ~ .tabs__container #c2 {
+                opacity: 1;
+                display: block;
+            }
+        }
+
+        &__label {
+            
+            cursor: pointer;
+            padding: 5px 0;
+            width: 49%;
+            
+        }
+
+        &__container {
+            position: relative;
+            top: 34px;
+        }
+
+        &__content {
+            position: relative;
+            padding: $gutter--double;
+            width: 100%;
+            top: 0;
+            opacity: 1;
+            display: none;
+        }
+
+    }
+
+}
+  
