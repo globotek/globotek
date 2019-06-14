@@ -15,6 +15,7 @@ get_header(); ?>
 	
 	<?php var_dump( gtek_get_appointments_for_date( '2019-06-14' ) ); ?>
 	<?php var_dump( $_POST ); ?>
+	
 	<div class="grid grid--one-third-two-thirds wrapper" data-module="freshsales">
 		
 		<div class="grid__item">
@@ -184,7 +185,7 @@ get_header(); ?>
                         
                         <div class="form-slider__page" data-id="4">
                             
-                            <h2 class="heading heading__secondary form-slider__page__heading">Confirm</h3>
+                            <p class="heading heading__secondary form-slider__page__heading">Confirm</p>
                             
                             <input type="submit" class="button button--primary" name="confirm_booking" value="Book Consultation"/>
                             
