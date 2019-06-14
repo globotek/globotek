@@ -15,7 +15,7 @@ get_header(); ?>
 	
 	<?php var_dump( gtek_get_appointments_for_date( '2019-06-14' ) ); ?>
 	<?php var_dump( $_POST ); ?>
-	<div class="grid grid--halves wrapper" data-module="freshsales">
+	<div class="grid grid--one-third-two-thirds wrapper" data-module="freshsales">
 		
 		<div class="grid__item">
 			
