@@ -1,5 +1,9 @@
 .form-slider{
 
+    @extend %transition-all;
+    position: relative;
+    padding-bottom: $gutter--treble;
+
 	@include mode('global'){
 
         &__slider {
@@ -7,6 +11,7 @@
             @extend %transition-all;
             position: relative;
             left: 0px;
+            height: 800px;
 
         }
 
@@ -34,12 +39,24 @@
 
         &__buttons {
             text-align: center;
+            position: relative;
             bottom: 0px;
             width: 100%;
-            padding: $gutter--double 0;
+            padding: 0 0;
 
             &__button {
+                position: absolute;
                 margin: 0 $gutter;
+                top: 0px;
+
+                &.back {
+                    left: 0px;
+                    opacity: 0;
+                }
+
+                &.next {
+                    right: 0px;
+                }
             }
         }
     

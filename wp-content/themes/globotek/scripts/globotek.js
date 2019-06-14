@@ -326,15 +326,18 @@ function debounce(func, wait, immediate) {
             
                 var left = parseInt($('.form-slider__slider').css("left")),
                 leftNew = left - formWidth,
-                slideNextHeight = $('.active').next().height();
+                slideNextHeight = $('.active').next().height(),
+                dataID = $('.active').data('id');
 
                 $('.active').removeClass('active').next().addClass('active');
                 $('.form-slider__slider').css('left', leftNew);
 
-                $('.form-slider__slider, .form-slider').css({
-                    height: slideNextHeight
+                $('.form-slider__slider').css({
+                    height: slideNextHeight + 60
                 });
-            
+                
+                hideButtons();
+
             });
 
             triggerPrev.off('click').on('click', function() {
@@ -346,12 +349,28 @@ function debounce(func, wait, immediate) {
                 $('.active').removeClass('active').prev().addClass('active');
                 $('.form-slider__slider').css('left', leftNew);
 
-                $('.form-slider__slider, .form-slider').css({
-                    height: slidePrevHeight
+                $('.form-slider__slider').css({
+                    height: slidePrevHeight + 60
                 }); 
+
+                hideButtons();
             
             });
-           
+
+            function hideButtons() {
+                if ($('.form-slider__page:first-child').hasClass('active')) {
+                    $('.back').css('opacity', '0');
+                } else {
+                    $('.back').css('opacity', '1');
+                }
+
+                if ($('.form-slider__page:last-child').hasClass('active')) {
+                    $('.next').css('opacity', '0');
+                } else {
+                    $('.next').css('opacity', '1');
+                }
+            } 
+            
 		}
 		
 		init();

@@ -76,7 +76,6 @@
             &__checkmark {
 
                 @extend %transition-all;
-                @extend %box-shadow-secondary;
 
                 position: absolute;
                 top: 0;

@@ -42,7 +42,11 @@ get_header(); ?>
                             
                             </div>
 
-                            <h2 class="heading heading__secondary form-slider__page__heading">Please select a timeslot</h2>
+                        </div>
+
+                        <div class="form-slider__page" data-id="2">
+
+                        <h2 class="heading heading__secondary form-slider__page__heading">Please select a timeslot</h2>
                             
                             <div class="tabs clear">
                                 <input class="tabs__input" type="radio" id="tab1" name="tab" checked>
@@ -50,7 +54,8 @@ get_header(); ?>
                                 <input class="tabs__input" type="radio" id="tab2" name="tab">
                                 <label class="tabs__label button button--small" for="tab2">Afternoon</label>
                                 
-                                <div class="tabs__container">
+                                <div class="tabs__container clear">
+                                    <div class="tabs__container__inner">
                                     <div class="tabs__content" id="c1">
 
                                         <ol class="timeslots">
@@ -138,11 +143,10 @@ get_header(); ?>
                                         </ol>
 
                                     </div>
+                                    </div>
                                 </div>
-                            </div>
 
-
-                            <!--<ol class="timeslots">
+                                <!--<ol class="timeslots">
                                 
                                 							--><?php //foreach ( $appointment_slots[ '30_minute_appointments' ] as $appointment ) { ?>
 <!--								-->
@@ -159,24 +163,15 @@ get_header(); ?>
 <!--							-->
 <!--							--><?php //} ?>
 
-                                
-                                
-                            
                             <!--</ol>-->
 
-                            <div class="form-slider__buttons">
-
-                                <a href="#next" class="button button--small form-slider__buttons__button js-next__trigger next">Next</a>
-                                
                             </div>
-                        
+
                         </div>
                         
-                        <div class="form-slider__page" data-id="2">
+                        <div class="form-slider__page" data-id="3">
 
                             <h2 class="heading heading__secondary form-slider__page__heading">Details</h2>
-
-                            
                             
                             <input type="text" class="form-slider__page__field form__field" name="first_name" placeholder="First Name" />
                             <input type="text" class="form-slider__page__field form__field" name="last_name" placeholder="Last Name" />
@@ -185,32 +180,30 @@ get_header(); ?>
                             <input type="email" class="form-slider__page__field form__field" name="email_address" placeholder="Email Address" />
                             <input type="tel" class="form-slider__page__field form__field" name="phone_number" placeholder="Phone Number" />
                             
-                            <div class="form-slider__buttons">
-
-                                <a href="#back" class="button button--neutral button--small form-slider__buttons__button js-prev__trigger back">Go Back</a>
-                                <a href="#next" class="button button--small form-slider__buttons__button js-next__trigger next">Next</a>
-                                
-                            </div>
-
                         </div>
                         
-                        <div class="form-slider__page" data-id="3">
+                        <div class="form-slider__page" data-id="4">
                             
                             <h2 class="heading heading__secondary form-slider__page__heading">Confirm</h3>
                             
                             <input type="submit" class="button button--neutral button--small" name="confirm_booking" value="Book Consultation"/>
                             
-                            <div class="form-slider__buttons">
-
-                                <a href="#back" class="button button--neutral button--small form-slider__buttons__button js-prev__trigger back">Go Back</a>
-                                
-                            </div>
                         </div>
 
                     </div>
+
+                    <div class="form-slider__buttons">
+
+                    <a href="#back" class="button button--neutral button--small form-slider__buttons__button js-prev__trigger back">Go Back</a>
+                    <a href="#next" class="button button--small form-slider__buttons__button js-next__trigger next">Next</a>
+
+                </div>
+
+                </div>
+
+                
 			
-			
-			</form>
+            </form>
 		
 		</div>
 	
