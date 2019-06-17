@@ -357,6 +357,10 @@ function debounce(func, wait, immediate) {
             
             });
 
+            $('[data-toggle="toggle"]').change(function(){
+                $('.datepicker__calendar__afternoon').toggleClass('datepicker__calendar__afternoon--active');
+            });
+
             function hideButtons() {
                 if ($('.form-slider__page:first-child').hasClass('active')) {
                     $('.back').css('opacity', '0');

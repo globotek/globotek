@@ -33,12 +33,98 @@ get_header(); ?>
 				
                         <div class="form-slider__page active" data-id="1">
                             
-                            <h2 class="heading heading__secondary form-slider__page__heading">Please select a date</h2>
+                            <h2 class="title title__secondary form-slider__page__heading">Please select a date</h2>
                             
                             <div class="datepicker">
+
+                                <div class="datepicker__buttons">
+                                    <a class="datepicker__buttons__prev" href="#prev"><i class="fas fa-angle-left"></i></a>
+                                    <a class="datepicker__buttons__next" href="#next"><i class="fas fa-angle-right"></i></a>
+                                </div>
+
+                                <table cellpadding="0" cellspacing="0" class="datepicker__calendar">
+                                    <thead>
+                                        <tr>
+                                            <th class="datepicker__calendar__head"><span class="datepicker__calendar__day">Mon</span>17 Jun</th>
+                                            <th class="datepicker__calendar__head"><span class="datepicker__calendar__day">Tue</span>18 Jun</th>
+                                            <th class="datepicker__calendar__head"><span class="datepicker__calendar__day">Wed</span>19 Jun</th>
+                                            <th class="datepicker__calendar__head"><span class="datepicker__calendar__day">Thu</span>20 Jun</th>
+                                            <th class="datepicker__calendar__head"><span class="datepicker__calendar__day">Fri</span>21 Jun</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="datepicker__calendar__time">9:00 am</td>
+                                            <td class="datepicker__calendar__time">9:00 am</td>
+                                            <td class="datepicker__calendar__time">9:00 am</td>
+                                            <td class="datepicker__calendar__time">9:00 am</td>
+                                            <td class="datepicker__calendar__time">9:00 am</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="datepicker__calendar__time datepicker__calendar__unavailable">9:30 am</td>
+                                            <td class="datepicker__calendar__time">9:30 am</td>
+                                            <td class="datepicker__calendar__time">9:30 am</td>
+                                            <td class="datepicker__calendar__time">9:30 am</td>
+                                            <td class="datepicker__calendar__time">9:30 am</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="datepicker__calendar__time">10:00 am</td>
+                                            <td class="datepicker__calendar__time">10:00 am</td>
+                                            <td class="datepicker__calendar__time datepicker__calendar__time__selected">10:00 am</td>
+                                            <td class="datepicker__calendar__time">10:00 am</td>
+                                            <td class="datepicker__calendar__time">10:00 am</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="datepicker__calendar__time">10:30 am</td>
+                                            <td class="datepicker__calendar__time">10:30 am</td>
+                                            <td class="datepicker__calendar__time">10:30 am</td>
+                                            <td class="datepicker__calendar__time datepicker__calendar__unavailable">10:30 am</td>
+                                            <td class="datepicker__calendar__time">10:30 am</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="datepicker__calendar__time">11:00 am</td>
+                                            <td class="datepicker__calendar__time">11:00 am</td>
+                                            <td class="datepicker__calendar__time">11:00 am</td>
+                                            <td class="datepicker__calendar__time datepicker__calendar__unavailable">11:00 am</td>
+                                            <td class="datepicker__calendar__time">11:00 am</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="datepicker__calendar__time">11:30 am</td>
+                                            <td class="datepicker__calendar__time">11:30 am</td>
+                                            <td class="datepicker__calendar__time datepicker__calendar__unavailable">11:30 am</td>
+                                            <td class="datepicker__calendar__time">11:30 am</td>
+                                            <td class="datepicker__calendar__time">11:30 am</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody class="datepicker__calendar__afternoon">
+                                        <tr>
+                                            <td class="datepicker__calendar__time">12:00 pm</td>
+                                            <td class="datepicker__calendar__time">12:00 pm</td>
+                                            <td class="datepicker__calendar__time">12:00 pm</td>
+                                            <td class="datepicker__calendar__time">12:00 pm</td>
+                                            <td class="datepicker__calendar__time">12:00 pm</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="datepicker__calendar__time">12:30 pm</td>
+                                            <td class="datepicker__calendar__time">12:30 pm</td>
+                                            <td class="datepicker__calendar__time">12:30 pm</td>
+                                            <td class="datepicker__calendar__time">12:30 pm</td>
+                                            <td class="datepicker__calendar__time">12:30 pm</td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td class="datepicker__calendar__foot"><label for="afternoon">Afternoon<span class="datepicker__calendar__arrow"><i class="fas fa-angle-down"></i></span></label><input type="checkbox" name="afternoon" id="afternoon" data-toggle="toggle"></td>
+                                            <td class="datepicker__calendar__foot"><label for="afternoon">Afternoon<span class="datepicker__calendar__arrow"><i class="fas fa-angle-down"></i></span></label><input type="checkbox" name="afternoon" id="afternoon" data-toggle="toggle"></td>
+                                            <td class="datepicker__calendar__foot"><label for="afternoon">Afternoon<span class="datepicker__calendar__arrow"><i class="fas fa-angle-down"></i></span></label><input type="checkbox" name="afternoon" id="afternoon" data-toggle="toggle"></td>
+                                            <td class="datepicker__calendar__foot"><label for="afternoon">Afternoon<span class="datepicker__calendar__arrow"><i class="fas fa-angle-down"></i></span></label><input type="checkbox" name="afternoon" id="afternoon" data-toggle="toggle"></td>
+                                            <td class="datepicker__calendar__foot"><label for="afternoon">Afternoon<span class="datepicker__calendar__arrow"><i class="fas fa-angle-down"></i></span></label><input type="checkbox" name="afternoon" id="afternoon" data-toggle="toggle"></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
                                 
-                                <div class="js-datepicker"></div>
-                                <input type="text" name="dateslot" class="js-datepicker-selection"/>
+                                <!--<div class="js-datepicker"></div>
+                                <input type="text" name="dateslot" class="js-datepicker-selection"/>-->
                             
                             </div>
 
@@ -46,126 +132,17 @@ get_header(); ?>
 
                         <div class="form-slider__page" data-id="2">
 
-                        <h2 class="heading heading__secondary form-slider__page__heading">Please select a timeslot</h2>
+                            <h2 class="title title__secondary form-slider__page__heading">Enter your details</h2>
                             
-                            <div class="tabs clear">
-                                <input class="tabs__input" type="radio" id="tab1" name="tab" checked>
-                                <label class="tabs__label button button--small" for="tab1">Morning</label>
-                                <input class="tabs__input" type="radio" id="tab2" name="tab">
-                                <label class="tabs__label button button--small" for="tab2">Afternoon</label>
-                                
-                                <div class="tabs__container clear">
-                                    <div class="tabs__container__inner">
-                                    <div class="tabs__content" id="c1">
-
-                                        <ol class="timeslots">
-                                    
-                                            <li class="timeslots__item">
-                                                <label class="timeslots__item__label">
-                                                    <input type="radio" class="timeslots__item__input" name="timeslot" value="09:00"/>
-                                                    <span class="timeslots__item__time">09:00 - 09:30</span>
-                                                    <span class="timeslots__item__checkmark"></span>
-                                                </label>
-                                            </li>
-                                            <li class="timeslots__item">
-                                                <label class="timeslots__item__label">
-                                                    <input type="radio" class="timeslots__item__input" name="timeslot" value="09:00"/>
-                                                    <span class="timeslots__item__time">10:00 - 10:30</span>
-                                                    <span class="timeslots__item__checkmark"></span>
-                                                </label>
-                                            </li>
-                                            <li class="timeslots__item">
-                                                <label class="timeslots__item__label">
-                                                    <input type="radio" class="timeslots__item__input" name="timeslot" value="09:00"/>
-                                                    <span class="timeslots__item__time">11:00 - 11:30</span>
-                                                    <span class="timeslots__item__checkmark"></span>
-                                                </label>
-                                            </li>
-
-                                        </ol>
-
-                                    </div>
-
-                                    <div class="tabs__content" id="c2">
-
-                                        <ol class="timeslots">
-
-                                            <li class="timeslots__item">
-                                                <label class="timeslots__item__label">
-                                                    <input type="radio" class="timeslots__item__input" name="timeslot" value="09:00"/>
-                                                    <span class="timeslots__item__time">12:00 - 12:30</span>
-                                                    <span class="timeslots__item__checkmark"></span>
-                                                </label>
-                                            </li>
-                                            <li class="timeslots__item">
-                                                <label class="timeslots__item__label">
-                                                    <input type="radio" class="timeslots__item__input" name="timeslot" value="09:00"/>
-                                                    <span class="timeslots__item__time">13:00 - 13:30</span>
-                                                    <span class="timeslots__item__checkmark"></span>
-                                                </label>
-                                            </li>
-                                            <li class="timeslots__item">
-                                                <label class="timeslots__item__label">
-                                                    <input type="radio" class="timeslots__item__input" name="timeslot" value="09:00"/>
-                                                    <span class="timeslots__item__time">14:00 - 14:30</span>
-                                                    <span class="timeslots__item__checkmark"></span>
-                                                </label>
-                                            </li>
-                                            <li class="timeslots__item">
-                                                <label class="timeslots__item__label">
-                                                    <input type="radio" class="timeslots__item__input" name="timeslot" value="09:00"/>
-                                                    <span class="timeslots__item__time">15:00 - 15:30</span>
-                                                    <span class="timeslots__item__checkmark"></span>
-                                                </label>
-                                            </li>
-                                            <li class="timeslots__item">
-                                                <label class="timeslots__item__label">
-                                                    <input type="radio" class="timeslots__item__input" name="timeslot" value="09:00"/>
-                                                    <span class="timeslots__item__time">16:00 - 16:30</span>
-                                                    <span class="timeslots__item__checkmark"></span>
-                                                </label>
-                                            </li>
-                                            <li class="timeslots__item">
-                                                <label class="timeslots__item__label">
-                                                    <input type="radio" class="timeslots__item__input" name="timeslot" value="09:00"/>
-                                                    <span class="timeslots__item__time">17:00 - 17:30</span>
-                                                    <span class="timeslots__item__checkmark"></span>
-                                                </label>
-                                            </li>
-                                            <li class="timeslots__item">
-                                                <label class="timeslots__item__label">
-                                                    <input type="radio" class="timeslots__item__input" name="timeslot" value="09:00"/>
-                                                    <span class="timeslots__item__time">18:00 - 18:30</span>
-                                                    <span class="timeslots__item__checkmark"></span>
-                                                </label>
-                                            </li>
-
-                                        </ol>
-
-                                    </div>
-                                    </div>
-                                </div>
-
-                                <!--<ol class="timeslots">
-                                
-                                							--><?php //foreach ( $appointment_slots[ '30_minute_appointments' ] as $appointment ) { ?>
-<!--								-->
-<!--								--><?php //$appointment_start = strtotime( $appointment[ 'start_time' ] ); ?>
-<!--								-->
-<!--								--><?php //$timeslot_value = date( 'H:i:s', $appointment_start ) . ' - ' . date( 'H:i:s', strtotime( '+30 minutes', $appointment_start ) ); ?>
-<!--								--><?php //$timeslot_label = date( 'H:i', $appointment_start ) . ' - ' . date( 'H:i', strtotime( '+30 minutes', $appointment_start ) ); ?>
-<!--								-->
-<!--								<li class="timeslots__item">-->
-<!--									<label>-->
-<!--										<input type="radio" name="timeslot" value="--><?php //echo $timeslot_label; ?><!--"/>--><?php //echo $timeslot_label; ?>
-<!--									</label>-->
-<!--								</li>-->
-<!--							-->
-<!--							--><?php //} ?>
-
-                            <!--</ol>-->
-
-                            </div>
+                            <select class="form-slider__page__field form__field" placeholder="Reason for Visit">
+                                <option selected>Reason for Visit</option>
+                                <option>Reason 1</option>
+                                <option>Reason 2</option>
+                                <option>Reason 3</option>
+                            </select>
+                            <input type="text" class="form-slider__page__field form__field" name="name" placeholder="Name" />
+                            <input type="email" class="form-slider__page__field form__field" name="company" placeholder="Email Address" />
+                            <input type="tel" class="form-slider__page__field form__field" name="company_position" placeholder="Phone Number" />
 
                         </div>
                         
