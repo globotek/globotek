@@ -45,6 +45,13 @@
 		&__text{
 			
 			text-align: center;
+			
+			p + p{
+				
+				margin-top: $gutter--mini;
+				
+			}
+			
 		}
 	}
 	

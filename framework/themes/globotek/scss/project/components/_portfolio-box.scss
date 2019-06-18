@@ -36,7 +36,8 @@
 			}
 			
 			&__image img {
-				max-height: 250px;
+				height: 100%;
+				max-width: none;
 				object-fit: cover;
 			}
 			

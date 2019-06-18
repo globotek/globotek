@@ -53,11 +53,7 @@ $content_background_decider = rand( 1, 3 ); ?>
 				</div>
 			
 			</div>
-			
-			<div class="project-card__inner__content">
-				<?php the_excerpt(); ?>
-			</div>
-			
+						
 			<div class="project-card__inner__link">
 				<a href="<?php the_permalink(); ?>" class="button button--white">View</a>
 			</div>
