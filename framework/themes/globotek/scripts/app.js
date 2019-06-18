@@ -64,6 +64,11 @@ var app = (function ($) {
 								
                                 elem.formPage();
                                 break;
+
+                            case 'datepicker':
+								
+                                elem.datepicker();
+                                break;
 							
 						}
 						
