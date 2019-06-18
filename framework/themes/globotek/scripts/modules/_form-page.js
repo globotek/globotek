@@ -21,8 +21,7 @@
             
                 var left = parseInt($('.form-slider__slider').css("left")),
                 leftNew = left - formWidth,
-                slideNextHeight = $('.active').next().height(),
-                dataID = $('.active').data('id');
+                slideNextHeight = $('.active').next().height();
 
                 $('.active').removeClass('active').next().addClass('active');
                 $('.form-slider__slider').css('left', leftNew);
@@ -64,10 +63,20 @@
                 }
 
                 if ($('.form-slider__page:last-child').hasClass('active')) {
-                    $('.next').css('opacity', '0');
+                    $('.next').hide();
+                    $('.back').hide();
                 } else {
-                    $('.next').css('opacity', '1');
+                    $('.next').show();
+                    $('.back').show();
                 }
+
+                /*if ($('.form-slider__page:nth-last-child(2)').hasClass('active')) {
+                    $('.next').hide();
+                    $('.book').show();
+                } else {
+                    $('.next').show();
+                    $('.book').hide();
+                }*/
             } 
             
 		}

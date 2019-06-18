@@ -15,6 +15,33 @@
 
         }
 
+        &__select {
+
+            &__field {
+                @extend %form-field;
+
+                padding-left: 25px;
+            }
+
+            
+            position: relative;
+
+            &:before {
+
+                content: "";
+                display: block;
+                position: absolute;
+                width: 0; 
+                height: 0; 
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                border-top: 6px solid $blue;
+                right: 25px;
+                top: 23px;
+            }
+
+        }
+
         &__textarea {
             
             @extend %form-field;
