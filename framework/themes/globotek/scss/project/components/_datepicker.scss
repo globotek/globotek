@@ -6,210 +6,141 @@
         width: 100%;
         margin: 0 auto;
         text-align: center;
-		
-		.ui-datepicker {
-			
-			&-header {
-				
-				font-weight: bold;
-                padding: $gutter 0;
-                margin: 0 auto;
-                width: 330px;
-				
-			}
-			
-			&-prev,
-			&-next {
-				
-				@extend .button;
+        overflow: visible;
+        position: relative;
+        top: -80px;
+
+        &__buttons {
+            overflow: visible;
+
+            &__prev,
+            &__next {
+                @extend .button;
 				
 				width: 45px;
-				height: 45px;
+                height: 45px;
+                line-height: 45px;
 				position: relative;
-				padding: 0 !important;
-				
-				&:before {
-					
-					content: "";
-					border: solid $white;
-					border-width: 0 3px 3px 0;
-					display: inline-block;
-					padding: 3px;
-					position: absolute;
-					top: 18px;
-					
-				}
-				
-			}
-			
-			&-prev {
-				
-				float: left;
-				
-				&:before {
-					
-					left: 20px;
-					transform: rotate(135deg);
-					-webkit-transform: rotate(135deg);
-					
-				}
-				
-			}
-			
-			&-next {
-				
-				float: right;
-				
-				&:before {
-					
-					right: 20px;
-					transform: rotate(-45deg);
-					-webkit-transform: rotate(-45deg);
-					
-				}
-				
-			}
-			
-			&-title {
+                padding: 0 !important;
+                margin: 0 13px;
+            }
 
-                @extend .heading__tertiary;
-				
-				text-align: center;
-				padding-top: $gutter--mini;
-				margin-bottom: $gutter;
-				
-			}
-			
-			&-calendar {
-				
-				//@extend %box-shadow-secondary;
-                
-                width: 400px;
-				//background: $grey--lighter;
-				border-radius: $gutter;
-                padding: $gutter;
-                margin: 0 auto;
-				
-				thead {
-					
-					th {
-                        
-                        @extend .heading__tertiary;
+            &__prev {
+                float: left;
+            }
 
-						font-weight: bold;
-						
-					}
-					
-                }
-                
-                tbody {
+            &__next {
+                float: right;
+            }
 
-                    td {
-
-                        text-align: center;
-                        padding: 10px 0;
-
-                    }
-
-                }
-				
-				.ui-state {
-					
-					&-default {
-						
-						@extend %transition-all;
-						
-						display: inline-block;
-						width: 50px;
-						height: 50px;
-						background: $white;
-						border-radius: 50%;
-						text-align: center;
-						text-decoration: none;
-						color: $primary-color;
-						line-height: 50px;
-						
-						&:hover {
-							
-							background: $primary-color--light;
-							
-						}
-						
-					}
-					
-					&-active {
-						
-						background: $primary-color;
-						color: $white;
-						
-						&:hover {
-							
-							background: $primary-color;
-							
-						}
-						
-					}
-					
-				}
-				
-				.ui-datepicker-week-end {
-
-                    display: none;
-					
-					.ui-state-default {
-						
-						background: $grey--light;
-						color: $black;
-						
-						&:hover {
-							
-							background: $primary-color--light;
-							
-						}
-						
-					}
-					
-				}
-				
-			}
-			
-		}
-		
-		.ui-icon {
-			display: none;
         }
-		
-		.ui-state-disabled.ui-corner-all{
-            background: $grey--light;
-		}
-		
-		.ui-state-disabled span{
-            background: $grey--lighter !important;
-            color: $grey--mid !important;
-		}
-        
-        .js-datepicker-selection {
 
-            @extend .heading__tertiary;
-            @extend %box-shadow-secondary;
+        &__calendar {
 
-            @include media-query('portable'){
-				@extend .heading__tertiary;
-			}
+            width: 100%;
+            margin: $gutter--treble 0 0 $gutter;
 
-            border: none;
-            width: 350px;
-            text-align: center;
-            margin: $gutter--double 0;
-            border-radius: $gutter;
-            border: $blue solid 1px;
-            padding: $gutter--mini;
-            color: $blue;
+            &__row {
+                @extend %flex-wrapper;
+                @extend %grid;
 
-            &:focus {
+                width: 100%;
+                margin-top: 0;
+            }
 
-                outline: none;
+            &__head,
+            &__foot {
+                @extend %one-fifth;
 
+                background: $blue;
+                color: $white;
+                padding: 5px 0;
+                border: $white solid 1px;
+            }
+
+            &__head {
+                &:first-child {
+                    border-radius: 25px 0 0 0;
+                }
+
+                &:last-child {
+                    border-radius: 0 25px 0 0;
+                }
+            }
+
+            &__day {
+                display: block;
+                text-transform: uppercase;
+            }
+
+            &__time {
+                @extend %one-fifth;
+                @extend %transition-all;
+                padding: 16px 0;
+                border: $white solid 1px;
+                cursor: pointer;
+
+                &:hover {
+                    background: $primary-color--light;
+                }
+
+                &__selected {
+                    background: $blue;
+                    color: $white;
+
+                    &:hover {
+                        background: $blue;
+                        color: $white;
+                    }
+                }
+            }
+
+            &__unavailable {
+                background: $grey--lighter;
+                text-indent: -99999px;
+
+                &:hover {
+                    background: $grey--lighter;
+                }
+            }
+
+            &__foot {
+                cursor: pointer;
+                
+                &:first-child {
+                    border-radius: 0 0 0 25px;
+                }
+
+                &:last-child {
+                    border-radius: 0 0 25px 0;
+                }
+
+                [data-toggle="toggle"] {
+                    display: none;
+                }
+
+                &--active {
+                    .datepicker__calendar__arrow {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+
+            &__arrow {
+                display: block;
+                cursor: pointer;
+            }
+
+            &__afternoon {
+                @extend %transition-all;
+
+                width: 100%;
+                overflow: hidden;
+                max-height: 0px;
+
+                &--active {
+                    max-height: 1000px;
+                }
             }
 
         }
