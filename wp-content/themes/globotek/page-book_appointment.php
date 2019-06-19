@@ -12,7 +12,6 @@ get_header(); ?>
 <div class="chunk">
 	
 	<?php //gtek_get_available_timeslots_for_date( '2019-06-14' ); ?>
-	
 	<?php //var_dump( gtek_get_appointments_for_date( '2019-06-14' ) ); ?>
 	<?php //var_dump( $_POST ); ?>
 	
