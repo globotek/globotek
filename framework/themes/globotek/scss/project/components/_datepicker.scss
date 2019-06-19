@@ -54,12 +54,15 @@
 
                 position: relative;
                 left: 0px;
+                overflow: hidden;
+                height: 478px;
             }
 
             &__page {
                 float: left;
                 @extend %grid;
                 @extend %grid--full;
+                width: 560px;
             }
 
             &__slot-slider {
