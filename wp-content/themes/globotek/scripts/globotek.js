@@ -441,8 +441,34 @@ function debounce(func, wait, immediate) {
             targetPage.width(formWidth);
             formSlider.width(sliderWidth);
 
-            triggerNext.off('click').on('click', function() {
+            triggerNext.off('click').on('click', function(evt) {
+                
+                evt.preventDefault();
+
+                nextPage();
+                hideButtons();
+
+            });
+
+            triggerPrev.off('click').on('click', function(evt) {
+
+                evt.preventDefault();
+
+                prevPage();
+                hideButtons();
             
+            });
+
+            bookBtn.off('click').on('click', function(evt) {
+
+                evt.preventDefault();
+
+                nextPage();
+                hideButtons();
+            
+            });
+
+            function nextPage() {
                 var left = parseInt(formSlider.css("left")),
                 leftNew = left - formWidth,
                 slideNextHeight = $('.active').next().height();
@@ -453,13 +479,9 @@ function debounce(func, wait, immediate) {
                 formSlider.css({
                     height: slideNextHeight + 60
                 });
-                
-                hideButtons();
+            }
 
-            });
-
-            triggerPrev.off('click').on('click', function() {
-
+            function prevPage() {
                 var left = parseInt(formSlider.css("left")),
                 leftNew = left + formWidth,
                 slidePrevHeight = $('.active').prev().height();
@@ -470,29 +492,7 @@ function debounce(func, wait, immediate) {
                 formSlider.css({
                     height: slidePrevHeight + 60
                 }); 
-
-                hideButtons();
-            
-            });
-
-            bookBtn.off('click').on('click', function(evt) {
-
-                evt.preventDefault();
-
-                var left = parseInt(formSlider.css("left")),
-                leftNew = left - formWidth,
-                slideNextHeight = $('.active').next().height();
-
-                $('.active').removeClass('active').next().addClass('active');
-                formSlider.css('left', leftNew);
-
-                formSlider.css({
-                    height: slideNextHeight + 60
-                });
-                
-                hideButtons();
-            
-            });
+            }
 
             function hideButtons() {
                 if ($('.form-slider__page:first-child').hasClass('active')) {
