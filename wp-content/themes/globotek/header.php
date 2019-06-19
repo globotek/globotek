@@ -42,7 +42,6 @@
 			gtag('config', 'UA-96947295-1');
 		</script>
 		
-		
 		<!-- Google Tag Manager -->
 		<!--	<script>-->
 		<!--		(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':-->

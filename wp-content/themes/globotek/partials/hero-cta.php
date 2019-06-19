@@ -10,7 +10,7 @@
 	
 	<div class="hero__background">
 		
-		<img class="hero__background__image" src="<?php echo get_template_directory_uri() . '/images/hero-home-bg.svg'; ?>"/>
+		<img class="hero__background__image" src="<?php echo get_template_directory_uri() . '/images/hero-home-bg.svg'; ?>" alt="Wave Background for Hero Image"/>
 	
 	</div>
 	

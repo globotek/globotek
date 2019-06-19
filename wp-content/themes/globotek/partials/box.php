@@ -19,6 +19,6 @@
 	<?php } ?>
 	
 	<h3 class="box__heading heading__tertiary"><?php echo $box[ 'title' ]; ?></h3>
-	<p class="box__text"><?php echo $box[ 'content' ]; ?></p>
+	<div class="box__text"><?php echo $box[ 'content' ]; ?></div>
 
 </div>

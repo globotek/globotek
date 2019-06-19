@@ -8,11 +8,12 @@
 		&__image {
 			
 			overflow: hidden;
-			max-height: 200px;
+			max-height: 250px;
 			
 			img {
+				height: 250px;
+				width: 100%;
                 object-fit: cover;
-                width: 100%;
 			}
 			
 		}

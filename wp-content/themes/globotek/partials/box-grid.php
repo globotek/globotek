@@ -34,6 +34,7 @@ foreach($component['boxes'] as $box_row){
 				$box_size = 'halves';
 				break;
 			
+			case ($box_count % 3 == 0 ? $box_count : !$box_count ):
 			case ($box_count % 6 == 0 ? $box_count : !$box_count ):
 				
 				$box_size = 'thirds';

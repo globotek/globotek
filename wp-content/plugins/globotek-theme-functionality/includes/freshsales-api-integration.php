@@ -208,13 +208,36 @@ add_action( 'wp_ajax_nopriv_gtek_get_appointments_for_date', 'gtek_trigger_get_a
 
 function gtek_get_available_timeslots_for_date( $date ) {
 	
-	$appointments = gtek_get_appointments_for_date( $date );
-	$date_day = date('l', strtotime($date));
-	var_dump( $date_day );
-	$timeslots = get_field($date_day . '_appointment_slots', 'option');
+	$booked_appointments = gtek_get_appointments_for_date( $date );
+	$date_day            = date( 'l', strtotime( $date ) );
 	
-	var_dump( $timeslots );
-
+	$timeslot_options = get_field( $date_day . '_appointment_slots', 'option' );
+	$timeslots        = array();
+	
+	foreach ( $timeslot_options[ '30_minute_appointments' ] as $time_of_day => $timeslot_option ) {
+		
+		foreach ( $timeslot_option as $appointment ) {
+			
+			$appointment[ 'available' ] = TRUE;
+			
+			foreach ( $booked_appointments as $booked_appointment ) {
+				
+				if ( $appointment[ 'start_time' ] == date( 'H:i:s', strtotime( $booked_appointment ) ) ) {
+					
+					$appointment[ 'available' ] = FALSE;
+					
+				}
+				
+			}
+			
+			$timeslots[ $time_of_day ][] = $appointment;
+			
+		}
+		
+	}
+	
+	return $timeslots;
+	
 }
 
 add_action( 'wp_ajax_gtek_get_available_timeslots_for_date', 'gtek_trigger_get_available_timeslots_for_date' );

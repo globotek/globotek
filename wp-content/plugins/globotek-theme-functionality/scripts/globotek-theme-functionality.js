@@ -316,9 +316,9 @@ function debounce(func, wait, immediate) {
 		
 		
 		var init = function () {
-			
-			console.log('a');
+						
 			var disabledDates = ['2019-06-28', '2019-06-13', '2019-06-21'];
+			
 			$('.js-datepicker').datepicker({
 				firstDay:      7,
 				dateFormat: 'DD-yy-mm-dd',

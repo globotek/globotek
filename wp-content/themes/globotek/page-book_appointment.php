@@ -11,12 +11,12 @@ get_header(); ?>
 
 <div class="chunk">
 	
-	<?php gtek_get_available_timeslots_for_date( '2019-06-14' ); ?>
+	<?php $timeslots = gtek_get_available_timeslots_for_date( '2019-06-04' ); ?>
 	
-	<?php var_dump( gtek_get_appointments_for_date( '2019-06-14' ) ); ?>
-	<?php var_dump( $_POST ); ?>
+	<?php //var_dump( gtek_get_appointments_for_date( '2019-06-14' ) ); ?>
+	<?php //var_dump( $_POST ); ?>
 	
-	<div class="grid grid--one-third-two-thirds wrapper" data-module="freshsales">
+	<div class="grid grid--halves wrapper" data-module="freshsales">
 		
 		<div class="grid__item">
 			
@@ -263,7 +263,7 @@ get_header(); ?>
 
                 </div>
 			
-            </form>
+			</form>
 		
 		</div>
 	
