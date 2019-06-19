@@ -1,6 +1,6 @@
 .form-slider{
 
-    @extend %transition-all;
+    @extend %transition-all-slow;
     position: relative;
     padding-bottom: $gutter--treble;
 
@@ -8,7 +8,7 @@
 
         &__slider {
 
-            @extend %transition-all;
+            @extend %transition-all-slow;
             position: relative;
             left: 0px;
 
