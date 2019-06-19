@@ -6,8 +6,12 @@
             triggerCalPrev = elem.find('.js-prevcal__trigger'),
             targetSlider = $('.datepicker__calendar__slider'),
             triggers = $('.datepicker__calendar__time'),
-            targetPage = $('.datepicker__calendar__page');
+            targetPage = $('.datepicker__calendar__page'),
+            triggerAfternoon = $('.datepicker__calendar__afternoon'),
+            triggerMorning = $('.datepicker__calendar__morning'),
+            slotSlider = $('.datepicker__calendar__slots'),
 		    settings = {
+                sliderClass: 'datepicker__calendar__slots',
 			    activeClass: 'datepicker__calendar__time__selected',
 			    visibleClass: 'is-active',
 			    elemClass: '',
@@ -30,7 +34,6 @@
             }
 
 
-
             triggerCalNext.off('click').on('click', function() {
 
                 var leftCurrent = parseInt(targetSlider.css("left")),
@@ -42,6 +45,25 @@
                 hideButtons();
 
             });
+
+
+            triggerAfternoon.off('click').on('click', function() {
+
+                var $this = $(this);
+
+                $this.parent().css('top', '-416px');
+            
+            });
+
+
+            triggerMorning.off('click').on('click', function() {
+
+                var $this = $(this);
+
+                $this.parent().css('top', '0px');
+            
+            });
+
 
             triggerCalPrev.off('click').on('click', function() {
 
@@ -84,11 +106,6 @@
                 triggers.removeClass(settings.activeClass);
                 trigger.addClass(settings.activeClass);
 
-            });
-            
-            $('[data-toggle="toggle"]').change(function(){
-                $('.datepicker__calendar__afternoon').toggleClass('datepicker__calendar__afternoon--active');
-                $('.datepicker__calendar__foot').toggleClass('datepicker__calendar__foot--active');
             });
             
 		}

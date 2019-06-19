@@ -12,7 +12,11 @@
 		// Default vertically align content top, unless set otherwise
 		&:not(.grid--middle):not(.grid--bottom) {
 			@extend %grid--top;
-		}
+        }
+        
+        &__full {
+            @extend %grid--full;
+        }
 		
 		// Default split into halves but add modifiers anyway
 		&--halfs,
