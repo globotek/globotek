@@ -24,7 +24,7 @@
 			
 			.grid__item {
 				@extend %palm--one-whole;
-				@extend %lap--one-half;
+				@extend %lap--one-whole;
 				@extend %desk--one-half;
 			}
 		}
@@ -113,7 +113,7 @@
 			// Halves by default.
 			&:not([class*="grid__item--"]) {
 				@extend %palm--one-whole;
-				@extend %lap--one-half;
+				@extend %lap--one-whole;
 				@extend %desk--one-half;
 			}
 		}

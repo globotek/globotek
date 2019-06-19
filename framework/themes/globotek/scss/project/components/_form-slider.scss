@@ -66,6 +66,13 @@
                 margin: 0 13px;
                 top: 0px;
 
+                @include media-query('palm'){
+
+                    position: relative;
+                    text-align: center;
+            
+                }
+
                 &.back {
                     left: 0px;
                     opacity: 0;
@@ -78,6 +85,12 @@
                 &.book {
                     right: 0px;
                     display: none;
+
+                    @include media-query('palm'){
+
+                        margin: $gutter auto 0;
+                
+                    }
                 }
             }
         }
