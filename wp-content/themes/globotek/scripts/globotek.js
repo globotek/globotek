@@ -473,6 +473,8 @@ function debounce(func, wait, immediate) {
                 leftNew = left - formWidth,
                 slideNextHeight = $('.active').next().height();
 
+                targetPage.css('opacity','1');
+                $('.active').css('opacity', '0');
                 $('.active').removeClass('active').next().addClass('active');
                 formSlider.css('left', leftNew);
 
@@ -485,7 +487,9 @@ function debounce(func, wait, immediate) {
                 var left = parseInt(formSlider.css("left")),
                 leftNew = left + formWidth,
                 slidePrevHeight = $('.active').prev().height();
-			
+                
+                targetPage.css('opacity','1');
+                $('.active').css('opacity', '0');
                 $('.active').removeClass('active').prev().addClass('active');
                 formSlider.css('left', leftNew);
 

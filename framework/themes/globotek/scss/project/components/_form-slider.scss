@@ -11,15 +11,18 @@
             @extend %transition-all-slow;
             position: relative;
             left: 0px;
+            height: 670px;
 
         }
 
         &__page {
 
+            @extend %transition-all;
             border-radius: $gutter;
             padding: $gutter 0;
             text-align: center;
             float: left;
+            opacity: 1;
 
             &__heading {
 
