@@ -15,6 +15,7 @@
 
             &__prev,
             &__next {
+                @extend %transition-all;
                 @extend .button;
 				
 				width: 45px;
@@ -27,6 +28,7 @@
 
             &__prev {
                 float: left;
+                opacity: 0;
             }
 
             &__next {
@@ -38,11 +40,24 @@
         &__calendar {
 
             width: 100%;
-            margin: $gutter--treble 0 0 $gutter;
+            margin: $gutter--treble 0 0 0;
+            overflow: hidden;
+
+            &__slider {
+                @extend %transition-all;
+
+                position: relative;
+                left: 0px;
+            }
+
+            &__page {
+                float: left;
+            }
 
             &__row {
                 @extend %flex-wrapper;
                 @extend %grid;
+                @extend %grid--full;
 
                 width: 100%;
                 margin-top: 0;

@@ -4,6 +4,7 @@
           var elem = $(this),
             triggerNext = elem.find('.js-next__trigger'),
             triggerPrev = elem.find('.js-prev__trigger'),
+            formSlider = $('.form-slider__slider'),
             target = $('.form'),
             targetPage = $('.form-slider__page');
 		
@@ -15,18 +16,18 @@
             sliderWidth = formWidth * pageNum;
 
             targetPage.width(formWidth);
-            $('.form-slider__slider').width(sliderWidth);
+            formSlider.width(sliderWidth);
 
             triggerNext.off('click').on('click', function() {
             
-                var left = parseInt($('.form-slider__slider').css("left")),
+                var left = parseInt(formSlider.css("left")),
                 leftNew = left - formWidth,
                 slideNextHeight = $('.active').next().height();
 
                 $('.active').removeClass('active').next().addClass('active');
-                $('.form-slider__slider').css('left', leftNew);
+                formSlider.css('left', leftNew);
 
-                $('.form-slider__slider').css({
+                formSlider.css({
                     height: slideNextHeight + 60
                 });
                 
@@ -36,14 +37,14 @@
 
             triggerPrev.off('click').on('click', function() {
 
-                var left = parseInt($('.form-slider__slider').css("left")),
+                var left = parseInt(formSlider.css("left")),
                 leftNew = left + formWidth,
                 slidePrevHeight = $('.active').prev().height();
 			
                 $('.active').removeClass('active').prev().addClass('active');
-                $('.form-slider__slider').css('left', leftNew);
+                formSlider.css('left', leftNew);
 
-                $('.form-slider__slider').css({
+                formSlider.css({
                     height: slidePrevHeight + 60
                 }); 
 
