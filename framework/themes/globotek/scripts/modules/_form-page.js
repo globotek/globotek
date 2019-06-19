@@ -4,6 +4,7 @@
           var elem = $(this),
             triggerNext = elem.find('.js-next__trigger'),
             triggerPrev = elem.find('.js-prev__trigger'),
+            bookBtn = elem.find('.book'),
             formSlider = $('.form-slider__slider'),
             target = $('.form'),
             targetPage = $('.form-slider__page');
@@ -18,8 +19,34 @@
             targetPage.width(formWidth);
             formSlider.width(sliderWidth);
 
-            triggerNext.off('click').on('click', function() {
+            triggerNext.off('click').on('click', function(evt) {
+                
+                evt.preventDefault();
+
+                nextPage();
+                hideButtons();
+
+            });
+
+            triggerPrev.off('click').on('click', function(evt) {
+
+                evt.preventDefault();
+
+                prevPage();
+                hideButtons();
             
+            });
+
+            bookBtn.off('click').on('click', function(evt) {
+
+                evt.preventDefault();
+
+                nextPage();
+                hideButtons();
+            
+            });
+
+            function nextPage() {
                 var left = parseInt(formSlider.css("left")),
                 leftNew = left - formWidth,
                 slideNextHeight = $('.active').next().height();
@@ -30,13 +57,9 @@
                 formSlider.css({
                     height: slideNextHeight + 60
                 });
-                
-                hideButtons();
+            }
 
-            });
-
-            triggerPrev.off('click').on('click', function() {
-
+            function prevPage() {
                 var left = parseInt(formSlider.css("left")),
                 leftNew = left + formWidth,
                 slidePrevHeight = $('.active').prev().height();
@@ -47,10 +70,7 @@
                 formSlider.css({
                     height: slidePrevHeight + 60
                 }); 
-
-                hideButtons();
-            
-            });
+            }
 
             function hideButtons() {
                 if ($('.form-slider__page:first-child').hasClass('active')) {
@@ -59,21 +79,17 @@
                     $('.back').css('opacity', '1');
                 }
 
-                if ($('.form-slider__page:last-child').hasClass('active')) {
-                    $('.next').hide();
-                    $('.back').hide();
-                } else {
-                    $('.next').show();
-                    $('.back').show();
-                }
-
-                /*if ($('.form-slider__page:nth-last-child(2)').hasClass('active')) {
+                if ($('.form-slider__page:nth-last-child(2)').hasClass('active')) {
                     $('.next').hide();
                     $('.book').show();
+                } else if ($('.form-slider__page:last-child').hasClass('active')) {
+                    $('.next').hide();
+                    $('.back').hide();
+                    $('.book').hide();
                 } else {
                     $('.next').show();
                     $('.book').hide();
-                }*/
+                }
             } 
             
 		}
