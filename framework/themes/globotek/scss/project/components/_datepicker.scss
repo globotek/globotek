@@ -15,6 +15,7 @@
 
             &__prev,
             &__next {
+                @extend %transition-all;
                 @extend .button;
 				
 				width: 45px;
@@ -27,6 +28,7 @@
 
             &__prev {
                 float: left;
+                opacity: 0;
             }
 
             &__next {
@@ -38,34 +40,74 @@
         &__calendar {
 
             width: 100%;
-            margin: $gutter--treble 0 0 $gutter;
+            margin: $gutter--treble 0 0 0;
+            overflow: hidden;
 
-            &__row {
-                @extend %flex-wrapper;
+            @include media-query('palm'){
+
+                font-size: 12px;
+        
+            }
+
+            &__slider {
+                @extend %transition-all;
+
+                position: relative;
+                left: 0px;
+            }
+
+            &__page {
+                float: left;
                 @extend %grid;
+                @extend %grid--full;
+            }
 
-                width: 100%;
+            &__slot-slider {
+                overflow: hidden;
+                height: 416px;
+            }
+
+            &__slots {
+                @extend %transition-all;
+
+                position: relative;
+                top: 0px;
+            }
+
+            &__col {
+                @extend %flex-wrapper;
+                @extend %one-fifth;
+
+                flex-direction: column;
                 margin-top: 0;
+
+                &:first-child {
+                    .datepicker__calendar__head {
+                        border-radius: 25px 0 0 0;
+                    }
+
+                    .datepicker__calendar__foot {
+                        border-radius: 0 0 0 25px;
+                    }
+                }
+
+                &:last-child {
+                    .datepicker__calendar__head {
+                        border-radius: 0 25px 0 0;
+                    }
+
+                    .datepicker__calendar__foot {
+                        border-radius: 0 0 25px 0;
+                    }
+                }
             }
 
             &__head,
             &__foot {
-                @extend %one-fifth;
-
                 background: $blue;
                 color: $white;
                 padding: 5px 0;
                 border: $white solid 1px;
-            }
-
-            &__head {
-                &:first-child {
-                    border-radius: 25px 0 0 0;
-                }
-
-                &:last-child {
-                    border-radius: 0 25px 0 0;
-                }
             }
 
             &__day {
@@ -74,7 +116,6 @@
             }
 
             &__time {
-                @extend %one-fifth;
                 @extend %transition-all;
                 padding: 16px 0;
                 border: $white solid 1px;
@@ -106,14 +147,6 @@
 
             &__foot {
                 cursor: pointer;
-                
-                &:first-child {
-                    border-radius: 0 0 0 25px;
-                }
-
-                &:last-child {
-                    border-radius: 0 0 25px 0;
-                }
 
                 [data-toggle="toggle"] {
                     display: none;
@@ -124,23 +157,16 @@
                         transform: rotate(180deg);
                     }
                 }
+
+                &:hover {
+                    background: $primary-color--light;
+                    color: $grey;
+                }
             }
 
             &__arrow {
                 display: block;
                 cursor: pointer;
-            }
-
-            &__afternoon {
-                @extend %transition-all;
-
-                width: 100%;
-                overflow: hidden;
-                max-height: 0px;
-
-                &--active {
-                    max-height: 1000px;
-                }
             }
 
         }
