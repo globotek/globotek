@@ -68,7 +68,7 @@
             }
 
             &__slots {
-                @extend %transition-all;
+                @extend %transition-all-slow;
 
                 position: relative;
                 top: 0px;
