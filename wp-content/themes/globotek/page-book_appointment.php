@@ -11,7 +11,7 @@ get_header(); ?>
 
 <div class="chunk">
 	
-	<?php $timeslots = gtek_get_available_timeslots_for_date( '2019-06-04' ); ?>
+	<?php //gtek_get_available_timeslots_for_date( '2019-06-14' ); ?>
 	
 	<?php //var_dump( gtek_get_appointments_for_date( '2019-06-14' ) ); ?>
 	<?php //var_dump( $_POST ); ?>
@@ -281,17 +281,17 @@ get_header(); ?>
 
                             <h2 class="title title__secondary form-slider__page__heading">Enter your details</h2>
                             
-                            <div class="form__select">
-                                <select class="form-slider__page__field form__select__field" placeholder="Reason for Visit">
-                                    <option selected>Reason for Visit</option>
-                                    <option>Reason 1</option>
-                                    <option>Reason 2</option>
-                                    <option>Reason 3</option>
-                                </select>
-                            </div>
+<!--                            <div class="form__select">-->
+<!--                                <select class="form-slider__page__field form__select__field" placeholder="Reason for Visit">-->
+<!--                                    <option selected>Reason for Visit</option>-->
+<!--                                    <option>Reason 1</option>-->
+<!--                                    <option>Reason 2</option>-->
+<!--                                    <option>Reason 3</option>-->
+<!--                                </select>-->
+<!--                            </div>-->
                             <input type="text" class="form-slider__page__field form__field" name="name" placeholder="Name" />
                             <input type="text" class="form-slider__page__field form__field" name="company" placeholder="Company" />
-                            <input type="text" class="form-slider__page__field form__field" name="company_position" placeholder="Company Position" />
+<!--                            <input type="text" class="form-slider__page__field form__field" name="company_position" placeholder="Company Position" />-->
                             <input type="email" class="form-slider__page__field form__field" name="company" placeholder="Email Address" />
                             <input type="tel" class="form-slider__page__field form__field" name="company_position" placeholder="Phone Number" />
 
@@ -327,7 +327,7 @@ get_header(); ?>
 
                 </div>
 			
-			</form>
+            </form>
 		
 		</div>
 	
