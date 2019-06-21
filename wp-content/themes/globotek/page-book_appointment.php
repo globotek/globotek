@@ -89,7 +89,19 @@ get_header(); ?>
 																	
 																	<?php foreach ( $appointment_slots[ strtolower( $day[ 5 ] ) . '_appointment_slots' ][ 'morning' ] as $time ) { ?>
 																		
-																		<div class="datepicker__calendar__time <?php _e( ! $time[ 'available' ] ? 'datepicker__calendar__time--unavailable' : '' ); ?>"><?php echo date( 'h:i a', $time[ 'start_time' ] ); ?></div>
+																		<div class="datepicker__calendar__time <?php _e( ! $time[ 'available' ] ? 'datepicker__calendar__time--unavailable' : '' ); ?>">
+																			
+																			<?php if ( ! empty( $time[ 'start_time' ] ) ) { ?>
+																				
+																				<?php echo date( 'h:i a', $time[ 'start_time' ] ); ?>
+																			
+																			<?php } else { ?>
+																				
+																				<?php echo 'No Time Set'; ?>
+																			
+																			<?php } ?>
+																		
+																		</div>
 																	
 																	<?php } ?>
 																
@@ -103,7 +115,19 @@ get_header(); ?>
 																	
 																	<?php foreach ( $appointment_slots[ strtolower( $day[ 5 ] ) . '_appointment_slots' ][ 'afternoon' ] as $time ) { ?>
 																		
-																		<div class="datepicker__calendar__time <?php _e( ! $time[ 'available' ] ? 'datepicker__calendar__time--unavailable' : '' ); ?>"><?php echo date( 'h:i a', $time[ 'start_time' ] ); ?></div>
+																		<div class="datepicker__calendar__time <?php _e( ! $time[ 'available' ] ? 'datepicker__calendar__time--unavailable' : '' ); ?>">
+																			
+																			<?php if ( ! empty( $time[ 'start_time' ] ) ) { ?>
+																				
+																				<?php echo date( 'h:i a', $time[ 'start_time' ] ); ?>
+																			
+																			<?php } else { ?>
+																				
+																				<?php echo 'No Time Set'; ?>
+																				
+																			<?php } ?>
+																		
+																		</div>
 																	
 																	<?php } ?>
 																
