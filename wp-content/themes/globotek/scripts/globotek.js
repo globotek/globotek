@@ -500,9 +500,9 @@ function debounce(func, wait, immediate) {
 
             function hideButtons() {
                 if ($('.form-slider__page:first-child').hasClass('active')) {
-                    $('.back').css('opacity', '0');
+                    $('.back').hide();
                 } else {
-                    $('.back').css('opacity', '1');
+                    $('.back').show();
                 }
 
                 if ($('.form-slider__page:nth-last-child(2)').hasClass('active')) {
