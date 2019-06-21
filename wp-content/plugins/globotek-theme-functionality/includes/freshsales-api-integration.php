@@ -172,9 +172,12 @@ function gtek_get_freshsales_appointments( $filter = 'future' ) {
 }
 
 
-function gtek_get_appointments_for_date( $date ) {
+function gtek_get_appointments_for_date( $date, $appointments = NULL ) {
 	
-	$appointments          = gtek_get_freshsales_appointments();
+	if ( is_null( $appointments ) ) {
+		$appointments = gtek_get_freshsales_appointments();
+	}
+	
 	$filtered_appointments = array();
 	
 	foreach ( $appointments as $appointment ) {
