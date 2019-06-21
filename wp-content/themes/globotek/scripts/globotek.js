@@ -340,17 +340,48 @@ function debounce(func, wait, immediate) {
 			}
 			
 			
-			triggerCalNext.off('click').on('click', function () {
+			var nextClick = function(){
+                var $self = $(this);
 				
 				var leftCurrent = parseInt(targetSlider.css("left")),
 				    leftCalNew  = leftCurrent - calWidth;
 				
 				$('.activeCal').removeClass('activeCal').next().addClass('activeCal');
 				targetSlider.css('left', leftCalNew);
+                
+                $self.unbind('click'); 
+
+                setTimeout(function(){
+                    $self.click(nextClick);
+                }, 500);
+
+				hideButtons();
+            };
+            
+            triggerCalNext.click(nextClick);
+
+
+            var prevClick = function(){
+                var $self = $(this);
+				
+				var leftCurrent = parseInt(targetSlider.css("left")),
+				    leftCalNew  = leftCurrent + calWidth;
+				
+				$('.activeCal').removeClass('activeCal').prev().addClass('activeCal');
+                targetSlider.css('left', leftCalNew);
+                
+                $self.unbind('click'); 
+
+                setTimeout(function(){
+                    $self.click(prevClick);
+                }, 500);
+
 				
 				hideButtons();
 				
-			});
+            };
+            
+            triggerCalPrev.click(prevClick);
 			
 			
 			triggerAfternoon.off('click').on('click', function () {
@@ -371,17 +402,7 @@ function debounce(func, wait, immediate) {
 			});
 			
 			
-			triggerCalPrev.off('click').on('click', function () {
-				
-				var leftCurrent = parseInt(targetSlider.css("left")),
-				    leftCalNew  = leftCurrent + calWidth;
-				
-				$('.activeCal').removeClass('activeCal').prev().addClass('activeCal');
-				targetSlider.css('left', leftCalNew);
-				
-				hideButtons();
-				
-			});
+			
 			
 			
 			function hideButtons() {
