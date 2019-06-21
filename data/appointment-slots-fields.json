@@ -1,0 +1,799 @@
+[
+    {
+        "key": "group_5cfff2e5d9f68",
+        "title": "Appointment Slots",
+        "fields": [
+            {
+                "key": "field_5d0c8f4e75e05",
+                "label": "Unavailable",
+                "name": "appointment_availability",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "",
+                "sub_fields": [
+                    {
+                        "key": "field_5d0c8f6075e06",
+                        "label": "Date",
+                        "name": "date",
+                        "type": "date_picker",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "25",
+                            "class": "",
+                            "id": ""
+                        },
+                        "display_format": "d\/m\/Y",
+                        "return_format": "d\/m\/Y",
+                        "first_day": 1
+                    },
+                    {
+                        "key": "field_5d0c9008bbce0",
+                        "label": "All Day",
+                        "name": "all_day",
+                        "type": "true_false",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "10",
+                            "class": "",
+                            "id": ""
+                        },
+                        "message": "All Day?",
+                        "default_value": 0,
+                        "ui": 0,
+                        "ui_on_text": "",
+                        "ui_off_text": ""
+                    },
+                    {
+                        "key": "field_5d0c8f7b75e08",
+                        "label": "Times",
+                        "name": "times",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "65",
+                            "class": "",
+                            "id": ""
+                        },
+                        "collapsed": "",
+                        "min": 0,
+                        "max": 0,
+                        "layout": "table",
+                        "button_label": "",
+                        "sub_fields": [
+                            {
+                                "key": "field_5d0c8f8d75e09",
+                                "label": "Time Start",
+                                "name": "time_start",
+                                "type": "time_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "g:i a",
+                                "return_format": "g:i a"
+                            },
+                            {
+                                "key": "field_5d0c8fc0a40a2",
+                                "label": "Time End",
+                                "name": "time_end",
+                                "type": "time_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "g:i a",
+                                "return_format": "g:i a"
+                            },
+                            {
+                                "key": "field_5d0c8ff2bbcdf",
+                                "label": "Rest of Day",
+                                "name": "rest_of_day",
+                                "type": "true_false",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "Rest of Day?",
+                                "default_value": 0,
+                                "ui": 0,
+                                "ui_on_text": "",
+                                "ui_off_text": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "field_5d04dc53491fa",
+                "label": "Monday",
+                "name": "monday_appointment_slots",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_5d04dc53491fc",
+                        "label": "Morning",
+                        "name": "morning",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "collapsed": "",
+                        "min": 0,
+                        "max": 0,
+                        "layout": "",
+                        "button_label": "",
+                        "sub_fields": [
+                            {
+                                "key": "field_5d04dc53491fd",
+                                "label": "Start Time",
+                                "name": "start_time",
+                                "type": "time_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "Hi",
+                                "return_format": "U"
+                            },
+                            {
+                                "key": "field_5d0c99de1243a",
+                                "label": "Available",
+                                "name": "available",
+                                "type": "true_false",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "Available?",
+                                "default_value": 1,
+                                "ui": 0,
+                                "ui_on_text": "",
+                                "ui_off_text": ""
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_5d04dc53491fe",
+                        "label": "Afternoon",
+                        "name": "afternoon",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "collapsed": "",
+                        "min": 0,
+                        "max": 0,
+                        "layout": "",
+                        "button_label": "",
+                        "sub_fields": [
+                            {
+                                "key": "field_5d04dc53491ff",
+                                "label": "Start Time",
+                                "name": "start_time",
+                                "type": "time_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "Hi",
+                                "return_format": "U"
+                            },
+                            {
+                                "key": "field_5d0c9a2b1243e",
+                                "label": "Available",
+                                "name": "available",
+                                "type": "true_false",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "Available?",
+                                "default_value": 1,
+                                "ui": 0,
+                                "ui_on_text": "",
+                                "ui_off_text": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "field_5d04dc6949202",
+                "label": "Tuesday",
+                "name": "tuesday_appointment_slots",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_5d04dc6949204",
+                        "label": "Morning",
+                        "name": "morning",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "collapsed": "",
+                        "min": 0,
+                        "max": 0,
+                        "layout": "",
+                        "button_label": "",
+                        "sub_fields": [
+                            {
+                                "key": "field_5d04dc6949205",
+                                "label": "Start Time",
+                                "name": "start_time",
+                                "type": "time_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "Hi",
+                                "return_format": "U"
+                            },
+                            {
+                                "key": "field_5d0c9a021243c",
+                                "label": "Available",
+                                "name": "available",
+                                "type": "true_false",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "Available?",
+                                "default_value": 1,
+                                "ui": 0,
+                                "ui_on_text": "",
+                                "ui_off_text": ""
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_5d04dc6949206",
+                        "label": "Afternoon",
+                        "name": "afternoon",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "collapsed": "",
+                        "min": 0,
+                        "max": 0,
+                        "layout": "",
+                        "button_label": "",
+                        "sub_fields": [
+                            {
+                                "key": "field_5d04dc6949207",
+                                "label": "Start Time",
+                                "name": "start_time",
+                                "type": "time_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "Hi",
+                                "return_format": "U"
+                            },
+                            {
+                                "key": "field_5d0c9a141243d",
+                                "label": "Available",
+                                "name": "available",
+                                "type": "true_false",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "Available?",
+                                "default_value": 1,
+                                "ui": 0,
+                                "ui_on_text": "",
+                                "ui_off_text": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "field_5d04dc724920a",
+                "label": "Wednesday",
+                "name": "wednesday_appointment_slots",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_5d04dc724920c",
+                        "label": "Morning",
+                        "name": "morning",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "collapsed": "",
+                        "min": 0,
+                        "max": 0,
+                        "layout": "",
+                        "button_label": "",
+                        "sub_fields": [
+                            {
+                                "key": "field_5d04dc724920d",
+                                "label": "Start Time",
+                                "name": "start_time",
+                                "type": "time_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "Hi",
+                                "return_format": "U"
+                            },
+                            {
+                                "key": "field_5d0c9a3f1243f",
+                                "label": "Available",
+                                "name": "available",
+                                "type": "true_false",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "Available?",
+                                "default_value": 1,
+                                "ui": 0,
+                                "ui_on_text": "",
+                                "ui_off_text": ""
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_5d04dc724920e",
+                        "label": "Afternoon",
+                        "name": "afternoon",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "collapsed": "",
+                        "min": 0,
+                        "max": 0,
+                        "layout": "",
+                        "button_label": "",
+                        "sub_fields": [
+                            {
+                                "key": "field_5d04dc724920f",
+                                "label": "Start Time",
+                                "name": "start_time",
+                                "type": "time_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "Hi",
+                                "return_format": "U"
+                            },
+                            {
+                                "key": "field_5d0c9a4a12440",
+                                "label": "Available",
+                                "name": "available",
+                                "type": "true_false",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "Available?",
+                                "default_value": 1,
+                                "ui": 0,
+                                "ui_on_text": "",
+                                "ui_off_text": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "field_5d04dc7a49212",
+                "label": "Thursday",
+                "name": "thursday_appointment_slots",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_5d04dc7a49214",
+                        "label": "Morning",
+                        "name": "morning",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "collapsed": "",
+                        "min": 0,
+                        "max": 0,
+                        "layout": "table",
+                        "button_label": "",
+                        "sub_fields": [
+                            {
+                                "key": "field_5d04dc7a49215",
+                                "label": "Start Time",
+                                "name": "start_time",
+                                "type": "time_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "Hi",
+                                "return_format": "U"
+                            },
+                            {
+                                "key": "field_5d0c9a5b12441",
+                                "label": "Available",
+                                "name": "available",
+                                "type": "true_false",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "Available?",
+                                "default_value": 1,
+                                "ui": 0,
+                                "ui_on_text": "",
+                                "ui_off_text": ""
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_5d04dc7a49216",
+                        "label": "Afternoon",
+                        "name": "afternoon",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "collapsed": "",
+                        "min": 0,
+                        "max": 0,
+                        "layout": "table",
+                        "button_label": "",
+                        "sub_fields": [
+                            {
+                                "key": "field_5d04dc7a49217",
+                                "label": "Start Time",
+                                "name": "start_time",
+                                "type": "time_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "Hi",
+                                "return_format": "U"
+                            },
+                            {
+                                "key": "field_5d0c9a6a12442",
+                                "label": "Available",
+                                "name": "available",
+                                "type": "true_false",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "Available?",
+                                "default_value": 1,
+                                "ui": 0,
+                                "ui_on_text": "",
+                                "ui_off_text": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "key": "field_5cfff2f0e6c2b",
+                "label": "Friday",
+                "name": "friday_appointment_slots",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_5d03b98ef1ee5",
+                        "label": "Morning",
+                        "name": "morning",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "collapsed": "",
+                        "min": 0,
+                        "max": 0,
+                        "layout": "table",
+                        "button_label": "",
+                        "sub_fields": [
+                            {
+                                "key": "field_5cfff3d1e6c2e",
+                                "label": "Start Time",
+                                "name": "start_time",
+                                "type": "time_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "Hi",
+                                "return_format": "U"
+                            },
+                            {
+                                "key": "field_5d0c9a7a12443",
+                                "label": "Available",
+                                "name": "available",
+                                "type": "true_false",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "Available?",
+                                "default_value": 1,
+                                "ui": 0,
+                                "ui_on_text": "",
+                                "ui_off_text": ""
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_5d03ba0be4abf",
+                        "label": "Afternoon",
+                        "name": "afternoon",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "collapsed": "",
+                        "min": 0,
+                        "max": 0,
+                        "layout": "table",
+                        "button_label": "",
+                        "sub_fields": [
+                            {
+                                "key": "field_5d03ba0be4ac0",
+                                "label": "Start Time",
+                                "name": "start_time",
+                                "type": "time_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "Hi",
+                                "return_format": "U"
+                            },
+                            {
+                                "key": "field_5d0c9a8512444",
+                                "label": "Available",
+                                "name": "available",
+                                "type": "true_false",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "Available?",
+                                "default_value": 1,
+                                "ui": 0,
+                                "ui_on_text": "",
+                                "ui_off_text": ""
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "acf-options-appointment-slots"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    }
+]
