@@ -55,19 +55,19 @@
                 position: relative;
                 left: 0px;
                 overflow: hidden;
-                height: 478px;
+                height: 596px;
             }
 
             &__page {
                 float: left;
                 @extend %grid;
                 @extend %grid--full;
-                width: 560px;
+                width: 760px;
             }
 
             &__slot-slider {
                 overflow: hidden;
-                height: 416px;
+                height: 533px;
             }
 
             &__slots {

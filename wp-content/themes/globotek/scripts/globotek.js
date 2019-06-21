@@ -356,7 +356,7 @@ function debounce(func, wait, immediate) {
 
                 var $this = $(this);
 
-                $this.parent().css('top', '-416px');
+                $this.parent().css('top', '-534px');
             
             });
 
@@ -494,11 +494,13 @@ function debounce(func, wait, immediate) {
                 formSlider.css('left', leftNew);
 
                 formSlider.css({
-                    height: slidePrevHeight + 60
+                    height: slidePrevHeight
                 }); 
             }
 
             function hideButtons() {
+                event.preventDefault()
+
                 if ($('.form-slider__page:first-child').hasClass('active')) {
                     $('.back').hide();
                 } else {

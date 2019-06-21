@@ -72,11 +72,13 @@
                 formSlider.css('left', leftNew);
 
                 formSlider.css({
-                    height: slidePrevHeight + 60
+                    height: slidePrevHeight
                 }); 
             }
 
             function hideButtons() {
+                event.preventDefault()
+
                 if ($('.form-slider__page:first-child').hasClass('active')) {
                     $('.back').hide();
                 } else {

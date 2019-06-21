@@ -51,7 +51,7 @@
 
                 var $this = $(this);
 
-                $this.parent().css('top', '-416px');
+                $this.parent().css('top', '-534px');
             
             });
 

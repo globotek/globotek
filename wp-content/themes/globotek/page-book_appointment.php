@@ -50,6 +50,8 @@ get_header(); ?>
                                                 <div class="datepicker__calendar__head"><span class="datepicker__calendar__day">Mon</span>17 Jun</div>
                                                 <div class="datepicker__calendar__slot-slider">
                                                     <div class="datepicker__calendar__slots">
+                                                        <div class="datepicker__calendar__time">8:00 am</div>
+                                                        <div class="datepicker__calendar__time">8:30 am</div>
                                                         <div class="datepicker__calendar__time">9:00 am</div>
                                                         <div class="datepicker__calendar__time">9:30 am</div>
                                                         <div class="datepicker__calendar__time">10:00 am</div>
@@ -63,6 +65,8 @@ get_header(); ?>
                                                         <div class="datepicker__calendar__time datepicker__calendar__unavailable">13:30 pm</div>
                                                         <div class="datepicker__calendar__time datepicker__calendar__unavailable">14:00 pm</div>
                                                         <div class="datepicker__calendar__time">14:30 pm</div>
+                                                        <div class="datepicker__calendar__time">15:00 pm</div>
+                                                        <div class="datepicker__calendar__time">15:30 pm</div>
                                                         <div class="datepicker__calendar__foot datepicker__calendar__morning">Morning<span class="datepicker__calendar__arrow"><i class="fas fa-angle-up"></i></span></div>
                                                     </div>
                                                 </div>
@@ -71,6 +75,8 @@ get_header(); ?>
                                                 <div class="datepicker__calendar__head"><span class="datepicker__calendar__day">Tue</span>18 Jun</div>
                                                 <div class="datepicker__calendar__slot-slider">
                                                     <div class="datepicker__calendar__slots">
+                                                        <div class="datepicker__calendar__time">8:00 am</div>
+                                                        <div class="datepicker__calendar__time">8:30 am</div>
                                                         <div class="datepicker__calendar__time">9:00 am</div>
                                                         <div class="datepicker__calendar__time">9:30 am</div>
                                                         <div class="datepicker__calendar__time datepicker__calendar__unavailable">10:00 am</div>
@@ -84,6 +90,8 @@ get_header(); ?>
                                                         <div class="datepicker__calendar__time">13:30 pm</div>
                                                         <div class="datepicker__calendar__time">14:00 pm</div>
                                                         <div class="datepicker__calendar__time">14:30 pm</div>
+                                                        <div class="datepicker__calendar__time">15:00 pm</div>
+                                                        <div class="datepicker__calendar__time">15:30 pm</div>
                                                         <div class="datepicker__calendar__foot datepicker__calendar__morning">Morning<span class="datepicker__calendar__arrow"><i class="fas fa-angle-up"></i></span></div>
                                                     </div>
                                                 </div>
@@ -92,6 +100,8 @@ get_header(); ?>
                                                 <div class="datepicker__calendar__head"><span class="datepicker__calendar__day">Wed</span>19 Jun</div>
                                                 <div class="datepicker__calendar__slot-slider">
                                                     <div class="datepicker__calendar__slots">
+                                                        <div class="datepicker__calendar__time">8:00 am</div>
+                                                        <div class="datepicker__calendar__time">8:30 am</div>
                                                         <div class="datepicker__calendar__time">9:00 am</div>
                                                         <div class="datepicker__calendar__time">9:30 am</div>
                                                         <div class="datepicker__calendar__time">10:00 am</div>
@@ -105,6 +115,8 @@ get_header(); ?>
                                                         <div class="datepicker__calendar__time datepicker__calendar__unavailable">13:30 pm</div>
                                                         <div class="datepicker__calendar__time datepicker__calendar__unavailable">14:00 pm</div>
                                                         <div class="datepicker__calendar__time">14:30 pm</div>
+                                                        <div class="datepicker__calendar__time">15:00 pm</div>
+                                                        <div class="datepicker__calendar__time">15:30 pm</div>
                                                         <div class="datepicker__calendar__foot datepicker__calendar__morning">Morning<span class="datepicker__calendar__arrow"><i class="fas fa-angle-up"></i></span></div>
                                                     </div>
                                                 </div>
@@ -113,6 +125,8 @@ get_header(); ?>
                                                 <div class="datepicker__calendar__head"><span class="datepicker__calendar__day">Thu</span>20 Jun</div>
                                                 <div class="datepicker__calendar__slot-slider">
                                                     <div class="datepicker__calendar__slots">
+                                                        <div class="datepicker__calendar__time">8:00 am</div>
+                                                        <div class="datepicker__calendar__time">8:30 am</div>
                                                         <div class="datepicker__calendar__time">9:00 am</div>
                                                         <div class="datepicker__calendar__time">9:30 am</div>
                                                         <div class="datepicker__calendar__time">10:00 am</div>
@@ -126,6 +140,8 @@ get_header(); ?>
                                                         <div class="datepicker__calendar__time">13:30 pm</div>
                                                         <div class="datepicker__calendar__time">14:00 pm</div>
                                                         <div class="datepicker__calendar__time">14:30 pm</div>
+                                                        <div class="datepicker__calendar__time">15:00 pm</div>
+                                                        <div class="datepicker__calendar__time">15:30 pm</div>
                                                         <div class="datepicker__calendar__foot datepicker__calendar__morning">Morning<span class="datepicker__calendar__arrow"><i class="fas fa-angle-up"></i></span></div>
                                                     </div>
                                                 </div>
@@ -134,6 +150,8 @@ get_header(); ?>
                                                 <div class="datepicker__calendar__head"><span class="datepicker__calendar__day">Fri</span>21 Jun</div>
                                                 <div class="datepicker__calendar__slot-slider">
                                                     <div class="datepicker__calendar__slots">
+                                                        <div class="datepicker__calendar__time">8:00 am</div>
+                                                        <div class="datepicker__calendar__time">8:30 am</div>
                                                         <div class="datepicker__calendar__time">9:00 am</div>
                                                         <div class="datepicker__calendar__time">9:30 am</div>
                                                         <div class="datepicker__calendar__time datepicker__calendar__unavailable">10:00 am</div>
@@ -147,6 +165,8 @@ get_header(); ?>
                                                         <div class="datepicker__calendar__time datepicker__calendar__unavailable">13:30 pm</div>
                                                         <div class="datepicker__calendar__time">14:00 pm</div>
                                                         <div class="datepicker__calendar__time">14:30 pm</div>
+                                                        <div class="datepicker__calendar__time">15:00 pm</div>
+                                                        <div class="datepicker__calendar__time">15:30 pm</div>
                                                         <div class="datepicker__calendar__foot datepicker__calendar__morning">Morning<span class="datepicker__calendar__arrow"><i class="fas fa-angle-up"></i></span></div>
                                                     </div>
                                                 </div>
@@ -159,6 +179,8 @@ get_header(); ?>
                                                 <div class="datepicker__calendar__head"><span class="datepicker__calendar__day">Mon</span>24 Jun</div>
                                                 <div class="datepicker__calendar__slot-slider">
                                                     <div class="datepicker__calendar__slots">
+                                                        <div class="datepicker__calendar__time">8:00 am</div>
+                                                        <div class="datepicker__calendar__time">8:30 am</div>
                                                         <div class="datepicker__calendar__time">9:00 am</div>
                                                         <div class="datepicker__calendar__time">9:30 am</div>
                                                         <div class="datepicker__calendar__time">10:00 am</div>
@@ -172,6 +194,8 @@ get_header(); ?>
                                                         <div class="datepicker__calendar__time">13:30 pm</div>
                                                         <div class="datepicker__calendar__time">14:00 pm</div>
                                                         <div class="datepicker__calendar__time">14:30 pm</div>
+                                                        <div class="datepicker__calendar__time">15:00 pm</div>
+                                                        <div class="datepicker__calendar__time">15:30 pm</div>
                                                         <div class="datepicker__calendar__foot datepicker__calendar__morning">Morning<span class="datepicker__calendar__arrow"><i class="fas fa-angle-up"></i></span></div>
                                                     </div>
                                                 </div>
@@ -180,6 +204,8 @@ get_header(); ?>
                                                 <div class="datepicker__calendar__head"><span class="datepicker__calendar__day">Tue</span>25 Jun</div>
                                                 <div class="datepicker__calendar__slot-slider">
                                                     <div class="datepicker__calendar__slots">
+                                                        <div class="datepicker__calendar__time">8:00 am</div>
+                                                        <div class="datepicker__calendar__time">8:30 am</div>
                                                         <div class="datepicker__calendar__time">9:00 am</div>
                                                         <div class="datepicker__calendar__time">9:30 am</div>
                                                         <div class="datepicker__calendar__time">10:00 am</div>
@@ -193,6 +219,8 @@ get_header(); ?>
                                                         <div class="datepicker__calendar__time">13:30 pm</div>
                                                         <div class="datepicker__calendar__time">14:00 pm</div>
                                                         <div class="datepicker__calendar__time">14:30 pm</div>
+                                                        <div class="datepicker__calendar__time">15:00 pm</div>
+                                                        <div class="datepicker__calendar__time">15:30 pm</div>
                                                         <div class="datepicker__calendar__foot datepicker__calendar__morning">Morning<span class="datepicker__calendar__arrow"><i class="fas fa-angle-up"></i></span></div>
                                                     </div>
                                                 </div>
@@ -201,6 +229,8 @@ get_header(); ?>
                                                 <div class="datepicker__calendar__head"><span class="datepicker__calendar__day">Wed</span>26 Jun</div>
                                                 <div class="datepicker__calendar__slot-slider">
                                                     <div class="datepicker__calendar__slots">
+                                                        <div class="datepicker__calendar__time">8:00 am</div>
+                                                        <div class="datepicker__calendar__time">8:30 am</div>
                                                         <div class="datepicker__calendar__time">9:00 am</div>
                                                         <div class="datepicker__calendar__time">9:30 am</div>
                                                         <div class="datepicker__calendar__time">10:00 am</div>
@@ -214,6 +244,8 @@ get_header(); ?>
                                                         <div class="datepicker__calendar__time">13:30 pm</div>
                                                         <div class="datepicker__calendar__time">14:00 pm</div>
                                                         <div class="datepicker__calendar__time">14:30 pm</div>
+                                                        <div class="datepicker__calendar__time">15:00 pm</div>
+                                                        <div class="datepicker__calendar__time">15:30 pm</div>
                                                         <div class="datepicker__calendar__foot datepicker__calendar__morning">Morning<span class="datepicker__calendar__arrow"><i class="fas fa-angle-up"></i></span></div>
                                                     </div>
                                                 </div>
@@ -222,6 +254,8 @@ get_header(); ?>
                                                 <div class="datepicker__calendar__head"><span class="datepicker__calendar__day">Thu</span>27 Jun</div>
                                                 <div class="datepicker__calendar__slot-slider">
                                                     <div class="datepicker__calendar__slots">
+                                                        <div class="datepicker__calendar__time">8:00 am</div>
+                                                        <div class="datepicker__calendar__time">8:30 am</div>
                                                         <div class="datepicker__calendar__time">9:00 am</div>
                                                         <div class="datepicker__calendar__time">9:30 am</div>
                                                         <div class="datepicker__calendar__time">10:00 am</div>
@@ -235,6 +269,8 @@ get_header(); ?>
                                                         <div class="datepicker__calendar__time">13:30 pm</div>
                                                         <div class="datepicker__calendar__time">14:00 pm</div>
                                                         <div class="datepicker__calendar__time">14:30 pm</div>
+                                                        <div class="datepicker__calendar__time">15:00 pm</div>
+                                                        <div class="datepicker__calendar__time">15:30 pm</div>
                                                         <div class="datepicker__calendar__foot datepicker__calendar__morning">Morning<span class="datepicker__calendar__arrow"><i class="fas fa-angle-up"></i></span></div>
                                                     </div>
                                                 </div>
@@ -243,6 +279,8 @@ get_header(); ?>
                                                 <div class="datepicker__calendar__head"><span class="datepicker__calendar__day">Fri</span>28 Jun</div>
                                                 <div class="datepicker__calendar__slot-slider">
                                                     <div class="datepicker__calendar__slots">
+                                                        <div class="datepicker__calendar__time">8:00 am</div>
+                                                        <div class="datepicker__calendar__time">8:30 am</div>
                                                         <div class="datepicker__calendar__time">9:00 am</div>
                                                         <div class="datepicker__calendar__time">9:30 am</div>
                                                         <div class="datepicker__calendar__time">10:00 am</div>
@@ -256,6 +294,8 @@ get_header(); ?>
                                                         <div class="datepicker__calendar__time">13:30 pm</div>
                                                         <div class="datepicker__calendar__time">14:00 pm</div>
                                                         <div class="datepicker__calendar__time datepicker__calendar__unavailable">14:30 pm</div>
+                                                        <div class="datepicker__calendar__time">15:00 pm</div>
+                                                        <div class="datepicker__calendar__time">15:30 pm</div>
                                                         <div class="datepicker__calendar__foot datepicker__calendar__morning">Morning<span class="datepicker__calendar__arrow"><i class="fas fa-angle-up"></i></span></div>
                                                     </div>
                                                 </div>
