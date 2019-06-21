@@ -46,4 +46,10 @@ function gtek_register_functionality_globals() {
 }
 
 add_action( 'init', 'gtek_register_functionality_globals' );
+
+
+if ( function_exists( 'acf' ) ) {
 	
+	acf_add_options_page( array( 'page_title' => 'Appointment Availability' ) );
+	
+}
