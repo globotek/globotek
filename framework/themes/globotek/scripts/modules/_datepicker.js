@@ -10,7 +10,6 @@
 		    targetPage       = $('.datepicker__calendar__page'),
 		    triggerAfternoon = $('.datepicker__calendar__afternoon'),
 		    triggerMorning   = $('.datepicker__calendar__morning'),
-		    slotSlider       = $('.datepicker__calendar__slots'),
 		    settings         = {
 			    sliderClass:        'datepicker__calendar__slots',
 			    activeClass:        'datepicker__calendar__time__selected',
@@ -23,8 +22,8 @@
 			
 			var pageNum  = targetPage.length,
 			    calWidth = targetSlider.width();
-			pageWidth = targetPage.width(),
-				sliderWidth = calWidth * pageNum;
+			   pageWidth = targetPage.width(),
+			 sliderWidth = calWidth * pageNum;
 			
 			targetPage.width(calWidth);
 			targetSlider.width(sliderWidth);
@@ -35,11 +34,18 @@
 			}
 			
 			
-			var nextClick = function(){
-                var $self = $(this);
-				
-				var leftCurrent = parseInt(targetSlider.css("left")),
-				    leftCalNew  = leftCurrent - calWidth;
+			var nextClick = function() {
+
+                if ($('.datepicker__calendar__page:nth-last-child(2)').hasClass('activeCal')) {
+					triggerCalNext.addClass('is-hidden');
+                }
+                if ($('.datepicker__calendar__page:first-child').hasClass('activeCal')) {
+					triggerCalPrev.removeClass('is-hidden');
+				}
+
+                var $self = $(this),
+			  leftCurrent = parseInt(targetSlider.css("left")),
+			  leftCalNew  = leftCurrent - calWidth;
 				
 				$('.activeCal').removeClass('activeCal').next().addClass('activeCal');
 				targetSlider.css('left', leftCalNew);
@@ -50,17 +56,24 @@
                     $self.click(nextClick);
                 }, 500);
 
-				hideButtons();
+                console.log('Clicked');
             };
             
             triggerCalNext.click(nextClick);
 
+            
+            var prevClick = function() {
 
-            var prevClick = function(){
-                var $self = $(this);
-				
-				var leftCurrent = parseInt(targetSlider.css("left")),
-				    leftCalNew  = leftCurrent + calWidth;
+                if ($('.datepicker__calendar__page:nth-child(2)').hasClass('activeCal')) {
+                    triggerCalPrev.addClass('is-hidden');
+                }
+                if ($('.datepicker__calendar__page:last-child').hasClass('activeCal')) {
+					triggerCalNext.removeClass('is-hidden');
+				}
+
+                var $self = $(this),
+			  leftCurrent = parseInt(targetSlider.css("left")),
+			  leftCalNew  = leftCurrent + calWidth;
 				
 				$('.activeCal').removeClass('activeCal').prev().addClass('activeCal');
                 targetSlider.css('left', leftCalNew);
@@ -71,50 +84,22 @@
                     $self.click(prevClick);
                 }, 500);
 
-				
-				hideButtons();
-				
+                console.log('Clicked');
             };
             
             triggerCalPrev.click(prevClick);
 			
 			
 			triggerAfternoon.off('click').on('click', function () {
-				
 				var $this = $(this);
-				
 				$this.parent().css('top', '-534px');
-				
 			});
 			
 			
 			triggerMorning.off('click').on('click', function () {
-				
 				var $this = $(this);
-				
 				$this.parent().css('top', '0px');
-				
 			});
-			
-			
-			
-			
-			
-			function hideButtons() {
-				if ($('.datepicker__calendar__page:first-child').hasClass('activeCal')) {
-					triggerCalPrev.css('opacity', '0');
-				} else {
-					triggerCalPrev.css('opacity', '1');
-				}
-				
-				if ($('.datepicker__calendar__page:last-child').hasClass('activeCal')) {
-					triggerCalNext.hide();
-					triggerCalPrev.show();
-				} else {
-					triggerCalNext.show();
-					triggerCalPrev.show();
-				}
-			}
 			
 			
 			// Bind the click
