@@ -340,7 +340,6 @@ function debounce(func, wait, immediate) {
 			
 			
 			var nextClick = function() {
-
                 if ($('.datepicker__calendar__page:nth-last-child(2)').hasClass('activeCal')) {
 					triggerCalNext.addClass('is-hidden');
                 }
@@ -360,15 +359,12 @@ function debounce(func, wait, immediate) {
                 setTimeout(function(){
                     $self.click(nextClick);
                 }, 500);
-
-                console.log('Clicked');
             };
             
             triggerCalNext.click(nextClick);
 
             
             var prevClick = function() {
-
                 if ($('.datepicker__calendar__page:nth-child(2)').hasClass('activeCal')) {
                     triggerCalPrev.addClass('is-hidden');
                 }
@@ -388,8 +384,6 @@ function debounce(func, wait, immediate) {
                 setTimeout(function(){
                     $self.click(prevClick);
                 }, 500);
-
-                console.log('Clicked');
             };
             
             triggerCalPrev.click(prevClick);
