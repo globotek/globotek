@@ -21,10 +21,10 @@
 		
 		var init = function () {
 			
-			var pageNum  = targetPage.length,
-			    calWidth = targetSlider.width();
-			pageWidth = targetPage.width(),
-				sliderWidth = calWidth * pageNum;
+			var pageNum     = targetPage.length,
+			    calWidth    = targetSlider.width(),
+			    pageWidth   = targetPage.width(),
+			    sliderWidth = calWidth * pageNum;
 			
 			targetPage.width(calWidth);
 			targetSlider.width(sliderWidth);
@@ -35,48 +35,48 @@
 			}
 			
 			
-			var nextClick = function(){
-                var $self = $(this);
+			var nextClick = function () {
+				var $self = $(this);
 				
 				var leftCurrent = parseInt(targetSlider.css("left")),
 				    leftCalNew  = leftCurrent - calWidth;
 				
 				$('.activeCal').removeClass('activeCal').next().addClass('activeCal');
 				targetSlider.css('left', leftCalNew);
-                
-                $self.unbind('click'); 
-
-                setTimeout(function(){
-                    $self.click(nextClick);
-                }, 500);
-
+				
+				$self.unbind('click');
+				
+				setTimeout(function () {
+					$self.click(nextClick);
+				}, 500);
+				
 				hideButtons();
-            };
-            
-            triggerCalNext.click(nextClick);
-
-
-            var prevClick = function(){
-                var $self = $(this);
+			};
+			
+			triggerCalNext.click(nextClick);
+			
+			
+			var prevClick = function () {
+				var $self = $(this);
 				
 				var leftCurrent = parseInt(targetSlider.css("left")),
 				    leftCalNew  = leftCurrent + calWidth;
 				
 				$('.activeCal').removeClass('activeCal').prev().addClass('activeCal');
-                targetSlider.css('left', leftCalNew);
-                
-                $self.unbind('click'); 
-
-                setTimeout(function(){
-                    $self.click(prevClick);
-                }, 500);
-
+				targetSlider.css('left', leftCalNew);
+				
+				$self.unbind('click');
+				
+				setTimeout(function () {
+					$self.click(prevClick);
+				}, 500);
+				
 				
 				hideButtons();
 				
-            };
-            
-            triggerCalPrev.click(prevClick);
+			};
+			
+			triggerCalPrev.click(prevClick);
 			
 			
 			triggerAfternoon.off('click').on('click', function () {
@@ -95,9 +95,6 @@
 				$this.parent().css('top', '0px');
 				
 			});
-			
-			
-			
 			
 			
 			function hideButtons() {
@@ -120,7 +117,7 @@
 			// Bind the click
 			triggers.off('click').on('click', function (evt) {
 				
-				evt.preventDefault();
+				//evt.preventDefault();
 				
 				// Load trigger and target
 				var trigger = $(this);

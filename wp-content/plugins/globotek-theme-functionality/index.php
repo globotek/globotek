@@ -53,3 +53,21 @@ if ( function_exists( 'acf' ) ) {
 	acf_add_options_page( array( 'page_title' => 'Appointment Availability' ) );
 	
 }
+
+
+//if ( function_exists( 'woocommerce' ) ) {
+	
+	function gtek_dequeue_woocom_styles( $enqueue_styles ) {
+	
+		if(is_shop() || is_product()) {
+			
+			unset( $enqueue_styles[ 'woocommerce-general' ] );    // Remove the gloss
+			//unset( $enqueue_styles[ 'woocommerce-layout' ] );        // Remove the layout
+			//unset( $enqueue_styles[ 'woocommerce-smallscreen' ] );    // Remove the smallscreen optimisation
+		}
+			return $enqueue_styles;
+	}
+	
+	add_filter( 'woocommerce_enqueue_styles', 'gtek_dequeue_woocom_styles' );
+	
+//}

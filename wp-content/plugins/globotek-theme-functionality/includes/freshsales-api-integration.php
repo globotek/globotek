@@ -130,7 +130,7 @@ function gtek_submit_to_freshsales() {
 	
 	if ( $_POST[ 'lead_data' ][ 'note' ][ 'value' ] ) {
 		
-		$note = gtek_freshsales_create_note( $_POST[ 'lead_data' ][ 'note' ][ 'value' ], $lead->lead->id, $_POST[ 'lead_data' ][ 'note' ][ 'target_type' ] );
+		gtek_freshsales_create_note( $_POST[ 'lead_data' ][ 'note' ][ 'value' ], $lead->lead->id, $_POST[ 'lead_data' ][ 'note' ][ 'target_type' ] );
 		
 	}
 	
@@ -175,7 +175,9 @@ function gtek_get_freshsales_appointments( $filter = 'future' ) {
 function gtek_get_appointments_for_date( $date, $appointments = NULL ) {
 	
 	if ( is_null( $appointments ) ) {
+		
 		$appointments = gtek_get_freshsales_appointments();
+		
 	}
 	
 	$filtered_appointments = array();
@@ -185,8 +187,8 @@ function gtek_get_appointments_for_date( $date, $appointments = NULL ) {
 		$appointment_date = date( 'Y-m-d', strtotime( $appointment->from_date ) );
 		
 		if ( $appointment_date == $date ) {
-			
-			$filtered_appointments[] = $appointment->from_date;
+//			var_dump( $appointment );
+			$filtered_appointments[] = array( 'start' => $appointment->from_date, 'finish' => $appointment->end_date );
 			
 		}
 		
@@ -209,25 +211,32 @@ add_action( 'wp_ajax_gtek_get_appointments_for_date', 'gtek_trigger_get_appointm
 add_action( 'wp_ajax_nopriv_gtek_get_appointments_for_date', 'gtek_trigger_get_appointments_for_date' );
 
 
-function gtek_get_available_timeslots_for_date( $date ) {
+function gtek_get_available_timeslots_for_date( $appointment_slots, $booked_appointments ) {
 	
-	$booked_appointments = gtek_get_appointments_for_date( $date );
-	$date_day            = date( 'l', strtotime( $date ) );
+	//var_dump( $appointment_slots );
+	//var_dump( $booked_appointments );
 	
-	$timeslot_options = get_field( $date_day . '_appointment_slots', 'option' );
-	$timeslots        = array();
+	$timeslots = array();
 	
-	foreach ( $timeslot_options[ '30_minute_appointments' ] as $time_of_day => $timeslot_option ) {
+	foreach ( $appointment_slots as $time_of_day => $timeslot_options ) {
 		
-		foreach ( $timeslot_option as $appointment ) {
+		
+		foreach ( $timeslot_options as $appointment ) {
 			
-			$appointment[ 'available' ] = TRUE;
-			
-			foreach ( $booked_appointments as $booked_appointment ) {
+			if ( $appointment[ 'available' ] === TRUE ) {
 				
-				if ( $appointment[ 'start_time' ] == date( 'H:i:s', strtotime( $booked_appointment ) ) ) {
-					
-					$appointment[ 'available' ] = FALSE;
+				//$appointment[ 'available' ] = TRUE;
+				
+				foreach ( $booked_appointments as $booked_appointment ) {
+					//var_dump( $booked_appointment );
+					if (
+						date( 'H:i:s', $appointment[ 'start_time' ] ) >= date( 'H:i:s', strtotime( $booked_appointment[ 'start' ] ) ) &&
+						date( 'H:i:s', $appointment[ 'start_time' ] ) <= date( 'H:i:s', strtotime( $booked_appointment[ 'finish' ] ) )
+					) {
+						
+						$appointment[ 'available' ] = FALSE;
+						
+					}
 					
 				}
 				

@@ -1,9 +1,9 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: wmjc1
- * Date: 25/01/2019
- * Time: 22:48
+ * User: matthew
+ * Date: 9/5/19
+ * Time: 4:22 PM
  */ ?>
 
 <div class="hero hero--content">
@@ -19,17 +19,19 @@
 		<div class="hero__cta">
 			
 			<div class="hero__cta__content">
-	
-                <h1 class="hero__title title title__primary">
-                    Wordpress Support
-                </h1>
 				
+				<h1 class="hero__title title title__primary">
+					
+					<?php the_title(); ?>
+					
+				</h1>
+			
 			</div>
 			
 			<div class="hero__cta__image">
-					
-				<img src="<?php echo get_template_directory_uri() . '/images/comparison-hero.png'; ?>" alt="Hero Section Background"/>
 				
+				<?php the_post_thumbnail(); ?>
+			
 			</div>
 		
 		</div>

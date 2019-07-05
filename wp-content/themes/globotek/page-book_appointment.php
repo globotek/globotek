@@ -17,18 +17,12 @@ get_header(); ?>
 			
 			<p>Content</p>
 			
+			<?php var_dump( $_POST ); ?>
+			
 			<?php
 			$booked_appointments = gtek_get_freshsales_appointments();
-			
-			$appointment_slots        = get_fields( 'option' );
-			$appointment_availability = $appointment_slots[ 'appointment_availability' ];
-			var_dump( $appointment_slots[ 'monday_appointment_slots' ] );
-			
-			
-			//$timeslots = gtek_get_available_timeslots_for_date( '2019-06-14' );
-			
-			//var_dump( $timeslots );
-			$dates = array();
+			$appointment_slots   = get_fields( 'option' );
+			$dates               = array();
 			
 			for ( $w = 0; $w <= 7; $w ++ ) {
 				
@@ -72,28 +66,36 @@ get_header(); ?>
 											
 											<div class="datepicker__calendar__page <?php _e( $week_number == 0 ? 'activeCal' : '' ); ?>">
 												
-												<?php foreach ( $weekdays as $day ) { ?>
+												<?php foreach ( $weekdays as $date ) { ?>
 													
+													<?php $date_string = $date[ 0 ] . '-' . $date[ 1 ] . '-' . $date[ 3 ]; ?>
+													<?php $date_appointments = gtek_get_appointments_for_date( $date_string, $booked_appointments ); ?>
+													<?php $timeslots = gtek_get_available_timeslots_for_date( $appointment_slots[ strtolower( $date[ 5 ] ) . '_appointment_slots' ], $date_appointments ); ?>
 													
 													<div class="datepicker__calendar__col">
 														
 														<div class="datepicker__calendar__head">
-															<span class="datepicker__calendar__day"><?php echo $day[ 4 ]; ?></span><?php echo $day[ 3 ] . ' ' . $day[ 2 ]; ?>
+															<span class="datepicker__calendar__day"><?php echo $date[ 4 ]; ?></span><?php echo $date[ 3 ] . ' ' . $date[ 2 ]; ?>
 														</div>
 														
 														<div class="datepicker__calendar__slot-slider">
 															
 															<div class="datepicker__calendar__slots">
 																
-																<?php if ( ! empty( $appointment_slots[ strtolower( $day[ 5 ] ) . '_appointment_slots' ][ 'morning' ] ) ) { ?>
+																<?php if ( ! empty( $timeslots[ 'morning' ] ) ) { ?>
 																	
-																	<?php foreach ( $appointment_slots[ strtolower( $day[ 5 ] ) . '_appointment_slots' ][ 'morning' ] as $time ) { ?>
+																	<?php foreach ( $timeslots[ 'morning' ] as $time ) { ?>
 																		
 																		<div class="datepicker__calendar__time <?php _e( ! $time[ 'available' ] ? 'datepicker__calendar__time--unavailable' : '' ); ?>">
 																			
 																			<?php if ( ! empty( $time[ 'start_time' ] ) ) { ?>
 																				
-																				<?php echo date( 'h:i a', $time[ 'start_time' ] ); ?>
+																				<label>
+																					
+																					<input type="radio" name="appointment_datetime" value="<?php echo date( 'D M d Y h:i:s', $time[ 'start_time' ] ); ?>" />
+																					<?php echo date( 'h:i a', $time[ 'start_time' ] ); ?>
+																				
+																				</label>
 																			
 																			<?php } else { ?>
 																				
@@ -111,9 +113,9 @@ get_header(); ?>
 																	<span class="datepicker__calendar__arrow"><i class="fas fa-angle-down"></i></span>
 																</div>
 																
-																<?php if ( ! empty( $appointment_slots[ strtolower( $day[ 5 ] ) . '_appointment_slots' ][ 'afternoon' ] ) ) { ?>
+																<?php if ( ! empty( $timeslots[ 'afternoon' ] ) ) { ?>
 																	
-																	<?php foreach ( $appointment_slots[ strtolower( $day[ 5 ] ) . '_appointment_slots' ][ 'afternoon' ] as $time ) { ?>
+																	<?php foreach ( $timeslots[ 'afternoon' ] as $time ) { ?>
 																		
 																		<div class="datepicker__calendar__time <?php _e( ! $time[ 'available' ] ? 'datepicker__calendar__time--unavailable' : '' ); ?>">
 																			
@@ -124,7 +126,7 @@ get_header(); ?>
 																			<?php } else { ?>
 																				
 																				<?php echo 'No Time Set'; ?>
-																				
+																			
 																			<?php } ?>
 																		
 																		</div>
@@ -137,21 +139,7 @@ get_header(); ?>
 																<div class="datepicker__calendar__foot datepicker__calendar__morning">Morning
 																	<span class="datepicker__calendar__arrow"><i class="fas fa-angle-up"></i></span>
 																</div>
-																
-																
-																<!--																<div class="datepicker__calendar__time">9:30 am</div>-->
-																<!--																<div class="datepicker__calendar__time">10:00 am</div>-->
-																<!--																<div class="datepicker__calendar__time datepicker__calendar__time--unavailable">10:30 am</div>-->
-																<!--																<div class="datepicker__calendar__time">11:00 am</div>-->
-																<!--																<div class="datepicker__calendar__time">11:30 am</div>-->
-																<!--																-->
-																<!--																<div class="datepicker__calendar__time">12:00 pm</div>-->
-																<!--																<div class="datepicker__calendar__time">12:30 pm</div>-->
-																<!--																<div class="datepicker__calendar__time">13:00 pm</div>-->
-																<!--																<div class="datepicker__calendar__time datepicker__calendar__time--unavailable">13:30 pm</div>-->
-																<!--																<div class="datepicker__calendar__time datepicker__calendar__time--unavailable">14:00 pm</div>-->
-																<!--																<div class="datepicker__calendar__time">14:30 pm</div>-->
-																<!--																-->
+															
 															</div>
 														
 														</div>

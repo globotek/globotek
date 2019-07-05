@@ -13,6 +13,41 @@ remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_l
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
 
 
+add_action( 'woocommerce_before_main_content', function () {
+	
+	if ( is_shop() ) {
+		
+		echo '<div class="product-archive wrapper"><div class="chunk">';
+		
+	}
+	
+}, 5 );
+
+
+add_action( 'woocommerce_after_main_content', function () {
+	
+	if ( is_shop() ) {
+		
+		echo '</div></div>';
+		
+	}
+	
+}, 5 );
+
+
+add_action( 'woocommerce_before_shop_loop', function () {
+	
+	echo '<div class="product-archive__products">';
+	
+}, 5 );
+
+
+add_action( 'woocommerce_after_shop_loop', function () {
+	
+	echo '</div>';
+	
+}, 5 );
+
 function woocommerce_after_shop_loop_item_title_short_description() {
 	global $product;
 	
@@ -22,7 +57,7 @@ function woocommerce_after_shop_loop_item_title_short_description() {
 	
 	echo '<div class="description">';
 	
-		 echo apply_filters( 'woocommerce_short_description', $product->post->post_excerpt );
+	echo apply_filters( 'woocommerce_short_description', $product->post->post_excerpt );
 	
 	echo '</div>';
 	
@@ -45,9 +80,6 @@ add_action( 'woocommerce_archive_description', function () {
 	echo '</div></div></div>';
 	
 }, 5 );
-
-
-
 
 
 add_action( 'woocommerce_before_shop_loop', function () {

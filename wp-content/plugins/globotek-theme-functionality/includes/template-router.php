@@ -39,7 +39,7 @@ function gtek_hero( $hero_template = NULL ) {
 			
 		} else {
 			
-			$hero_template = 'hero-menu-bg';
+			$hero_template = 'hero-post';
 			
 		}
 		
@@ -48,7 +48,7 @@ function gtek_hero( $hero_template = NULL ) {
 	if ( $hero_template ) {
 		
 		include( get_stylesheet_directory() . '/partials/' . $hero_template . '.php' );
-		
+
 	}
 	
 }

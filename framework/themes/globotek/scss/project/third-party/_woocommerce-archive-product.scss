@@ -1,0 +1,17 @@
+.woocommerce-page {
+	
+	@include mode('global') {
+		
+		/*.woocommerce ul.products li.product .woocommerce-loop-product__title {
+			
+			@extend %title-secondary;
+			
+		}
+		
+		.woocommerce ul.products[class*=columns-] li.product, .woocommerce-page ul.products[class*=columns-] li.product {
+			width: 100%;
+		}*/
+		
+	}
+	
+}
