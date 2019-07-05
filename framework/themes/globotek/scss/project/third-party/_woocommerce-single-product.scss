@@ -28,8 +28,7 @@
 			&__content {
 				
 				@extend %desk--three-quarters;
-				@extend %lap--three-quarters;
-				@extend %palm--one-whole;
+				@extend %portable--one-whole;
 				
 				padding-right: $gutter--double;
 				
@@ -43,8 +42,12 @@
 			&__sidebar {
 				
 				@extend %desk--one-quarter;
-				@extend %lap--one-quarter;
-				@extend %palm--one-whole;
+                @extend %portable--one-whole;
+                
+                @include media-query('portable') {
+                    display: flex;
+                    flex-wrap: wrap;
+				}
 				
 			}
 			
@@ -70,6 +73,12 @@
 			}
 			
 			.price-box {
+
+                @extend %portable--one-whole;
+
+                @include media-query('portable') {
+                    text-align: center;
+				}
 				
 				.purchase-options {
 					
@@ -143,6 +152,12 @@
 			}
 			
 			.support {
+
+                @extend %portable--one-whole;
+
+                @include media-query('portable') {
+                    text-align: center;
+				}
 				
 				h3 {
 					margin: 0 0 $gutter;
@@ -163,7 +178,9 @@
 			}
 			
 			.details {
-				
+                
+                @extend %portable--one-whole;
+                
 				background: $grey--lighter;
 				padding: $gutter;
 				
