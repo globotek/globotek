@@ -5,7 +5,20 @@
 		@extend %flex-wrapper--column;
 		
 		align-items: center;
-		padding: $gutter $gutter--double $gutter--double;
+		padding: $gutter--double;
+		
+		&--gradient{
+			
+			@extend %box-gradient;
+			@extend %box-shadow;
+			
+			border-radius: $radius--double;
+			min-width: 490px;
+			max-width: 980px;
+			margin: 0 auto;
+			
+			
+		}
 		
 		&__icon{
 			
@@ -16,6 +29,7 @@
 			position: relative;
 			height: 100px;
 			width: 100px;
+			margin-top: -$gutter;
 			padding: 20px;
 			
 			&:before{

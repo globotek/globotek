@@ -55,12 +55,12 @@ get_header(); ?>
 							<div class="datepicker" data-module="datepicker">
 								
 								<div class="datepicker__buttons">
-									<a class="datepicker__buttons__prev js-prevcal__trigger is-hidden" href="#prev"><i class="fas fa-angle-left"></i></a>
+									<a class="datepicker__buttons__prev js-prevcal__trigger" href="#prev"><i class="fas fa-angle-left"></i></a>
 									<a class="datepicker__buttons__next js-nextcal__trigger" href="#next"><i class="fas fa-angle-right"></i></a>
 								</div>
 								
 								<div class="datepicker__calendar">
-									<div class="datepicker__calendar__slider">
+									<div class="datepicker__calendar__slider clear">
 										
 										<?php foreach ( $dates as $week_number => $weekdays ) { ?>
 											

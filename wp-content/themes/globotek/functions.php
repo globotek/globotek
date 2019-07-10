@@ -74,8 +74,23 @@ add_theme_support( 'custom-header' );
 add_theme_support( 'title-tag' );
 
 add_image_size( 'interior-banner', 0, 200, FALSE );
-add_image_size( 'post-hero', 0, 600, TRUE );
+add_image_size( 'post-hero', 1920, 0, TRUE );
 add_image_size( 'card-thumbnail', 0, 250, FALSE );
+
+
+if ( function_exists( 'rocket_init' ) ) {
+	
+	function rocket_lazyload_exclude_class( $attributes ) {
+		
+		$attributes[] = 'class="gallery__item"';
+		
+		return $attributes;
+		
+	}
+	
+	add_filter( 'rocket_lazyload_excluded_attributes', 'rocket_lazyload_exclude_class' );
+	
+}
 
 
 if ( class_exists( 'woocommerce' ) ) {

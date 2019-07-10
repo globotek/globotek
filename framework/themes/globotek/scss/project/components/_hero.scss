@@ -42,8 +42,8 @@
 			
 			@extend %one-whole;
 			@extend %desk--one-whole;
-			position: absolute;
-			
+			//position: absolute;
+			display: none;
 			bottom: 0;
 			
 			flex-shrink: 0;

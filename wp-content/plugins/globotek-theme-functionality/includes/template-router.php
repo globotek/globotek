@@ -29,6 +29,14 @@ function gtek_template_router( $components ) {
 
 function gtek_hero( $hero_template = NULL ) {
 	
+	if ( is_array( $hero_template ) ) {
+		
+		include( get_stylesheet_directory() . '/partials/hero-dynamic.php' );
+		
+		return;
+		
+	}
+	
 	if ( ! $hero_template ) {
 		
 		$hero = get_field( 'hero', get_the_ID() );
@@ -48,7 +56,7 @@ function gtek_hero( $hero_template = NULL ) {
 	if ( $hero_template ) {
 		
 		include( get_stylesheet_directory() . '/partials/' . $hero_template . '.php' );
-
+		
 	}
 	
 }

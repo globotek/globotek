@@ -55,19 +55,51 @@ if ( function_exists( 'acf' ) ) {
 }
 
 
-//if ( function_exists( 'woocommerce' ) ) {
+if ( function_exists( 'woocommerce' ) ) {
 	
 	function gtek_dequeue_woocom_styles( $enqueue_styles ) {
-	
-		if(is_shop() || is_product()) {
+		
+		if ( is_shop() || is_product() ) {
 			
 			unset( $enqueue_styles[ 'woocommerce-general' ] );    // Remove the gloss
-			//unset( $enqueue_styles[ 'woocommerce-layout' ] );        // Remove the layout
-			//unset( $enqueue_styles[ 'woocommerce-smallscreen' ] );    // Remove the smallscreen optimisation
+			
 		}
-			return $enqueue_styles;
+		
+		return $enqueue_styles;
 	}
 	
 	add_filter( 'woocommerce_enqueue_styles', 'gtek_dequeue_woocom_styles' );
 	
-//}
+}
+
+
+function gtek_email_response_rewrites() {
+	
+	add_rewrite_tag( '%gtek_email_response%', '([^&]+)' );
+	
+	add_rewrite_rule(
+		'survey-response',
+		'index.php?gtek_email_response=true',
+		'top'
+	);
+	
+	flush_rewrite_rules( TRUE );
+	
+}
+
+add_action( 'init', 'gtek_email_response_rewrites', 0 );
+
+
+function gtek_email_response_template( $template ) {
+	
+	if ( get_query_var( 'gtek_email_response' ) == TRUE ) {
+		
+		return plugin_dir_path( __FILE__ ) . 'templates/page-survey_response.php';
+		
+	}
+	
+	return $template;
+	
+}
+
+add_action( 'template_include', 'gtek_email_response_template' );
