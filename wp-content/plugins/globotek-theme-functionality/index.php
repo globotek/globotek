@@ -73,17 +73,24 @@ if ( function_exists( 'woocommerce' ) ) {
 }
 
 
+function gtek_admin_menus() {
+	
+	add_menu_page( 'Campaign Monitor Link Builder', 'CM Link Builder', 'manage_options', 'cm-link-builder', 'gtek_cm_link_builder' );
+	
+}
+
+add_action( 'admin_menu', 'gtek_admin_menus' );
+
+
 function gtek_email_response_rewrites() {
 	
 	add_rewrite_tag( '%gtek_email_response%', '([^&]+)' );
 	
 	add_rewrite_rule(
 		'survey-response',
-		'index.php?gtek_email_response=true',
+		'index.php?gtek_email_response=true&pagename=survey-response',
 		'top'
 	);
-	
-	flush_rewrite_rules( TRUE );
 	
 }
 
@@ -93,6 +100,14 @@ add_action( 'init', 'gtek_email_response_rewrites', 0 );
 function gtek_email_response_template( $template ) {
 	
 	if ( get_query_var( 'gtek_email_response' ) == TRUE ) {
+		
+		add_filter( 'wpseo_title', function ( $title ) {
+			
+			$title = 'Survey Response | GloboTek';
+			
+			return $title;
+			
+		} );
 		
 		return plugin_dir_path( __FILE__ ) . 'templates/page-survey_response.php';
 		
