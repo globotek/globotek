@@ -10,7 +10,8 @@
         &__background{
 		
             @extend %one-whole;            
-            width: 100vw;
+            width: 105vw;
+            margin-left: -10px;
             
             img{
                 

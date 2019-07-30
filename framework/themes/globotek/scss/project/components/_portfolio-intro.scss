@@ -1,6 +1,6 @@
 .portfolio-intro {
 	
-	@include mode('global') {     
+	@include mode('global') { 
 
         &__body {
 			
@@ -8,10 +8,16 @@
             width: 100%;
             margin-top: -160px;
 	        overflow: hidden;
+
+            @include media-query('portable'){
+		        
+		        margin-top: -50px;
+		        
+	        }
 			
 	        @include media-query('palm'){
 		        
-		        margin-top: -70px;
+		        margin-top: -30px;
 		        
 	        }
 	        

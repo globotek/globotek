@@ -7,6 +7,12 @@
         justify-content: space-between;
         padding: $gutter--treble $gutter;
 
+        @include media-query('portable'){
+                
+            padding: 0 $gutter;
+
+        }
+
         &__hero__body {
 
             height: 10px;

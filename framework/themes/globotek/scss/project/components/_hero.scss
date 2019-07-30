@@ -17,6 +17,10 @@
 		&--no-content {
 			
 			margin-bottom: $gutter--double;
+
+            @include media-query('portable') {
+                margin-bottom: 0;
+            }
 			
 		}
 		
@@ -31,8 +35,9 @@
 				object-fit: cover;
 				
 				@include media-query('portable') {
-					width: 150%;
-					max-width: 150%;
+					width: 100%;
+                    height: auto;
+					max-width: 100%;
 				}
 				
 			}
@@ -164,8 +169,12 @@
 				@extend %desk--two-fifths;
 				@extend %palm--one-whole;
 				
-				padding-top: 100px;
+				padding-top: 50px;
 				min-height: 400px;
+
+                @include media-query('desk-wide') {
+                    padding-top: 100px;
+                }
 				
 				@include media-query('portable') {
 					padding-top: 50px;

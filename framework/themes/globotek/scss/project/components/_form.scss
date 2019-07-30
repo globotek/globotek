@@ -5,7 +5,7 @@
         @extend %transition-all-slow;
 
         position: relative;
-        overflow: hidden;
+        //overflow: hidden;
     
         &__field {
 
@@ -59,12 +59,7 @@
 
         &__range {
             position: relative; 
-
-            @include media-query('portable'){
-
-                margin: 0 $gutter--double;
-        
-            }
+            margin: 0 $gutter--double;
 
             &--input {
                 -webkit-appearance: none;
