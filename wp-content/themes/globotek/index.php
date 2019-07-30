@@ -8,6 +8,8 @@
  */
 get_header(); ?>
 
+<?php the_post(); ?>
+
 <?php gtek_hero(); ?>
 
 <?php gtek_template_router( get_field( 'components' ) ); ?>

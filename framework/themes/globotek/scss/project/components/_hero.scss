@@ -27,7 +27,8 @@
 			img {
 				
 				width: 100%;
-				height: auto;
+				max-height: 850px;
+				object-fit: cover;
 				
 				@include media-query('portable') {
 					width: 150%;
@@ -42,10 +43,9 @@
 			
 			@extend %one-whole;
 			@extend %desk--one-whole;
+			
 			position: absolute;
-			
 			bottom: 0;
-			
 			flex-shrink: 0;
 			
 			&__image {
@@ -88,7 +88,7 @@
 			
 		}
 		
-		&__wave{
+		&__wave {
 			margin-top: -160px;
 			height: 160px;
 		}
@@ -99,7 +99,7 @@
 			display: inline;
 			@include font-size(16px, true, false, $tight-line-height-ratio);
 			padding-left: 5px;
-						
+			
 			&:after {
 				content: "";
 				position: absolute;
@@ -112,7 +112,7 @@
 			
 		}
 		
-		&__category + &__title  {
+		&__category + &__title {
 			
 			margin-top: 10px;
 			
@@ -130,9 +130,9 @@
 			
 			@include media-query('portable') {
 				height: 420px;
-            }
-            
-            @include media-query('palm') {
+			}
+			
+			@include media-query('palm') {
 				height: 370px;
 			}
 			
@@ -167,7 +167,7 @@
 				padding-top: 100px;
 				min-height: 400px;
 				
-				@include media-query('portable'){
+				@include media-query('portable') {
 					padding-top: 50px;
 				}
 				

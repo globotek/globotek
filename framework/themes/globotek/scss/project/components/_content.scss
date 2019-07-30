@@ -128,7 +128,10 @@
 			margin: $gutter--midi 0;
 			
 			figcaption {
-				text-align: left;
+				
+				max-width: 70%;
+				margin: 0 auto;
+				
 			}
 			
 		}

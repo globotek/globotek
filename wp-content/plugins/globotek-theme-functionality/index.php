@@ -55,7 +55,7 @@ if ( function_exists( 'acf' ) ) {
 }
 
 
-if ( function_exists( 'woocommerce' ) ) {
+if ( class_exists( 'woocommerce' ) ) {
 	
 	function gtek_dequeue_woocom_styles( $enqueue_styles ) {
 		
