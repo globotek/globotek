@@ -65,6 +65,8 @@ the_post(); ?>
 				<div class="blog__body__text content">
 					
 					<?php the_content(); ?>
+
+                    <?php comments_template(); ?>
 				
 				</div>
 			
