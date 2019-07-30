@@ -3,7 +3,9 @@
 	@include mode('global'){
 		
 		@extend %flex-wrapper;
-		@extend %one-quarter;
+
+        @extend %desk--one-quarter;
+		@extend %lap--one-half;
 		@extend %palm--one-whole;
 		
 		padding: 0 $gutter;

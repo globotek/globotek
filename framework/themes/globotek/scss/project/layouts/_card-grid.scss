@@ -4,7 +4,7 @@
 	
 		@extend %grid;
 		@extend %grid--full;
-		
+		@extend %grid--level-heights;
 		
 		max-width: $site-max-width;
 		margin: 0 auto;

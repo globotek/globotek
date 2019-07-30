@@ -50,9 +50,10 @@ $cards = get_posts( array( 'posts_per_page' => 3, 'post__not_in' => array( get_t
 		</div>
 	
 	<?php } ?>
-	
-	<div class="card-grid__link">
-		<a href="<?php echo get_post_type_archive_link( 'post' ); ?>" class="button">More Articles</a>
-	</div>
 
 </div>
+
+<div class="card-grid__link">
+    <a href="<?php echo get_post_type_archive_link( 'post' ); ?>" class="button">More Articles</a>
+</div>
+

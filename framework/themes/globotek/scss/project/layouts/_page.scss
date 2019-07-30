@@ -7,12 +7,14 @@
 		//align-items: center;
 		
 		&__icon-blocks{
-			
-			@extend %flex-wrapper;
+
+            @extend %grid;
+			@extend %grid--full;
+			//@extend %flex-wrapper;
 			padding: $gutter--treble 0;
 			
 			@include media-query('portable'){
-				flex-direction: column;
+				//flex-direction: column;
             }
             
             @include media-query('palm'){
@@ -22,6 +24,9 @@
 		}
 		
 		&__info-boxes{
+
+            @extend %grid;
+            @extend %grid--full;
 			
 			padding-bottom: $gutter--treble;
 			
