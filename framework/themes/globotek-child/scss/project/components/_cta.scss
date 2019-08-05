@@ -1,0 +1,201 @@
+.cta{
+	
+	display: flex;
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	
+	
+	&__background{
+		
+        @extend %one-whole;
+               
+        width: 100vw;
+		
+		img{
+			
+			width: 100%;
+			
+			@include media-query('portable'){
+				
+                width: 1500px;
+                max-width: 1500px;
+                left: 50%;
+                transform: translateX(-10%);
+				
+			}
+			
+		}
+		
+	}
+	
+	&__inner{
+		
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		
+		
+		@extend %flex-wrapper--column;
+		justify-content: center;
+        align-items: center;
+        
+        &__image {
+
+            @include media-query('desk'){
+                max-width: 75%;
+            }
+        }
+		
+    }
+    
+    &__title {
+        text-align: center;
+        position: relative;
+
+        @include media-query('desk'){
+            top: -10%;
+		}
+    }
+	
+	&__universal{
+		
+		@extend %grid;
+        @extend %flex-wrapper;
+
+        align-items: center;
+		justify-content: space-between;
+		width: $site-max-width;
+		max-width: 100%;
+		
+		@include media-query('portable'){
+            margin-top: 20px;
+			//flex-direction: column;
+			text-align: center;
+		}
+		
+		&__content{
+			
+			@extend %desk--two-thirds;
+			color: $white;
+			
+			@include media-query('portable'){
+				padding-top: 60px;
+			}
+			
+			&__title{
+				
+				padding-bottom: $gutter--midi;
+				
+			}
+			
+			&__text{
+				
+                //margin-bottom: $gutter--treble;
+                
+                @include media-query('portable'){
+                    margin-bottom: $gutter--mini;
+                }
+				
+			}
+			
+			
+		}
+		
+		&__link{
+			
+            @extend %desk--one-third;
+            @extend %portable--one-whole;
+			align-self: center;
+			margin-bottom: $gutter--treble;
+            text-align: right;
+            
+            @include media-query('portable'){
+                text-align: center;
+            }
+			
+		}
+		
+	}
+	
+	&__portfolio-item{
+		
+		width: 980px;
+		max-width: 100%;
+		
+		@include media-query('desk'){
+		}
+		
+		&__body{
+			
+			@extend %flex-wrapper;
+			
+			justify-content: space-around;
+			margin: $gutter--double 0;
+			border-radius: 10px;
+			background: $white;
+			@extend %box-shadow-secondary;
+			overflow: hidden;
+			
+			@include media-query('portable'){
+				flex-direction: column;
+                margin: $gutter--double $gutter;
+			}
+			
+			&__image,
+			&__content{
+				@extend %portable--one-whole;
+				@extend %desk--one-half;
+			}
+			
+			&__content{
+                @extend %flex-wrapper--column;
+                @extend %box-gradient;
+				justify-content: space-between;
+				padding: $gutter--midi;
+            }
+            
+            &__image{
+                img {
+                    min-height: 100%;
+                    width: auto;
+                }
+            }
+        }
+        
+        &__tags {
+            margin: 5px 0;
+            color: $grey--mid;
+        }
+		
+		&__link{
+			text-align: center;
+			
+		}
+		
+	}
+	
+	&__testimonials{
+		
+		margin-top: -180px;
+		
+		@include media-query('portable'){
+			margin-top: -100px;
+		}
+		
+		&__body{
+			
+			margin: $gutter--treble 0;
+			padding: $gutter--midi;
+			
+			@include media-query('portable'){
+				flex-direction: column;
+				margin-left: $gutter;
+				margin-right: $gutter;
+			}
+			
+		}
+		
+    }
+	
+}

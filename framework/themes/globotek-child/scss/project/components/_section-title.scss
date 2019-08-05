@@ -1,0 +1,35 @@
+.section-title {
+	
+	@include mode('global') {
+		
+		@extend %flex-wrapper--column;
+		align-self: center;
+		max-width: $site-max-width;
+		padding: $gutter--treble 100px 0;
+		text-align: center;
+		
+		@include media-query('palm') {
+			margin-bottom: 0;
+			padding: $gutter $gutter;
+		}
+		
+		&.center {
+			
+			@include media-query('portable') {
+				
+				padding-bottom: 0;
+				
+			}
+						
+		}
+		
+		&__intro {
+			width: 70%;
+			margin: 0 15%;
+			margin-top: $gutter--midi;
+			
+		}
+		
+	}
+	
+}

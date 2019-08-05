@@ -1,0 +1,72 @@
+.image-content{
+	
+	@include mode('global'){
+		
+		@extend %grid;
+		@extend %grid--split;
+		
+		@include media-query('palm'){
+			flex-direction: column !important;
+			text-align: center;
+		}
+		
+		& + & {
+			padding-top: $gutter--treble;
+		}
+		
+		&:nth-child(even){
+			flex-direction: row-reverse;
+		}
+		
+		&__image{
+
+            @extend %desk--one-half;
+			@extend %lap--one-half;
+            @extend %palm--one-whole;
+            @extend %flex-wrapper;
+
+            justify-content: center;
+            align-items: center;
+
+            &__cloud {
+
+                position: absolute;
+                z-index: -1;
+                
+                @include media-query('lap'){
+                    width: 330px;
+                }
+
+
+
+            }
+            
+		}
+		
+		&__content{
+			
+			@extend %flex-wrapper--column;
+			@extend %desk--one-half;
+			@extend %lap--one-half;
+            @extend %palm--one-whole;
+            
+			justify-content: center;
+			
+			
+			
+			&__text{
+				padding-top: $gutter--midi;
+				padding-bottom: $gutter--double;
+			}
+			
+			
+			&__link{
+				
+				display: inline-block;
+				
+			}
+		}
+		
+	}
+	
+}

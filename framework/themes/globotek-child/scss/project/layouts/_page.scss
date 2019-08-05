@@ -1,0 +1,36 @@
+.page{
+	
+	@include mode('global'){
+		
+		@extend %flex-wrapper--column;
+        width: 100%;
+		//align-items: center;
+		
+		&__icon-blocks{
+
+            @extend %grid;
+			@extend %grid--full;
+			//@extend %flex-wrapper;
+			padding: $gutter--treble 0;
+			
+			@include media-query('portable'){
+				//flex-direction: column;
+            }
+            
+            @include media-query('palm'){
+                padding: $gutter--treble 0 0;
+            }
+			
+		}
+		
+		&__info-boxes{
+
+            @extend %grid;
+            @extend %grid--full;
+			
+			padding-bottom: $gutter--treble;
+			
+		}
+		
+	}
+}

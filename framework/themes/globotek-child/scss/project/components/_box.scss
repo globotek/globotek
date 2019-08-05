@@ -1,0 +1,72 @@
+.box{
+	
+	@include mode('global'){
+		
+		@extend %flex-wrapper--column;
+		
+		align-items: center;
+		padding: $gutter--double;
+		
+		&--gradient{
+			
+			@extend %box-gradient;
+			@extend %box-shadow;
+			
+			border-radius: $radius--double;
+			min-width: 490px;
+			max-width: 980px;
+			margin: 0 auto;
+			
+			
+		}
+		
+		&__icon{
+			
+			@extend %flex-wrapper;
+			
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			height: 100px;
+			width: 100px;
+			margin-top: -$gutter;
+			padding: 20px;
+			
+			&:before{
+				
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				background: $primary-color--light;
+				border-radius: 100%;
+				z-index: -10;
+				
+			}
+			
+			img{
+				width: 60px;
+			}
+			
+		}
+		
+		&__heading{
+			margin: $gutter--midi 0 $gutter;
+		}
+		
+		&__text{
+			
+			text-align: center;
+			
+			p + p{
+				
+				margin-top: $gutter--mini;
+				
+			}
+			
+		}
+	}
+	
+}

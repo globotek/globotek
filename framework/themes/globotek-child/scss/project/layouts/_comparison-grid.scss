@@ -1,0 +1,26 @@
+.comparison-grid{
+	
+	@include mode('global'){
+	
+		@extend %grid;
+        @extend %grid--full;
+        @extend %grid--level-heights;
+		
+		max-width: $site-max-width;
+		
+		&__item{
+            @extend %desk--one-quarter;
+            @extend %lap--one-half;
+            @extend %palm--one-whole;
+
+			padding: 0 $gutter--mini;
+			
+			@include media-query('portable'){
+				margin-bottom: 140px;
+			}
+			
+		}
+		
+	}
+	
+}

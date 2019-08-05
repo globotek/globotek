@@ -1,0 +1,198 @@
+.wave-grid {
+	
+	@include mode('global') {
+		
+		max-width: $site-max-width;
+        margin: 0 auto;
+        
+        -moz-box-shadow: 0 0 10px #888;
+        -webkit-box-shadow: 0 0 10px #888;
+        box-shadow: 0 0 10px #888;
+		
+		&__item {
+			@extend %flex-wrapper;
+            overflow: hidden;
+			
+			$curve-height: 200%;
+			$curve-width: 290px;
+			$curve-offset: -19.55px;
+            $curve-percentage: 100%;
+            
+            @include media-query('portable'){
+
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                margin: #{-$gutter} 0 0 #{-$gutter};
+                padding: 0;
+        
+            }
+						
+			
+			&:nth-child(even) {
+				flex-direction: row-reverse;
+				
+				.wave-grid__item__body {
+                    position: relative;
+					
+					&:before {
+						content: "";
+						position: absolute;
+						top: -50%;
+						right: $curve-offset;
+						height: $curve-height;
+						width: $curve-width;
+						border-radius: $curve-percentage;
+                        background: $primary-color--light;
+                        
+                        -moz-box-shadow: 16px 15px -17px #888;
+                        -webkit-box-shadow: 16px 0 15px 17px #888;
+                        box-shadow: 16px 0 15px -17px #888;
+
+                        @include media-query('portable'){
+
+                            display: none;
+
+                        }
+					}
+				}
+			}
+			
+			&:nth-child(odd) {
+				
+				.wave-grid__item__body {
+					&:before {
+						content: "";
+						position: absolute;
+						top: -50%;
+						left: $curve-offset;
+						height: $curve-height;
+						width: $curve-width;
+						border-radius: $curve-percentage;
+                        background: $primary-color--light;
+
+                        -moz-box-shadow: -16px 0 15px -17px #888;
+                        -webkit-box-shadow: -16px 0 15px 17px #888;
+                        box-shadow: -16px 0 15px -17px #888;
+
+                        @include media-query('portable'){
+
+                            display: none;
+
+                        }
+                    }
+				}
+            }
+
+            &:nth-child(1n) {
+                .wave-grid__item__body {
+                    background: $primary-color--light;
+                    
+					&:before {
+                        background: $primary-color--light;
+                    }
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        background-image: url('../images/clouds-top.svg');
+                        background-size: auto 85%;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        width: 100%;
+                        height: 100%;
+                        left: 0px;
+                    }
+                }
+            }
+
+            &:nth-child(2n) {
+                .wave-grid__item__body {
+                    background: $primary-color;
+                    color: $white;
+                    
+					&:before {
+                        background: $primary-color;
+                    }
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        background-image: url('../images/clouds-middle.svg');
+                        background-size: auto 95%;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        width: 100%;
+                        height: 100%;
+                        left: 0px;
+                    }
+                }
+            }
+
+            &:nth-child(3n) {
+                .wave-grid__item__body {
+                    background: $primary-color--mid;
+                    
+					&:before {
+                        background: $primary-color--mid;
+                    }
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        background-image: url('../images/clouds-bottom.svg');
+                        background-size: 242px auto;
+                        background-repeat: no-repeat;
+                        background-position: top 60px right 40px;
+                        width: 100%;
+                        height: 100%;
+                        left: 0px;
+                    }
+                }
+            }
+			
+			&__image {
+				
+                @extend %desk--one-half;
+                @extend %portable--one-whole;
+                overflow: hidden;
+                
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                }
+                
+				
+			}
+			
+			&__body {
+				
+                @extend %desk--one-half;
+                @extend %portable--one-whole;
+
+				
+				@extend %flex-wrapper--column;
+				justify-content: center;
+				
+				position: relative;
+				padding: $gutter--treble;
+				
+				&__title {
+					position: relative;
+					z-index: 10;
+				}
+				
+				&__text {
+					padding-top: $gutter;
+					position: relative;
+					z-index: 10;
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}

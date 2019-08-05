@@ -1,0 +1,155 @@
+.project-card{
+	
+	@include mode('global') {
+		
+		position: relative;
+		display: block;
+		overflow: hidden;
+		
+		& + & {
+            margin-top: 100px;
+            
+            @include media-query('portable') {
+				
+				margin-top: 50px;
+					
+			}
+		}
+		
+		&__image {
+			height: auto;
+			width: 100%;
+        }
+        
+        &__body {
+            position: relative;
+            top: -30px;     
+            
+            @include media-query('palm') {
+				
+				top: 0px;
+					
+			}
+        }
+		
+		&__bg {
+            position: relative;
+            left: -5px;
+						
+			@include media-query('desk') {
+				
+				width: 120%;
+				max-width: 120%;
+				
+			}
+			
+			@include media-query('desk-wide') {
+				
+				width: 105%;
+				max-width: 105%;
+				
+			}
+			
+			@include media-query('portable') {
+				
+				width: 110%;
+				max-width: 190%;
+				
+				
+			}
+			
+			@include media-query('palm') {
+				
+                background: $primary-color;
+                height: 110px;
+				
+			}
+			
+		}
+		
+		&__inner {
+			
+			@extend %grid;
+			
+			justify-content: space-between;
+			align-items: center;
+			position: absolute;
+			top: 20px;
+			width: 100%;
+			padding: 0 100px;
+			color: $white;
+			
+			@include media-query('desk') {
+				
+				bottom: 20px;
+				padding: 0 20px;
+				
+			}
+			
+			@include media-query('desk-wide') {
+				
+				bottom: 20px;
+				padding: 0 100px;
+				
+			}
+			
+			@include media-query('portable') {
+				
+				padding: 0 20px;
+				bottom: 10px;
+				
+			}
+			
+			&__title {
+				
+				//@extend %desk--two-fifths;
+				//@extend %portable--one-half;
+				
+				&__tags {
+					
+					padding-top: $gutter--small;
+					
+					@include media-query('portable') {
+						
+						display: none;
+						
+					}
+					
+				}
+				
+			}
+			
+			&__content {
+				
+				@extend %desk--two-fifths;
+				@extend %portable--four-fifths;
+				
+				@include media-query('portable') {
+					
+					display: none;
+					
+				}
+				
+			}
+			
+			&__link {
+				
+				@extend %desk--one-fifth;
+				@extend %portable--one-fifth;
+				
+				text-align: right;
+				
+				@include media-query('portable') {
+					
+					padding-left: 0;
+					margin-right: 20px;
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}

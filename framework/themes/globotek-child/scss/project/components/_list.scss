@@ -1,0 +1,22 @@
+.list{
+	
+	@include mode('global'){
+	
+		
+		&__item{
+			
+			&:before {
+				content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+				color: $primary-color; /* Change the color */
+				font-size: 24px;
+				font-weight: bold; /* If you want it to be bold */
+				display: inline-block; /* Needed to add space between the bullet and the text */
+				width: 16px; /* Also needed for space (tweak if needed) */
+				margin-top: 5px;
+				margin-left: 0; /* Also needed for space (tweak if needed) */}
+			
+		}
+		
+	}
+	
+}

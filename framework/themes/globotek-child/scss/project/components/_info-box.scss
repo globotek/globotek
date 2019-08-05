@@ -1,0 +1,59 @@
+.info-box{
+	
+	@include mode('global'){
+		
+        @extend %flex-wrapper--column;
+        
+        @extend %desk--one-quarter;
+		@extend %lap--one-half;
+		@extend %palm--one-whole;
+		
+		align-items: center;
+		
+		
+		
+		@include media-query('palm'){
+            
+			& + &{
+				margin-top: $gutter--midi;
+            }
+            
+        }
+	
+		
+		&__icon{
+			
+			@extend %flex-wrapper;
+			justify-content: center;
+			align-items: center;
+			
+			width: 120px;
+			
+			margin: $gutter 0;
+			
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: 120px;
+			
+			.icon{
+				height: 70px;
+			}
+			
+		}
+		
+		&__heading{
+			margin: $gutter 0;
+		}
+		
+		&__text{
+			max-width: 225px;
+			text-align: center;
+			
+			@include media-query('palm'){
+				max-width: 100%;
+			}
+		}
+		
+	}
+	
+}

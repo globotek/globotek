@@ -1,0 +1,47 @@
+.gallery{
+	
+	@include mode('global'){
+		
+		&__packery{
+			
+			//@extend %box-gradient;
+			
+			&--sizer{
+				
+				width: 22%;
+				
+			}
+			
+			&--gutter{
+				
+				width: 4%;
+				
+			}
+			
+		}
+		
+		&__item{
+			
+			
+			//@extend %box-shadow;
+			@extend %box-shadow-secondary;
+			
+			width: 31%;
+			
+			@include media-query('portable'){
+				
+				width: 100%;
+				
+			}
+			
+		}
+		
+		&__item--double{
+			
+			width: 48%;
+			
+		}
+		
+	}
+	
+}

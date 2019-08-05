@@ -1,0 +1,48 @@
+.blog-archive{
+	
+	@include mode('global'){
+		
+        @extend %grid;
+        @extend %one-whole;
+        
+        justify-content: space-between;
+        
+        &__hero__body {
+
+            height: 10px;
+
+        }
+		
+		&__posts {
+
+            @extend %desk--four-fifths;
+            @extend %portable--one-whole;
+            
+            
+            
+            padding-right: $gutter--midi;
+
+            @include media-query('portable'){
+                
+                padding-right: $gutter;
+
+            }
+
+        }
+
+        &__sidebar {
+
+            @extend %desk--one-fifth;
+            @extend %portable--one-whole;
+
+            @include media-query('portable'){
+                
+                padding-top: $gutter--treble;
+
+            }
+
+        }
+		
+	}
+	
+}

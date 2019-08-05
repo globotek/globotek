@@ -1,0 +1,182 @@
+.datepicker {
+	
+	@include mode('global') {
+		
+        display: inline-block;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        overflow: visible;
+        position: relative;
+        top: -80px;
+
+        &__buttons {
+            overflow: visible;
+
+            &__prev,
+            &__next {
+                @extend %transition-all;
+                @extend .button;
+				
+				width: 45px;
+                height: 45px;
+                line-height: 45px;
+				position: relative;
+                padding: 0 !important;
+                margin: 0 13px;
+            }
+
+            &__prev {
+                float: left;
+            }
+
+            &__next {
+                float: right;
+            }
+
+        }
+
+        &__calendar {
+
+            width: 100%;
+            margin: $gutter--treble 0 0 0;
+            overflow: hidden;
+
+            @include media-query('palm'){
+
+                font-size: 12px;
+        
+            }
+
+            &__slider {
+                @extend %transition-all-slow;
+
+                position: relative;
+                left: 0px;
+                overflow: hidden;
+                height: 596px;
+            }
+
+            &__page {
+                float: left;
+                @extend %grid;
+                @extend %grid--full;
+                width: 760px;
+            }
+
+            &__slot-slider {
+                overflow: hidden;
+                height: 533px;
+            }
+
+            &__slots {
+                @extend %transition-all-slow;
+
+                position: relative;
+                top: 0px;
+            }
+
+            &__col {
+                @extend %flex-wrapper;
+                @extend %one-fifth;
+
+                flex-direction: column;
+                margin-top: 0;
+
+                &:first-child {
+                    .datepicker__calendar__head {
+                        border-radius: 25px 0 0 0;
+                    }
+
+                    .datepicker__calendar__foot {
+                        border-radius: 0 0 0 25px;
+                    }
+                }
+
+                &:last-child {
+                    .datepicker__calendar__head {
+                        border-radius: 0 25px 0 0;
+                    }
+
+                    .datepicker__calendar__foot {
+                        border-radius: 0 0 25px 0;
+                    }
+                }
+            }
+
+            &__head,
+            &__foot {
+                background: $blue;
+                color: $white;
+                padding: 5px 0;
+                border: $white solid 1px;
+            }
+
+            &__day {
+                display: block;
+                text-transform: uppercase;
+            }
+
+            &__time {
+                @extend %transition-all;
+                padding: 16px 0;
+                border: $white solid 1px;
+                cursor: pointer;
+
+                &:hover {
+                    background: $primary-color--light;
+                }
+
+                &__selected {
+                    background: $blue;
+                    color: $white;
+
+                    &:hover {
+                        background: $blue;
+                        color: $white;
+                    }
+                }
+    
+                &--unavailable {
+                    
+                    background: $grey--lighter;
+                    text-indent: -99999px;
+                    cursor: default;
+                    
+                    &:hover {
+                        background: $grey--lighter;
+                    }
+                }
+            }
+
+            
+
+            &__foot {
+                cursor: pointer;
+
+                [data-toggle="toggle"] {
+                    display: none;
+                }
+
+                &--active {
+                    .datepicker__calendar__arrow {
+                        transform: rotate(180deg);
+                    }
+                }
+
+                &:hover {
+                    background: $primary-color--light;
+                    color: $grey;
+                }
+            }
+
+            &__arrow {
+                display: block;
+                cursor: pointer;
+            }
+
+        }
+		
+	}
+	
+}

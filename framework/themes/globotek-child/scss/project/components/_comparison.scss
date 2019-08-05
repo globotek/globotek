@@ -1,0 +1,110 @@
+.comparison{
+	
+	@include mode('global'){
+
+        //@extend %flex-wrapper--column;
+
+        background: $primary-color;
+        max-width: 258px;
+        height: 100%;
+        position: relative;
+        margin: 0 auto;
+
+        &__title {
+
+            @extend %box-shadow;
+
+            background: $white;
+            text-align: center;
+            width: 88%;
+            margin: 0 auto;
+            padding: $gutter 0;
+            position: relative;
+            top: -55px;
+
+            &--popular {
+
+                &:before {
+
+                    content: "";
+                    width: 104px;
+                    height: 94px;
+                    position: absolute;
+                    left: -5px;
+                    top: -5px;
+                    background: url('../images/comparison-banner.png') no-repeat;
+
+                }
+
+                &:after {
+                    content: "Popular";
+                    color: $white;
+                    position: absolute;
+                    top: 17px;
+                    left: 2px;
+                    transform: rotate(-44deg);
+                }
+
+            }
+
+        }
+
+        &__content {
+
+            position: relative;
+            top: -25px;
+            padding: 0 $gutter;
+            color: $white;
+
+        }
+
+        &__list {
+
+            padding-bottom: $gutter--mini;
+
+            &__item {
+
+                margin-bottom: $gutter;
+                
+                i {
+                    margin-right: $gutter--mini;
+                }
+
+            }
+
+        }
+
+        &__text {
+
+            padding: $gutter--midi 0;
+            border-top: $white solid 1px;
+
+        }
+
+        &__link {
+
+            text-align: center;
+
+        }
+
+        &__bottom {
+
+            width: 100%;
+            position: absolute;
+            bottom: -28px;
+            overflow: hidden;
+
+            &__image {
+
+                max-width: 102%;
+                display: block;
+                margin-left: -2px;
+
+            }
+
+        }
+
+
+    }
+	
+}

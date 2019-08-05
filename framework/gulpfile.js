@@ -21,6 +21,7 @@ var gulp        = require('gulp'),
  GLOBAL VARS
  ------------------------------------*/
 var THEMES  = ['globotek'];
+//var THEMES  = ['globotek-child'];
 var PLUGINS = ['globotek-theme-functionality'];
 
 var PROJECT_DIRECTORIES = {

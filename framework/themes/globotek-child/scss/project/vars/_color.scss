@@ -1,16 +1,24 @@
 $black: #000000;
 $white: #FFFFFF;
 
+
+// GSC Colours
+$green: #ced400;
+$light-blue: #009fdb;
+$dark-blue: #1c7fbd;
+$orange: #ff8633;
+
+
 $grey: #999999;
 $grey--dark: #181818;
 $grey--mid: #BBBBBB;
 $grey--light: #DDDDDD;
 $grey--lighter: #F1F0F0;
 
-$primary-color: #3BA4DC;
-$primary-color--mid: #b7d4f0;
-$primary-color--light: #d9e7f6;
-$primary-color--bg: #3CA2D8;
+$primary-color: #ced400;
+$primary-color--mid: #DFE284;
+$primary-color--light: #F1F3CB;
+$primary-color--bg: #CED400;
 
 $positive-color: darkgreen;
 $positive-color--mid: green;
@@ -21,9 +29,11 @@ $negative-color--mid: red;
 $negative-color--light: grapefruit;
 
 
+
+
+
 $blue: $primary-color;
 $blue--light: $primary-color--light;
 
-$primary-background: rgba(59, 164, 220, 0.25);
-
+$primary-background: rgba(206, 212, 0, 0.25)
 

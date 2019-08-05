@@ -1,0 +1,31 @@
+.post-date{
+	
+	@include mode('global'){
+        
+        justify-content: center;
+        align-items: center;
+        
+        height: 65px;
+        width: 65px;
+        border-radius: $radius;
+        background: $primary-color;
+        color: $white;
+        font-size: 36px;
+        text-align: center;
+        
+        span{
+
+            line-height: 1.2;
+            word-spacing: 50px;
+            text-align: center;
+            font-size: 17px;
+            display: block;
+            width: 100%;
+            padding: 4px 0;
+            font-weight: bold;
+
+        }
+		
+	}
+	
+}

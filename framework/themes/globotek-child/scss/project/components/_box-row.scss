@@ -1,0 +1,15 @@
+.box-row{
+	
+	@include mode('global'){
+	
+		@extend %grid;
+		justify-content: space-between;
+		width: 100%;
+		max-width: $site-max-width;
+		
+		@include media-query('palm'){
+			flex-direction: column;
+		}
+		
+	}
+}

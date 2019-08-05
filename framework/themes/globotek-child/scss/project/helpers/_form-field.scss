@@ -1,0 +1,32 @@
+%form-field {
+	width: 100%;
+	height: 50px;
+	background: $white;
+    border-radius: $radius--form-field;
+    border: none;
+    color: $grey--mid;
+    margin-bottom: 40px;
+
+    @include media-query('portable'){
+
+        margin-bottom: 20px;
+
+    }
+
+	@include form-field();
+	@include placeholder($grey);
+	@include font-size($base-font-size, true);
+
+	&:focus {
+		border-color: $primary-color;
+		background: $white;
+	}
+
+	&.is-error {
+		border-color: $negative-color;
+		color: $negative-color--mid;
+		background: lighten($negative-color, 40%);
+
+		@include placeholder($negative-color--mid);
+	}
+}

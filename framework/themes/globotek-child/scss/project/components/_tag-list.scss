@@ -1,0 +1,43 @@
+.tag-list {
+
+	@include mode('global') {
+
+		> * {
+            color: $grey;
+            text-decoration: none;
+		}
+				
+		span {
+			padding: 0 5px;
+
+			&:last-child {
+				display: none;
+            }
+            
+        }
+
+        a {
+
+            color: $grey--mid;
+	        white-space: nowrap;
+
+        }
+
+        &--white {
+
+			a, > * {
+				color: $white;
+			}
+
+		}
+        
+        &__author {
+
+            color: $primary-color;
+            padding: 0 !important;
+
+        }
+		
+	}
+
+}
